@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://producto/assets/img/fondo.png" type="Texture" id=1]
+[ext_resource path="res://producto/assets/scenes/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://producto/scripts/Mapa.gd" type="Script" id=2]
-[ext_resource path="res://producto/assets/other/Jugador.tscn" type="PackedScene" id=3]
+[ext_resource path="res://producto/assets/img/fondo.png" type="Texture" id=3]
 
 [node name="Mapa" type="Node2D"]
 scale = Vector2( 1.00096, 1 )
@@ -12,9 +12,9 @@ tiempo_spawn = 100
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 512, 293 )
 scale = Vector2( 0.805638, 0.910689 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 1025, 600 )
 
-[node name="Jugador" parent="." instance=ExtResource( 3 )]
+[node name="Jugador" parent="." instance=ExtResource( 1 )]

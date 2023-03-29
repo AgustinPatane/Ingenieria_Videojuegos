@@ -4,7 +4,7 @@ var a =0
 var mouse_position
 var fire_rate = 20
 
-onready var escena_proyectil = preload("res://producto/assets/other/Proyectil.tscn")
+onready var escena_proyectil = preload("res://producto/assets/scenes/Proyectil.tscn")
 
 func _mira_mouse(object):
 	mouse_position = get_global_mouse_position()

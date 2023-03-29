@@ -2,7 +2,7 @@ extends Node2D
 
 export(int) var tiempo_spawn = 30
 var a = 0
-onready var escena_enemigo = preload("res://producto/assets/other/Enemigo.tscn")
+onready var escena_enemigo = preload("res://producto/assets/scenes/Enemigo.tscn")
 
 func _ready():
 	randomize()
