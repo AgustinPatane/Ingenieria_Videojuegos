@@ -3,6 +3,7 @@ extends Area2D
 var pos_jugador = Vector2.ZERO
 var speed = 100
 var vidas = 2
+var jugador
 
 func recibe_damage():
 	vidas -=1
@@ -11,13 +12,12 @@ func recibe_damage():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	jugador = get_node("/root/Mapa/Jugador")
 	
 func _process(delta):
-	#pos_jugador = get_node("Jugador").global_position
-	#var dir = (pos_jugador - position).normalized()
-	#position += dir * speed * delta
-	pass
+	pos_jugador = jugador.position
+	var dir = (pos_jugador - position).normalized()
+	position += dir * speed * delta
 
 func _on_Enemigo_area_entered(area):
 	print(area.name)
