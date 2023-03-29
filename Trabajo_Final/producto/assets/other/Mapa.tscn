@@ -5,6 +5,7 @@
 [ext_resource path="res://producto/assets/other/Jugador.tscn" type="PackedScene" id=3]
 
 [node name="Mapa" type="Node2D"]
+scale = Vector2( 1.00096, 1 )
 script = ExtResource( 2 )
 tiempo_spawn = 100
 

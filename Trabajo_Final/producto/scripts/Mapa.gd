@@ -15,7 +15,7 @@ func spawn_enemigo():
 	get_tree().get_root().add_child(enemigo)
 
 
-func _process(delta):
+func _process(_delta):
 	if a%tiempo_spawn == 0:
 		spawn_enemigo()
 	a+=1
