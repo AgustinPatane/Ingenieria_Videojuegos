@@ -21,7 +21,7 @@ func _ready():
 	pass 
 
 
-func _process(delta):
+func _process(_delta):
 	_mira_mouse(self)
 	
 	if(rotation_degrees > 360):	rotation_degrees -=360
