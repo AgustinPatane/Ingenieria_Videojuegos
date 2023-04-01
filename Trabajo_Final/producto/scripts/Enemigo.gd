@@ -8,6 +8,7 @@ var jugador
 func recibe_damage():
 	vidas -=1
 	if vidas == 0:
+		jugador.suma_puntos(5)
 		queue_free()
 
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +21,11 @@ func _process(delta):
 	position += dir * speed * delta
 
 func _on_Enemigo_area_entered(area):
-	print(area.name)
 	if "Proyectil" in area.name:
 		recibe_damage()
 		area.queue_free()
+		jugador.suma_puntos(1)
+
+func _on_Enemigo_body_entered(body):
+	if "Jugador" in body.name:
+		jugador.recibe_ataque(10)

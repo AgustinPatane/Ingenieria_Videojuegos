@@ -4,6 +4,8 @@ var motion = Vector2()
 var vel_walk = 20000
 var vel_run = 35000
 var SPEED = 0
+var puntos = 0
+var vida = 100
 
 func _movimiento(delta):
 	motion = Vector2(0,0)
@@ -30,3 +32,9 @@ func _ready():
 
 func _process(delta):
 	_movimiento(delta)
+
+func suma_puntos(cantidad):
+	puntos += cantidad
+
+func recibe_ataque(danio):
+	vida-=danio

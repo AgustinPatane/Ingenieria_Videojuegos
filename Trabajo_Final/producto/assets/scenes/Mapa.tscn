@@ -18,3 +18,18 @@ texture = ExtResource( 3 )
 position = Vector2( 1025, 600 )
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
+
+[node name="Puntaje" type="TextEdit" parent="."]
+margin_left = 21.0
+margin_top = 17.0
+margin_right = 131.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 0, 10 )
+text = "PUNTOS = "
+
+[node name="Vida" type="TextEdit" parent="."]
+margin_left = 23.977
+margin_top = 67.0
+margin_right = 63.977
+margin_bottom = 107.0
+text = "VIDA = "
