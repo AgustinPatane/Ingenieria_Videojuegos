@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/musica_fondo.mp3-dc8a5215c158cf8097f71a848d24be5e.mp3str"
+
+[deps]
+
+source_file="res://producto/assets/img/sonidos/musica_fondo.mp3"
+dest_files=[ "res://.import/musica_fondo.mp3-dc8a5215c158cf8097f71a848d24be5e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
