@@ -2,7 +2,8 @@ extends Node2D
 
 var a =0
 var mouse_position
-var fire_rate = 20
+var fire_rate = 5
+var bullet_charger = 20
 
 onready var escena_proyectil = preload("res://producto/assets/scenes/Proyectil.tscn")
 
@@ -16,6 +17,7 @@ func _dispara():
 	disparo.global_position = $Position2D2.global_position
 	disparo.rotation_degrees = rotation_degrees
 	get_tree().get_root().add_child(disparo)
+	bullet_charger=bullet_charger-1
 
 func _ready():
 	pass 
@@ -32,6 +34,10 @@ func _process(_delta):
 	else:
 		get_node("Arma_Sprite").set_flip_v(true)
 		
-	if Input.is_action_pressed("shoot") and a % fire_rate==0: 
+	if Input.is_action_pressed("shoot") and a % fire_rate==0 and bullet_charger>0: 
 		_dispara()
+	
+	if Input.is_action_pressed("recharge"):
+		bullet_charger=20
+	 
 	a+=1

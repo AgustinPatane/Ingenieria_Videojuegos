@@ -6,6 +6,8 @@ var vel_run = 35000
 var SPEED = 0
 var puntos = 0
 var vida = 100
+var arma
+signal player_defeated
 
 func _movimiento(delta):
 	motion = Vector2(0,0)
@@ -26,6 +28,9 @@ func _movimiento(delta):
 	else: SPEED = vel_walk
 		
 	motion = move_and_slide(motion*delta*SPEED)
+	
+	if vida<=0:
+		emit_signal("player_defeated")
 
 func _ready():
 	pass 
@@ -38,3 +43,11 @@ func suma_puntos(cantidad):
 
 func recibe_ataque(danio):
 	vida-=danio
+	
+func recupera_vida(cant):
+	vida+=cant
+	if vida>100:
+		vida=100
+
+
+

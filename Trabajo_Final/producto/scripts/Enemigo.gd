@@ -27,5 +27,7 @@ func _on_Enemigo_area_entered(area):
 		jugador.suma_puntos(1)
 
 func _on_Enemigo_body_entered(body):
-	if "Jugador" in body.name:
+	if jugador and "Jugador" in body.name:
 		jugador.recibe_ataque(10)
+
+

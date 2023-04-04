@@ -20,6 +20,7 @@ shape = SubResource( 1 )
 
 [node name="Jugador_Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
+z_index = 1
 texture = ExtResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="."]
@@ -28,6 +29,7 @@ scale = Vector2( 0.5, 0.5 )
 [node name="Arma" type="Node2D" parent="."]
 rotation = -1.4207
 scale = Vector2( 0.5, 0.5 )
+z_index = 1
 script = ExtResource( 4 )
 
 [node name="Arma_Sprite" type="Sprite" parent="Arma"]
