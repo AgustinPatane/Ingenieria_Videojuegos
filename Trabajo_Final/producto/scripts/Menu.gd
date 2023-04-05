@@ -7,6 +7,7 @@ var prev_volumen = -20
 
 func _ready():
 	musica.play()
+	#OS.set_fullscreen(true)
 	OS.set_window_position(Vector2(255,110))
 	#OS.set_window_position(OS.get_window_position() + OS.get_screen_size() / 2)
 	#OS.set_window_maximized(true)

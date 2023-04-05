@@ -11,10 +11,23 @@ var vel_run = 35000
 var SPEED = 0
 var puntos = 0
 var vida = 100
+var experiencia = 0
+var nivel = 1
+var experiencia_necesaria = 10
+
 signal player_defeated
 
 func actualiza_vida():
 	barra_vida.max_value = 100
+
+func gana_exp(value):
+	experiencia += value
+	if experiencia_necesaria <= experiencia:
+		nivel += 1
+		experiencia_necesaria = experiencia_necesaria * round(pow(1.3,nivel))
+		print("subiste al nivel ",nivel)
+		print("ahora necesitas ",experiencia_necesaria)
+
 
 func _movimiento(delta):
 	motion = Vector2(0,0)

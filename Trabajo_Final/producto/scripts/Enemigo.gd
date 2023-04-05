@@ -7,11 +7,13 @@ var jugador
 var danio = 10
 var puntos = 1
 var puntos_muerte = 5
+var experiencia = 1
 
 func recibe_damage():
 	vidas -=1
 	if vidas == 0:
 		jugador.suma_puntos(puntos_muerte)
+		jugador.gana_exp(experiencia)
 		queue_free()
 
 # Called when the node enters the scene tree for the first time.
