@@ -43,11 +43,6 @@ func _process(_delta):
 	
 	a+=1
 
-
 func _on_Jugador_player_defeated():
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
-
-
-
-
-
+	

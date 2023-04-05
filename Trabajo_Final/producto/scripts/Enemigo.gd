@@ -8,6 +8,7 @@ var danio = 10
 #var puntos = 1
 var puntos_muerte = 5
 var experiencia = 1
+var flag_tocando_player = false
 
 func recibe_damage():
 	vidas -=1
@@ -31,10 +32,11 @@ func _process(delta):
 	if (vidas>0):
 		pos_jugador = jugador.position
 		var dir = (pos_jugador - position).normalized()
-		if pos_jugador.x < position.x:
-			get_node("Sprite").set_flip_h(false)
-		else:
-			get_node("Sprite").set_flip_h(true)
+		if !flag_tocando_player:
+			if pos_jugador.x < position.x:
+				get_node("Sprite").set_flip_h(false)
+			else:
+				get_node("Sprite").set_flip_h(true)
 		position += dir * speed * delta
 
 func _on_Enemigo_area_entered(area):
@@ -60,3 +62,13 @@ func _on_Area2D_body_entered(body):
 func _on_Area_ataque_body_exited(body):
 	if jugador and "Jugador" in body.name and  $AnimationPlayer.current_animation != "die":
 		$AnimationPlayer.play("move")
+
+
+func _on_Enemigo_body_entered(body):
+	if jugador and "Jugador" in body.name:
+		flag_tocando_player = true
+
+
+func _on_Enemigo_body_exited(body):
+	if jugador and "Jugador" in body.name:
+		flag_tocando_player = false

@@ -72,6 +72,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=6]
+radius = 11.6242
 
 [node name="Enemigo" type="Area2D"]
 z_index = 2
@@ -96,11 +97,13 @@ anims/move = SubResource( 5 )
 [node name="Area_ataque" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_ataque"]
-position = Vector2( 0, 33 )
-scale = Vector2( 5, 6 )
+position = Vector2( -24, 38 )
+scale = Vector2( 5.708, 4.5 )
 shape = SubResource( 6 )
 
 [connection signal="area_entered" from="." to="." method="_on_Enemigo_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Enemigo_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Enemigo_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="Area_ataque" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area_ataque" to="." method="_on_Area_ataque_body_exited"]
