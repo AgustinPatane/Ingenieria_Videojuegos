@@ -14,17 +14,17 @@ func recibe_damage():
 	if vidas == 0:
 		jugador.suma_puntos(puntos_muerte)
 		jugador.gana_exp(experiencia)
+		get_node("CollisionShape2D").queue_free()
 		muere()
-		#queue_free()
 
 func muere():
-	$AnimatedSprite.play("die")
+	$AnimationPlayer.play("die")
 	jugador.suma_puntos(puntos_muerte)
-
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimatedSprite.play("mov")
+	$AnimationPlayer.play("move")
 	jugador = get_node("/root/Mapa/Jugador")
 	
 func _process(delta):
@@ -32,9 +32,9 @@ func _process(delta):
 		pos_jugador = jugador.position
 		var dir = (pos_jugador - position).normalized()
 		if pos_jugador.x < position.x:
-			get_node("AnimatedSprite").set_flip_h(true)
+			get_node("Sprite").set_flip_h(false)
 		else:
-			get_node("AnimatedSprite").set_flip_h(false)
+			get_node("Sprite").set_flip_h(true)
 		position += dir * speed * delta
 
 func _on_Enemigo_area_entered(area):
@@ -46,7 +46,8 @@ func _on_Enemigo_area_entered(area):
 func _on_Enemigo_body_entered(body):
 	if jugador and "Jugador" in body.name:
 		jugador.recibe_ataque(danio)
-		$AnimatedSprite.play("attack")
 
-	
-	
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "die":
+		queue_free()
