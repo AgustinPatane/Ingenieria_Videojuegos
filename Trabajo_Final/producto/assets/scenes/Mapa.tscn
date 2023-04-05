@@ -2,7 +2,7 @@
 
 [ext_resource path="res://producto/assets/scenes/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://producto/scripts/Mapa.gd" type="Script" id=2]
-[ext_resource path="res://producto/assets/img/fondo.png" type="Texture" id=3]
+[ext_resource path="res://producto/assets/img/fondos/fondo.png" type="Texture" id=3]
 
 [node name="Mapa" type="Node2D"]
 scale = Vector2( 1.00096, 1 )

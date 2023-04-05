@@ -5,7 +5,7 @@ var speed = 100
 var vidas = 2
 var jugador
 var danio = 10
-var puntos = 1
+#var puntos = 1
 var puntos_muerte = 5
 var experiencia = 1
 
@@ -41,7 +41,7 @@ func _on_Enemigo_area_entered(area):
 	if "Proyectil" in area.name:
 		recibe_damage()
 		area.queue_free()
-		jugador.suma_puntos(puntos)
+		#jugador.suma_puntos(puntos)
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
