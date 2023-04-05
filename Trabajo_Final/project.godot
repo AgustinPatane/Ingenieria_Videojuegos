@@ -13,6 +13,11 @@ config_version=4
 config/name="Trabajo_Final"
 run/main_scene="res://producto/assets/scenes/Menu.tscn"
 
+[debug]
+
+settings/fps/force_fps=60
+settings/stdout/print_fps=true
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
