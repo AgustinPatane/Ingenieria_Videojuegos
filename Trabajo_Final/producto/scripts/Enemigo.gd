@@ -12,9 +12,19 @@ var experiencia = 1
 func recibe_damage():
 	vidas -=1
 	if vidas == 0:
+<<<<<<< Updated upstream
 		jugador.suma_puntos(puntos_muerte)
 		jugador.gana_exp(experiencia)
 		queue_free()
+=======
+		muere()
+		#queue_free()
+
+func muere():
+	$AnimatedSprite.play("die")
+	jugador.suma_puntos(puntos_muerte)
+	
+>>>>>>> Stashed changes
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,9 +32,14 @@ func _ready():
 	jugador = get_node("/root/Mapa/Jugador")
 	
 func _process(delta):
-	pos_jugador = jugador.position
-	var dir = (pos_jugador - position).normalized()
-	position += dir * speed * delta
+	if (vidas>0):
+		pos_jugador = jugador.position
+		var dir = (pos_jugador - position).normalized()
+		if pos_jugador.x < position.x:
+			get_node("AnimatedSprite").set_flip_h(true)
+		else:
+			get_node("AnimatedSprite").set_flip_h(false)
+		position += dir * speed * delta
 
 func _on_Enemigo_area_entered(area):
 	if "Proyectil" in area.name:
