@@ -13,6 +13,7 @@ func recibe_damage():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimatedSprite.play("mov")
 	jugador = get_node("/root/Mapa/Jugador")
 	
 func _process(delta):
