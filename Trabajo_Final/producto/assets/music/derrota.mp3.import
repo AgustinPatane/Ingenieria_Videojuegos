@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/derrota.mp3-a005ba97ba19ebb32cf6832bfdb2c48f.mp3str"
+
+[deps]
+
+source_file="res://producto/assets/music/derrota.mp3"
+dest_files=[ "res://.import/derrota.mp3-a005ba97ba19ebb32cf6832bfdb2c48f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

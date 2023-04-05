@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/pruebaJugador.jpg" type="Texture" id=2]
 [ext_resource path="res://producto/assets/img/pruebaArma.png" type="Texture" id=3]
 [ext_resource path="res://producto/scripts/Arma.gd" type="Script" id=4]
+[ext_resource path="res://producto/assets/img/progreso_barra.png" type="Texture" id=5]
+[ext_resource path="res://producto/assets/img/bala.png" type="Texture" id=6]
+[ext_resource path="res://producto/assets/img/fondo_barra.png" type="Texture" id=7]
+[ext_resource path="res://producto/assets/img/borde_barra.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 81, 118.5 )
@@ -40,3 +44,45 @@ texture = ExtResource( 3 )
 [node name="Position2D2" type="Position2D" parent="Arma"]
 position = Vector2( 120, -24 )
 scale = Vector2( 2, 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BarraVida" type="TextureProgress" parent="Control"]
+margin_left = -1004.0
+margin_top = -580.0
+margin_right = -368.0
+margin_bottom = -468.0
+texture_under = ExtResource( 7 )
+texture_over = ExtResource( 8 )
+texture_progress = ExtResource( 5 )
+
+[node name="Bala" type="Sprite" parent="Control"]
+position = Vector2( -552, -542 )
+scale = Vector2( 0.148529, 0.155556 )
+texture = ExtResource( 6 )
+
+[node name="Balas" type="TextEdit" parent="Control"]
+anchor_right = 0.624
+margin_left = -520.0
+margin_top = -562.0
+margin_right = -480.0
+margin_bottom = -522.0
+text = "
+"
+
+[node name="Puntaje" type="TextEdit" parent="Control"]
+margin_left = -998.0
+margin_top = -526.0
+margin_right = -848.0
+margin_bottom = -501.0
+rect_min_size = Vector2( 0, 10 )
+text = "PUNTOS = "
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1

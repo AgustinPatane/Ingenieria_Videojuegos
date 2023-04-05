@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://producto/assets/img/fuentes/scream/Scream_al.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://producto/scripts/MenuDerrota.gd" type="Script" id=2]
 [ext_resource path="res://producto/assets/img/GameOver.png" type="Texture" id=3]
-[ext_resource path="res://producto/assets/img/sonidos/derrota.mp3" type="AudioStream" id=4]
+[ext_resource path="res://producto/assets/music/derrota.mp3" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -24,11 +24,16 @@ margin_left = 11.0
 margin_top = -4.0
 margin_right = 11.0
 margin_bottom = -4.0
-rect_scale = Vector2( 0.989813, 1.00574 )
 script = ExtResource( 2 )
 
-[node name="GameOver" type="Sprite" parent="."]
-position = Vector2( 533.182, 300.278 )
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 302.077
+margin_top = 530.202
+margin_right = 677.077
+margin_bottom = 530.202
+
+[node name="GameOver" type="Sprite" parent="MarginContainer"]
+position = Vector2( 229.923, -229.202 )
 scale = Vector2( 3.4366, 2.39427 )
 texture = ExtResource( 3 )
 
@@ -45,16 +50,16 @@ rect_scale = Vector2( 0.966417, 1.20759 )
 alignment = 1
 
 [node name="Menu" type="Button" parent="VBoxContainer" groups=["botones"]]
-margin_top = 22.0
+margin_top = 24.0
 margin_right = 375.0
-margin_bottom = 71.0
+margin_bottom = 72.0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( -303, -33 )
 custom_fonts/font = SubResource( 1 )
 text = "VOLVER AL MENU"
 
 [node name="Salir" type="Button" parent="VBoxContainer" groups=["botones"]]
-margin_top = 75.0
+margin_top = 76.0
 margin_right = 375.0
 margin_bottom = 124.0
 rect_min_size = Vector2( 0, 40 )

@@ -1,13 +1,20 @@
 extends KinematicBody2D
 
+onready var balas = get_node("Control/Balas")
+onready var barra_vida = get_node("Control/BarraVida")
+onready var puntaje = get_node("Control/Puntaje")
+onready var arma = get_node("Arma")
+
 var motion = Vector2()
 var vel_walk = 20000
 var vel_run = 35000
 var SPEED = 0
 var puntos = 0
 var vida = 100
-var arma
 signal player_defeated
+
+func actualiza_vida():
+	barra_vida.max_value = 100
 
 func _movimiento(delta):
 	motion = Vector2(0,0)
@@ -29,25 +36,30 @@ func _movimiento(delta):
 		
 	motion = move_and_slide(motion*delta*SPEED)
 	
-	if vida<=0:
-		emit_signal("player_defeated")
 
 func _ready():
 	pass 
 
 func _process(delta):
 	_movimiento(delta)
+	puntaje.text = "Puntaje:"+str(self.puntos)
+	barra_vida.value = self.vida
+	balas.text = str(arma.bullet_charger)
+	actualiza_vida()
 
 func suma_puntos(cantidad):
 	puntos += cantidad
 
 func recibe_ataque(danio):
 	vida-=danio
+	if vida<=0:
+		emit_signal("player_defeated")
 	
 func recupera_vida(cant):
-	vida+=cant
-	if vida>100:
-		vida=100
+	if (vida+cant) <= 100: 
+		vida+=cant
+		
+	
 
 
 

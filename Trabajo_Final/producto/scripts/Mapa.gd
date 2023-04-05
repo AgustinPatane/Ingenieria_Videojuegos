@@ -7,17 +7,11 @@ onready var escena_enemigo = preload("res://producto/assets/scenes/Enemigo.tscn"
 onready var escena_item = preload("res://producto/assets/scenes/Item.tscn")
 var puntaje
 var jugador
-var arma
 var vida
 var balas
 var barra_vida
 
 func _ready():
-	puntaje = get_node("/root/Mapa/Puntaje")
-	jugador = get_node("/root/Mapa/Jugador")
-	arma = get_node("/root/Mapa/Jugador/Arma")
-	balas = get_node("/root/Mapa/Balas")
-	barra_vida = get_node("/root/Mapa/BarraVida")
 	randomize()
 
 func spawn_enemigo():
@@ -48,15 +42,10 @@ func _process(_delta):
 		spawn_item_vida()
 	
 	a+=1
-	puntaje.text = "Puntaje:"+str(jugador.puntos)
-	barra_vida.value = jugador.vida
-	balas.text = str(arma.bullet_charger)
-	
-	actualiza_vida()
 
 
 func _on_Jugador_player_defeated():
-	get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
+	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
 
 
 
