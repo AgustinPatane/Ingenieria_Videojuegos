@@ -43,11 +43,20 @@ func _on_Enemigo_area_entered(area):
 		area.queue_free()
 		jugador.suma_puntos(puntos)
 
-func _on_Enemigo_body_entered(body):
-	if jugador and "Jugador" in body.name:
-		jugador.recibe_ataque(danio)
-
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "die":
 		queue_free()
+	if anim_name == "atack":
+		jugador.recibe_ataque(danio)
+		$AnimationPlayer.play("atack")
+
+
+func _on_Area2D_body_entered(body):
+	if jugador and "Jugador" in body.name and $AnimationPlayer.current_animation != "die":
+		$AnimationPlayer.play("atack")
+
+
+func _on_Area_ataque_body_exited(body):
+	if jugador and "Jugador" in body.name and  $AnimationPlayer.current_animation != "die":
+		$AnimationPlayer.play("move")
