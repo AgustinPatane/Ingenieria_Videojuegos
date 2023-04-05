@@ -12,19 +12,15 @@ var experiencia = 1
 func recibe_damage():
 	vidas -=1
 	if vidas == 0:
-<<<<<<< Updated upstream
 		jugador.suma_puntos(puntos_muerte)
 		jugador.gana_exp(experiencia)
-		queue_free()
-=======
 		muere()
 		#queue_free()
 
 func muere():
 	$AnimatedSprite.play("die")
 	jugador.suma_puntos(puntos_muerte)
-	
->>>>>>> Stashed changes
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,5 +46,7 @@ func _on_Enemigo_area_entered(area):
 func _on_Enemigo_body_entered(body):
 	if jugador and "Jugador" in body.name:
 		jugador.recibe_ataque(danio)
+		$AnimatedSprite.play("attack")
 
-
+	
+	
