@@ -84,7 +84,6 @@ texture = ExtResource( 2 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Arma" type="Node2D" parent="."]
-rotation = -1.4207
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 script = ExtResource( 4 )
@@ -94,8 +93,8 @@ position = Vector2( 8, 0 )
 scale = Vector2( 1, 0.9375 )
 texture = ExtResource( 3 )
 
-[node name="Position2D2" type="Position2D" parent="Arma"]
-position = Vector2( 120, -24 )
+[node name="Position_arma" type="Position2D" parent="Arma"]
+position = Vector2( 116, -4 )
 scale = Vector2( 2, 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

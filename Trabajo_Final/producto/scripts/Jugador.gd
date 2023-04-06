@@ -64,8 +64,7 @@ func gana_exp(value):
 		animLvlUp.play("LVL_UP")
 		vida_max += 5
 		vida += round(vida_max * 0.1)
-		if vida > vida_max:
-			vida= vida_max
+		if vida > vida_max: vida= vida_max
 		actualiza_barras()
 
 func _movimiento(delta):
@@ -80,12 +79,9 @@ func _movimiento(delta):
 		motion.y = -100
 	elif Input.is_action_pressed("ui_down"):
 		motion.y = 100
-		
 	motion = motion.normalized()
-	
 	if Input.is_action_pressed("run"): SPEED = vel_run
 	else: SPEED = vel_walk
-		
 	motion = move_and_slide(motion*delta*SPEED)
 
 func suma_puntos(cantidad):
@@ -93,12 +89,10 @@ func suma_puntos(cantidad):
 
 func recibe_ataque(danio):
 	vida-=danio
-	if vida<=0:
-		emit_signal("player_defeated")
+	if vida<=0:	emit_signal("player_defeated")
 	
 func recupera_vida(cant):
-	if (vida+cant) <= vida_max: 
-		vida+=cant
+	if (vida+cant) <= vida_max: vida+=cant
 		
 func _on_Anim_lvl_up_animation_finished(_anim_name):
 	spriteLvlUp.visible =false

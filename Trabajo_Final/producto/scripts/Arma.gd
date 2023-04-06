@@ -13,8 +13,8 @@ func _mira_mouse(object):
 		
 func _dispara():
 	var disparo = escena_proyectil.instance()
-	disparo.direction = mouse_position - $Position2D2.global_position
-	disparo.global_position = $Position2D2.global_position
+	disparo.direction = mouse_position - $Position_arma.global_position
+	disparo.global_position = $Position_arma.global_position
 	disparo.rotation_degrees = rotation_degrees
 	get_tree().get_root().add_child(disparo)
 	bullet_charger=bullet_charger-1
@@ -30,9 +30,9 @@ func _process(_delta):
 	elif(rotation_degrees < 0):	rotation_degrees += 360
 		
 	if  rotation_degrees > 270 or rotation_degrees <90 :
-		get_node("Arma_Sprite").set_flip_v(false)
+		scale.y = 1
 	else:
-		get_node("Arma_Sprite").set_flip_v(true)
+		scale.y = -1
 		
 	if Input.is_action_pressed("shoot") and a % fire_rate==0 and bullet_charger>0: 
 		_dispara()

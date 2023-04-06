@@ -34,9 +34,9 @@ func _process(delta):
 		var dir = (pos_jugador - position).normalized()
 		if !flag_tocando_player:
 			if pos_jugador.x < position.x:
-				get_node("Sprite").set_flip_h(false)
+				self.scale.x = 1
 			else:
-				get_node("Sprite").set_flip_h(true)
+				self.scale.x = -1
 		position += dir * speed * delta
 
 func _on_Enemigo_area_entered(area):
