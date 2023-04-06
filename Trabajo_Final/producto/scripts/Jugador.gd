@@ -103,6 +103,8 @@ func _on_Btn_pausa_pressed():
 		btn_pausa.disabled = true
 		btn_pausa.visible = false
 		paused.connect("continuar",self, "on_paused_quit")
+		$Jugador_Sprite.hide()
+		arma.get_node("Arma_Sprite").hide()
 		
 		#no se como hacer para que el menu de pausa se ponga bien
 		self.add_child(paused)
@@ -113,4 +115,6 @@ func _on_Btn_pausa_pressed():
 		get_tree().paused = true
 
 func on_paused_quit():
+	$Jugador_Sprite.show()
+	arma.get_node("Arma_Sprite").show()
 	paused = null

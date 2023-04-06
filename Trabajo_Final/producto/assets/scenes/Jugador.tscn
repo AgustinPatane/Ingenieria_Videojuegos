@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/pruebaJugador.jpg" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://producto/assets/img/jugador/Explosion 2 SpriteSheet.png" type="Texture" id=12]
 [ext_resource path="res://producto/assets/img/GUI/pausa_pressed.png" type="Texture" id=13]
 [ext_resource path="res://producto/assets/img/GUI/pausa.png" type="Texture" id=14]
+[ext_resource path="res://producto/assets/music/sounds/disparo.wav" type="AudioStream" id=15]
+[ext_resource path="res://producto/assets/music/sounds/reload.wav" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 104, 122 )
@@ -96,6 +98,13 @@ texture = ExtResource( 3 )
 [node name="Position_arma" type="Position2D" parent="Arma"]
 position = Vector2( 116, -4 )
 scale = Vector2( 2, 2 )
+
+[node name="disparo" type="AudioStreamPlayer" parent="Arma"]
+stream = ExtResource( 15 )
+
+[node name="reload" type="AudioStreamPlayer" parent="Arma"]
+stream = ExtResource( 16 )
+pitch_scale = 1.36
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

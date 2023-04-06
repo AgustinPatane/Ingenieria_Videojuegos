@@ -13,15 +13,14 @@ var flag_tocando_player = false
 func recibe_damage():
 	vidas -=1
 	if vidas == 0:
-		jugador.suma_puntos(puntos_muerte)
-		jugador.gana_exp(experiencia)
-		get_node("CollisionShape2D").queue_free()
 		muere()
 
 func muere():
+	$death.play()
 	$AnimationPlayer.play("die")
 	jugador.suma_puntos(puntos_muerte)
-	
+	jugador.gana_exp(experiencia)
+	get_node("CollisionShape2D").queue_free()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,6 +41,7 @@ func _process(delta):
 func _on_Enemigo_area_entered(area):
 	if "Proyectil" in area.name:
 		recibe_damage()
+		$damage.play()
 		area.queue_free()
 		#jugador.suma_puntos(puntos)
 

@@ -13,11 +13,14 @@ func _mira_mouse(object):
 		
 func _dispara():
 	var disparo = escena_proyectil.instance()
+	$disparo.play()
 	disparo.direction = mouse_position - $Position_arma.global_position
 	disparo.global_position = $Position_arma.global_position
 	disparo.rotation_degrees = rotation_degrees
 	get_tree().get_root().add_child(disparo)
 	bullet_charger=bullet_charger-1
+	if bullet_charger==0:
+		$disparo.stop()
 
 func _ready():
 	pass 
@@ -39,5 +42,6 @@ func _process(_delta):
 	
 	if Input.is_action_pressed("recharge"):
 		bullet_charger=20
+		$reload.play()
 	 
 	a+=1
