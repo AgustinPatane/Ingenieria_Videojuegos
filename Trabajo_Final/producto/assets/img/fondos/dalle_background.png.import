@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Explosion 2 SpriteSheet.png-6fb3cd3f0d5a9531da522635432d6c62.stex"
+path="res://.import/dalle_background.png-0883be7771853c799c355d84fb111641.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/jugador/Explosion 2 SpriteSheet.png"
-dest_files=[ "res://.import/Explosion 2 SpriteSheet.png-6fb3cd3f0d5a9531da522635432d6c62.stex" ]
+source_file="res://producto/assets/img/fondos/dalle_background.png"
+dest_files=[ "res://.import/dalle_background.png-0883be7771853c799c355d84fb111641.stex" ]
 
 [params]
 

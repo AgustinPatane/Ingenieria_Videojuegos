@@ -20,10 +20,6 @@ func recibe_damage():
 func muere():
 	#$death.play()
 	$AnimationPlayer.play("die")
-	var orbe_exp = escena_exp.instance()
-	orbe_exp.position = self.position
-	orbe_exp._set_value(experiencia)
-	get_tree().get_root().add_child(orbe_exp)
 	jugador.suma_puntos(puntos_muerte)
 	get_node("CollisionShape2D").queue_free()
 
@@ -53,6 +49,10 @@ func _on_Enemigo_area_entered(area):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "die":
+		var orbe_exp = escena_exp.instance()
+		orbe_exp.position = self.position
+		orbe_exp._set_value(experiencia)
+		get_tree().get_root().add_child(orbe_exp)
 		queue_free()
 	if anim_name == "atack":
 		jugador.recibe_ataque(danio)

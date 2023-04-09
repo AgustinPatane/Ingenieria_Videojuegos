@@ -7,8 +7,6 @@ var pos_jugador = Vector2.ZERO
 func _ready():
 	jugador = get_node("/root/Mapa/Jugador")
 
-
-
 func _process(delta):
 	if en_Area:
 		pos_jugador = jugador.position

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dalle_background_byn.png-5fe92a3f51b4e694411ace6a285e8bf9.stex"
+path="res://.import/body.png-5168838cf20f6f3080eee70dbcf4d124.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/dalle_background_byn.png"
-dest_files=[ "res://.import/dalle_background_byn.png-5fe92a3f51b4e694411ace6a285e8bf9.stex" ]
+source_file="res://producto/assets/img/jugador/Green/body.png"
+dest_files=[ "res://.import/body.png-5168838cf20f6f3080eee70dbcf4d124.stex" ]
 
 [params]
 

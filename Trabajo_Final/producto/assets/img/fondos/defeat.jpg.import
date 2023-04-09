@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dalle_background.png-864be626614f96852306c1aa13de4f83.stex"
+path="res://.import/defeat.jpg-420949e2f369b035b38dd8932cf9ff35.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/dalle_background.png"
-dest_files=[ "res://.import/dalle_background.png-864be626614f96852306c1aa13de4f83.stex" ]
+source_file="res://producto/assets/img/fondos/defeat.jpg"
+dest_files=[ "res://.import/defeat.jpg-420949e2f369b035b38dd8932cf9ff35.stex" ]
 
 [params]
 

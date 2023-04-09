@@ -2,7 +2,7 @@
 
 [ext_resource path="res://producto/assets/music/musica_fondo.mp3" type="AudioStream" id=1]
 [ext_resource path="res://producto/scripts/Menu.gd" type="Script" id=3]
-[ext_resource path="res://producto/assets/img/dalle_background.png" type="Texture" id=4]
+[ext_resource path="res://producto/assets/img/fondos/dalle_background.png" type="Texture" id=4]
 [ext_resource path="res://producto/assets/fonts/Scream_al.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]

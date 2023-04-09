@@ -31,7 +31,7 @@ signal player_defeated
 
 # FUNCIONES ----------------------------------------------
 func _ready():
-	aumenta_Area_recoleccion(1)
+	$AnimationPlayer_body.play("idle")
 	spriteLvlUp.visible = false
 	barra_exp.max_value = experiencia_necesaria
 	barra_exp.value = experiencia
@@ -85,6 +85,11 @@ func _movimiento(delta):
 	elif Input.is_action_pressed("ui_down"):
 		motion.y = 100
 	motion = motion.normalized()
+	if motion.abs() != Vector2.ZERO:
+		$AnimationPlayer_body.play("move")
+		arma.position.y = -5
+	else:
+		$AnimationPlayer_body.play("idle")
 	if Input.is_action_pressed("run"): SPEED = vel_run
 	else: SPEED = vel_walk
 	motion = move_and_slide(motion*delta*SPEED)

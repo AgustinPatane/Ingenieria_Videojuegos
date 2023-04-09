@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Laser_Medium_png_processed.png-2be71439d3b11320dc9e7540e8ff17e0.stex"
+path="res://.import/body.png-b70b0025465929b0ad26e5aa62e28ca6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/jugador/Laser_Medium_png_processed.png"
-dest_files=[ "res://.import/Laser_Medium_png_processed.png-2be71439d3b11320dc9e7540e8ff17e0.stex" ]
+source_file="res://producto/assets/img/jugador/Red/body.png"
+dest_files=[ "res://.import/body.png-b70b0025465929b0ad26e5aa62e28ca6.stex" ]
 
 [params]
 

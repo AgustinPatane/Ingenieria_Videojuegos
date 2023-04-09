@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/defeat.jpg-efdedb0f6584da7700b6cee7f92342fa.stex"
+path="res://.import/gun.png-e117fc91def35e4f31db4ce06547d877.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/defeat.jpg"
-dest_files=[ "res://.import/defeat.jpg-efdedb0f6584da7700b6cee7f92342fa.stex" ]
+source_file="res://producto/assets/img/jugador/Yellow/gun.png"
+dest_files=[ "res://.import/gun.png-e117fc91def35e4f31db4ce06547d877.stex" ]
 
 [params]
 

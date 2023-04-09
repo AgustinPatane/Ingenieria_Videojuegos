@@ -23,8 +23,8 @@ func _dispara():
 		#$disparo.stop()
 
 func _ready():
-	pass 
-
+	pass
+	
 
 func _process(_delta):
 	_mira_mouse(self)
@@ -33,9 +33,12 @@ func _process(_delta):
 	elif(rotation_degrees < 0):	rotation_degrees += 360
 		
 	if  rotation_degrees > 270 or rotation_degrees <90 :
-		scale.y = 1
+		$Arma_Sprite.set_flip_v(false)
+		get_parent().get_node("Jugador_Sprite").set_flip_h(false)
+		self.position.y = -2
 	else:
-		scale.y = -1
+		$Arma_Sprite.set_flip_v(true)
+		get_parent().get_node("Jugador_Sprite").set_flip_h(true)
 		
 	if Input.is_action_pressed("shoot") and a % fire_rate==0 and bullet_charger>0: 
 		_dispara()
