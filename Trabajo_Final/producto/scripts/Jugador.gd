@@ -31,6 +31,7 @@ signal player_defeated
 
 # FUNCIONES ----------------------------------------------
 func _ready():
+	aumenta_Area_recoleccion(1)
 	spriteLvlUp.visible = false
 	barra_exp.max_value = experiencia_necesaria
 	barra_exp.value = experiencia
@@ -67,6 +68,10 @@ func gana_exp(value):
 		if vida > vida_max: vida= vida_max
 		actualiza_barras()
 
+func aumenta_Area_recoleccion(value):
+	$area_recoleccion.scale.x += value
+	$area_recoleccion.scale.y += value
+	
 func _movimiento(delta):
 	motion = Vector2(0,0)
 	if Input.is_action_pressed("ui_right"):

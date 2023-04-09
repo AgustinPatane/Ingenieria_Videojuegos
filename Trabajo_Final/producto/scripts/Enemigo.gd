@@ -10,16 +10,21 @@ var puntos_muerte = 5
 var experiencia = 1
 var flag_tocando_player = false
 
+onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
+
 func recibe_damage():
 	vidas -=1
 	if vidas == 0:
 		muere()
 
 func muere():
-	$death.play()
+	#$death.play()
 	$AnimationPlayer.play("die")
+	var orbe_exp = escena_exp.instance()
+	orbe_exp.position = self.position
+	orbe_exp._set_value(experiencia)
+	get_tree().get_root().add_child(orbe_exp)
 	jugador.suma_puntos(puntos_muerte)
-	jugador.gana_exp(experiencia)
 	get_node("CollisionShape2D").queue_free()
 
 # Called when the node enters the scene tree for the first time.
@@ -41,7 +46,7 @@ func _process(delta):
 func _on_Enemigo_area_entered(area):
 	if "Proyectil" in area.name:
 		recibe_damage()
-		$damage.play()
+		#$damage.play()
 		area.queue_free()
 		#jugador.suma_puntos(puntos)
 

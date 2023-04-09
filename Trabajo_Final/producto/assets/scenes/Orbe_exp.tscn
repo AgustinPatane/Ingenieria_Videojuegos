@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://producto/assets/img/items/orbe_Exp_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://producto/Orbe_exp.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 28.2843
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "anim"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+
+[node name="Orbe_exp" type="Area2D"]
+position = Vector2( 610, 371 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 7
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/anim = SubResource( 3 )
+
+[connection signal="area_entered" from="." to="." method="_on_Orbe_exp_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Orbe_exp_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_Orbe_exp_body_entered"]

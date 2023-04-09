@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/pruebaJugador.jpg" type="Texture" id=2]
@@ -67,6 +67,9 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
+[sub_resource type="CircleShape2D" id=8]
+radius = 98.0816
+
 [node name="Jugador" type="KinematicBody2D"]
 position = Vector2( 541, 296 )
 scale = Vector2( 0.5, 0.5 )
@@ -81,6 +84,8 @@ shape = SubResource( 1 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 1
 texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Position2D" type="Position2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -187,8 +192,6 @@ expand = true
 [node name="pos_pausa" type="Position2D" parent="Control"]
 position = Vector2( -1040, -620 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [node name="Lvp_up" type="Sprite" parent="."]
 position = Vector2( -6, -18 )
 scale = Vector2( 3.58333, 4.25 )
@@ -200,6 +203,11 @@ frame = 1
 [node name="Anim_lvl_up" type="AnimationPlayer" parent="Lvp_up"]
 anims/LVL_UP = SubResource( 5 )
 anims/RESET = SubResource( 6 )
+
+[node name="area_recoleccion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_recoleccion"]
+shape = SubResource( 8 )
 
 [connection signal="pressed" from="Control/Btn_pausa" to="." method="_on_Btn_pausa_pressed"]
 [connection signal="animation_finished" from="Lvp_up/Anim_lvl_up" to="." method="_on_Anim_lvl_up_animation_finished"]
