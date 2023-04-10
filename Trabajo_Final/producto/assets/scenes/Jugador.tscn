@@ -18,7 +18,7 @@
 [ext_resource path="res://producto/assets/music/sounds/reload.wav" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 72, 114 )
+extents = Vector2( 17.5, 28.5 )
 
 [sub_resource type="Animation" id=9]
 length = 0.001
@@ -118,20 +118,18 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=8]
-radius = 98.0816
+radius = 53.0848
 
 [node name="Jugador" type="KinematicBody2D"]
 position = Vector2( 541, 296 )
-scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -8, -5 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( -2.5, -2.5 )
 shape = SubResource( 1 )
 
 [node name="Jugador_Sprite" type="Sprite" parent="."]
-scale = Vector2( 3.5, 3.5 )
+scale = Vector2( 1.75, 1.75 )
 z_index = 1
 texture = ExtResource( 2 )
 hframes = 6
@@ -148,6 +146,7 @@ position = Vector2( -10, 0 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Arma" type="Node2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
 z_index = 1
 script = ExtResource( 4 )
 
@@ -177,6 +176,7 @@ drag_margin_bottom = 0.1
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="BarraVida" type="TextureProgress" parent="Control"]
 margin_left = -998.0
@@ -249,8 +249,8 @@ expand = true
 position = Vector2( -1040, -620 )
 
 [node name="Lvp_up" type="Sprite" parent="."]
-position = Vector2( -6, -18 )
-scale = Vector2( 3.58333, 4.25 )
+position = Vector2( -5.99998, -14 )
+scale = Vector2( 2.09375, 2.39583 )
 z_index = 2
 texture = ExtResource( 12 )
 hframes = 18
@@ -261,9 +261,10 @@ anims/LVL_UP = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
 [node name="area_recoleccion" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_recoleccion"]
-position = Vector2( -8, 0 )
+position = Vector2( -4, 0 )
 shape = SubResource( 8 )
 
 [connection signal="pressed" from="Control/Btn_pausa" to="." method="_on_Btn_pausa_pressed"]
