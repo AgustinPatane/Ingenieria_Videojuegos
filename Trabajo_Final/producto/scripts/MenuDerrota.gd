@@ -3,6 +3,12 @@ extends Control
 onready var musica = get_node("AudioStreamPlayer2D")
 onready var sprite = get_node("MarginContainer/GameOver")
 var aux=0
+
+var player = {
+	"username" : "",
+	"score" : ""
+}
+
 func _ready():
 	musica.play()
 	

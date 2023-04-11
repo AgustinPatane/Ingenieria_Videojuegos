@@ -4,6 +4,8 @@ onready var musica = get_node("Musica_OnOff/Musica")
 onready var slider = get_node("VSlider")
 
 var prev_volumen = -20
+var ranking = null
+var menu_ranking
 
 func _ready():
 	musica.play()
@@ -32,7 +34,6 @@ func _on_Salir_pressed():
 func _process(_delta):
 	pass
 
-
 func _on_VSlider_value_changed(value):
 	if value == -50:
 		get_node("Musica_OnOff").pressed = false
@@ -43,3 +44,18 @@ func _on_VSlider_value_changed(value):
 	musica.volume_db = value
 	prev_volumen = value
 	
+	
+func _on_Ranking_pressed():
+	if ranking == null:
+		ranking = load("res://producto/assets/scenes/MenuRanking.tscn").instance()
+		ranking.connect("continuar",self, "on_ranking_quit")
+		
+		self.add_child(ranking)
+		menu_ranking = get_node("MenuRanking")
+		menu_ranking.raise()
+		#menu_ranking.rect_position = $Control/pos_pausa.position
+		menu_ranking.rect_size = Vector2(2048,1200)
+		get_tree().paused = true
+	
+func on_ranking_quit():
+	ranking = null
