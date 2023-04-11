@@ -28,7 +28,6 @@ func _on_Orbe_exp_body_entered(body):
 		jugador.gana_exp(value)
 		queue_free()
 
-
 func _on_Orbe_exp_area_entered(area):
 	if "area_recoleccion" in area.name:
 		en_Area = true

@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://producto/scripts/MenuDerrota.gd" type="Script" id=2]
 [ext_resource path="res://producto/assets/img/fondos/GameOver.png" type="Texture" id=3]
 [ext_resource path="res://producto/assets/music/derrota.mp3" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -36,6 +41,15 @@ margin_bottom = 530.202
 position = Vector2( 232.923, -247.202 )
 scale = Vector2( 3.5183, 2.68113 )
 texture = ExtResource( 3 )
+
+[node name="Nombre" type="LineEdit" parent="."]
+margin_left = 228.0
+margin_top = 79.0
+margin_right = 800.0
+margin_bottom = 166.0
+custom_fonts/font = SubResource( 3 )
+text = "a"
+align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5

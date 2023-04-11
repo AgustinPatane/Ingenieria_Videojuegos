@@ -6,7 +6,7 @@
 [ext_resource path="res://producto/assets/music/sounds/death.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 36.5, 43.5 )
+extents = Vector2( 35.0682, 41.75 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -77,15 +77,17 @@ tracks/0/keys = {
 radius = 11.6242
 
 [node name="Enemigo" type="Area2D"]
+position = Vector2( -1, 27 )
 scale = Vector2( 1.1, 1.1 )
 z_index = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.5, 36.5 )
+position = Vector2( -2.72727, -9.09091 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -2.72727, -46.3636 )
 texture = ExtResource( 1 )
 hframes = 22
 vframes = 5
@@ -100,7 +102,7 @@ anims/move = SubResource( 5 )
 [node name="Area_ataque" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_ataque"]
-position = Vector2( -24, 38 )
+position = Vector2( -26.3636, -10 )
 scale = Vector2( 5.708, 4.5 )
 shape = SubResource( 6 )
 

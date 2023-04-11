@@ -5,11 +5,7 @@ export(int) var tiempo_spawn_curita = 3000
 var a = 0
 onready var escena_enemigo = preload("res://producto/assets/scenes/Enemigo.tscn")
 onready var escena_item = preload("res://producto/assets/scenes/Item.tscn")
-var puntaje
 var jugador
-var vida
-var balas
-var barra_vida
 
 func _ready():
 	randomize()
@@ -30,9 +26,6 @@ func spawn_item_vida():
 	item.position = Vector2(posx,posy)
 	get_node("/root/Mapa").add_child(item)
 
-func actualiza_vida():
-	barra_vida.max_value = 100
-
 
 func _process(_delta):
 	if a%tiempo_spawn == 0:
@@ -45,4 +38,3 @@ func _process(_delta):
 
 func _on_Jugador_player_defeated():
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
-	

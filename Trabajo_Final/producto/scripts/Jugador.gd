@@ -38,7 +38,7 @@ func _ready():
 	label_nivel.text = " Lvl: " + str(nivel)
 	label_vida.text = " " + str(vida) + "/"+ str(vida_max)
 	self.z_index = get_parent().get_child_count() + 1
-	
+
 func _process(delta):
 	_movimiento(delta)
 	puntaje.text = " Score: "+str(self.puntos)
@@ -58,6 +58,7 @@ func gana_exp(value):
 	if experiencia_necesaria <= experiencia:
 		nivel += 1
 		experiencia = 0
+		puntos += nivel * 25
 		experiencia_necesaria = experiencia_necesaria * round(pow(1.3,nivel))
 		barra_exp.max_value = experiencia_necesaria
 		label_nivel.text = "Lvl: " + str(nivel)
@@ -99,7 +100,10 @@ func suma_puntos(cantidad):
 
 func recibe_ataque(danio):
 	vida-=danio
-	if vida<=0:	emit_signal("player_defeated")
+	if vida<=0:
+		
+		Engine.set_meta("Puntaje",puntos)
+		emit_signal("player_defeated")
 	
 func recupera_vida(cant):
 	if (vida+cant) <= vida_max: vida+=cant
