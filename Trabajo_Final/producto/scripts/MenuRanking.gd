@@ -16,7 +16,7 @@ func acomoda_todo():
 
 func _ready():
 	acomoda_todo()
-	_get_highscore_from_saves()
+	get_highscore_from_saves()
 
 func _on_Volver_button_down():
 	get_tree().paused = false
@@ -33,14 +33,14 @@ func ordena(puntuaciones):
 				puntuaciones[j+1] = aux
 	return puntuaciones
 
-func _genera_puntajes_random():
+func genera_puntajes_random():
 	randomize()
 	var puntuaciones = Array()
 	var nombres = ["juan","pedro","sofia","miguel","claudia","maria","agustin","franco","nahuel","juliana"]
 	for i in range(0,10):
 		var jugador = {}
 		jugador.username = nombres[i]
-		jugador.score = randi()%1000+1
+		jugador.score = randi()%1500+1
 		puntuaciones.append(jugador)
 	var aux = ordena(puntuaciones)
 	save_game(aux)
@@ -68,7 +68,7 @@ func load_game():
 	highscores = parse_json(save_game.get_line())
 	save_game.close()
 
-func _get_highscore_from_saves():
+func get_highscore_from_saves():
 	load_game()
 	if highscores != null:
 		for i in range(1,11):
@@ -80,5 +80,10 @@ func _get_highscore_from_saves():
 			nodo_score.set_editable(false)
 
 func _on_Generar_pressed():
-	_genera_puntajes_random()
-	_get_highscore_from_saves()
+	genera_puntajes_random()
+	get_highscore_from_saves()
+
+func _on_Button_pressed():
+	genera_saves_vacio()
+	get_highscore_from_saves()
+	

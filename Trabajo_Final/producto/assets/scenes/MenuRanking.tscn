@@ -317,5 +317,14 @@ margin_right = 764.0
 margin_bottom = 499.0
 text = "Generar valores"
 
+[node name="Borrar" type="Button" parent="."]
+pause_mode = 2
+margin_left = 578.0
+margin_top = 479.0
+margin_right = 643.0
+margin_bottom = 499.0
+text = "Borrar"
+
 [connection signal="button_down" from="Volver" to="." method="_on_Volver_button_down"]
 [connection signal="pressed" from="Generar" to="." method="_on_Generar_pressed"]
+[connection signal="pressed" from="Borrar" to="." method="_on_Button_pressed"]

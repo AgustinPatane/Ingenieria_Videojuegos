@@ -25,6 +25,7 @@ var nivel = 1
 var experiencia_necesaria = 5
 var paused = null
 var menu_pausa
+var subiendo_nivel = false
 
 # SIGNALS ------------------------------------------------
 signal player_defeated
@@ -41,6 +42,10 @@ func _ready():
 
 func _process(delta):
 	_movimiento(delta)
+	
+	if Input.is_action_pressed("ui_cancel"):
+		pausa()
+		
 	puntaje.text = " Score: "+str(self.puntos)
 	barra_vida.value = self.vida
 	balas.text = str(arma.bullet_charger)
@@ -64,6 +69,7 @@ func gana_exp(value):
 		label_nivel.text = "Lvl: " + str(nivel)
 		spriteLvlUp.visible = true
 		animLvlUp.play("LVL_UP")
+		subiendo_nivel = true
 		vida_max += 5
 		vida += round(vida_max * 0.1)
 		if vida > vida_max: vida= vida_max
@@ -109,15 +115,17 @@ func recupera_vida(cant):
 	if (vida+cant) <= vida_max: vida+=cant
 		
 func _on_Anim_lvl_up_animation_finished(_anim_name):
+	subiendo_nivel = false
 	spriteLvlUp.visible =false
 
-func _on_Btn_pausa_pressed():
+func pausa():
 	if paused == null:
 		paused = load("res://producto/assets/scenes/MenuPausa.tscn").instance()
 		btn_pausa.disabled = true
 		btn_pausa.visible = false
 		paused.connect("continuar",self, "on_paused_quit")
 		$Jugador_Sprite.hide()
+		$Lvp_up.hide()
 		arma.get_node("Arma_Sprite").hide()
 		
 		#no se como hacer para que el menu de pausa se ponga bien
@@ -128,7 +136,12 @@ func _on_Btn_pausa_pressed():
 		menu_pausa.rect_size = Vector2(2048,1200)
 		get_tree().paused = true
 
+func _on_Btn_pausa_pressed():
+	pausa()
+
 func on_paused_quit():
 	$Jugador_Sprite.show()
+	if subiendo_nivel:
+		$Lvp_up.show()
 	arma.get_node("Arma_Sprite").show()
 	paused = null
