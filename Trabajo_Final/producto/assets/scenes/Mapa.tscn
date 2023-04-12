@@ -7,7 +7,6 @@
 [node name="Mapa" type="Node2D"]
 scale = Vector2( 1.00096, 1 )
 script = ExtResource( 2 )
-tiempo_spawn = 100
 tiempo_spawn_curita = 1000
 
 [node name="Sprite" type="Sprite" parent="."]
