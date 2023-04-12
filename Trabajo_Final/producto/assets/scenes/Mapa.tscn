@@ -12,7 +12,7 @@ tiempo_spawn_curita = 1000
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 512, 293 )
-scale = Vector2( 2.18982, 2.51608 )
+scale = Vector2( 0.805638, 0.910689 )
 texture = ExtResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="."]

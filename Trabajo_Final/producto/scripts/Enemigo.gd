@@ -18,7 +18,7 @@ func recibe_damage():
 		muere()
 
 func muere():
-	$death.play()
+	#$death.play()
 	$AnimationPlayer.play("die")
 	jugador.suma_puntos(puntos_muerte)
 	get_node("CollisionShape2D").queue_free()
@@ -42,7 +42,7 @@ func _process(delta):
 func _on_Enemigo_area_entered(area):
 	if "Proyectil" in area.name:
 		recibe_damage()
-		$damage.play()
+		#$damage.play()
 		area.queue_free()
 		#jugador.suma_puntos(puntos)
 

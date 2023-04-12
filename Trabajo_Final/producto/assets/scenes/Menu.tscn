@@ -141,7 +141,6 @@ fit_content_height = true
 
 [connection signal="pressed" from="Botones/Jugar" to="." method="_on_Jugar_pressed"]
 [connection signal="pressed" from="Botones/Ranking" to="." method="_on_Ranking_pressed"]
-[connection signal="pressed" from="Botones/Tienda" to="." method="_on_Tienda_pressed"]
 [connection signal="pressed" from="Botones/Salir" to="." method="_on_Salir_pressed"]
 [connection signal="toggled" from="Musica_OnOff" to="." method="_on_CheckButton_toggled"]
 [connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
