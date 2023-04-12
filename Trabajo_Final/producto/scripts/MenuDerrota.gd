@@ -2,7 +2,7 @@ extends Control
 
 const SAVE_PATH = "res://Saves/saves.sav"
 onready var musica = get_node("AudioStreamPlayer2D")
-onready var sprite = get_node("MarginContainer/GameOver")
+onready var sprite = get_node("GameOver")
 
 var highscores = null
 var aux=0

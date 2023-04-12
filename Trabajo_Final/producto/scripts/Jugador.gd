@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 # NODOS ---------------------------------------------------
-onready var balas = get_node("Control/Balas")
 onready var puntaje = get_node("Control/Puntaje")
 onready var barra_vida = get_node("Control/BarraVida")
 onready var barra_exp = get_node("Control/BarraExperiencia")
@@ -48,7 +47,6 @@ func _process(delta):
 		
 	puntaje.text = " Score: "+str(self.puntos)
 	barra_vida.value = self.vida
-	balas.text = str(arma.bullet_charger)
 	actualiza_barras()
 	
 func actualiza_barras():

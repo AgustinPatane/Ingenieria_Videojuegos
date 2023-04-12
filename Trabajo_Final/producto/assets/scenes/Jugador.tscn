@@ -1,11 +1,10 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/Red/body.png" type="Texture" id=2]
 [ext_resource path="res://producto/assets/img/jugador/Yellow/gun.png" type="Texture" id=3]
 [ext_resource path="res://producto/scripts/Arma.gd" type="Script" id=4]
 [ext_resource path="res://producto/assets/img/GUI/vida_marco.png" type="Texture" id=5]
-[ext_resource path="res://producto/assets/img/GUI/bala.png" type="Texture" id=6]
 [ext_resource path="res://producto/assets/img/GUI/vida_llena.png" type="Texture" id=7]
 [ext_resource path="res://producto/assets/img/GUI/vida_vacia.png" type="Texture" id=8]
 [ext_resource path="res://producto/assets/img/GUI/exp_marco.png" type="Texture" id=9]
@@ -69,10 +68,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 6, 7, 8, 9, 10, 11 ]
 }
-
-[sub_resource type="DynamicFont" id=3]
-size = 30
-font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 30
@@ -195,21 +190,6 @@ margin_bottom = -112.0
 texture_over = ExtResource( 9 )
 texture_progress = ExtResource( 10 )
 
-[node name="Bala" type="Sprite" parent="Control"]
-position = Vector2( -240, -494 )
-scale = Vector2( 0.198709, 0.202222 )
-texture = ExtResource( 6 )
-
-[node name="Balas" type="TextEdit" parent="Control"]
-anchor_right = 0.624
-margin_left = -208.0
-margin_top = -520.0
-margin_right = -72.96
-margin_bottom = -468.0
-custom_fonts/font = SubResource( 3 )
-text = "
-"
-
 [node name="Puntaje" type="TextEdit" parent="Control"]
 margin_left = -264.0
 margin_top = -564.0
@@ -261,7 +241,6 @@ anims/LVL_UP = SubResource( 5 )
 anims/RESET = SubResource( 6 )
 
 [node name="area_recoleccion" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_recoleccion"]
 position = Vector2( -4, 0 )
