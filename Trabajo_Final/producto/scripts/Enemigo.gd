@@ -9,6 +9,7 @@ var danio = 10
 var puntos_muerte = 5
 var experiencia = 1
 var flag_tocando_player = false
+var mapa
 
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
 
@@ -19,6 +20,8 @@ func recibe_damage():
 
 func muere():
 	#$death.play()
+	mapa = get_node("/root/Mapa")
+	mapa.cant_enemigos=mapa.cant_enemigos-1
 	$AnimationPlayer.play("die")
 	jugador.suma_puntos(puntos_muerte)
 	get_node("CollisionShape2D").queue_free()

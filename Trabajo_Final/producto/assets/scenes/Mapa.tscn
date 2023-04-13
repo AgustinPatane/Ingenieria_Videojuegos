@@ -7,7 +7,8 @@
 [node name="Mapa" type="Node2D"]
 scale = Vector2( 1.00096, 1 )
 script = ExtResource( 2 )
-tiempo_spawn_curita = 1000
+tiempo_spawn_enemigo = 1
+tiempo_spawn_curita = 5
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 512, 293 )
