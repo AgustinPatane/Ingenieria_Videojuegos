@@ -74,7 +74,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 11.6242
+radius = 27.627
 
 [node name="Enemigo" type="Area2D"]
 position = Vector2( -1, 27 )

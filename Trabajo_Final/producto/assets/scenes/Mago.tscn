@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://producto/assets/scenes/Enemigo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://producto/assets/img/mounstruo2.jpg" type="Texture" id=2]
+[ext_resource path="res://producto/scripts/Mago.gd" type="Script" id=3]
+
+[node name="Mago" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( -2.72727, -8.63636 )
+scale = Vector2( 0.0521441, 0.0633925 )
+texture = ExtResource( 2 )
+hframes = 1
+vframes = 1
+frame = 0
+
+[node name="CollisionShape2D" parent="Area_ataque" index="0"]
+position = Vector2( 160.909, -7.27273 )
