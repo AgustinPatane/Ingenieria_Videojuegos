@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gun.png-91b2f71c68b1bf61acf2febc2250cf34.stex"
+path="res://.import/escopeta.png-3146cbb1f1e62a3a5e635cad4ec8c57c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/jugador/Green/gun.png"
-dest_files=[ "res://.import/gun.png-91b2f71c68b1bf61acf2febc2250cf34.stex" ]
+source_file="res://producto/assets/img/jugador/Blue/escopeta.png"
+dest_files=[ "res://.import/escopeta.png-3146cbb1f1e62a3a5e635cad4ec8c57c.stex" ]
 
 [params]
 

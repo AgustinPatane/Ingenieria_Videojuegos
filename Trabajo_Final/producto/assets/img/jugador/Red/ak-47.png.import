@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gun.png-fbb0a6b6da1a03a85ffc3dc6bbea4ade.stex"
+path="res://.import/ak-47.png-efd18e4d3ae77b9e7a914cd9daf1fe44.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/jugador/Black/gun.png"
-dest_files=[ "res://.import/gun.png-fbb0a6b6da1a03a85ffc3dc6bbea4ade.stex" ]
+source_file="res://producto/assets/img/jugador/Red/ak-47.png"
+dest_files=[ "res://.import/ak-47.png-efd18e4d3ae77b9e7a914cd9daf1fe44.stex" ]
 
 [params]
 

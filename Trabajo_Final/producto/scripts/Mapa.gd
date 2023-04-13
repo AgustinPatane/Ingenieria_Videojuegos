@@ -34,7 +34,7 @@ func _ready():
 
 	
 func spawn_enemigo():
-	print("BBBBBBBBBB")
+	#print("BBBBBBBBBB")
 	var result
 	if cant_enemigos < max_enemigos:
 		cant_enemigos += 1
@@ -47,20 +47,15 @@ func spawn_enemigo():
 		var enemigo = escena_enemigo.instance()
 		enemigo. position = Vector2(posx,posy)
 		get_node("/root/Mapa").add_child(enemigo)
-		print(cant_enemigos)
-	
-
-
-
+		#print(cant_enemigos)
 	
 func spawn_item_vida():
-	print("AAAAAAAAA")
+	#print("AAAAAAAAA")
 	var posx = jugador.position.x + rand_range(-800, 800)
 	var posy = jugador.position.y + rand_range(-500, 500)
 	var item = escena_item.instance()
 	item.position = Vector2(posx,posy)
 	get_node("/root/Mapa").add_child(item)
-	
 	
 
 func _process(_delta):

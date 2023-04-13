@@ -1,8 +1,8 @@
 [gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
-[ext_resource path="res://producto/assets/img/jugador/Red/body.png" type="Texture" id=2]
-[ext_resource path="res://producto/assets/img/jugador/Yellow/gun.png" type="Texture" id=3]
+[ext_resource path="res://producto/assets/img/jugador/Black/ak-47.png" type="Texture" id=2]
+[ext_resource path="res://producto/assets/img/jugador/Black/body.png" type="Texture" id=3]
 [ext_resource path="res://producto/scripts/Arma.gd" type="Script" id=4]
 [ext_resource path="res://producto/assets/img/GUI/vida_marco.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/GUI/vida_llena.png" type="Texture" id=7]
@@ -126,7 +126,7 @@ shape = SubResource( 1 )
 [node name="Jugador_Sprite" type="Sprite" parent="."]
 scale = Vector2( 1.75, 1.75 )
 z_index = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 hframes = 6
 vframes = 2
 frame = 1
@@ -148,7 +148,7 @@ script = ExtResource( 4 )
 [node name="Arma_Sprite" type="Sprite" parent="Arma"]
 position = Vector2( 32, 0 )
 scale = Vector2( 3.5, 3.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Position_arma" type="Position2D" parent="Arma"]
 position = Vector2( 74, -2 )

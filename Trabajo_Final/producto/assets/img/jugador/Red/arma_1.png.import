@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gun.png-0847307ed240926e68a6f6ca1b631b00.stex"
+path="res://.import/arma_1.png-c17cab1c9035f0f200d1cbf2788aec2f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/jugador/Blue/gun.png"
-dest_files=[ "res://.import/gun.png-0847307ed240926e68a6f6ca1b631b00.stex" ]
+source_file="res://producto/assets/img/jugador/Red/arma_1.png"
+dest_files=[ "res://.import/arma_1.png-c17cab1c9035f0f200d1cbf2788aec2f.stex" ]
 
 [params]
 
