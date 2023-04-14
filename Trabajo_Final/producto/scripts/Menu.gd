@@ -59,3 +59,6 @@ func _on_Ranking_pressed():
 	
 func on_ranking_quit():
 	ranking = null
+
+func _on_Tienda_pressed():
+	var _aux = get_tree().change_scene("res://producto/assets/scenes/Tienda.tscn")
