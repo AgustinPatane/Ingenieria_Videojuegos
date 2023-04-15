@@ -2,10 +2,9 @@ extends Area2D
 
 var pos_jugador = Vector2.ZERO
 var speed = 100
-var vidas = 2
+var vida = 20
 var jugador
 var danio = 10
-#var puntos = 1
 var puntos_muerte = 5
 var experiencia = 1
 var flag_tocando_player = false
@@ -13,9 +12,9 @@ var mapa
 
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
 
-func recibe_damage():
-	vidas -=1
-	if vidas == 0:
+func recibe_damage(damage):
+	vida -= damage
+	if vida <= 0:
 		muere()
 
 func muere():
@@ -23,7 +22,7 @@ func muere():
 	mapa = get_node("/root/Mapa")
 	mapa.cant_enemigos=mapa.cant_enemigos-1
 	$AnimationPlayer.play("die")
-	jugador.suma_puntos(puntos_muerte)
+	jugador.gana_puntos(puntos_muerte)
 	get_node("CollisionShape2D").queue_free()
 
 # Called when the node enters the scene tree for the first time.
@@ -32,7 +31,7 @@ func _ready():
 	jugador = get_node("/root/Mapa/Jugador")
 	
 func _process(delta):
-	if (vidas>0):
+	if (vida>0):
 		pos_jugador = jugador.position
 		var dir = (pos_jugador - position).normalized()
 		if !flag_tocando_player:
@@ -44,11 +43,10 @@ func _process(delta):
 
 func _on_Enemigo_area_entered(area):
 	if "Proyectil" in area.name:
-		recibe_damage()
+		recibe_damage(area.get_damage())
 		#$damage.play()
 		area.queue_free()
 		#jugador.suma_puntos(puntos)
-
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "die":
