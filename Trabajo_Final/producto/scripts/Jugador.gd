@@ -76,7 +76,8 @@ func gana_exp(value):
 func aumenta_Area_recoleccion(value):
 	$area_recoleccion.scale.x += value
 	$area_recoleccion.scale.y += value
-	
+
+
 func _movimiento(delta):
 	motion = Vector2(0,0)
 	if Input.is_action_pressed("ui_right"):
@@ -98,6 +99,14 @@ func _movimiento(delta):
 	if Input.is_action_pressed("run"): SPEED = vel_run
 	else: SPEED = vel_walk
 	motion = move_and_slide(motion*delta*SPEED)
+	
+	var slide_count = get_slide_count()
+	if slide_count > 0:
+		for i in range (slide_count):
+			motion = get_slide_collision(i)
+			var collider = motion.collider
+			if collider.is_in_group("Wall"):
+				motion = move_and_slide(delta * -SPEED)
 
 func suma_puntos(cantidad):
 	puntos += cantidad
