@@ -7,22 +7,13 @@ var damage_Arma = 10.0
 
 onready var escena_proyectil = preload("res://producto/assets/scenes/Proyectil.tscn")
 
-func get_damage_Arma():
-	return damage_Arma 
+func _ready():
+	pass
 
-func actualiza_damage(value):
-	damage_Arma += value
+# -------------------------------------------------------------------------------------
+# --------------------------------- DISPARO ARMA --------------------------------------
+# -------------------------------------------------------------------------------------
 
-func get_cadencia_disparo():
-	return cadencia_disparo
-
-func actualiza_cadencia(value):
-	cadencia_disparo += value
-
-func _mira_mouse(object):
-	mouse_position = get_global_mouse_position()
-	object.look_at(mouse_position)
-		
 func _dispara():
 	var disparo = escena_proyectil.instance()
 	#$disparo.play()
@@ -32,14 +23,15 @@ func _dispara():
 	disparo.set_damage(damage_Arma)
 	get_tree().get_root().add_child(disparo)
 	tiempo_ultimo_disparo = OS.get_ticks_msec() / 1000.0
-
-func _ready():
-	pass
 	
 func _process(_delta):
 	var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0
 	if Input.is_action_pressed("shoot") and cond_disparo: 
 		_dispara()
+
+# -------------------------------------------------------------------------------------
+# --------------------------------- MOVIMIENTO ARMA -----------------------------------
+# -------------------------------------------------------------------------------------
 
 func _physics_process(_delta):
 	_mira_mouse(self)
@@ -53,3 +45,30 @@ func _physics_process(_delta):
 	else:
 		$Arma_Sprite.set_flip_v(true)
 		get_parent().get_node("Jugador_Sprite").set_flip_h(true)
+
+func _mira_mouse(object):
+	mouse_position = get_global_mouse_position()
+	object.look_at(mouse_position)
+	
+# -------------------------------------------------------------------------------------
+# ------------------------------ MANEJO ATRIBUTOS ARMA --------------------------------
+# -------------------------------------------------------------------------------------
+
+func get_damage_Arma():
+	return damage_Arma 
+
+func set_damage_Arma(value):
+	damage_Arma = value
+
+func incremento_damage(porcentaje):
+	damage_Arma = damage_Arma * porcentaje
+
+func get_cadencia_disparo():
+	return cadencia_disparo
+
+func set_cadencia_disparo(value):
+	cadencia_disparo = value
+
+func incremento_cadencia(porcentaje):
+	cadencia_disparo = cadencia_disparo * porcentaje
+

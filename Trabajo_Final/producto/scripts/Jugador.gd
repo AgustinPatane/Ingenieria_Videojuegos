@@ -20,7 +20,7 @@ onready var btn_pausa = get_node("Control/Btn_pausa")
 
 var motion = Vector2()
 var vel_walk = 20000
-var vel_run = 35000
+var vel_run = 1.75 * vel_walk
 var SPEED = 0
 var puntos = 0
 var vida_max = 100
@@ -97,8 +97,44 @@ func _physics_process(delta):
 				motion = move_and_slide(delta * -SPEED)
 
 # -------------------------------------------------------------------------------------
-# ------------------------------- MANEJO DE LA VIDA -----------------------------------
+# ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
 # -------------------------------------------------------------------------------------
+
+func get_vida_max():
+	return vida_max
+	
+func set_vida_max(value):
+	vida_max = value
+	
+func incremento_vida(porcentaje):
+	vida_max = vida_max * porcentaje
+	
+func get_velocidad():
+	return vel_walk
+
+func set_velocidad(value):
+	vel_walk = value
+	
+func incremento_velocidad(porcentaje):
+	vel_walk = vel_walk * porcentaje
+
+func get_damage_Arma():
+	return arma.get_damage_Arma()
+
+func set_damage_Arma(value):
+	arma.set_damage_Arma(value)
+
+func incremento_damage(porcentaje):
+	arma.incremento_damage(porcentaje)
+
+func get_cadencia_disparo():
+	return arma.get_cadencia_disparo()
+
+func set_cadencia_disparo(value):
+	arma.set_cadencia_disparo(value)
+
+func incremento_cadencia(porcentaje):
+	arma.incremento_cadencia(porcentaje)
 
 func recibe_ataque(danio):
 	vida-=danio
