@@ -42,8 +42,12 @@ func spawn_enemigo():
 			result=1
 		else:
 			result=-1
-		var posx = jugador.position.x + rand_range(100, 800)*result #Inicia de 30 para que el enemigo no se genere muy cerca del jugador
-		var posy = jugador.position.y + rand_range(30, 500)*result
+			
+		var posx = rand_range(-567,1651)
+		var posy = rand_range(-411,980)
+		if abs(posx) - abs(jugador.position.x) < 20 and abs(posy) - abs(jugador.position.y) < 20:
+			posx += 20 * result 
+			posy += 20 * result
 		var enemigo = escena_enemigo.instance()
 		enemigo. position = Vector2(posx,posy)
 		get_node("/root/Mapa").add_child(enemigo)
