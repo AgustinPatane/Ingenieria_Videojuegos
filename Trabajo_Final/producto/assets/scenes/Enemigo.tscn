@@ -77,14 +77,9 @@ tracks/0/keys = {
 radius = 27.627
 
 [node name="Enemigo" type="Area2D"]
-position = Vector2( -1, 27 )
 scale = Vector2( 1.1, 1.1 )
 z_index = 2
 script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.72727, -9.09091 )
-shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -2.72727, -46.3636 )
@@ -93,6 +88,10 @@ hframes = 22
 vframes = 5
 frame = 22
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.72727, -9.09091 )
+shape = SubResource( 1 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
 anims/atack = SubResource( 3 )
@@ -100,6 +99,7 @@ anims/die = SubResource( 4 )
 anims/move = SubResource( 5 )
 
 [node name="Area_ataque" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_ataque"]
 position = Vector2( -26.3636, -10 )

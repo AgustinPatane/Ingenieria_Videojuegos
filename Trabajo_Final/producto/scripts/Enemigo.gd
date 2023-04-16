@@ -9,8 +9,13 @@ var danio = 10
 var puntos_muerte = 5
 var experiencia = 1
 var flag_tocando_player = false
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
+onready var mapa = get_node("/root/Mapa")
 
 func recibe_damage():
 	vidas -=1
@@ -19,6 +24,11 @@ func recibe_damage():
 
 func muere():
 	#$death.play()
+<<<<<<< Updated upstream
+=======
+	#var mapa = get_node("/root/Mapa")
+	mapa.cant_enemigos=mapa.cant_enemigos-1
+>>>>>>> Stashed changes
 	$AnimationPlayer.play("die")
 	jugador.suma_puntos(puntos_muerte)
 	get_node("CollisionShape2D").queue_free()

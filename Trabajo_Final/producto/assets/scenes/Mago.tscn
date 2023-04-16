@@ -7,13 +7,23 @@
 [node name="Mago" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="Sprite" parent="." index="1"]
-position = Vector2( -2.72727, -8.63636 )
-scale = Vector2( 0.0521441, 0.0633925 )
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, 0 )
+scale = Vector2( 0.04, 0.04 )
 texture = ExtResource( 2 )
 hframes = 1
 vframes = 1
 frame = 0
 
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+z_index = 1
+
 [node name="CollisionShape2D" parent="Area_ataque" index="0"]
+visible = false
 position = Vector2( 160.909, -7.27273 )
+
+[node name="Position_arma" type="Position2D" parent="." index="6"]
+visible = false
+position = Vector2( 0.909091, -2.72727 )
+scale = Vector2( 90, 90 )
