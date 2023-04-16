@@ -2,6 +2,8 @@ extends Control
 
 onready var musica = get_node("Musica_OnOff/Musica")
 onready var slider = get_node("VSlider")
+onready var escena_mapa = preload("res://producto/assets/scenes/Mapa.tscn")
+onready var escena_tienda = preload("res://producto/assets/scenes/Tienda.tscn")
 
 var prev_volumen = -20
 var ranking = null
