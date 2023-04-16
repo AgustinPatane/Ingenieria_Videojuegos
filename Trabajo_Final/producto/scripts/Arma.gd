@@ -4,6 +4,7 @@ var mouse_position
 var cadencia_disparo = 0.5 #es en segundos
 var tiempo_ultimo_disparo = 0.0
 var damage_Arma = 10.0
+var rango = 0.4 #tiempo de vida del disparo
 
 onready var escena_proyectil = preload("res://producto/assets/scenes/Proyectil.tscn")
 
@@ -21,6 +22,7 @@ func _dispara():
 	disparo.global_position = $Position_arma.global_position
 	disparo.rotation_degrees = rotation_degrees
 	disparo.set_damage(damage_Arma)
+	disparo.set_rango(rango)
 	get_tree().get_root().add_child(disparo)
 	tiempo_ultimo_disparo = OS.get_ticks_msec() / 1000.0
 	
@@ -53,6 +55,15 @@ func _mira_mouse(object):
 # -------------------------------------------------------------------------------------
 # ------------------------------ MANEJO ATRIBUTOS ARMA --------------------------------
 # -------------------------------------------------------------------------------------
+
+func get_rango():
+	return rango
+	
+func set_rango(value):
+	rango = value
+	
+func incremento_rango(porcentaje):
+	rango = rango * porcentaje
 
 func get_damage_Arma():
 	return damage_Arma 
