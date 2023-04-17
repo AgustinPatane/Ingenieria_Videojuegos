@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
-[ext_resource path="res://producto/assets/img/armas/escopeta.png" type="Texture" id=2]
-[ext_resource path="res://producto/assets/img/jugador/skins/body.png" type="Texture" id=3]
+[ext_resource path="res://producto/assets/img/armas/ametralladora.png" type="Texture" id=2]
 [ext_resource path="res://producto/scripts/Arma.gd" type="Script" id=4]
 [ext_resource path="res://producto/assets/img/GUI/vida_marco.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/GUI/vida_llena.png" type="Texture" id=7]
@@ -127,7 +126,6 @@ shape = SubResource( 1 )
 position = Vector2( 3, -0.125 )
 scale = Vector2( 2.41667, 2.475 )
 z_index = 1
-texture = ExtResource( 3 )
 hframes = 6
 vframes = 2
 frame = 1

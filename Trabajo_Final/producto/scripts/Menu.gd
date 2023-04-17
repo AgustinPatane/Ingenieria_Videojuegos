@@ -10,6 +10,8 @@ var ranking = null
 var menu_ranking
 
 func _ready():
+	if !Engine.has_meta("ruta_skin"):
+		Engine.set_meta("ruta_skin","res://producto/assets/img/jugador/skins/skin_pela.png")
 	musica.play()
 	slider.max_value = 5
 	slider.min_value = -50
@@ -28,7 +30,6 @@ func _on_CheckButton_toggled(button_pressed):
 	else:
 		slider.value = -50
 		musica.stop()
-
 
 func _on_Salir_pressed():
 	get_tree().quit()

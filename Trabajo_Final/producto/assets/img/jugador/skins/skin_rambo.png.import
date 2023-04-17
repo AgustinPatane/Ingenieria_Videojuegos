@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/body.png-13e9960b298e9e7006b32b1273b7106a.stex"
+path="res://.import/skin_rambo.png-f1102d5aae5cd4de746e0be0ee893bda.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/jugador/skins/body.png"
-dest_files=[ "res://.import/body.png-13e9960b298e9e7006b32b1273b7106a.stex" ]
+source_file="res://producto/assets/img/jugador/skins/skin_rambo.png"
+dest_files=[ "res://.import/skin_rambo.png-f1102d5aae5cd4de746e0be0ee893bda.stex" ]
 
 [params]
 

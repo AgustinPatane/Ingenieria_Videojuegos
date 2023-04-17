@@ -1,7 +1,7 @@
 extends Node2D
 
 var mouse_position
-var cadencia_disparo = 0.5 #es en segundos
+var cadencia_disparo = 0.05 #es en segundos
 var tiempo_ultimo_disparo = 0.0
 var damage_Arma = 10.0
 var rango = 0.4 #tiempo de vida del disparo
