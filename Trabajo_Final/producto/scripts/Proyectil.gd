@@ -25,7 +25,6 @@ func _ready():
 	timer.start()
 
 func eliminar():
-	print("hola")
 	queue_free()
 
 func _process(delta):

@@ -59,10 +59,9 @@ func _on_volver_a_menu_pressed():
 
 func _on_equipar_pressed():
 	if skins_compradas.has(skin_seleccionada):
-		var ruta = "res://producto/assets/img/jugador/skins/" + skin_seleccionada + "/body.png"
+		var ruta = "res://producto/assets/img/jugador/skins/" + skin_seleccionada
 		Engine.remove_meta("ruta_skin")
 		Engine.set_meta("ruta_skin",ruta)
-		print(Engine.get_meta("ruta_skin"))
 		#llamar al metodo que cambia la skin en el jugador
 		#sprite = load("res://producto/assets/img/tienda/seleccionados/rambo_buy.png")
 		pass

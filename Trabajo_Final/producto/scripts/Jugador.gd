@@ -43,9 +43,11 @@ signal player_defeated
 # -------------------------------------------------------------------------------------
 
 func _ready():
-	var skin = load(Engine.get_meta("ruta_skin"))
-	print(Engine.get_meta("ruta_skin"))
-	$Jugador_Sprite.set_texture(skin)
+	var ruta = Engine.get_meta("ruta_skin")
+	var skin_body = load(ruta + "/body.png")
+	var skin_arma = load(ruta + "/arma_1.png")
+	$Jugador_Sprite.set_texture(skin_body)
+	$Arma/Arma_Sprite.set_texture(skin_arma)
 	$AnimationPlayer_body.play("idle")
 	spriteLvlUp.visible = false
 	barra_exp.max_value = experiencia_necesaria
