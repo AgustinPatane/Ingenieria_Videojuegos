@@ -66,7 +66,7 @@ margin_top = -50.0
 margin_right = 366.0
 margin_bottom = 50.0
 
-[node name="skin_pela" type="TextureButton" parent="skins_jugador"]
+[node name="Pela" type="TextureButton" parent="skins_jugador"]
 margin_left = 26.0
 margin_top = -93.0
 margin_right = 178.0
@@ -77,7 +77,7 @@ texture_hover = ExtResource( 9 )
 texture_focused = ExtResource( 9 )
 expand = true
 
-[node name="skin_soldado" type="TextureButton" parent="skins_jugador"]
+[node name="Soldado_arg" type="TextureButton" parent="skins_jugador"]
 margin_left = 200.0
 margin_top = -93.0
 margin_right = 352.0
@@ -88,7 +88,7 @@ texture_hover = ExtResource( 10 )
 texture_focused = ExtResource( 10 )
 expand = true
 
-[node name="skin_bask" type="TextureButton" parent="skins_jugador"]
+[node name="Nba" type="TextureButton" parent="skins_jugador"]
 margin_left = 374.0
 margin_top = -93.0
 margin_right = 526.0
@@ -99,7 +99,7 @@ texture_hover = ExtResource( 12 )
 texture_focused = ExtResource( 12 )
 expand = true
 
-[node name="skin_rambo" type="TextureButton" parent="skins_jugador"]
+[node name="Rambo" type="TextureButton" parent="skins_jugador"]
 margin_left = 548.0
 margin_top = -93.0
 margin_right = 700.0
@@ -195,10 +195,10 @@ text = "VOLVER"
 icon_align = 1
 expand_icon = true
 
-[connection signal="pressed" from="skins_jugador/skin_pela" to="." method="_on_skin_pela_pressed"]
-[connection signal="pressed" from="skins_jugador/skin_soldado" to="." method="_on_skin_soldado_pressed"]
-[connection signal="pressed" from="skins_jugador/skin_bask" to="." method="_on_skin_bask_pressed"]
-[connection signal="pressed" from="skins_jugador/skin_rambo" to="." method="_on_skin_rambo_pressed"]
+[connection signal="pressed" from="skins_jugador/Pela" to="." method="_on_skin_pela_pressed"]
+[connection signal="pressed" from="skins_jugador/Soldado_arg" to="." method="_on_skin_soldado_pressed"]
+[connection signal="pressed" from="skins_jugador/Nba" to="." method="_on_skin_bask_pressed"]
+[connection signal="pressed" from="skins_jugador/Rambo" to="." method="_on_skin_rambo_pressed"]
 [connection signal="pressed" from="skins_jugador/comprar" to="." method="_on_comprar_pressed"]
 [connection signal="pressed" from="skins_jugador/equipar" to="." method="_on_equipar_pressed"]
 [connection signal="pressed" from="volver_a_menu" to="." method="_on_volver_a_menu_pressed"]

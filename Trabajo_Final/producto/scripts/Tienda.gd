@@ -4,7 +4,7 @@ var monedas = 1000
 var skins_disponibles = Array()
 var skins_compradas = Array()
 var skin_equipada
-var skin_seleccionada = "skin_pela"
+var skin_seleccionada = "Pela"
 
 var skins_armas = Array()
 
@@ -39,19 +39,19 @@ func _on_comprar_pressed():
 
 func _on_skin_pela_pressed():
 	valor.text = "100"
-	skin_seleccionada = "skin_pela"
+	skin_seleccionada = "Pela"
 
 func _on_skin_soldado_pressed():
 	valor.text = "200"
-	skin_seleccionada = "skin_soldado"
+	skin_seleccionada = "Soldado_arg"
 
 func _on_skin_bask_pressed():
 	valor.text = "300"
-	skin_seleccionada = "skin_bask"
+	skin_seleccionada = "Nba"
 
 func _on_skin_rambo_pressed():
 	valor.text = "500"
-	skin_seleccionada = "skin_rambo"
+	skin_seleccionada = "Rambo"
 
 func _on_volver_a_menu_pressed():
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Menu.tscn")
@@ -59,7 +59,7 @@ func _on_volver_a_menu_pressed():
 
 func _on_equipar_pressed():
 	if skins_compradas.has(skin_seleccionada):
-		var ruta = "res://producto/assets/img/jugador/skins/" + skin_seleccionada + ".png"
+		var ruta = "res://producto/assets/img/jugador/skins/" + skin_seleccionada + "/body.png"
 		Engine.remove_meta("ruta_skin")
 		Engine.set_meta("ruta_skin",ruta)
 		print(Engine.get_meta("ruta_skin"))
