@@ -19,8 +19,10 @@ extents = Vector2( 1119.68, 17.5 )
 [node name="Mapa" type="Node2D"]
 scale = Vector2( 1.00096, 1 )
 script = ExtResource( 2 )
+
 tiempo_spawn_enemigo = 1
 tiempo_spawn_curita = 5
+
 
 [node name="Fondo" type="TextureRect" parent="."]
 margin_left = -607.417
