@@ -11,26 +11,8 @@ onready var escena_demonio = preload("res://producto/assets/scenes/Demonio.tscn"
 onready var escena_item = preload("res://producto/assets/scenes/Item.tscn")
 var jugador
 
-func _ready():
-	jugador = get_node("Jugador")
-	randomize()
-	
-	var timer_objetos = Timer.new()
-	self.add_child(timer_objetos)
-	timer_objetos.wait_time = tiempo_spawn_curita
-	timer_objetos.connect("timeout", self, "spawn_item_vida")
-	timer_objetos.start()
-	
-	var timer_enemigos = Timer.new()
-	self.add_child(timer_enemigos)
-	timer_enemigos.wait_time = tiempo_spawn_enemigo
-	timer_enemigos.connect("timeout", self, "spawn_enemigo")
-	timer_enemigos.start()
-	
-func spawn_enemigo():
-	if cant_enemigos < max_enemigos:
-		cant_enemigos += 1
-		spawn(escena_enemigo.instance())
+
+
 
 
 signal spawn_enemy
@@ -39,8 +21,6 @@ signal spawn_enemy
 func _ready():
 	jugador = get_node("Jugador")
 	randomize()
-	
-	
 	var timer_objetos = Timer.new()
 	self.add_child(timer_objetos)
 	timer_objetos.wait_time = tiempo_spawn_curita
@@ -51,7 +31,7 @@ func _ready():
 	get_node("/root/Mapa").add_child(escena_mago.instance())
 	get_node("/root/Mapa").add_child(escena_demonio.instance())
 	emit_signal("spawn_enemy")
-	##################################
+	
 	
 	
 func spawn_enemigo(tipo_enemigo: String):

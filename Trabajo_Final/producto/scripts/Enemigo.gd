@@ -9,7 +9,6 @@ var puntos_muerte = 5
 var experiencia = 1
 var flag_tocando_player = false
 
-var mapa
 
 
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
