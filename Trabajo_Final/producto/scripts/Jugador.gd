@@ -215,3 +215,5 @@ func on_paused_quit():
 		$Lvp_up.show()
 	arma.get_node("Arma_Sprite").show()
 	paused = null
+	
+	
