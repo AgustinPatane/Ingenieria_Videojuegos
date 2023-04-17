@@ -1,14 +1,9 @@
 extends Node2D
 
-<<<<<<< Updated upstream
-export(int) var tiempo_spawn_enemigo = 1
-export(int) var tiempo_spawn_curita = 10
-var max_enemigos = 50
-=======
-var tiempo_spawn_enemigo = 1000
-var tiempo_spawn_curita = 1
+
+export(int) var tiempo_spawn_enemigo = 2
+export(int) var tiempo_spawn_curita = 1
 var max_enemigos = 30
->>>>>>> Stashed changes
 var cant_enemigos = 0
 onready var escena_enemigo = preload("res://producto/assets/scenes/Enemigo.tscn")
 onready var escena_mago = preload("res://producto/assets/scenes/Mago.tscn")
@@ -16,45 +11,27 @@ onready var escena_demonio = preload("res://producto/assets/scenes/Demonio.tscn"
 onready var escena_item = preload("res://producto/assets/scenes/Item.tscn")
 var jugador
 
-<<<<<<< Updated upstream
 func _ready():
 	jugador = get_node("Jugador")
 	randomize()
+	
+	var timer_objetos = Timer.new()
+	self.add_child(timer_objetos)
+	timer_objetos.wait_time = tiempo_spawn_curita
+	timer_objetos.connect("timeout", self, "spawn_item_vida")
+	timer_objetos.start()
+	
 	var timer_enemigos = Timer.new()
 	self.add_child(timer_enemigos)
 	timer_enemigos.wait_time = tiempo_spawn_enemigo
 	timer_enemigos.connect("timeout", self, "spawn_enemigo")
 	timer_enemigos.start()
 	
-	var timer_objetos = Timer.new()
-	self.add_child(timer_objetos)
-	timer_objetos.wait_time = tiempo_spawn_curita
-	timer_objetos.connect("timeout", self, "spawn_objeto")
-	timer_objetos.start()
-	
 func spawn_enemigo():
 	if cant_enemigos < max_enemigos:
 		cant_enemigos += 1
-		var posx = jugador.position.x + rand_range(-800, 800)
-		var posy = jugador.position.y + rand_range(-500, 500)
-		var enemigo = escena_enemigo.instance()
-		enemigo. position = Vector2(posx,posy)
-		get_node("/root/Mapa").add_child(enemigo)
-		print(cant_enemigos)
-	
+		spawn(escena_enemigo.instance())
 
-func spawn_objeto():
-	#aca tendriamos que elegir cual item vamos a spawnear
-	spawn_item_vida()
-
-	
-func spawn_item_vida():
-	var posx = jugador.position.x + rand_range(-800, 800)
-	var posy = jugador.position.y + rand_range(-500, 500)
-	var item = escena_item.instance()
-	item.position = Vector2(posx,posy)
-	get_node("/root/Mapa").add_child(item)
-=======
 
 signal spawn_enemy
 
@@ -110,14 +87,31 @@ func posicion_aleatoria() -> Vector2:
 		result=1
 	else:
 		result=-1
-	var posx = jugador.position.x + rand_range(100, 800)*result #Inicia de 30 para que el enemigo no se genere muy cerca del jugador
-	var posy = jugador.position.y + rand_range(30, 500)*result
+	var posx = rand_range(-567,1651)
+	var posy = rand_range(-411,980)
+	if abs(posx) - abs(jugador.position.x) < 20 and abs(posy) - abs(jugador.position.y) < 20:
+		posx += 20 * result 
+		posy += 20 * result
 	return Vector2(posx,posy)
 	
 	
->>>>>>> Stashed changes
 
 
+#le pasas una instancia de una escena y la posiciona dentro de los limites del mapa
+func spawn(instancia):
+	var result
+	if rand_range(0, 1)<=0.5:
+		result=1
+	else:
+		result=-1	
+	var posx = rand_range(-567,1651)
+	var posy = rand_range(-411,980)
+	if abs(posx) - abs(jugador.position.x) < 20 and abs(posy) - abs(jugador.position.y) < 20:
+		posx += 20 * result 
+		posy += 20 * result
+	instancia.position = Vector2(posx,posy)
+	get_node("/root/Mapa").add_child(instancia)
+	
 func _process(_delta):
 	pass
 

@@ -2,12 +2,16 @@ extends Control
 
 onready var musica = get_node("Musica_OnOff/Musica")
 onready var slider = get_node("VSlider")
+onready var escena_mapa = preload("res://producto/assets/scenes/Mapa.tscn")
+onready var escena_tienda = preload("res://producto/assets/scenes/Tienda.tscn")
 
 var prev_volumen = -20
 var ranking = null
 var menu_ranking
 
 func _ready():
+	if !Engine.has_meta("ruta_skin"):
+		Engine.set_meta("ruta_skin","res://producto/assets/img/jugador/skins/skin_pela.png")
 	musica.play()
 	slider.max_value = 5
 	slider.min_value = -50
@@ -26,7 +30,6 @@ func _on_CheckButton_toggled(button_pressed):
 	else:
 		slider.value = -50
 		musica.stop()
-
 
 func _on_Salir_pressed():
 	get_tree().quit()
@@ -59,3 +62,6 @@ func _on_Ranking_pressed():
 	
 func on_ranking_quit():
 	ranking = null
+
+func _on_Tienda_pressed():
+	var _aux = get_tree().change_scene("res://producto/assets/scenes/Tienda.tscn")

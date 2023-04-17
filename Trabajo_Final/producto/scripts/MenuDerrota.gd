@@ -12,16 +12,20 @@ var player = {
 	"score" : 0
 }
 
-func _ready():
-	musica.play()
-	load_game()
-	player.score = Engine.get_meta("Puntaje")
-
-func _process(_delta):
+func _maneja_musica():
 	yield(get_tree().create_timer(5.0), "timeout")
 	if aux==0:
 		musica.queue_free()
 		aux=1
+		
+func _ready():
+	musica.play()
+	load_game()
+	player.score = Engine.get_meta("Puntaje")
+	_maneja_musica()
+
+func _process(_delta):
+	pass
 
 func genera_saves_vacio():
 	var puntuaciones = []

@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
-# NODOS ---------------------------------------------------
+# -------------------------------------------------------------------------------------
+# ------------------------------------- NODOS -----------------------------------------
+# -------------------------------------------------------------------------------------
+
 onready var puntaje = get_node("Control/Puntaje")
 onready var barra_vida = get_node("Control/BarraVida")
 onready var barra_exp = get_node("Control/BarraExperiencia")
@@ -11,10 +14,13 @@ onready var spriteLvlUp = get_node("Lvp_up")
 onready var animLvlUp = get_node("Lvp_up/Anim_lvl_up")
 onready var btn_pausa = get_node("Control/Btn_pausa")
 
-# VARIABLES -----------------------------------------------
+# -------------------------------------------------------------------------------------
+# ----------------------------------- VARIABLES ---------------------------------------
+# -------------------------------------------------------------------------------------
+
 var motion = Vector2()
 var vel_walk = 20000
-var vel_run = 35000
+var vel_run = 1.75 * vel_walk
 var SPEED = 0
 var puntos = 0
 var vida_max = 100
@@ -26,11 +32,20 @@ var paused = null
 var menu_pausa
 var subiendo_nivel = false
 
-# SIGNALS ------------------------------------------------
+# -------------------------------------------------------------------------------------
+# ------------------------------------ SIGNALS ----------------------------------------
+# -------------------------------------------------------------------------------------
+
 signal player_defeated
 
-# FUNCIONES ----------------------------------------------
+# -------------------------------------------------------------------------------------
+# ----------------------------------- FUNCIONES ---------------------------------------
+# -------------------------------------------------------------------------------------
+
 func _ready():
+	var skin = load(Engine.get_meta("ruta_skin"))
+	print(Engine.get_meta("ruta_skin"))
+	$Jugador_Sprite.set_texture(skin)
 	$AnimationPlayer_body.play("idle")
 	spriteLvlUp.visible = false
 	barra_exp.max_value = experiencia_necesaria
@@ -39,45 +54,22 @@ func _ready():
 	label_vida.text = " " + str(vida) + "/"+ str(vida_max)
 	self.z_index = get_parent().get_child_count() + 1
 
-func _process(delta):
-	_movimiento(delta)
-	
+func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
-		pausa()
-		
+		pausa()		
 	puntaje.text = " Score: "+str(self.puntos)
 	barra_vida.value = self.vida
 	actualiza_barras()
-	
-func actualiza_barras():
-	label_vida.text = " " + str(vida) + "/"+ str(vida_max)
-	barra_vida.value = vida
-	barra_vida.max_value = vida_max
-	barra_exp.value = experiencia
-	
-func gana_exp(value):
-	experiencia += value
-	actualiza_barras()
-	if experiencia_necesaria <= experiencia:
-		nivel += 1
-		experiencia = 0
-		puntos += nivel * 25
-		experiencia_necesaria = experiencia_necesaria * round(pow(1.3,nivel))
-		barra_exp.max_value = experiencia_necesaria
-		label_nivel.text = "Lvl: " + str(nivel)
-		spriteLvlUp.visible = true
-		animLvlUp.play("LVL_UP")
-		subiendo_nivel = true
-		vida_max += 5
-		vida += round(vida_max * 0.1)
-		if vida > vida_max: vida= vida_max
-		actualiza_barras()
 
 func aumenta_Area_recoleccion(value):
 	$area_recoleccion.scale.x += value
 	$area_recoleccion.scale.y += value
-	
-func _movimiento(delta):
+
+# -------------------------------------------------------------------------------------
+# ---------------------------------- MOVIMIENTO ---------------------------------------
+# -------------------------------------------------------------------------------------
+
+func _physics_process(delta):
 	motion = Vector2(0,0)
 	if Input.is_action_pressed("ui_right"):
 		motion.x = 100
@@ -98,23 +90,103 @@ func _movimiento(delta):
 	if Input.is_action_pressed("run"): SPEED = vel_run
 	else: SPEED = vel_walk
 	motion = move_and_slide(motion*delta*SPEED)
+	
+	var slide_count = get_slide_count()
+	if slide_count > 0:
+		for i in range (slide_count):
+			motion = get_slide_collision(i)
+			var collider = motion.collider
+			if collider.is_in_group("Wall"):
+				motion = move_and_slide(delta * -SPEED)
 
-func suma_puntos(cantidad):
-	puntos += cantidad
+# -------------------------------------------------------------------------------------
+# ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
+# -------------------------------------------------------------------------------------
+
+func get_vida_max():
+	return vida_max
+	
+func set_vida_max(value):
+	vida_max = value
+	
+func incremento_vida(porcentaje):
+	vida_max = vida_max * porcentaje
+	
+func get_velocidad():
+	return vel_walk
+
+func set_velocidad(value):
+	vel_walk = value
+	
+func incremento_velocidad(porcentaje):
+	vel_walk = vel_walk * porcentaje
+
+func get_damage_Arma():
+	return arma.get_damage_Arma()
+
+func set_damage_Arma(value):
+	arma.set_damage_Arma(value)
+
+func incremento_damage(porcentaje):
+	arma.incremento_damage(porcentaje)
+
+func get_cadencia_disparo():
+	return arma.get_cadencia_disparo()
+
+func set_cadencia_disparo(value):
+	arma.set_cadencia_disparo(value)
+
+func incremento_cadencia(porcentaje):
+	arma.incremento_cadencia(porcentaje)
 
 func recibe_ataque(danio):
 	vida-=danio
 	if vida<=0:
-		
 		Engine.set_meta("Puntaje",puntos)
 		emit_signal("player_defeated")
 	
 func recupera_vida(cant):
 	if (vida+cant) <= vida_max: vida+=cant
-		
+
+# -------------------------------------------------------------------------------------
+# ------------------------------- LVL UP y PUNTAJE ------------------------------------
+# -------------------------------------------------------------------------------------
+
+func actualiza_barras():
+	label_vida.text = " " + str(vida) + "/"+ str(vida_max)
+	barra_vida.value = vida
+	barra_vida.max_value = vida_max
+	barra_exp.value = experiencia
+
+func gana_puntos(cantidad):
+	puntos += cantidad
+
+func gana_exp(value):
+	experiencia += value
+	gana_puntos(nivel)
+	actualiza_barras()
+	if experiencia_necesaria <= experiencia:
+		nivel += 1
+		experiencia = 0
+		puntos += nivel * 25
+		experiencia_necesaria = experiencia_necesaria * round(pow(1.3,nivel))
+		barra_exp.max_value = experiencia_necesaria
+		label_nivel.text = "Lvl: " + str(nivel)
+		spriteLvlUp.visible = true
+		animLvlUp.play("LVL_UP")
+		subiendo_nivel = true
+		vida_max += 5
+		vida += round(vida_max * 0.1)
+		if vida > vida_max: vida= vida_max
+		actualiza_barras()
+
 func _on_Anim_lvl_up_animation_finished(_anim_name):
 	subiendo_nivel = false
 	spriteLvlUp.visible =false
+
+# -------------------------------------------------------------------------------------
+# ------------------------------ MANEJO DE LA PAUSA -----------------------------------
+# -------------------------------------------------------------------------------------
 
 func pausa():
 	if paused == null:
