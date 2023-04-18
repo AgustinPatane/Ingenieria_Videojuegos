@@ -1,6 +1,6 @@
 extends Control
 
-var monedas = 1000
+var monedas
 var skins_disponibles = Array()
 var skins_compradas = Array()
 var skin_equipada
@@ -13,9 +13,14 @@ onready var valor = get_node("skins_jugador/valor")
 onready var botones_skins_jugador = get_node("skins_jugador")
 
 
+
+const SAVE_PATH = "res://Saves/tienda.sav"
+
+
 func _ready():
-	#monedas = jugador.puntos
-	
+	monedas = Engine.get_meta("monedas")
+	if monedas == null:
+		monedas = 1300
 	label_monedas.text = str(monedas)
 	print(monedas)
 	var boton = botones_skins_jugador.get_node(skin_seleccionada)
@@ -34,6 +39,7 @@ func _on_comprar_pressed():
 			var boton = botones_skins_jugador.get_node(skin_seleccionada)	
 			boton.texture_normal = boton.texture_pressed
 			print(skins_compradas)
+			guardar_monedas()
 	else:
 		pass #mostrar monedas insuficientes
 
@@ -56,13 +62,14 @@ func _on_skin_rambo_pressed():
 func _on_volver_a_menu_pressed():
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Menu.tscn")
 
-
 func _on_equipar_pressed():
 	if skins_compradas.has(skin_seleccionada):
 		var ruta = "res://producto/assets/img/jugador/skins/" + skin_seleccionada
-		Engine.remove_meta("ruta_skin")
 		Engine.set_meta("ruta_skin",ruta)
-		#llamar al metodo que cambia la skin en el jugador
-		#sprite = load("res://producto/assets/img/tienda/seleccionados/rambo_buy.png")
-		pass
 	pass
+
+func guardar_monedas():
+	var file = File.new()
+	file.open(SAVE_PATH, File.WRITE)
+	file.store_line(str(monedas))
+	file.close()
