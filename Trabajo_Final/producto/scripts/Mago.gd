@@ -14,13 +14,11 @@ func _dispara():
 	disparo.rotation_degrees = rotation_degrees
 	disparo.set_damage(20)
 	disparo.set_rango(4)
-	get_tree().get_root().add_child(disparo)
+	get_node("/root/Mapa").add_child(disparo)
 	tiempo_ultimo_disparo = OS.get_ticks_msec() / 1000.0
 
 func _ready():
 	self.speed=50
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

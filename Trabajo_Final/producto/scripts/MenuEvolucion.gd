@@ -13,25 +13,28 @@ var evolucion_1 = {
 	"vida": 0.75,
 	"velocidad": 1.2,
 	"damage": 0.75,
-	"rango": 0.75
+	"rango": 0.75,
+	"arma": "ak-47"
 }
 
 var evolucion_1_1 = {
-	"nombre": "cadencia/cadencia",
+	"nombre": "cadencia_cadencia",
 	"cadencia": 2,
 	"vida": 1,
 	"velocidad": 1,
 	"damage": 0.75,
-	"rango": 1
+	"rango": 1,
+	"arma": "ametralladora"
 }
 
 var evolucion_1_2 = {
-	"nombre": "cadencia/velocidad",
+	"nombre": "cadencia_velocidad",
 	"cadencia": 1.5,
 	"vida": 0.75,
 	"velocidad": 1.2,
 	"damage": 1,
-	"rango": 0.75
+	"rango": 0.75,
+	"arma": "ak-47"
 }
 
 var evolucion_2 = {
@@ -40,25 +43,28 @@ var evolucion_2 = {
 	"vida": 1.5,
 	"velocidad": 0.75,
 	"damage": 1.5,
-	"rango": 1.5
+	"rango": 1.5,
+	"arma": "rifle"
 }
 
 var evolucion_2_1 = {
-	"nombre": "damage/proyectiles",
+	"nombre": "damage_proyectiles",
 	"cadencia": 1,
 	"vida": 1.5,
 	"velocidad": 1,
 	"damage": 1.5,
-	"rango": 0.75
+	"rango": 0.75,
+	"arma": "escopeta"
 }
 
 var evolucion_2_2 = {
-	"nombre": "damage/rango",
+	"nombre": "damage_rango",
 	"cadencia": 0.75,
 	"vida": 1.5,
 	"velocidad": 0.75,
 	"damage": 2,
-	"rango": 2
+	"rango": 2,
+	"arma": "francotirador"
 }
 
 # Called when the node enters the scene tree for the first time.

@@ -227,15 +227,17 @@ func _on_Anim_lvl_up_animation_finished(_anim_name):
 # ---------------------------------- EVOLUCION ----------------------------------------
 # -------------------------------------------------------------------------------------
 
+func _adquiere_habilidad():
+	pass
+
 func _evolucion():
 	var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
 	self.add_child(evol_instance)
 	var menu_evol = get_node("MenuEvolucion")
 	menu_evol.set_botones(evolucion_actual)
 	menu_evol.raise()
-	menu_evol.rect_position = Vector2(0,0) - Vector2(OS.get_window_size().x/2,OS.get_window_size().y/2)
+	menu_evol.rect_position = Vector2($Control/pos_pausa.position.x/2,$Control/pos_pausa.position.y/2)
 	menu_evol.rect_size = Vector2(2048,1200)
-	#menu_evol.connect("evolucionar",self, "on_evol_quit")
 	$Jugador_Sprite.hide()
 	arma.get_node("Arma_Sprite").hide()
 	get_tree().paused = true
@@ -257,23 +259,29 @@ func actualiza_atributos(atributos, evol):
 	incremento_cadencia(atributos.cadencia)
 	incremento_velocidad(atributos.velocidad)
 	incremento_rango(atributos.rango)
-	
 	#aca pondriamos las caracteristicas especiales de la evol
-	if "damage/rango" == atributos.nombre:
-		arma.set_cant_atraviesa(3)
-		arma.incrementa_velocidad_proyectil(2)
-		arma.cambia_skin("francotirador")
-		
-	elif "damage/proyectiles" == atributos.nombre:
-		arma.mas_proyectiles(3)
-		arma.set_dispersion_angular(30)
-		arma.cambia_skin("escopeta")
+	call(atributos.nombre)	
+	arma.cambia_skin(atributos.arma)
 
-	elif "cadencia/velocidad" in atributos.nombre:
-		puede_correr = true
-
-func _adquiere_habilidad():
+func damage():
 	pass
+
+func cadencia():
+	pass
+
+func damage_rango():
+	arma.set_cant_atraviesa(3)
+	arma.incrementa_velocidad_proyectil(2)
+	
+func damage_proyectiles():
+	arma.mas_proyectiles(3)
+	arma.set_dispersion_angular(30)
+	
+func cadencia_velocidad():
+	puede_correr = true
+	
+func cadencia_cadencia():
+	arma.set_dispersion_angular(5)
 	
 # -------------------------------------------------------------------------------------
 # ------------------------------ MANEJO DE LA PAUSA -----------------------------------

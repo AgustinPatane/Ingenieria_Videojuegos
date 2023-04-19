@@ -9,9 +9,6 @@ font_data = ExtResource( 6 )
 
 [node name="MenuEvolucion" type="Control"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -37.0
