@@ -33,6 +33,12 @@ var menu_pausa
 var subiendo_nivel = false
 
 # -------------------------------------------------------------------------------------
+# ------------------------------------ CONSTANTES ----------------------------------------
+# -------------------------------------------------------------------------------------
+
+const SAVE_PATH = "res://Saves/tienda.sav"
+
+# -------------------------------------------------------------------------------------
 # ------------------------------------ SIGNALS ----------------------------------------
 # -------------------------------------------------------------------------------------
 
@@ -146,6 +152,7 @@ func recibe_ataque(danio):
 	if vida<=0:
 		Engine.set_meta("Puntaje",puntos)
 		emit_signal("player_defeated")
+		guardar_monedas()
 	
 func recupera_vida(cant):
 	if (vida+cant) <= vida_max: vida+=cant
@@ -217,5 +224,12 @@ func on_paused_quit():
 		$Lvp_up.show()
 	arma.get_node("Arma_Sprite").show()
 	paused = null
-	
-	
+
+func guardar_monedas():
+	var monedas = Engine.get_meta("monedas")
+	monedas += puntos
+	Engine.set_meta("monedas",monedas)
+	var file = File.new()
+	file.open(SAVE_PATH, File.WRITE)
+	file.store_line(str(monedas))
+	file.close()

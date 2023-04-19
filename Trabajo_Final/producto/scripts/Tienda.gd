@@ -12,10 +12,7 @@ onready var label_monedas = get_node("Monedas")
 onready var valor = get_node("skins_jugador/valor")
 onready var botones_skins_jugador = get_node("skins_jugador")
 
-
-
 const SAVE_PATH = "res://Saves/tienda.sav"
-
 
 func _ready():
 	monedas = Engine.get_meta("monedas")
