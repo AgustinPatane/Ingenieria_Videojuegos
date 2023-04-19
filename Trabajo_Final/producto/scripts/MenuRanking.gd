@@ -66,7 +66,7 @@ func load_game():
 		genera_saves_vacio()
 	save_game.open(SAVE_PATH, File.READ)
 	highscores = parse_json(save_game.get_line())
-	print(highscores)
+	#print(highscores)
 	save_game.close()
 
 func get_highscore_from_saves():
