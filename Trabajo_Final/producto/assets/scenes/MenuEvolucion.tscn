@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://producto/scripts/MenuEvolucion.gd" type="Script" id=1]
+[ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 6 )
+
+[node name="MenuEvolucion" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -37.0
+margin_top = -17.0
+margin_right = 1075.0
+margin_bottom = 632.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 30.0
+margin_top = 25.0
+margin_right = 997.0
+margin_bottom = 564.0
+color = Color( 0.0588235, 0.113725, 0.533333, 1 )
+
+[node name="Opcion_1" type="TextureButton" parent="."]
+pause_mode = 2
+margin_left = 213.0
+margin_top = 109.0
+margin_right = 491.0
+margin_bottom = 376.0
+toggle_mode = true
+expand = true
+
+[node name="Opcion_2" type="TextureButton" parent="."]
+pause_mode = 2
+margin_left = 556.0
+margin_top = 109.0
+margin_right = 834.0
+margin_bottom = 376.0
+toggle_mode = true
+expand = true
+
+[node name="Seleccionar" type="Button" parent="."]
+pause_mode = 2
+margin_left = 446.0
+margin_top = 436.0
+margin_right = 613.0
+margin_bottom = 502.0
+custom_fonts/font = SubResource( 1 )
+text = "SELECCIONAR"
+
+[connection signal="button_down" from="Opcion_1" to="." method="_on_Opcion_1_button_down"]
+[connection signal="button_down" from="Opcion_2" to="." method="_on_Opcion_2_button_down"]
+[connection signal="pressed" from="Seleccionar" to="." method="_on_Seleccionar_pressed"]

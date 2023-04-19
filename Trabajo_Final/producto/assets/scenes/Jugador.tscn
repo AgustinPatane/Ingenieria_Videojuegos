@@ -2,7 +2,7 @@
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
-[ext_resource path="res://producto/assets/img/jugador/skins/Yellow/arma_1.png" type="Texture" id=3]
+[ext_resource path="res://producto/assets/img/jugador/skins/Yellow/ak-47.png" type="Texture" id=3]
 [ext_resource path="res://producto/scripts/Arma.gd" type="Script" id=4]
 [ext_resource path="res://producto/assets/img/GUI/vida_marco.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/GUI/vida_llena.png" type="Texture" id=7]
@@ -125,7 +125,6 @@ shape = SubResource( 1 )
 
 [node name="Jugador_Sprite" type="Sprite" parent="."]
 position = Vector2( 3, -0.125 )
-scale = Vector2( 1.75, 1.75 )
 z_index = 1
 texture = ExtResource( 2 )
 hframes = 6
@@ -139,7 +138,6 @@ anims/idle = SubResource( 10 )
 anims/move = SubResource( 11 )
 
 [node name="Position2D" type="Position2D" parent="."]
-visible = false
 position = Vector2( -10, 0 )
 scale = Vector2( 0.5, 0.5 )
 
@@ -149,13 +147,12 @@ z_index = 1
 script = ExtResource( 4 )
 
 [node name="Arma_Sprite" type="Sprite" parent="Arma"]
-position = Vector2( 32, -2 )
+position = Vector2( 36, -2 )
 scale = Vector2( 3.5, 3.5 )
 texture = ExtResource( 3 )
 
 [node name="Position_arma" type="Position2D" parent="Arma"]
-visible = false
-position = Vector2( 74, -2 )
+position = Vector2( 76, -2 )
 scale = Vector2( 2, 2 )
 
 [node name="disparo" type="AudioStreamPlayer" parent="Arma"]
@@ -233,7 +230,6 @@ expand = true
 position = Vector2( -1040, -620 )
 
 [node name="Lvp_up" type="Sprite" parent="."]
-visible = false
 position = Vector2( -5.99998, -14 )
 scale = Vector2( 2.09375, 2.39583 )
 z_index = 2

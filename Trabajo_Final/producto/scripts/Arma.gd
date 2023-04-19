@@ -1,10 +1,14 @@
 extends Node2D
 
 var mouse_position
-var cadencia_disparo = 0.05 #es en segundos
+var cadencia_disparo = 0.4 #es en segundos
 var tiempo_ultimo_disparo = 0.0
 var damage_Arma = 10.0
-var rango = 0.4 #tiempo de vida del disparo
+var rango = 0.5 #tiempo de vida del disparo
+var velocidad_proyectil = 800
+var cant_atraviesa = 1
+var cant_proyectiles = 1
+var dispersion_angular = 0
 
 onready var escena_proyectil = preload("res://producto/assets/scenes/Proyectil.tscn")
 
@@ -16,14 +20,18 @@ func _ready():
 # -------------------------------------------------------------------------------------
 
 func _dispara():
-	var disparo = escena_proyectil.instance()
 	#$disparo.play()
-	disparo.direction = mouse_position - $Position_arma.global_position
-	disparo.global_position = $Position_arma.global_position
-	disparo.rotation_degrees = rotation_degrees
-	disparo.set_damage(damage_Arma)
-	disparo.set_rango(rango)
-	get_tree().get_root().add_child(disparo)
+	for _i in range(cant_proyectiles):
+		var dispersion = rand_range(-dispersion_angular, dispersion_angular)
+		var disparo = escena_proyectil.instance()
+		var direccion = mouse_position - $Position_arma.global_position
+		disparo.direction = direccion.rotated(dispersion * 3.141592 / 180)
+		disparo.global_position = $Position_arma.global_position
+		disparo.rotation_degrees = rotation_degrees + dispersion
+		disparo.set_damage(damage_Arma)
+		disparo.set_rango(rango)
+		disparo.set_atraviesa(cant_atraviesa)
+		get_tree().get_root().add_child(disparo)
 	tiempo_ultimo_disparo = OS.get_ticks_msec() / 1000.0
 	
 func _process(_delta):
@@ -56,6 +64,12 @@ func _mira_mouse(object):
 # ------------------------------ MANEJO ATRIBUTOS ARMA --------------------------------
 # -------------------------------------------------------------------------------------
 
+func mas_proyectiles(value):
+	cant_proyectiles += value
+
+func set_dispersion_angular(value):
+	dispersion_angular = value
+
 func get_rango():
 	return rango
 	
@@ -81,5 +95,11 @@ func set_cadencia_disparo(value):
 	cadencia_disparo = value
 
 func incremento_cadencia(porcentaje):
-	cadencia_disparo = cadencia_disparo * porcentaje
+	cadencia_disparo = cadencia_disparo / porcentaje
+
+func incrementa_velocidad_proyectil(porcentaje):
+	velocidad_proyectil = velocidad_proyectil * porcentaje
+
+func set_cant_atraviesa(value):
+	cant_atraviesa = value
 

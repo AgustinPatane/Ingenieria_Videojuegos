@@ -11,12 +11,7 @@ onready var escena_demonio = preload("res://producto/assets/scenes/Demonio.tscn"
 onready var escena_item = preload("res://producto/assets/scenes/Item.tscn")
 var jugador
 
-
-
-
-
 signal spawn_enemy
-
 
 func _ready():
 	jugador = get_node("Jugador")
@@ -32,8 +27,6 @@ func _ready():
 	get_node("/root/Mapa").add_child(escena_demonio.instance())
 	emit_signal("spawn_enemy")
 	
-	
-	
 func spawn_enemigo(tipo_enemigo: String):
 	if cant_enemigos < max_enemigos:
 		cant_enemigos += 1
@@ -42,7 +35,6 @@ func spawn_enemigo(tipo_enemigo: String):
 		enemigo. position = posicion_aleatoria()
 		get_node("/root/Mapa").add_child(enemigo)
 		
-
 func spawn_timer(tipo_enemigo: String, tiempo: int):
 	var timer_enemigos = Timer.new()
 	self.add_child(timer_enemigos)
@@ -50,16 +42,10 @@ func spawn_timer(tipo_enemigo: String, tiempo: int):
 	timer_enemigos.connect("timeout", self, "spawn_enemigo",[tipo_enemigo])
 	timer_enemigos.start()
 
-
-
 func spawn_item_vida():
 	var item = escena_item.instance()
 	item.position = posicion_aleatoria()
 	get_node("/root/Mapa").add_child(item)
-
-
-
-
 
 func posicion_aleatoria() -> Vector2:
 	var result
@@ -73,9 +59,6 @@ func posicion_aleatoria() -> Vector2:
 		posx += 20 * result 
 		posy += 20 * result
 	return Vector2(posx,posy)
-	
-	
-
 
 #le pasas una instancia de una escena y la posiciona dentro de los limites del mapa
 func spawn(instancia):
