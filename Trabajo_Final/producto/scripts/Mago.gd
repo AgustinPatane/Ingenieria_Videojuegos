@@ -17,14 +17,7 @@ func _dispara():
 	get_tree().get_root().add_child(disparo)
 	tiempo_ultimo_disparo = OS.get_ticks_msec() / 1000.0
 
-
-func spawnear() -> void:
-	mapa.spawn_timer("Mago",10)
-
-
-
 func _ready():
-	mapa.connect("spawn_enemy", self, "spawnear")
 	self.speed=50
 
 

@@ -1,17 +1,16 @@
 extends Node2D
 
-
-export(int) var tiempo_spawn_enemigo = 2
+export(int) var tiempo_spawn_enemigo = 4
 export(int) var tiempo_spawn_curita = 1
+
+export(int) var tiempo_spawn_Demonio = tiempo_spawn_enemigo / 4
+export(int) var tiempo_spawn_Mago = tiempo_spawn_enemigo
+
 var max_enemigos = 30
 var cant_enemigos = 0
-onready var escena_enemigo = preload("res://producto/assets/scenes/Enemigo.tscn")
-onready var escena_mago = preload("res://producto/assets/scenes/Mago.tscn")
-onready var escena_demonio = preload("res://producto/assets/scenes/Demonio.tscn")
+
 onready var escena_item = preload("res://producto/assets/scenes/Item.tscn")
 var jugador
-
-signal spawn_enemy
 
 func _ready():
 	jugador = get_node("Jugador")
@@ -22,17 +21,24 @@ func _ready():
 	timer_objetos.connect("timeout", self, "spawn_item_vida")
 	timer_objetos.start()
 
-	#Lo ideal seria que se emita la señal, y luego mediante algun tiempo se decida cuando se genera el enemigo. De esta forma arrancan de una dos enemigos.
-	get_node("/root/Mapa").add_child(escena_mago.instance())
-	get_node("/root/Mapa").add_child(escena_demonio.instance())
-	emit_signal("spawn_enemy")
+	#Lo ideal seria que se emita la señal, y luego mediante algun tiempo se decida 
+	#cuando se genera el enemigo. De esta forma arrancan de una dos enemigos.
+	start_spawn_enemigo("Mago")
+	start_spawn_enemigo("Demonio")
+
+func start_spawn_enemigo(tipo_enemigo: String):
+	var timer_enemigo = Timer.new()
+	timer_enemigo.wait_time = self["tiempo_spawn_"+tipo_enemigo]
+	timer_enemigo.connect("timeout", self, "spawn_enemigo",[tipo_enemigo])
+	get_node("/root/Mapa").add_child(timer_enemigo)
+	timer_enemigo.start()
 	
 func spawn_enemigo(tipo_enemigo: String):
 	if cant_enemigos < max_enemigos:
 		cant_enemigos += 1
 		var enemigo_scene = load("res://producto/assets/scenes/" + tipo_enemigo + ".tscn")
 		var enemigo = enemigo_scene.instance()
-		enemigo. position = posicion_aleatoria()
+		enemigo.position = posicion_aleatoria()
 		get_node("/root/Mapa").add_child(enemigo)
 		
 func spawn_timer(tipo_enemigo: String, tiempo: int):
@@ -59,21 +65,6 @@ func posicion_aleatoria() -> Vector2:
 		posx += 20 * result 
 		posy += 20 * result
 	return Vector2(posx,posy)
-
-#le pasas una instancia de una escena y la posiciona dentro de los limites del mapa
-func spawn(instancia):
-	var result
-	if rand_range(0, 1)<=0.5:
-		result=1
-	else:
-		result=-1	
-	var posx = rand_range(-567,1651)
-	var posy = rand_range(-411,980)
-	if abs(posx) - abs(jugador.position.x) < 20 and abs(posy) - abs(jugador.position.y) < 20:
-		posx += 20 * result 
-		posy += 20 * result
-	instancia.position = Vector2(posx,posy)
-	get_node("/root/Mapa").add_child(instancia)
 	
 func _process(_delta):
 	pass

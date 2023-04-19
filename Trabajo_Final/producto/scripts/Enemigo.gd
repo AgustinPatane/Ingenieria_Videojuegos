@@ -10,7 +10,6 @@ var experiencia = 1
 var flag_tocando_player = false
 
 
-
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
 onready var mapa = get_node("/root/Mapa")
 
@@ -21,10 +20,8 @@ func recibe_damage(damage):
 
 func muere():
 	#$death.play()
-
 	mapa = get_node("/root/Mapa")
 	mapa.cant_enemigos=mapa.cant_enemigos-1
-
 	$AnimationPlayer.play("die")
 	jugador.gana_puntos(puntos_muerte)
 	get_node("CollisionShape2D").queue_free()

@@ -99,7 +99,6 @@ anims/die = SubResource( 4 )
 anims/move = SubResource( 5 )
 
 [node name="Area_ataque" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_ataque"]
 position = Vector2( -26.3636, -10 )

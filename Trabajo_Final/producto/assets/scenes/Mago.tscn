@@ -16,11 +16,9 @@ vframes = 1
 frame = 0
 
 [node name="CollisionShape2D" parent="." index="1"]
-visible = false
 z_index = 1
 
 [node name="CollisionShape2D" parent="Area_ataque" index="0"]
-visible = false
 position = Vector2( 160.909, -7.27273 )
 
 [node name="Position_arma" type="Position2D" parent="." index="6"]
