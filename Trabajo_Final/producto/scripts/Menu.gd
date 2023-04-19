@@ -9,11 +9,17 @@ var prev_volumen = -20
 var ranking = null
 var menu_ranking
 
+var registro_tienda = {
+	"nombre":"",
+	"valor":0
+}
+var lista_registro_tienda = Array()
+var skins_compradas = Array()
+
 const SAVE_PATH = "res://Saves/tienda.sav"
 
 func _ready():
-	if !Engine.has_meta("ruta_skin"):
-		Engine.set_meta("ruta_skin","res://producto/assets/img/jugador/skins/Yellow")
+	load_tienda()
 	musica.play()
 	slider.max_value = 5
 	slider.min_value = -50
@@ -21,7 +27,6 @@ func _ready():
 	OS.set_window_position(Vector2(255,110))
 	#OS.set_fullscreen(true)
 	#OS.set_window_maximized(true)
-	load_tienda()
 
 func _on_Jugar_pressed():
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Mapa.tscn")
@@ -71,8 +76,15 @@ func _on_Tienda_pressed():
 
 func load_tienda():
 	var file = File.new()
-	if file.file_exists(SAVE_PATH):		
-		file.open(SAVE_PATH, File.READ)
-		var monedas_tienda = file.get_as_text()
-		Engine.set_meta("monedas",int(monedas_tienda))
-		file.close()
+	if file.file_exists(SAVE_PATH):
+		file.open(SAVE_PATH,File.READ)
+		var skins_cargados = parse_json(file.get_line())
+		Engine.set_meta("ruta_skin","res://producto/assets/img/jugador/skins/"+skins_cargados[0].nombre)
+		Engine.set_meta("skin_equipado",skins_cargados[0].nombre)
+		Engine.set_meta("monedas",skins_cargados[0].valor)
+		for i in range(1,len(skins_cargados)):
+			if skins_cargados[i].valor == 1:
+				skins_compradas.append(skins_cargados[i])#agrega los skins comprados
+	else:
+		pass
+	file.close()

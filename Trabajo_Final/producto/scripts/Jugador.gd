@@ -312,6 +312,10 @@ func guardar_monedas():
 	monedas += puntos
 	Engine.set_meta("monedas",monedas)
 	var file = File.new()
+	file.open(SAVE_PATH,File.READ)
+	var skins_cargados = parse_json(file.get_line())
+	skins_cargados[0].valor = Engine.get_meta("monedas")
+	file.close()
 	file.open(SAVE_PATH, File.WRITE)
-	file.store_line(str(monedas))
+	file.store_line(to_json(skins_cargados))
 	file.close()
