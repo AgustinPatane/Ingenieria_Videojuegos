@@ -64,6 +64,11 @@ func _mira_mouse(object):
 # ------------------------------ MANEJO ATRIBUTOS ARMA --------------------------------
 # -------------------------------------------------------------------------------------
 
+func cambia_skin(skin):
+	var ruta = Engine.get_meta("ruta_skin")
+	var skin_arma = load(ruta + "/" + skin + ".png")
+	$Arma_Sprite.set_texture(skin_arma)
+
 func mas_proyectiles(value):
 	cant_proyectiles += value
 

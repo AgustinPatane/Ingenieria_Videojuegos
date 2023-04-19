@@ -259,13 +259,15 @@ func actualiza_atributos(atributos, evol):
 	incremento_rango(atributos.rango)
 	
 	#aca pondriamos las caracteristicas especiales de la evol
-	if "damage/rango" in atributos.nombre:
+	if "damage/rango" == atributos.nombre:
 		arma.set_cant_atraviesa(3)
 		arma.incrementa_velocidad_proyectil(2)
+		arma.cambia_skin("francotirador")
 		
-	elif "damage/proyectiles" in atributos.nombre:
+	elif "damage/proyectiles" == atributos.nombre:
 		arma.mas_proyectiles(3)
 		arma.set_dispersion_angular(30)
+		arma.cambia_skin("escopeta")
 
 	elif "cadencia/velocidad" in atributos.nombre:
 		puede_correr = true
