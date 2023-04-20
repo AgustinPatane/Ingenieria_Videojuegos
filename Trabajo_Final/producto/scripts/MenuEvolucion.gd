@@ -9,7 +9,7 @@ var seleccionado
 
 var evolucion_1 = {
 	"nombre": "cadencia",
-	"cadencia": 1.5,
+	"cadencia": 2,
 	"vida": 0.75,
 	"velocidad": 1.2,
 	"damage": 0.75,

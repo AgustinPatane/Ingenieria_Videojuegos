@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://producto/assets/scenes/Enemigo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://producto/scripts/Demonio.gd" type="Script" id=2]
+[ext_resource path="res://producto/assets/img/enemigos/demonio/demonio.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 75.8042
@@ -9,8 +10,13 @@ radius = 75.8042
 [node name="Demonio" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+frame = 11
+
 [node name="CollisionShape2D" parent="." index="1"]
+visible = false
 shape = SubResource( 1 )
 
 [node name="Area_ataque" parent="." index="3"]
-visible = true
+visible = false

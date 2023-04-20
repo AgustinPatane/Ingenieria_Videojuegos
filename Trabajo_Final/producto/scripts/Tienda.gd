@@ -67,7 +67,7 @@ func guardar_tienda():
 	var file = File.new()
 	
 	file.open(SAVE_PATH,File.READ)
-	var skins_cargados2 = parse_json(file.get_line())
+	var _skins_cargados2 = parse_json(file.get_line())
 
 	skins_cargados[0].nombre = Engine.get_meta("skin_equipado")
 	skins_cargados[0].valor = Engine.get_meta("monedas")

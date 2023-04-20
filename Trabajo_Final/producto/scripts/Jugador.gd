@@ -51,6 +51,7 @@ const SAVE_PATH = "res://Saves/tienda.sav"
 # -------------------------------------------------------------------------------------
 
 signal player_defeated
+signal level_up
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- FUNCIONES ---------------------------------------
@@ -198,7 +199,7 @@ func gana_exp(value):
 	actualiza_barras()
 	if experiencia_necesaria <= experiencia:
 		nivel += 1
-		
+		emit_signal("level_up")
 		if nivel == niveles_evol[0] or nivel == niveles_evol[1] or nivel == niveles_evol[2]:
 			_evolucion()
 		else:

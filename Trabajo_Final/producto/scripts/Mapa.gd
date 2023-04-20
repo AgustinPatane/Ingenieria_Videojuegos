@@ -8,12 +8,14 @@ export(int) var tiempo_spawn_Mago = tiempo_spawn_enemigo
 
 var max_enemigos = 30
 var cant_enemigos = 0
+var timers_enemigos = []
 
 onready var escena_item = preload("res://producto/assets/scenes/Item.tscn")
 var jugador
 
 func _ready():
 	jugador = get_node("Jugador")
+	jugador.connect("level_up",self,"actualiza_tiempos_enemigos")
 	randomize()
 	var timer_objetos = Timer.new()
 	self.add_child(timer_objetos)
@@ -27,12 +29,18 @@ func _ready():
 	start_spawn_enemigo("Demonio")
 
 func start_spawn_enemigo(tipo_enemigo: String):
-	var timer_enemigo = Timer.new()
-	timer_enemigo.wait_time = self["tiempo_spawn_"+tipo_enemigo]
-	timer_enemigo.connect("timeout", self, "spawn_enemigo",[tipo_enemigo])
-	get_node("/root/Mapa").add_child(timer_enemigo)
-	timer_enemigo.start()
-	
+	var timer = Timer.new()
+	timer.wait_time = self["tiempo_spawn_"+tipo_enemigo]
+	timer.connect("timeout", self, "spawn_enemigo",[tipo_enemigo])
+	get_node("/root/Mapa").add_child(timer)
+	timer.start()
+	timers_enemigos.append(timer)
+
+func actualiza_tiempos_enemigos():
+	print("menem")
+	for i in range(0,len(timers_enemigos)):
+		timers_enemigos[i].wait_time *= 0.9
+
 func spawn_enemigo(tipo_enemigo: String):
 	if cant_enemigos < max_enemigos:
 		cant_enemigos += 1
