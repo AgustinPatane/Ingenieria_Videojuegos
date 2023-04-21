@@ -43,11 +43,9 @@ func _process(delta):
 		position += dir * speed * delta
 
 func _on_Enemigo_area_entered(area):
-	if "Proyectil" in area.name:
+	if area.is_in_group("Proyectil"):
 		recibe_damage(area.get_damage())
-		#$damage.play()
 		area.choca()
-		#jugador.suma_puntos(puntos)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "die":

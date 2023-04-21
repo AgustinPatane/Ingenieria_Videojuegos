@@ -64,6 +64,9 @@ func _mira_mouse(object):
 # ------------------------------ MANEJO ATRIBUTOS ARMA --------------------------------
 # -------------------------------------------------------------------------------------
 
+func cambia_proeyctil(nombre):
+	escena_proyectil = load("res://producto/assets/scenes/" + nombre +".tscn")
+
 func cambia_skin(skin):
 	var ruta = Engine.get_meta("ruta_skin")
 	var skin_arma = load(ruta + "/" + skin + ".png")

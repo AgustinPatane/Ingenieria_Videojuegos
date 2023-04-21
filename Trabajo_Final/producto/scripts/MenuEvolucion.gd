@@ -67,6 +67,26 @@ var evolucion_2_2 = {
 	"arma": "francotirador"
 }
 
+var evolucion_2_2_1 = {
+	"nombre": "damage_rango_rango",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1.5,
+	"rango": 1,
+	"arma": "francotirador"
+}
+
+var evolucion_2_2_2 = {
+	"nombre": "damage_rango_explosivo",
+	"cadencia": 0.5,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 2,
+	"rango": 1,
+	"arma": "bazooka"
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#btn_seleccionar.set_disabled(true)

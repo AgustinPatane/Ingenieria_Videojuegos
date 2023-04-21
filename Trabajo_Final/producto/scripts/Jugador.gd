@@ -28,7 +28,7 @@ var experiencia_necesaria = 5
 var paused = null
 var menu_pausa
 var subiendo_nivel = false
-var niveles_evol = [2,3,20]
+var niveles_evol = [2,3,4]
 var puede_correr = false
 
 # -------------------------------------------------------------------------------------
@@ -283,6 +283,13 @@ func cadencia_velocidad():
 	
 func cadencia_cadencia():
 	arma.set_dispersion_angular(5)
+	
+func damage_rango_rango():
+	arma.set_cant_atraviesa(5)
+	arma.incrementa_velocidad_proyectil(2)
+	
+func damage_rango_explosivo():
+	arma.cambia_proeyctil("Cohete")
 	
 # -------------------------------------------------------------------------------------
 # ------------------------------ MANEJO DE LA PAUSA -----------------------------------
