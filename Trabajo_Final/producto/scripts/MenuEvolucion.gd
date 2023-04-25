@@ -74,7 +74,7 @@ var evolucion_2_1_2 = {
 	"velocidad": 1,
 	"damage": 1.5,
 	"rango": 0.75,
-	"arma": "escopeta"
+	"arma": "bobina"
 }
 
 var evolucion_2_2 = {

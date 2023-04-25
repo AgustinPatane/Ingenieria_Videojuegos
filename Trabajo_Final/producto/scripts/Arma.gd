@@ -68,6 +68,8 @@ func cambia_proeyctil(nombre):
 	escena_proyectil = load("res://producto/assets/scenes/" + nombre +".tscn")
 
 func cambia_skin(skin):
+	if skin == "bobina":
+		$Position_arma.position.x += 10
 	var ruta = Engine.get_meta("ruta_skin")
 	var skin_arma = load(ruta + "/" + skin + ".png")
 	$Arma_Sprite.set_texture(skin_arma)
