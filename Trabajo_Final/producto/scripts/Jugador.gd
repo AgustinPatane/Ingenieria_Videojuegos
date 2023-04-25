@@ -270,27 +270,37 @@ func damage():
 func cadencia():
 	pass
 
+	
+
+	
+func cadencia_velocidad():
+	puede_correr = true
+
+func cadencia_cadencia():
+	arma.set_dispersion_angular(5)
+
 func damage_rango():
 	arma.set_cant_atraviesa(3)
 	arma.incrementa_velocidad_proyectil(2)
+
+func damage_rango_rango():
+	arma.set_cant_atraviesa(5)
+	arma.incrementa_velocidad_proyectil(2)
+
+func damage_rango_explosivo():
+	arma.cambia_proeyctil("Cohete")
 	
 func damage_proyectiles():
 	arma.mas_proyectiles(3)
 	arma.set_dispersion_angular(30)
-	
-func cadencia_velocidad():
-	puede_correr = true
-	
-func cadencia_cadencia():
-	arma.set_dispersion_angular(5)
-	
-func damage_rango_rango():
-	arma.set_cant_atraviesa(5)
-	arma.incrementa_velocidad_proyectil(2)
-	
-func damage_rango_explosivo():
-	arma.cambia_proeyctil("Cohete")
-	
+
+func damage_proyectiles_proyectiles():
+	arma.mas_proyectiles(5)
+
+func damage_proyectiles_360():
+	arma.mas_proyectiles(10)
+	arma.set_dispersion_angular(360)
+
 # -------------------------------------------------------------------------------------
 # ------------------------------ MANEJO DE LA PAUSA -----------------------------------
 # -------------------------------------------------------------------------------------

@@ -57,6 +57,26 @@ var evolucion_2_1 = {
 	"arma": "escopeta"
 }
 
+var evolucion_2_1_1 = {
+	"nombre": "damage_proyectiles_proyectiles",
+	"cadencia": 1,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 1.5,
+	"rango": 0.75,
+	"arma": "escopeta"
+}
+
+var evolucion_2_1_2 = {
+	"nombre": "damage_proyectiles_360",
+	"cadencia": 1,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 1.5,
+	"rango": 0.75,
+	"arma": "escopeta"
+}
+
 var evolucion_2_2 = {
 	"nombre": "damage_rango",
 	"cadencia": 0.75,
