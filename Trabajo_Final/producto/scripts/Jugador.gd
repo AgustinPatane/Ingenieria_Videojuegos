@@ -296,6 +296,8 @@ func damage_proyectiles():
 
 func damage_proyectiles_proyectiles():
 	arma.mas_proyectiles(5)
+	arma.cambia_proeyctil("Proyectil_Rebota")
+	arma.set_cant_atraviesa(2)
 
 func damage_proyectiles_360():
 	arma.mas_proyectiles(10)
