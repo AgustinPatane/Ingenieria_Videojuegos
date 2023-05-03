@@ -4,6 +4,7 @@ const SAVE_PATH = "res://Saves/saves.sav"
 onready var musica = get_node("AudioStreamPlayer2D")
 onready var sprite = get_node("GameOver")
 
+var highserver
 var highscores = null
 var aux=0
 
@@ -70,3 +71,26 @@ func _on_Menu_pressed():
 
 func _on_Salir_pressed():
 	get_tree().quit()
+
+
+
+
+
+
+#############################PUNTAJE GLOBAL##################################
+func _get_highscore_from_server():
+	var aux = Network.getHttp("")
+	var arr = aux.split("|")
+	print(aux)
+	$Score3.text = "Mejor Puntaje\n"+arr[0]+"\n"+arr[1]+" puntos\n"
+	highserver = arr[1]
+
+func _get_highscore_from_saves():
+	Saves.load_game()
+	if Saves.player.username !="":
+		$Nombre.editable = false
+		$Score2.text = "Tu mejor Puntaje\n"+str(Saves.player.highscore)
+	else:
+		$Nombre.editable = true
+	$Nombre.text = Saves.player.username
+############################################################################
