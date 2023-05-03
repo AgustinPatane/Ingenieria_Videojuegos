@@ -5,7 +5,7 @@
 [ext_resource path="res://producto/assets/music/sounds/death.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.0909, 14.983 )
+extents = Vector2( 20.2273, 15.1094 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -74,7 +74,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 12.9069
+radius = 4.62313
 
 [node name="Enemigo" type="Area2D"]
 scale = Vector2( 1.1, 1.1 )

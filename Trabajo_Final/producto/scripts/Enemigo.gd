@@ -30,6 +30,7 @@ func muere():
 func _ready():
 	$AnimationPlayer.play("move")
 	jugador = get_node("/root/Mapa/Jugador")
+	#self.z_index = jugador.z_index + 1
 	
 func _process(delta):
 	if (vida>0):

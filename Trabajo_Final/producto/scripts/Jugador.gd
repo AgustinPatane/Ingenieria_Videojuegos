@@ -309,6 +309,7 @@ func damage_proyectiles_360():
 
 func pausa():
 	if paused == null:
+		self.z_index = z_index + 20
 		paused = load("res://producto/assets/scenes/MenuPausa.tscn").instance()
 		btn_pausa.disabled = true
 		btn_pausa.visible = false
@@ -329,6 +330,7 @@ func _on_Btn_pausa_pressed():
 	pausa()
 
 func on_paused_quit():
+	self.z_index = z_index - 20
 	$Jugador_Sprite.show()
 	if subiendo_nivel:
 		$Lvp_up.show()

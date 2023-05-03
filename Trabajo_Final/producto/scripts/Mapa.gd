@@ -4,7 +4,8 @@ export(int) var tiempo_spawn_enemigo = 4
 export(int) var tiempo_spawn_curita = 1
 
 export(int) var tiempo_spawn_Demonio = tiempo_spawn_enemigo / 4
-export(int) var tiempo_spawn_Mago = tiempo_spawn_enemigo
+export(int) var tiempo_spawn_Ojo_volador = tiempo_spawn_enemigo
+export(int) var tiempo_spawn_Gusano = tiempo_spawn_enemigo
 
 var max_enemigos = 30
 var cant_enemigos = 0
@@ -25,7 +26,8 @@ func _ready():
 
 	#Lo ideal seria que se emita la señal, y luego mediante algun tiempo se decida 
 	#cuando se genera el enemigo. De esta forma arrancan de una dos enemigos.
-	start_spawn_enemigo("Mago")
+	start_spawn_enemigo("Gusano")
+	start_spawn_enemigo("Ojo_volador")
 	start_spawn_enemigo("Demonio")
 
 func start_spawn_enemigo(tipo_enemigo: String):
@@ -37,7 +39,6 @@ func start_spawn_enemigo(tipo_enemigo: String):
 	timers_enemigos.append(timer)
 
 func actualiza_tiempos_enemigos():
-	print("menem")
 	for i in range(0,len(timers_enemigos)):
 		timers_enemigos[i].wait_time *= 0.9
 
