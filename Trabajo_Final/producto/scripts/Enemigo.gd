@@ -68,11 +68,9 @@ func _on_Area_ataque_body_exited(body):
 	if jugador and "Jugador" in body.name and  $AnimationPlayer.current_animation != "die":
 		$AnimationPlayer.play("move")
 
-
 func _on_Enemigo_body_entered(body):
 	if jugador and "Jugador" in body.name:
 		flag_tocando_player = true
-
 
 func _on_Enemigo_body_exited(body):
 	if jugador and "Jugador" in body.name:

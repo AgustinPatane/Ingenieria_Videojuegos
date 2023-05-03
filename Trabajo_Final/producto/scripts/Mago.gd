@@ -4,14 +4,12 @@ onready var escena_proyectil = preload("res://producto/assets/scenes/MunicionEne
 var tiempo_ultimo_disparo=0.0
 var cadencia_disparo = 4
 
-
-
 func _dispara():
 	var disparo = escena_proyectil.instance()
 	#$disparo.play()
 	disparo.direction = self.pos_jugador - $Position_arma.global_position
 	disparo.global_position = $Position_arma.global_position
-	disparo.rotation_degrees = rotation_degrees
+	disparo.rotation_degrees = disparo.direction.angle() * 180 / 3.141592
 	disparo.set_damage(20)
 	disparo.set_rango(4)
 	get_node("/root/Mapa").add_child(disparo)

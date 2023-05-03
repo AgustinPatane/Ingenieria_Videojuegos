@@ -22,5 +22,5 @@ z_index = 1
 position = Vector2( 160.909, -7.27273 )
 
 [node name="Position_arma" type="Position2D" parent="." index="6"]
-position = Vector2( 0.909091, -2.72727 )
+position = Vector2( -21.3333, 1.33333 )
 scale = Vector2( 90, 90 )

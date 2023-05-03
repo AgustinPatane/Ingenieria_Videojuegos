@@ -20,6 +20,7 @@ func set_damage(value):
 	damage = value
 
 func _ready():
+	$AnimationPlayer.play("move")
 	var timer = Timer.new()
 	timer.wait_time = rango
 	add_child(timer)
