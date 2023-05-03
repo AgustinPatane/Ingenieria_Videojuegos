@@ -5,6 +5,7 @@ var speed = 800
 var damage = 0 setget set_damage, get_damage
 var rango = 0 setget set_rango, get_rango
 var cant_atraviesa = 1
+var timer
 
 func set_rango(val):
 	rango = val
@@ -25,7 +26,7 @@ func set_atraviesa(value):
 	cant_atraviesa = value
 
 func _ready():
-	var timer = Timer.new()
+	timer = Timer.new()
 	timer.wait_time = rango
 	add_child(timer)
 	timer.connect("timeout", self, "eliminar")
@@ -33,6 +34,8 @@ func _ready():
 
 func choca():
 	cant_atraviesa -= 1
+	timer.stop()
+	timer.start()
 	rotation_degrees = rotation_degrees + rand_range(160,200)
 	direction = Vector2(speed, 0).rotated(rotation_degrees)
 	if cant_atraviesa == 0:

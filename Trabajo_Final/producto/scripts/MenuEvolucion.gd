@@ -109,7 +109,7 @@ var evolucion_2_2_2 = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#btn_seleccionar.set_disabled(true)
+	btn_seleccionar.set_disabled(true)
 	pass
 	
 func set_botones(evolucion_act):
@@ -129,6 +129,7 @@ func _process(_delta):
 		btn_seleccionar.set_disabled(false)
 
 func _on_Opcion_2_button_down():
+	btn_seleccionar.set_disabled(false)
 	if opcion_1.is_pressed():
 		opcion_1.set_pressed(false)
 	seleccionado = 2
@@ -136,6 +137,7 @@ func _on_Opcion_2_button_down():
 	#print(self[evolucion_actual + "_" + str(seleccionado)])
 
 func _on_Opcion_1_button_down():
+	btn_seleccionar.set_disabled(false)
 	if opcion_2.is_pressed():
 		opcion_2.set_pressed(false)
 	seleccionado = 1

@@ -233,6 +233,7 @@ func _adquiere_habilidad():
 
 func _evolucion():
 	var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
+	self.z_index = z_index + 20
 	self.add_child(evol_instance)
 	var menu_evol = get_node("MenuEvolucion")
 	menu_evol.set_botones(evolucion_actual)
@@ -245,6 +246,7 @@ func _evolucion():
 	pass
 
 func on_evol_quit():
+	self.z_index = z_index - 20
 	$Jugador_Sprite.show()
 	arma.get_node("Arma_Sprite").show()
 	spriteLvlUp.visible = true
