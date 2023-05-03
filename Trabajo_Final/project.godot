@@ -13,6 +13,11 @@ config_version=4
 config/name="Trabajo_Final"
 run/main_scene="res://producto/assets/scenes/Menu.tscn"
 
+[autoload]
+
+Network="*res://producto/scripts/Network.gd"
+Saves="*res://producto/scripts/Saves.gd"
+
 [debug]
 
 settings/fps/force_fps=60
