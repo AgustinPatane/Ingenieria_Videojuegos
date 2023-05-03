@@ -52,7 +52,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		var orbe_exp = escena_exp.instance()
 		orbe_exp.position = self.position
 		orbe_exp._set_value(experiencia)
-		get_tree().get_root().add_child(orbe_exp)
+		get_parent().add_child(orbe_exp)
 		queue_free()
 	if anim_name == "atack":
 		jugador.recibe_ataque(danio)

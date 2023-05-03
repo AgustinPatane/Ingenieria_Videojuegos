@@ -24,7 +24,7 @@ var puntos = 0
 var vida = 100
 var experiencia = 0
 var nivel = 1
-var experiencia_necesaria = 5
+var experiencia_necesaria = 1
 var paused = null
 var menu_pausa
 var subiendo_nivel = false
