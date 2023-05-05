@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nba_buy.png-46eb21c418e1bcb47a71676d6d6b013a.stex"
+path="res://.import/soldadoarg_buy.png-c88c3cd63450ab5dba3d5ca6f3ca120e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/tienda/nba_buy.png"
-dest_files=[ "res://.import/nba_buy.png-46eb21c418e1bcb47a71676d6d6b013a.stex" ]
+source_file="res://producto/assets/img/tienda/focused/soldadoarg_buy.png"
+dest_files=[ "res://.import/soldadoarg_buy.png-c88c3cd63450ab5dba3d5ca6f3ca120e.stex" ]
 
 [params]
 

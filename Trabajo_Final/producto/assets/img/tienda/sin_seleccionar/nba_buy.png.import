@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pela_buy.png-24bda39f4f3b22fab882d35befdd22b1.stex"
+path="res://.import/nba_buy.png-f66f1e71fff9c1604620bbfda22c2a20.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/tienda/pela_buy.png"
-dest_files=[ "res://.import/pela_buy.png-24bda39f4f3b22fab882d35befdd22b1.stex" ]
+source_file="res://producto/assets/img/tienda/sin_seleccionar/nba_buy.png"
+dest_files=[ "res://.import/nba_buy.png-f66f1e71fff9c1604620bbfda22c2a20.stex" ]
 
 [params]
 

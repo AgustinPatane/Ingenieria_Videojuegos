@@ -1,9 +1,9 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=36 format=2]
 
-[ext_resource path="res://producto/assets/img/tienda/soldadoarg_buy.png" type="Texture" id=1]
-[ext_resource path="res://producto/assets/img/tienda/pela_buy.png" type="Texture" id=2]
-[ext_resource path="res://producto/assets/img/tienda/nba_buy.png" type="Texture" id=3]
-[ext_resource path="res://producto/assets/img/tienda/rambo_buy.png" type="Texture" id=4]
+[ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/soldadoarg_buy.png" type="Texture" id=1]
+[ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/pela_buy.png" type="Texture" id=2]
+[ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/nba_buy.png" type="Texture" id=3]
+[ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/rambo_buy.png" type="Texture" id=4]
 [ext_resource path="res://producto/scripts/Tienda.gd" type="Script" id=5]
 [ext_resource path="res://producto/assets/fonts/Scream_al.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://producto/assets/img/tienda/coin.png" type="Texture" id=7]
@@ -12,6 +12,22 @@
 [ext_resource path="res://producto/assets/img/tienda/seleccionados/soldadoarg_buy.png" type="Texture" id=10]
 [ext_resource path="res://producto/assets/img/tienda/seleccionados/rambo_buy.png" type="Texture" id=11]
 [ext_resource path="res://producto/assets/img/tienda/seleccionados/nba_buy.png" type="Texture" id=12]
+[ext_resource path="res://producto/assets/img/tienda/seleccionados/yellow.png" type="Texture" id=13]
+[ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/gred.png" type="Texture" id=14]
+[ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/gblue.png" type="Texture" id=15]
+[ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/gblack.png" type="Texture" id=16]
+[ext_resource path="res://producto/assets/img/tienda/seleccionados/blue.png" type="Texture" id=17]
+[ext_resource path="res://producto/assets/img/tienda/seleccionados/red.png" type="Texture" id=18]
+[ext_resource path="res://producto/assets/img/tienda/seleccionados/black.png" type="Texture" id=19]
+[ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/gyellow.png" type="Texture" id=20]
+[ext_resource path="res://producto/assets/img/tienda/focused/pela_buy.png" type="Texture" id=21]
+[ext_resource path="res://producto/assets/img/tienda/focused/yellow.png" type="Texture" id=22]
+[ext_resource path="res://producto/assets/img/tienda/focused/soldadoarg_buy.png" type="Texture" id=23]
+[ext_resource path="res://producto/assets/img/tienda/focused/nba_buy.png" type="Texture" id=24]
+[ext_resource path="res://producto/assets/img/tienda/focused/rambo_buy.png" type="Texture" id=25]
+[ext_resource path="res://producto/assets/img/tienda/focused/red.png" type="Texture" id=26]
+[ext_resource path="res://producto/assets/img/tienda/focused/black.png" type="Texture" id=27]
+[ext_resource path="res://producto/assets/img/tienda/focused/blue.png" type="Texture" id=28]
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.533333, 0, 0.105882, 1 )
@@ -66,50 +82,6 @@ margin_top = -50.0
 margin_right = 366.0
 margin_bottom = 50.0
 
-[node name="Pela" type="TextureButton" parent="skins_jugador"]
-margin_left = 26.0
-margin_top = -93.0
-margin_right = 178.0
-margin_bottom = 59.0
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 9 )
-texture_focused = ExtResource( 9 )
-expand = true
-
-[node name="Soldado_arg" type="TextureButton" parent="skins_jugador"]
-margin_left = 200.0
-margin_top = -93.0
-margin_right = 352.0
-margin_bottom = 59.0
-texture_normal = ExtResource( 1 )
-texture_pressed = ExtResource( 10 )
-texture_hover = ExtResource( 10 )
-texture_focused = ExtResource( 10 )
-expand = true
-
-[node name="Nba" type="TextureButton" parent="skins_jugador"]
-margin_left = 374.0
-margin_top = -93.0
-margin_right = 526.0
-margin_bottom = 59.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 12 )
-texture_hover = ExtResource( 12 )
-texture_focused = ExtResource( 12 )
-expand = true
-
-[node name="Rambo" type="TextureButton" parent="skins_jugador"]
-margin_left = 548.0
-margin_top = -93.0
-margin_right = 700.0
-margin_bottom = 59.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 11 )
-texture_focused = ExtResource( 11 )
-expand = true
-
 [node name="valor" type="Label" parent="skins_jugador"]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -147,6 +119,135 @@ custom_colors/font_color = Color( 1, 0.764706, 0.137255, 1 )
 custom_fonts/font = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
 text = "EQUIPAR"
+
+[node name="skins_de_colores" type="Control" parent="skins_jugador"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -356.0
+margin_top = -150.0
+margin_right = 349.0
+margin_bottom = 21.0
+
+[node name="Yellow" type="TextureButton" parent="skins_jugador/skins_de_colores"]
+margin_left = 16.0
+margin_top = 7.0
+margin_right = 168.0
+margin_bottom = 159.0
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 13 )
+texture_focused = ExtResource( 22 )
+expand = true
+
+[node name="Red" type="TextureButton" parent="skins_jugador/skins_de_colores"]
+margin_left = 190.0
+margin_top = 7.0
+margin_right = 342.0
+margin_bottom = 159.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 18 )
+texture_focused = ExtResource( 26 )
+expand = true
+
+[node name="Blue" type="TextureButton" parent="skins_jugador/skins_de_colores"]
+margin_left = 364.0
+margin_top = 7.0
+margin_right = 516.0
+margin_bottom = 159.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 17 )
+texture_focused = ExtResource( 28 )
+expand = true
+
+[node name="Black" type="TextureButton" parent="skins_jugador/skins_de_colores"]
+margin_left = 538.0
+margin_top = 7.0
+margin_right = 690.0
+margin_bottom = 159.0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 19 )
+texture_hover = ExtResource( 19 )
+texture_focused = ExtResource( 27 )
+expand = true
+
+[node name="skins_customs" type="Control" parent="skins_jugador"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -356.0
+margin_top = -150.0
+margin_right = 349.0
+margin_bottom = 21.0
+
+[node name="Pela" type="TextureButton" parent="skins_jugador/skins_customs"]
+margin_left = 16.0
+margin_top = 7.0
+margin_right = 168.0
+margin_bottom = 159.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+texture_focused = ExtResource( 21 )
+expand = true
+
+[node name="Soldado_arg" type="TextureButton" parent="skins_jugador/skins_customs"]
+margin_left = 190.0
+margin_top = 7.0
+margin_right = 342.0
+margin_bottom = 159.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
+texture_focused = ExtResource( 23 )
+expand = true
+
+[node name="Nba" type="TextureButton" parent="skins_jugador/skins_customs"]
+margin_left = 364.0
+margin_top = 7.0
+margin_right = 516.0
+margin_bottom = 159.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+texture_focused = ExtResource( 24 )
+expand = true
+
+[node name="Rambo" type="TextureButton" parent="skins_jugador/skins_customs"]
+margin_left = 538.0
+margin_top = 7.0
+margin_right = 690.0
+margin_bottom = 159.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
+texture_focused = ExtResource( 25 )
+expand = true
+
+[node name="ver_skins_colores" type="Button" parent="skins_jugador"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -401.5
+margin_top = -89.5
+margin_right = -360.5
+margin_bottom = -46.5
+
+[node name="ver_skins_customs" type="Button" parent="skins_jugador"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 351.5
+margin_top = -88.5
+margin_right = 392.5
+margin_bottom = -45.5
 
 [node name="Titulo" type="Label" parent="."]
 anchor_left = 0.5
@@ -197,10 +298,16 @@ text = "VOLVER"
 icon_align = 1
 expand_icon = true
 
-[connection signal="pressed" from="skins_jugador/Pela" to="." method="_on_skin_pela_pressed"]
-[connection signal="pressed" from="skins_jugador/Soldado_arg" to="." method="_on_skin_soldado_pressed"]
-[connection signal="pressed" from="skins_jugador/Nba" to="." method="_on_skin_bask_pressed"]
-[connection signal="pressed" from="skins_jugador/Rambo" to="." method="_on_skin_rambo_pressed"]
 [connection signal="pressed" from="skins_jugador/comprar" to="." method="_on_comprar_pressed"]
 [connection signal="pressed" from="skins_jugador/equipar" to="." method="_on_equipar_pressed"]
+[connection signal="pressed" from="skins_jugador/skins_de_colores/Yellow" to="." method="_on_Yellow_pressed"]
+[connection signal="pressed" from="skins_jugador/skins_de_colores/Red" to="." method="_on_Red_pressed"]
+[connection signal="pressed" from="skins_jugador/skins_de_colores/Blue" to="." method="_on_Blue_pressed"]
+[connection signal="pressed" from="skins_jugador/skins_de_colores/Black" to="." method="_on_Black_pressed"]
+[connection signal="pressed" from="skins_jugador/skins_customs/Pela" to="." method="_on_skin_pela_pressed"]
+[connection signal="pressed" from="skins_jugador/skins_customs/Soldado_arg" to="." method="_on_skin_soldado_pressed"]
+[connection signal="pressed" from="skins_jugador/skins_customs/Nba" to="." method="_on_skin_bask_pressed"]
+[connection signal="pressed" from="skins_jugador/skins_customs/Rambo" to="." method="_on_skin_rambo_pressed"]
+[connection signal="pressed" from="skins_jugador/ver_skins_colores" to="." method="_on_ver_skins_colores_pressed"]
+[connection signal="pressed" from="skins_jugador/ver_skins_customs" to="." method="_on_ver_skins_customs_pressed"]
 [connection signal="pressed" from="volver_a_menu" to="." method="_on_volver_a_menu_pressed"]
