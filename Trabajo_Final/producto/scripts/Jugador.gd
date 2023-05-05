@@ -77,6 +77,7 @@ func _process(_delta):
 	puntaje.text = " Score: "+str(self.puntos)
 	barra_vida.value = self.vida
 	actualiza_barras()
+	
 
 func aumenta_Area_recoleccion(value):
 	$area_recoleccion.scale.x += value
@@ -115,7 +116,9 @@ func _physics_process(delta):
 			var collider = motion.collider
 			if collider.is_in_group("Wall"):
 				motion = move_and_slide(delta * -SPEED)
-
+	if !(self.position.x<1651 and self.position.x >-567 and self.position.y<980 and self.position.y >-411):
+		recibe_ataque(1)
+	
 # -------------------------------------------------------------------------------------
 # ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
 # -------------------------------------------------------------------------------------
