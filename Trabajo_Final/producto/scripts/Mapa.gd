@@ -11,7 +11,7 @@ var max_enemigos = 30
 var cant_enemigos = 0
 var timers_enemigos = []
 
-onready var escena_item = preload("res://producto/assets/scenes/Item.tscn")
+onready var escena_item = preload("res://producto/assets/scenes/Item_curacion.tscn")
 var jugador
 
 func _ready():

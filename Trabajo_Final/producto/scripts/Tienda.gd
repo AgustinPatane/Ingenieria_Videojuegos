@@ -107,7 +107,7 @@ func guardar_tienda():
 
 
 func load_tienda():
-	var auxruta = ""
+	var _auxruta = ""
 	var file = File.new()
 	file.open(SAVE_PATH,File.READ)
 	skins_cargados = parse_json(file.get_line())
