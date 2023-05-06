@@ -8,15 +8,20 @@
 radius = 75.8042
 
 [node name="Demonio" groups=["Enemigo"] instance=ExtResource( 1 )]
+scale = Vector2( 2, 2.5 )
 script = ExtResource( 2 )
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sombra" parent="." index="0"]
+position = Vector2( -9.5, 9.2 )
+scale = Vector2( 2.33333, 1.2913 )
+
+[node name="Sprite" parent="." index="1"]
 texture = ExtResource( 3 )
 frame = 11
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
 visible = false
 shape = SubResource( 1 )
 
-[node name="Area_ataque" parent="." index="3"]
+[node name="Area_ataque" parent="." index="4"]
 visible = false

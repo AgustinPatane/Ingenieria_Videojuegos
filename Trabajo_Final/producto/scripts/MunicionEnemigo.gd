@@ -19,6 +19,9 @@ func get_damage():
 func set_damage(value):
 	damage = value
 
+func set_speed(value):
+	speed = value
+
 func _ready():
 	$AnimationPlayer.play("move")
 	var timer = Timer.new()
@@ -41,5 +44,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_MunicionEnemigo_body_entered(body):
 	if jugador and "Jugador" in body.name:
-		jugador.recibe_ataque(30)
+		jugador.recibe_ataque(damage)
 		self.queue_free()

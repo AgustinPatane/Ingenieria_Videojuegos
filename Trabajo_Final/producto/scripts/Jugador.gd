@@ -51,13 +51,14 @@ const SAVE_PATH = "res://Saves/tienda.sav"
 # -------------------------------------------------------------------------------------
 
 signal player_defeated
-signal level_up
+signal level_up(nivel)
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- FUNCIONES ---------------------------------------
 # -------------------------------------------------------------------------------------
 
 func _ready():
+	$Sombra.modulate = Color(1,1,1,0.5)
 	var ruta = Engine.get_meta("ruta_skin")
 	var skin_body = load(ruta + "/body.png")
 	var skin_arma = load(ruta + "/arma_1.png")
@@ -202,7 +203,7 @@ func gana_exp(value):
 	actualiza_barras()
 	if experiencia_necesaria <= experiencia:
 		nivel += 1
-		emit_signal("level_up")
+		emit_signal("level_up",nivel)
 		if nivel == niveles_evol[0] or nivel == niveles_evol[1] or nivel == niveles_evol[2]:
 			_evolucion()
 		else:

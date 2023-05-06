@@ -8,6 +8,7 @@ var en_Area = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Sombra.modulate = Color(1, 1, 1, 0.5)
 	self.scale.y = escala
 	self.scale.x = escala
 	$AnimationPlayer.play("anim")

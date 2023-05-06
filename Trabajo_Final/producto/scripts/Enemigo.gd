@@ -18,16 +18,33 @@ func recibe_damage(damage):
 	if vida <= 0:
 		muere()
 
+func set_experiencia(val):
+	experiencia = val
+	
+func set_puntos_muerte(val):
+	puntos_muerte = val
+	
+func set_danio(val):
+	danio = val
+
+func set_vida(val):
+	vida = val
+
+func set_speed(val):
+	speed = val
+
 func muere():
 	#$death.play()
 	mapa = get_node("/root/Mapa")
 	mapa.cant_enemigos=mapa.cant_enemigos-1
+	#$Sombra.hide()
 	$AnimationPlayer.play("die")
 	jugador.gana_puntos(puntos_muerte)
 	get_node("CollisionShape2D").queue_free()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Sombra.modulate = Color(1,1,1,0.5)
 	$AnimationPlayer.play("move")
 	jugador = get_node("/root/Mapa/Jugador")
 	#self.z_index = jugador.z_index + 1
@@ -38,9 +55,9 @@ func _process(delta):
 		var dir = (pos_jugador - position).normalized()
 		if !flag_tocando_player:
 			if pos_jugador.x < position.x:
-				self.scale.x = 1
+				self.scale.x = abs(self.scale.x)
 			else:
-				self.scale.x = -1
+				self.scale.x = abs(self.scale.x) * -1
 		position += dir * speed * delta
 
 func _on_Enemigo_area_entered(area):

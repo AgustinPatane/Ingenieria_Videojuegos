@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/ak-47.png" type="Texture" id=3]
 [ext_resource path="res://producto/scripts/Arma.gd" type="Script" id=4]
 [ext_resource path="res://producto/assets/img/GUI/vida_marco.png" type="Texture" id=5]
+[ext_resource path="res://producto/assets/img/enemigos/Sombra.png" type="Texture" id=6]
 [ext_resource path="res://producto/assets/img/GUI/vida_llena.png" type="Texture" id=7]
 [ext_resource path="res://producto/assets/img/GUI/vida_vacia.png" type="Texture" id=8]
 [ext_resource path="res://producto/assets/img/GUI/exp_marco.png" type="Texture" id=9]
@@ -118,6 +119,11 @@ radius = 53.0848
 [node name="Jugador" type="KinematicBody2D"]
 position = Vector2( 541, 296 )
 script = ExtResource( 1 )
+
+[node name="Sombra" type="Sprite" parent="."]
+position = Vector2( 2, 23 )
+scale = Vector2( 1.61905, 1.3913 )
+texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, -3 )

@@ -1,11 +1,12 @@
 extends Node2D
 
-export(int) var tiempo_spawn_enemigo = 4
+export(int) var tiempo_spawn_enemigo = 6
 export(int) var tiempo_spawn_curita = 1
 
-export(int) var tiempo_spawn_Demonio = tiempo_spawn_enemigo / 4
-export(int) var tiempo_spawn_Ojo_volador = tiempo_spawn_enemigo
-export(int) var tiempo_spawn_Gusano = tiempo_spawn_enemigo
+export(int) var tiempo_spawn_Demonio = tiempo_spawn_enemigo * 10
+export(int) var tiempo_spawn_Diablito = tiempo_spawn_enemigo * 2
+export(int) var tiempo_spawn_Ojo_volador = tiempo_spawn_enemigo 
+export(int) var tiempo_spawn_Gusano = tiempo_spawn_enemigo / 6
 
 var max_enemigos = 30
 var cant_enemigos = 0
@@ -16,7 +17,7 @@ var jugador
 
 func _ready():
 	jugador = get_node("Jugador")
-	jugador.connect("level_up",self,"actualiza_tiempos_enemigos")
+	jugador.connect("level_up",self,"sube_dificultad")
 	randomize()
 	var timer_objetos = Timer.new()
 	self.add_child(timer_objetos)
@@ -27,8 +28,6 @@ func _ready():
 	#Lo ideal seria que se emita la señal, y luego mediante algun tiempo se decida 
 	#cuando se genera el enemigo. De esta forma arrancan de una dos enemigos.
 	start_spawn_enemigo("Gusano")
-	start_spawn_enemigo("Ojo_volador")
-	start_spawn_enemigo("Demonio")
 
 func start_spawn_enemigo(tipo_enemigo: String):
 	var timer = Timer.new()
@@ -38,7 +37,14 @@ func start_spawn_enemigo(tipo_enemigo: String):
 	timer.start()
 	timers_enemigos.append(timer)
 
-func actualiza_tiempos_enemigos():
+func sube_dificultad(nivel):
+	if nivel == 2:
+		start_spawn_enemigo("Ojo_volador")
+	elif nivel == 5:
+		start_spawn_enemigo("Diablito")
+	elif nivel == 10:
+		start_spawn_enemigo("Demonio")
+	
 	for i in range(0,len(timers_enemigos)):
 		timers_enemigos[i].wait_time *= 0.9
 

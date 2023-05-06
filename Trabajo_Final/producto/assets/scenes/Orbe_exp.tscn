@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://producto/assets/img/items/orbe_Exp_spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://producto/scripts/Orbe_exp.gd" type="Script" id=2]
+[ext_resource path="res://producto/assets/img/enemigos/Sombra.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 28.2843
@@ -23,8 +24,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "anim"
-length = 0.7
+length = 1.4
 loop = true
+step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -32,7 +34,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
@@ -41,6 +43,10 @@ tracks/0/keys = {
 [node name="Orbe_exp" type="Area2D"]
 position = Vector2( 610, 371 )
 script = ExtResource( 2 )
+
+[node name="Sombra" type="Sprite" parent="."]
+position = Vector2( 1, 14 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.5, 0.5 )

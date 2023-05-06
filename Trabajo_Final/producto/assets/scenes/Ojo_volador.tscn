@@ -8,19 +8,29 @@
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 3 )
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sombra" parent="." index="0"]
+position = Vector2( -4, 22.6667 )
+scale = Vector2( 1.03968, 1 )
+
+[node name="Sprite" parent="." index="1"]
 position = Vector2( 0, 0 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
 frame = 5
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
+visible = false
 position = Vector2( -3.63636, 1.34659 )
 z_index = 1
 
+[node name="Area_ataque" parent="." index="4"]
+visible = false
+
 [node name="CollisionShape2D" parent="Area_ataque" index="0"]
+visible = false
 position = Vector2( 160.909, -7.27273 )
 
 [node name="Position_arma" type="Position2D" parent="." index="6"]
+visible = false
 position = Vector2( -21.3333, 1.33333 )
 scale = Vector2( 90, 90 )

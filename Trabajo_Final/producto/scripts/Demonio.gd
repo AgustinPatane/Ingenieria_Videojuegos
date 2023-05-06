@@ -1,16 +1,11 @@
 extends "res://producto/scripts/Enemigo.gd"
 
-var tiempo_spawn = 2
-
-func get_tiempo_spawn():
-	return tiempo_spawn
-	
-func set_tiempo_spawn(value):
-	tiempo_spawn = value
-
-
 func _ready():
-	pass
+	set_vida(200)
+	set_danio(50)
+	set_experiencia(100)
+	set_puntos_muerte(50)
+	set_speed(100)
 
 func _process(_delta):
 	pass
