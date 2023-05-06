@@ -1,7 +1,7 @@
 extends "res://producto/scripts/Enemigo.gd"
 
 func _ready():
-	set_vida(200)
+	set_vida(2000)
 	set_danio(50)
 	set_experiencia(100)
 	set_puntos_muerte(50)
