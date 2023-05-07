@@ -18,6 +18,7 @@ func _ready():
 	var timer = Timer.new()
 	timer.wait_time = tiempo_parpadeo
 	self.add_child(timer)
+	timer.connect("timeout", self, "parpadea")
 	timer.start()
 	
 func parpadea():
