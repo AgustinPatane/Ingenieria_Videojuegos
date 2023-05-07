@@ -9,11 +9,16 @@ var puntos_muerte = 5
 var experiencia = 1
 var flag_tocando_player = false
 
-
+onready var escena_txt_danio = preload("res://producto/assets/scenes/Texto_danio.tscn")
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
 onready var mapa = get_node("/root/Mapa")
 
-func recibe_damage(damage):
+func recibe_damage(damage, pos):
+	var label_danio = escena_txt_danio.instance()
+	label_danio.set_texto(str(damage))
+	label_danio.set_position(pos)
+	label_danio.z_index = self.z_index + 1
+	get_parent().add_child(label_danio)
 	vida -= damage
 	if vida <= 0:
 		muere()
@@ -60,7 +65,7 @@ func _process(delta):
 
 func _on_Enemigo_area_entered(area):
 	if area.is_in_group("Proyectil"):
-		recibe_damage(area.get_damage())
+		recibe_damage(area.get_damage(), area.position)
 		area.choca()
 
 func _on_AnimationPlayer_animation_finished(anim_name):

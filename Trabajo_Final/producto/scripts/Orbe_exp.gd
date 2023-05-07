@@ -5,8 +5,8 @@ var value = 1
 var jugador
 var escala = 0.7
 var en_Area = false
+var tiempo_parpadeo = 15
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$Sombra.modulate = Color(1, 1, 1, 0.5)
 	self.scale.y = escala
@@ -14,6 +14,18 @@ func _ready():
 	$AnimationPlayer.play("anim")
 	position.y += 30
 	jugador = get_node("/root/Mapa/Jugador")
+	
+	var timer = Timer.new()
+	timer.wait_time = tiempo_parpadeo
+	self.add_child(timer)
+	timer.start()
+	
+func parpadea():
+	for i in range(30):
+		$Sprite.visible = !$Sprite.visible
+		$Sombra.visible = !$Sombra.visible
+		yield(get_tree().create_timer(0.2 / pow(1.1, i)), "timeout")
+	queue_free()
 
 func _set_value(val):
 	self.value = val

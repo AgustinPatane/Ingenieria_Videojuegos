@@ -55,7 +55,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "explotar":
 		queue_free()
 
-
 func _on_area_eplosion_area_entered(area):
 	if explotando and area.is_in_group("Enemigo"):
-		area.recibe_damage(damage)
+		area.recibe_damage(damage, area.position)

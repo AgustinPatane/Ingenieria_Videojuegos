@@ -38,6 +38,7 @@ func choca():
 	timer.start()
 	rotation_degrees = rotation_degrees + rand_range(160,200)
 	direction = Vector2(speed, 0).rotated(rotation_degrees)
+	damage = damage / 2
 	if cant_atraviesa == 0:
 		queue_free()
 		

@@ -4,7 +4,7 @@ var subiendo = true
 var timer
 
 func _ready():
-	set_vida(20)
+	set_vida(500)
 	set_danio(10)
 	set_experiencia(1)
 	set_puntos_muerte(2)
