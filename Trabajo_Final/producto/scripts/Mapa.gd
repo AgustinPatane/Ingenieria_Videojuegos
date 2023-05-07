@@ -5,6 +5,7 @@ export(int) var tiempo_spawn_curita = 1
 
 export(int) var tiempo_spawn_Demonio = tiempo_spawn_enemigo * 10
 export(int) var tiempo_spawn_Diablito = tiempo_spawn_enemigo * 2
+export(int) var tiempo_spawn_Pilar = tiempo_spawn_enemigo * 5
 export(int) var tiempo_spawn_Ojo_volador = tiempo_spawn_enemigo 
 export(int) var tiempo_spawn_Gusano = tiempo_spawn_enemigo / 6
 
@@ -44,6 +45,8 @@ func sube_dificultad(nivel):
 		start_spawn_enemigo("Diablito")
 	elif nivel == 10:
 		start_spawn_enemigo("Demonio")
+	elif nivel == 12:
+		start_spawn_enemigo("Pilar")
 	
 	for i in range(0,len(timers_enemigos)):
 		timers_enemigos[i].wait_time *= 0.9

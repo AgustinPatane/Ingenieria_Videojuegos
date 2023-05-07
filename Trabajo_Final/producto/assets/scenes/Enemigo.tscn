@@ -6,7 +6,7 @@
 [ext_resource path="res://producto/assets/music/sounds/death.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 23.2955, 20 )
+extents = Vector2( 19.5455, 69.5455 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -59,8 +59,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "move"
-length = 0.6
+length = 1.2
 loop = true
+step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -68,14 +69,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 9.39887
+radius = 5.88223
 
 [node name="Enemigo" type="Area2D"]
 scale = Vector2( 1.1, 1.1 )

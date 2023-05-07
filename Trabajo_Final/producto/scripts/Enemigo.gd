@@ -27,6 +27,9 @@ func set_puntos_muerte(val):
 func set_danio(val):
 	danio = val
 
+func get_danio():
+	return danio
+
 func set_vida(val):
 	vida = val
 
@@ -53,11 +56,6 @@ func _process(delta):
 	if (vida>0):
 		pos_jugador = jugador.position
 		var dir = (pos_jugador - position).normalized()
-		if !flag_tocando_player:
-			if pos_jugador.x < position.x:
-				self.scale.x = abs(self.scale.x)
-			else:
-				self.scale.x = abs(self.scale.x) * -1
 		position += dir * speed * delta
 
 func _on_Enemigo_area_entered(area):

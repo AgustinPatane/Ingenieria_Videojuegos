@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://producto/assets/scenes/Enemigo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Pilar.gd" type="Script" id=2]
+[ext_resource path="res://producto/assets/img/enemigos/Pilar/spritesheet (1).png" type="Texture" id=3]
+[ext_resource path="res://producto/assets/img/enemigos/Pilar/fin_rayo.png" type="Texture" id=4]
+[ext_resource path="res://producto/assets/img/enemigos/Pilar/inicio_rayo.png" type="Texture" id=5]
+[ext_resource path="res://producto/scripts/Rayo.gd" type="Script" id=6]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 1.4334
+height = 0.0
+
+[sub_resource type="Curve" id=1]
+min_value = 0.5
+_data = [ Vector2( 0, 1.01818 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.5 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Pilar" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sombra" parent="." index="0"]
+visible = false
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( -12.7273, -26.3636 )
+scale = Vector2( 0.567843, 0.570104 )
+texture = ExtResource( 3 )
+frame = 5
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( -8.57954, -26.3636 )
+
+[node name="CollisionShape2D" parent="Area_ataque" index="0"]
+position = Vector2( -8.18182, -26.3636 )
+shape = SubResource( 2 )
+
+[node name="Pos_disparo" type="Node2D" parent="." index="7"]
+position = Vector2( -10.9091, -144.545 )
+
+[node name="Rayo" type="RayCast2D" parent="Pos_disparo" index="0"]
+enabled = true
+cast_to = Vector2( 100, 0 )
+collision_mask = 4095
+script = ExtResource( 6 )
+
+[node name="inicio" type="Sprite" parent="Pos_disparo/Rayo" index="0"]
+position = Vector2( -9.53674e-07, 0 )
+scale = Vector2( 0.485795, 0.485795 )
+texture = ExtResource( 5 )
+
+[node name="Line2D" type="Line2D" parent="Pos_disparo/Rayo" index="1"]
+points = PoolVector2Array( 0, 0, 100, 0 )
+width_curve = SubResource( 1 )
+default_color = Color( 0.509804, 1, 0.980392, 1 )
+
+[node name="Tween" type="Tween" parent="Pos_disparo/Rayo" index="2"]
+
+[node name="final" type="Sprite" parent="Pos_disparo/Rayo" index="3"]
+position = Vector2( 99.091, 0.500015 )
+scale = Vector2( 0.159091, 0.159091 )
+texture = ExtResource( 4 )

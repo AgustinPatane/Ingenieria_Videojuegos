@@ -8,4 +8,8 @@ func _ready():
 	set_speed(100)
 
 func _process(_delta):
-	pass
+	if !flag_tocando_player:
+		if pos_jugador.x < position.x:
+			self.scale.x = abs(self.scale.x)
+		else:
+			self.scale.x = abs(self.scale.x) * -1
