@@ -25,10 +25,10 @@ visible = false
 position = Vector2( -12.7273, -26.3636 )
 scale = Vector2( 0.567843, 0.570104 )
 texture = ExtResource( 3 )
-frame = 11
+frame = 0
 
 [node name="CollisionShape2D" parent="." index="2"]
-position = Vector2( -8.57954, -26.3636 )
+position = Vector2( -9.54545, -30 )
 
 [node name="CollisionShape2D" parent="Area_ataque" index="0"]
 position = Vector2( -8.18182, -26.3636 )

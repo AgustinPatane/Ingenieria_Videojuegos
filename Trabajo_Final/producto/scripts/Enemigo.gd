@@ -8,6 +8,7 @@ var danio = 10
 var puntos_muerte = 5
 var experiencia = 1
 var flag_tocando_player = false
+var flag_en_area_ataque = false
 
 onready var escena_txt_danio = preload("res://producto/assets/scenes/Texto_danio.tscn")
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
@@ -40,6 +41,9 @@ func set_vida(val):
 
 func set_speed(val):
 	speed = val
+
+func ataque():
+	pass
 
 func muere():
 	#$death.play()
@@ -76,17 +80,18 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		get_parent().add_child(orbe_exp)
 		queue_free()
 	if anim_name == "atack":
-		jugador.recibe_ataque(danio)
+		ataque()
 		$AnimationPlayer.play("atack")
 
 
-func _on_Area2D_body_entered(body):
+func _on_Area_ataque_body_entered(body):
 	if jugador and "Jugador" in body.name and $AnimationPlayer.current_animation != "die":
+		flag_en_area_ataque = true
 		$AnimationPlayer.play("atack")
-
 
 func _on_Area_ataque_body_exited(body):
 	if jugador and "Jugador" in body.name and  $AnimationPlayer.current_animation != "die":
+		flag_en_area_ataque = false
 		$AnimationPlayer.play("move")
 
 func _on_Enemigo_body_entered(body):

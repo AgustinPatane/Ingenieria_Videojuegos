@@ -6,7 +6,7 @@
 [ext_resource path="res://producto/assets/music/sounds/death.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.5455, 69.5455 )
+extents = Vector2( 19.5455, 70.9091 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -122,5 +122,5 @@ pitch_scale = 0.49
 [connection signal="body_entered" from="." to="." method="_on_Enemigo_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Enemigo_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="body_entered" from="Area_ataque" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area_ataque" to="." method="_on_Area_ataque_body_entered"]
 [connection signal="body_exited" from="Area_ataque" to="." method="_on_Area_ataque_body_exited"]

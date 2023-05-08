@@ -1,6 +1,5 @@
 extends Area2D
 
-
 var direction = Vector2.RIGHT
 var speed = 200
 var damage = 0 setget set_damage, get_damage
@@ -32,7 +31,6 @@ func _ready():
 	jugador = get_node("/root/Mapa/Jugador")
 
 func eliminar():
-	print("hola")
 	queue_free()
 
 func _process(delta):
@@ -40,7 +38,6 @@ func _process(delta):
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
-
 
 func _on_MunicionEnemigo_body_entered(body):
 	if jugador and "Jugador" in body.name:

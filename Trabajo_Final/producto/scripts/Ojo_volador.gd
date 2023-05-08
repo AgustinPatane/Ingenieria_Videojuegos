@@ -23,6 +23,11 @@ func _ready():
 	set_puntos_muerte(5)
 	set_speed(50)
 
+func ataque():
+	var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0
+	if cond_disparo: 
+		_dispara()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if !flag_tocando_player:
@@ -30,7 +35,3 @@ func _process(_delta):
 			self.scale.x = abs(self.scale.x)
 		else:
 			self.scale.x = abs(self.scale.x) * -1
-			
-	var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0
-	if cond_disparo: 
-		_dispara()

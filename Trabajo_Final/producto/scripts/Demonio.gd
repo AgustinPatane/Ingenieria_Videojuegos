@@ -7,6 +7,9 @@ func _ready():
 	set_puntos_muerte(50)
 	set_speed(100)
 
+func ataque():
+	jugador.recibe_ataque(danio)
+
 func _process(_delta):
 	if !flag_tocando_player:
 		if pos_jugador.x < position.x:
