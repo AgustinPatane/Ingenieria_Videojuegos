@@ -19,11 +19,13 @@ func _ready():
 	jugador = get_node("Jugador")
 	jugador.connect("level_up",self,"sube_dificultad")
 	randomize()
+	
 	var timer_objetos = Timer.new()
 	self.add_child(timer_objetos)
 	timer_objetos.wait_time = tiempo_spawn_curita
 	timer_objetos.connect("timeout", self, "spawn_item_vida")
 	timer_objetos.start()
+	
 	start_spawn_enemigo("Gusano")
 
 func start_spawn_enemigo(tipo_enemigo: String):

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spritesheet (1).png-90e56120c22c1c2b285adcde7cadb33c.stex"
+path="res://.import/Pilar.png-ab2defc3aa075a3c37baec1e9c5ab244.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/enemigos/Pilar/spritesheet (1).png"
-dest_files=[ "res://.import/spritesheet (1).png-90e56120c22c1c2b285adcde7cadb33c.stex" ]
+source_file="res://producto/assets/img/enemigos/Pilar/Pilar.png"
+dest_files=[ "res://.import/Pilar.png-ab2defc3aa075a3c37baec1e9c5ab244.stex" ]
 
 [params]
 
