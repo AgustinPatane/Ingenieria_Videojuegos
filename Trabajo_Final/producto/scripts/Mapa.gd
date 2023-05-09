@@ -26,10 +26,7 @@ func _ready():
 	timer_objetos.wait_time = tiempo_spawn_curita
 	timer_objetos.connect("timeout", self, "spawn_item_vida")
 	timer_objetos.start()
-	
 	start_spawn_enemigo("Gusano")
-	start_spawn_enemigo("Hechicero")
-
 
 func start_spawn_enemigo(tipo_enemigo: String):
 	var timer = Timer.new()
@@ -48,6 +45,8 @@ func sube_dificultad(nivel):
 		start_spawn_enemigo("Demonio")
 	elif nivel == 5:
 		start_spawn_enemigo("Pilar")
+	elif nivel == 6:
+		start_spawn_enemigo("Hechicero")
 	
 	for i in range(0,len(timers_enemigos)):
 		timers_enemigos[i].wait_time *= 0.9
