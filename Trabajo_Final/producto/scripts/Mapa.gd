@@ -7,7 +7,7 @@ export(int) var tiempo_spawn_Diablito = 10
 export(int) var tiempo_spawn_Pilar = 20
 export(int) var tiempo_spawn_Ojo_volador = 5
 export(int) var tiempo_spawn_Gusano = 2
-export(int) var tiempo_spawn_Hechizero = 2
+export(int) var tiempo_spawn_Hechicero = 2
 
 var max_enemigos = 30
 var cant_enemigos = 0
@@ -28,7 +28,7 @@ func _ready():
 	timer_objetos.start()
 	
 	start_spawn_enemigo("Gusano")
-	start_spawn_enemigo("Hechizero")
+	start_spawn_enemigo("Hechicero")
 
 
 func start_spawn_enemigo(tipo_enemigo: String):

@@ -39,7 +39,11 @@ func _process(delta):
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
+func accion():
+	jugador.recibe_ataque(damage)
+	self.queue_free()
+	
+
 func _on_MunicionEnemigo_body_entered(body):
 	if jugador and "Jugador" in body.name:
-		jugador.recibe_ataque(damage)
-		self.queue_free()
+		accion()

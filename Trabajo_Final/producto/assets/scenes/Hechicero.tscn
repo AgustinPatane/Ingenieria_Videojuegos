@@ -2,7 +2,7 @@
 
 [ext_resource path="res://producto/assets/img/enemigos/Hechizero/spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://producto/assets/scenes/Enemigo.tscn" type="PackedScene" id=2]
-[ext_resource path="res://producto/scripts/Hechizero.gd" type="Script" id=3]
+[ext_resource path="res://producto/scripts/Hechicero.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 14.5455
