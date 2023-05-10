@@ -1,0 +1,4 @@
+script atributos enemigos
+diferentes jugadores
+mas ramas de evolucion (una por skin de la tienda)
+mapas que vienen con enemigos particulares

@@ -1,11 +1,12 @@
 extends "res://producto/scripts/Enemigo.gd"
 
 func _ready():
-	set_vida(2000)
-	set_danio(50)
-	set_experiencia(100)
-	set_puntos_muerte(50)
-	set_speed(100)
+	var atrib = Atributos.get_demonio()
+	set_vida(atrib.vida)
+	set_danio(atrib.danio)
+	set_experiencia(atrib.experiencia)
+	set_puntos_muerte(atrib.puntos_muerte)
+	set_speed(atrib.speed)
 
 func ataque():
 	jugador.recibe_ataque(danio)

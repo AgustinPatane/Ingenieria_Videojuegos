@@ -24,4 +24,4 @@ position = Vector2( 16, 7 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="Area_ataque" index="0"]
-position = Vector2( -0.909091, -6.77626e-21 )
+position = Vector2( -6, 2 )

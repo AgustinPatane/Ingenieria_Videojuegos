@@ -1,11 +1,12 @@
 extends "res://producto/scripts/Enemigo.gd"
 
 func _ready():
-	set_vida(40)
-	set_danio(25)
-	set_experiencia(10)
-	set_puntos_muerte(20)
-	set_speed(200)
+	var atrib = Atributos.get_diablito()
+	set_vida(atrib.vida)
+	set_danio(atrib.danio)
+	set_experiencia(atrib.experiencia)
+	set_puntos_muerte(atrib.puntos_muerte)
+	set_speed(atrib.speed)
 
 func ataque():
 	jugador.recibe_ataque(danio)

@@ -4,11 +4,12 @@ var subiendo = true
 var timer
 
 func _ready():
-	set_vida(500)
-	set_danio(10)
-	set_experiencia(1)
-	set_puntos_muerte(2)
-	set_speed(10)
+	var atrib = Atributos.get_pilar()
+	set_vida(atrib.vida)
+	set_danio(atrib.danio)
+	set_experiencia(atrib.experiencia)
+	set_puntos_muerte(atrib.puntos_muerte)
+	set_speed(atrib.speed)
 	
 	timer = Timer.new()
 	timer.wait_time = 0.6

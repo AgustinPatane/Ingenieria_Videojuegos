@@ -1,5 +1,5 @@
 extends "res://producto/scripts/Enemigo.gd"
-onready var arma = preload("res://producto/scripts/Arma.gd")
+onready var atributos = preload("res://producto/scripts/Atributos.gd")
 onready var escena_proyectil = preload("res://producto/assets/scenes/MunicionEnemigo.tscn")
 var tiempo_ultimo_disparo=0.0
 var cadencia_disparo = 4
@@ -17,11 +17,12 @@ func _dispara():
 	tiempo_ultimo_disparo = OS.get_ticks_msec() / 1000.0
 
 func _ready():
-	set_vida(20)
-	set_danio(15)
-	set_experiencia(2)
-	set_puntos_muerte(5)
-	set_speed(50)
+	var atrib = Atributos.get_ojo()
+	set_vida(atrib.vida)
+	set_danio(atrib.danio)
+	set_experiencia(atrib.experiencia)
+	set_puntos_muerte(atrib.puntos_muerte)
+	set_speed(atrib.speed)
 
 func ataque():
 	var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0

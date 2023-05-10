@@ -1,13 +1,12 @@
 extends Node2D
 
-export(int) var tiempo_spawn_curita = 1
-
-export(int) var tiempo_spawn_Demonio = 60
-export(int) var tiempo_spawn_Diablito = 10
-export(int) var tiempo_spawn_Pilar = 20
-export(int) var tiempo_spawn_Ojo_volador = 5
-export(int) var tiempo_spawn_Gusano = 2
-export(int) var tiempo_spawn_Hechicero = 2
+var tiempo_curita 
+var tiempo_Demonio 
+var tiempo_Diablito 
+var tiempo_Pilar 
+var tiempo_Ojo_volador 
+var tiempo_Gusano 
+var tiempo_Hechicero 
 
 var max_enemigos = 30
 var cant_enemigos = 0
@@ -17,20 +16,35 @@ onready var escena_item = preload("res://producto/assets/scenes/Item_curacion.ts
 var jugador
 
 func _ready():
+	var tiempos = Atributos.get_tiempos()
+	tiempo_Demonio = tiempos.demonio
+	tiempo_Pilar = tiempos.pilar
+	tiempo_Ojo_volador = tiempos.ojo
+	tiempo_Gusano = tiempos.gusano
+	tiempo_Hechicero = tiempos.hechicero
+	tiempo_curita = tiempos.curita
+	
 	jugador = get_node("Jugador")
 	jugador.connect("level_up",self,"sube_dificultad")
 	randomize()
-	
+
 	var timer_objetos = Timer.new()
 	self.add_child(timer_objetos)
-	timer_objetos.wait_time = tiempo_spawn_curita
+	timer_objetos.wait_time = tiempo_curita
 	timer_objetos.connect("timeout", self, "spawn_item_vida")
 	timer_objetos.start()
 	start_spawn_enemigo("Gusano")
 
+	#start_spawn_enemigo("Ojo_volador")
+	#start_spawn_enemigo("Diablito")
+	#start_spawn_enemigo("Demonio")
+	#start_spawn_enemigo("Pilar")
+	#start_spawn_enemigo("Hechicero")
+	#start_spawn_enemigo("Hongo")
+
 func start_spawn_enemigo(tipo_enemigo: String):
 	var timer = Timer.new()
-	timer.wait_time = self["tiempo_spawn_"+tipo_enemigo]
+	timer.wait_time = self["tiempo_"+tipo_enemigo]
 	timer.connect("timeout", self, "spawn_enemigo",[tipo_enemigo])
 	get_node("/root/Mapa").add_child(timer)
 	timer.start()
@@ -47,7 +61,7 @@ func sube_dificultad(nivel):
 		start_spawn_enemigo("Pilar")
 	elif nivel == 6:
 		start_spawn_enemigo("Hechicero")
-	
+
 	for i in range(0,len(timers_enemigos)):
 		timers_enemigos[i].wait_time *= 0.9
 
@@ -58,7 +72,7 @@ func spawn_enemigo(tipo_enemigo: String):
 		var enemigo = enemigo_scene.instance()
 		enemigo.position = posicion_aleatoria(tipo_enemigo)
 		get_node("/root/Mapa").add_child(enemigo)
-		
+
 func spawn_timer(tipo_enemigo: String, tiempo: int):
 	var timer_enemigos = Timer.new()
 	self.add_child(timer_enemigos)
