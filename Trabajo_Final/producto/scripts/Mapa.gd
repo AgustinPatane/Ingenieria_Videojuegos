@@ -56,7 +56,7 @@ func spawn_enemigo(tipo_enemigo: String):
 		cant_enemigos += 1
 		var enemigo_scene = load("res://producto/assets/scenes/" + tipo_enemigo + ".tscn")
 		var enemigo = enemigo_scene.instance()
-		enemigo.position = posicion_aleatoria()
+		enemigo.position = posicion_aleatoria(tipo_enemigo)
 		get_node("/root/Mapa").add_child(enemigo)
 		
 func spawn_timer(tipo_enemigo: String, tiempo: int):
@@ -68,31 +68,32 @@ func spawn_timer(tipo_enemigo: String, tiempo: int):
 
 func spawn_item_vida():
 	var item = escena_item.instance()
-	item.position = posicion_aleatoria()
+	item.position = Vector2(rand_range(-567,1651),rand_range(-411,980))
 	get_node("/root/Mapa").add_child(item)
 
-func posicion_aleatoria() -> Vector2:
+func posicion_aleatoria(tipo_enemigo) -> Vector2:
 	var result
 	if rand_range(0, 1)<=0.5:
 		result=1
 	else:
 		result=-1
-	
-	var pos1 = Vector2(rand_range(-1200,-570),rand_range(-1200,1400))
-	var pos2 = Vector2(rand_range(1670,2300),rand_range(-1200,1400))
-	var pos3 = Vector2(rand_range(-1200,2300),rand_range(-800,-420))
-	var pos4 = Vector2(rand_range(-1200,2300),rand_range(1000,1400))
-	
-	var posiciones = [pos1,pos2,pos3,pos4]
-	
-	var pos = posiciones[rand_range(0,3)]
-	var posx = pos[0]
-	var posy = pos[1]
-	#var posx = rand_range(-567,1651)
-	#var posy = rand_range(-411,980)
-	#if abs(posx) - abs(jugador.position.x) < 20 and abs(posy) - abs(jugador.position.y) < 20:
-	#posx += 20 * result 
-	#posy += 20 * result
+	var posx
+	var posy
+	if tipo_enemigo == "Pilar":
+		var pos1 = Vector2(rand_range(-1200,-570),rand_range(-1200,1400))
+		var pos2 = Vector2(rand_range(1670,2300),rand_range(-1200,1400))
+		var pos3 = Vector2(rand_range(-1200,2300),rand_range(-800,-420))
+		var pos4 = Vector2(rand_range(-1200,2300),rand_range(1000,1400))
+		var posiciones = [pos1,pos2,pos3,pos4]	
+		var pos = posiciones[rand_range(0,3)]
+		posx = pos[0]
+		posy = pos[1]
+	else:
+		posx = rand_range(-567,1651)
+		posy = rand_range(-411,980)
+		if abs(posx) - abs(jugador.position.x) < 20 and abs(posy) - abs(jugador.position.y) < 20:
+			posx += 20 * result 
+			posy += 20 * result
 	return Vector2(posx,posy)
 	
 func _process(_delta):
