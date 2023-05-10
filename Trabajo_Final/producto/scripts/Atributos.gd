@@ -2,11 +2,21 @@ extends Node
 
 # JUGADOR ------------------------------------------------------------
 
-var jugador_exp_necesaria = 10
-var jugador_cadencia = 0.4 #es en segundos
-var jugador_damage_Arma = 10.0
-var jugador_rango = 0.5 #tiempo de vida del disparo
-var jugador_velocidad_proyectil = 800
+var jugador = {
+	vida_max = 100, 
+	exp_necesaria = 10,
+	cadencia_disparo = 0.4,
+	danio = 10,
+	rango = 0.5,
+	speed = 20000,
+	speed_proyectil = 800,
+	cant_atraviesa = 1,
+	cant_proyectiles = 1,
+	niveles_evol = [2,3,4]
+}
+
+func get_atrib_jugador():
+	return jugador
 
 # MAPA ---------------------------------------------------------------
 
@@ -23,8 +33,21 @@ var tiempos = {
 	curita = 5
 }
 
+var niveles_spawn = {
+	demonio = 10,
+	diablito = 5,
+	gusano = 1,
+	hechicero = 6,
+	hongo = 1, # 3
+	ojo = 2,
+	pilar = 4
+}
+
 func get_tiempos():
 	return tiempos
+
+func get_niveles_spawn():
+	return niveles_spawn
 
 # DEMONIO ------------------------------------------------------------
 
@@ -82,10 +105,11 @@ func get_hechicero():
 
 var hongo = {
 	vida = 30,
-	danio = 10,
-	experiencia = 15,
-	puntos_muerte = 50,
-	speed = 0
+	danio = 0.2,
+	experiencia = 5,
+	puntos_muerte = 7,
+	speed = 0,
+	max_tamanio = 1
 }
 
 func get_hongo():
@@ -98,7 +122,8 @@ var ojo = {
 	danio = 15,
 	experiencia = 2,
 	puntos_muerte = 5,
-	speed = 50
+	speed = 75,
+	cadencia_disparo = 4
 }
 
 func get_ojo():

@@ -1,12 +1,12 @@
 extends Area2D
 
 var pos_jugador = Vector2.ZERO
-var speed = 100
-var vida = 20
+var speed
+var vida 
 var jugador
-var danio = 10
-var puntos_muerte = 5
-var experiencia = 1
+var danio
+var puntos_muerte
+var experiencia
 var flag_tocando_player = false
 var flag_en_area_ataque = false
 
@@ -60,29 +60,42 @@ func _ready():
 	$AnimationPlayer.play("move")
 	jugador = get_node("/root/Mapa/Jugador")
 	#self.z_index = jugador.z_index + 1
+
+func movimiento(delta):
+	pos_jugador = jugador.position
+	var dir = (pos_jugador - position).normalized()
+	position += dir * speed * delta
 	
+func acomodar():
+	if !flag_tocando_player:
+		if pos_jugador.x < position.x:
+			self.scale.x = abs(self.scale.x)
+		else:
+			self.scale.x = abs(self.scale.x) * -1
+
 func _process(delta):
 	if (vida>0):
-		pos_jugador = jugador.position
-		var dir = (pos_jugador - position).normalized()
-		position += dir * speed * delta
+		movimiento(delta)
+		acomodar()
 
 func _on_Enemigo_area_entered(area):
 	if area.is_in_group("Proyectil"):
 		recibe_damage(area.get_damage(), area.position)
 		area.choca()
 
+func drop_on_death():
+	var orbe_exp = escena_exp.instance()
+	orbe_exp.position = self.position
+	orbe_exp._set_value(experiencia)
+	get_parent().add_child(orbe_exp)
+	queue_free()
+
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "die":
-		var orbe_exp = escena_exp.instance()
-		orbe_exp.position = self.position
-		orbe_exp._set_value(experiencia)
-		get_parent().add_child(orbe_exp)
-		queue_free()
+		drop_on_death()
 	if anim_name == "atack":
 		ataque()
 		$AnimationPlayer.play("atack")
-
 
 func _on_Area_ataque_body_entered(body):
 	if jugador and "Jugador" in body.name and $AnimationPlayer.current_animation != "die":

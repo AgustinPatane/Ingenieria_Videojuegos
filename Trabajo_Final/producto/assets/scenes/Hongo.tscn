@@ -20,11 +20,15 @@ scale = Vector2( 1.1039, 1 )
 [node name="Sprite" parent="." index="1"]
 position = Vector2( 0.909091, -21.8182 )
 texture = ExtResource( 2 )
-frame = 0
+frame = 2
 
 [node name="CollisionShape2D" parent="." index="2"]
+visible = false
 position = Vector2( 0, -12.7273 )
 shape = SubResource( 1 )
+
+[node name="Area_ataque" parent="." index="4"]
+visible = false
 
 [node name="CollisionShape2D" parent="Area_ataque" index="0"]
 position = Vector2( 0, -12.7273 )

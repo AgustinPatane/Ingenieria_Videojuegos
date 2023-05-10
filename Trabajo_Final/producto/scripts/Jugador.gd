@@ -21,23 +21,23 @@ onready var btn_pausa = get_node("Control/Btn_pausa")
 var motion = Vector2()
 var SPEED = 0
 var puntos = 0
-var vida = 100
+var vida 
 var experiencia = 0
 var nivel = 1
-var experiencia_necesaria = 10
+var experiencia_necesaria
 var paused = null
 var menu_pausa
 var subiendo_nivel = false
-var niveles_evol = [2,3,4]
+var niveles_evol
 var puede_correr = false
 
 # -------------------------------------------------------------------------------------
 # -------------------------------- CARACTERISTICAS ------------------------------------
 # -------------------------------------------------------------------------------------
 
-var vida_max = 100
-var vel_walk = 20000
-var vel_run = 1.2 * vel_walk
+var vida_max
+var vel_walk 
+var vel_run
 var evolucion_actual = "evolucion"
 
 # -------------------------------------------------------------------------------------
@@ -58,6 +58,8 @@ signal level_up(nivel)
 # -------------------------------------------------------------------------------------
 
 func _ready():
+	set_atributos()
+		
 	$Sombra.modulate = Color(1,1,1,0.5)
 	var ruta = Engine.get_meta("ruta_skin")
 	var skin_body = load(ruta + "/body.png")
@@ -124,6 +126,29 @@ func _physics_process(delta):
 # ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
 # -------------------------------------------------------------------------------------
 
+func set_atributos():
+	var atrib = Atributos.get_atrib_jugador()
+	experiencia_necesaria = atrib.exp_necesaria
+	set_vida_max(atrib.vida_max)
+	vida = vida_max
+	set_cadencia_disparo(atrib.cadencia_disparo)
+	set_danio_Arma(atrib.danio)
+	set_rango(atrib.rango)
+	set_velocidad(atrib.speed)
+	set_cant_atraviesa(atrib.cant_atraviesa)
+	set_vel_proyectil(atrib.speed_proyectil)
+	set_cant_proyectiles(atrib.cant_proyectiles)
+	niveles_evol = atrib.niveles_evol
+
+func set_cant_proyectiles(val):
+	arma.set_cant_proyectiles(val)
+
+func set_vel_proyectil(val):
+	arma.set_velocidad_proyectil(val)
+
+func set_cant_atraviesa(val):
+	arma.set_cant_atraviesa(val)
+
 func get_vida_max():
 	return vida_max
 	
@@ -147,13 +172,13 @@ func incremento_velocidad(porcentaje):
 	vel_walk = vel_walk * porcentaje
 	actualiza_vel_run()
 
-func get_damage_Arma():
+func get_danio_Arma():
 	return arma.get_damage_Arma()
 
-func set_damage_Arma(value):
+func set_danio_Arma(value):
 	arma.set_damage_Arma(value)
 
-func incremento_damage(porcentaje):
+func incremento_danio(porcentaje):
 	arma.incremento_damage(porcentaje)
 
 func get_cadencia_disparo():
@@ -259,7 +284,7 @@ func on_evol_quit():
 
 func actualiza_atributos(atributos, evol):
 	evolucion_actual = evolucion_actual + "_" + evol
-	incremento_damage(atributos.damage)
+	incremento_danio(atributos.damage)
 	incremento_vida(atributos.vida)
 	if vida > vida_max:
 		vida = vida_max

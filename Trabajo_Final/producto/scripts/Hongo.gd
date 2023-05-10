@@ -1,8 +1,11 @@
 extends "res://producto/scripts/Enemigo.gd"
 
-var tamanio_Area = 0
-var max_tamanio = 4
+onready var escena_area_danio = preload("res://producto/assets/scenes/Area_hongo.tscn")
+
+var tamanio_Area = 0.3
+var max_tamanio
 var tiempo_ultimo_disparo = 0.0
+var area_danio
 
 func _ready():
 	var atrib = Atributos.get_hongo()
@@ -11,23 +14,33 @@ func _ready():
 	set_experiencia(atrib.experiencia)
 	set_puntos_muerte(atrib.puntos_muerte)
 	set_speed(atrib.speed)
+	max_tamanio = atrib.max_tamanio
+	
+	area_danio = escena_area_danio.instance()
+	area_danio.position = self.position
+	area_danio.scale.x = tamanio_Area
+	area_danio.scale.y = tamanio_Area
+	area_danio.set_danio(danio)
+	area_danio.ref_jugador(jugador)
+	get_tree().get_root().add_child(area_danio)
+	
+	var timer = Timer.new()
+	timer.wait_time = 1.2
+	self.add_child(timer)
+	timer.connect("timeout", self, "aumenta_area")
+	timer.start()
 
-func disparar():
-	#var disparo = escena_proyectil.instance()
-	#$disparo.play()
-	#disparo.set_damage(self.danio)
-	#disparo.set_rango(4)
-	#disparo.set_speed(300)
-	#get_node("/root/Mapa").add_child(disparo)
-	tiempo_ultimo_disparo = OS.get_ticks_msec() / 1000.0
+func aumenta_area():
+	if tamanio_Area <= max_tamanio:
+		tamanio_Area += 0.1
+		area_danio.scale.x += tamanio_Area
+		area_danio.scale.y += tamanio_Area
 
-func ataque():
-	#jugador.recibe_ataque(danio)
-	pass
+func drop_on_death():
+	var orbe_exp = escena_exp.instance()
+	orbe_exp.position = self.position
+	orbe_exp._set_value(experiencia)
+	get_parent().add_child(orbe_exp)
+	area_danio.desaparecer()
+	queue_free()
 
-func _process(_delta):
-	if !flag_tocando_player:
-		if pos_jugador.x < position.x:
-			self.scale.x = abs(self.scale.x)
-		else:
-			self.scale.x = abs(self.scale.x) * -1

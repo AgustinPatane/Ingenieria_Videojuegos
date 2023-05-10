@@ -21,6 +21,9 @@ func _ready():
 func _on_timer_timeout():
 	subiendo = !subiendo
 
+func acomodar():
+	pass
+
 func _process(_delta):
 	if subiendo:
 		pos_disparo.position.y -= 0.1
