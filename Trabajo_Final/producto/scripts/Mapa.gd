@@ -77,11 +77,22 @@ func posicion_aleatoria() -> Vector2:
 		result=1
 	else:
 		result=-1
-	var posx = rand_range(-567,1651)
-	var posy = rand_range(-411,980)
-	if abs(posx) - abs(jugador.position.x) < 20 and abs(posy) - abs(jugador.position.y) < 20:
-		posx += 20 * result 
-		posy += 20 * result
+	
+	var pos1 = Vector2(rand_range(-1200,-570),rand_range(-1200,1400))
+	var pos2 = Vector2(rand_range(1670,2300),rand_range(-1200,1400))
+	var pos3 = Vector2(rand_range(-1200,2300),rand_range(-800,-420))
+	var pos4 = Vector2(rand_range(-1200,2300),rand_range(1000,1400))
+	
+	var posiciones = [pos1,pos2,pos3,pos4]
+	
+	var pos = posiciones[rand_range(0,3)]
+	var posx = pos[0]
+	var posy = pos[1]
+	#var posx = rand_range(-567,1651)
+	#var posy = rand_range(-411,980)
+	#if abs(posx) - abs(jugador.position.x) < 20 and abs(posy) - abs(jugador.position.y) < 20:
+	#posx += 20 * result 
+	#posy += 20 * result
 	return Vector2(posx,posy)
 	
 func _process(_delta):
