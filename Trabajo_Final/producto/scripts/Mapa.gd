@@ -122,7 +122,7 @@ func posicion_aleatoria(tipo_enemigo) -> Vector2:
 		result=-1
 	var posx
 	var posy
-	if tipo_enemigo == "Pilar":
+	if tipo_enemigo != "Pilar" and tipo_enemigo!="Hongo":
 		var pos1 = Vector2(rand_range(-1200,-570),rand_range(-1200,1400))
 		var pos2 = Vector2(rand_range(1670,2300),rand_range(-1200,1400))
 		var pos3 = Vector2(rand_range(-1200,2300),rand_range(-800,-420))
