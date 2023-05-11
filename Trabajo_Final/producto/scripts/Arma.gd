@@ -1,13 +1,13 @@
 extends Node2D
 
 var mouse_position
-var cadencia_disparo = 0.4 #es en segundos
+var cadencia_disparo  #es en segundos
 var tiempo_ultimo_disparo = 0.0
-var damage_Arma = 10.0
-var rango = 0.5 #tiempo de vida del disparo
-var velocidad_proyectil = 800
-var cant_atraviesa = 1
-var cant_proyectiles = 1
+var damage_Arma 
+var rango  #tiempo de vida del disparo
+var velocidad_proyectil
+var cant_atraviesa 
+var cant_proyectiles 
 var dispersion_angular = 0
 
 onready var escena_proyectil = preload("res://producto/assets/scenes/Proyectil.tscn")
@@ -31,6 +31,7 @@ func _dispara():
 		disparo.set_damage(damage_Arma)
 		disparo.set_rango(rango)
 		disparo.set_atraviesa(cant_atraviesa)
+		disparo.set_velocidad(velocidad_proyectil)
 		get_tree().get_root().add_child(disparo)
 	tiempo_ultimo_disparo = OS.get_ticks_msec() / 1000.0
 	
@@ -74,6 +75,9 @@ func cambia_skin(skin):
 	var skin_arma = load(ruta + "/" + skin + ".png")
 	$Arma_Sprite.set_texture(skin_arma)
 
+func set_cant_proyectiles(val):
+	cant_proyectiles = val
+
 func mas_proyectiles(value):
 	cant_proyectiles += value
 
@@ -106,6 +110,9 @@ func set_cadencia_disparo(value):
 
 func incremento_cadencia(porcentaje):
 	cadencia_disparo = cadencia_disparo / porcentaje
+
+func set_velocidad_proyectil(val):
+	velocidad_proyectil = val
 
 func incrementa_velocidad_proyectil(porcentaje):
 	velocidad_proyectil = velocidad_proyectil * porcentaje

@@ -1,14 +1,24 @@
 extends Node2D
 
 var tiempo_curita 
+
 var tiempo_Demonio 
 var tiempo_Diablito 
 var tiempo_Pilar 
 var tiempo_Ojo_volador 
 var tiempo_Gusano 
 var tiempo_Hechicero 
+var tiempo_Hongo
 
-var max_enemigos = 30
+var nivel_demonio
+var nivel_diablito
+var nivel_pilar
+var nivel_ojo
+var nivel_gusano
+var nivel_hechicero
+var nivel_hongo
+
+var max_enemigos
 var cant_enemigos = 0
 var timers_enemigos = []
 
@@ -16,6 +26,7 @@ onready var escena_item = preload("res://producto/assets/scenes/Item_curacion.ts
 var jugador
 
 func _ready():
+
 	var tiempos = Atributos.get_tiempos()
 	tiempo_Demonio = tiempos.demonio
 	tiempo_Pilar = tiempos.pilar
@@ -24,6 +35,10 @@ func _ready():
 	tiempo_Hechicero = tiempos.hechicero
 	tiempo_curita = tiempos.curita
 	tiempo_Diablito = tiempos.diablito
+
+	set_tiempos()
+	set_niveles_spawn()
+
 	
 	jugador = get_node("Jugador")
 	jugador.connect("level_up",self,"sube_dificultad")
@@ -34,16 +49,35 @@ func _ready():
 	timer_objetos.wait_time = tiempo_curita
 	timer_objetos.connect("timeout", self, "spawn_item_vida")
 	timer_objetos.start()
-	start_spawn_enemigo("Gusano")
+	sube_dificultad(1)
 
-	#start_spawn_enemigo("Ojo_volador")
-	#start_spawn_enemigo("Diablito")
-	#start_spawn_enemigo("Demonio")
-	#start_spawn_enemigo("Pilar")
-	#start_spawn_enemigo("Hechicero")
-	#start_spawn_enemigo("Hongo")
+func set_niveles_spawn():
+	max_enemigos = Atributos.max_enemigos
+	var niveles = Atributos.get_niveles_spawn()
+	
+	nivel_demonio = niveles.demonio
+	nivel_diablito = niveles.diablito
+	nivel_pilar = niveles.pilar
+	nivel_ojo = niveles.ojo
+	nivel_gusano = niveles.gusano
+	nivel_hechicero = niveles.hechicero
+	nivel_hongo = niveles.hongo
+
+func set_tiempos():
+	var tiempos = Atributos.get_tiempos()
+	
+	tiempo_Demonio = tiempos.demonio
+	tiempo_Diablito = tiempos.diablito
+	tiempo_Pilar = tiempos.pilar
+	tiempo_Ojo_volador = tiempos.ojo
+	tiempo_Gusano = tiempos.gusano
+	tiempo_Hechicero = tiempos.hechicero
+	tiempo_Hongo = tiempos.hongo
+	
+	tiempo_curita = tiempos.curita
 
 func start_spawn_enemigo(tipo_enemigo: String):
+	spawn_enemigo(tipo_enemigo)
 	var timer = Timer.new()
 	print("aaaaaaa"+tipo_enemigo)
 	timer.wait_time = self["tiempo_"+tipo_enemigo]
@@ -53,19 +87,24 @@ func start_spawn_enemigo(tipo_enemigo: String):
 	timers_enemigos.append(timer)
 
 func sube_dificultad(nivel):
-	if nivel == 2:
+	if nivel == nivel_gusano:
+		start_spawn_enemigo("Gusano")
+	if nivel == nivel_ojo:
 		start_spawn_enemigo("Ojo_volador")
-	elif nivel == 3:
+	if nivel == nivel_diablito:
 		start_spawn_enemigo("Diablito")
-	elif nivel == 4:
+	if nivel == nivel_demonio:
 		start_spawn_enemigo("Demonio")
-	elif nivel == 5:
+	if nivel == nivel_pilar:
 		start_spawn_enemigo("Pilar")
-	elif nivel == 6:
+	if nivel == nivel_hechicero:
 		start_spawn_enemigo("Hechicero")
+	if nivel == nivel_hongo:
+		start_spawn_enemigo("Hongo")
 
-	for i in range(0,len(timers_enemigos)):
-		timers_enemigos[i].wait_time *= 0.9
+	if nivel > 1:
+		for i in range(0,len(timers_enemigos)):
+			timers_enemigos[i].wait_time *= 0.9
 
 func spawn_enemigo(tipo_enemigo: String):
 	if cant_enemigos < max_enemigos:
@@ -95,7 +134,7 @@ func posicion_aleatoria(tipo_enemigo) -> Vector2:
 		result=-1
 	var posx
 	var posy
-	if tipo_enemigo == "Pilar":
+	if tipo_enemigo != "Pilar" and tipo_enemigo!="Hongo":
 		var pos1 = Vector2(rand_range(-1200,-570),rand_range(-1200,1400))
 		var pos2 = Vector2(rand_range(1670,2300),rand_range(-1200,1400))
 		var pos3 = Vector2(rand_range(-1200,2300),rand_range(-800,-420))
@@ -111,9 +150,6 @@ func posicion_aleatoria(tipo_enemigo) -> Vector2:
 			posx += 20 * result 
 			posy += 20 * result
 	return Vector2(posx,posy)
-	
-func _process(_delta):
-	pass
 
 func _on_Jugador_player_defeated():
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")

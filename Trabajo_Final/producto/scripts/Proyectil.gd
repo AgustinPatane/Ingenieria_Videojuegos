@@ -1,10 +1,10 @@
 extends Area2D
 
 var direction = Vector2.RIGHT
-var speed = 800
+var speed 
 var damage = 0 setget set_damage, get_damage
 var rango = 0 setget set_rango, get_rango
-var cant_atraviesa = 1
+var cant_atraviesa 
 
 func set_rango(val):
 	rango = val

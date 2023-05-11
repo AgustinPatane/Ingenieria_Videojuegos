@@ -5,11 +5,12 @@ var direccion = Vector2(1, 0)
 var puede_disparar = true
 
 func _ready():
-	set_vida(200)
-	set_danio(20)
-	set_experiencia(100)
-	set_puntos_muerte(50)
-	set_speed(100)
+	var atrib = Atributos.get_hechicero()
+	set_vida(atrib.vida)
+	set_danio(atrib.danio)
+	set_experiencia(atrib.experiencia)
+	set_puntos_muerte(atrib.puntos_muerte)
+	set_speed(atrib.speed)
 
 func ataque():
 	if puede_disparar:

@@ -1,8 +1,10 @@
 extends "res://producto/scripts/Enemigo.gd"
+
 onready var atributos = preload("res://producto/scripts/Atributos.gd")
 onready var escena_proyectil = preload("res://producto/assets/scenes/MunicionEnemigo.tscn")
+
 var tiempo_ultimo_disparo=0.0
-var cadencia_disparo = 4
+var cadencia_disparo
 
 func _dispara():
 	var disparo = escena_proyectil.instance()
@@ -23,16 +25,10 @@ func _ready():
 	set_experiencia(atrib.experiencia)
 	set_puntos_muerte(atrib.puntos_muerte)
 	set_speed(atrib.speed)
+	cadencia_disparo = atrib.cadencia_disparo
 
 func ataque():
 	var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0
 	if cond_disparo: 
 		_dispara()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if !flag_tocando_player:
-		if pos_jugador.x < position.x:
-			self.scale.x = abs(self.scale.x)
-		else:
-			self.scale.x = abs(self.scale.x) * -1
