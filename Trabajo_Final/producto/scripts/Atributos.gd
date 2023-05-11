@@ -4,7 +4,7 @@ extends Node
 
 var jugador = {
 	vida_max = 100, 
-	exp_necesaria = 10,
+	exp_necesaria = 1,
 	cadencia_disparo = 0.4,
 	danio = 10,
 	rango = 0.5,
@@ -35,7 +35,7 @@ var tiempos = {
 
 var niveles_spawn = {
 	demonio = 10,
-	diablito = 5,
+	diablito = 1,
 	gusano = 1,
 	hechicero = 6,
 	hongo = 1, # 3

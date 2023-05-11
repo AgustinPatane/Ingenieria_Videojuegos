@@ -52,6 +52,8 @@ const SAVE_PATH = "res://Saves/tienda.sav"
 
 signal player_defeated
 signal level_up(nivel)
+signal player_ready
+signal actualiza_interfaz
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- FUNCIONES ---------------------------------------
@@ -68,20 +70,9 @@ func _ready():
 	$Arma/Arma_Sprite.set_texture(skin_arma)
 	$AnimationPlayer_body.play("idle")
 	spriteLvlUp.visible = false
-	barra_exp.max_value = experiencia_necesaria
-	barra_exp.value = experiencia
-	label_nivel.text = " Lvl: " + str(nivel)
-	label_vida.text = " " + str(vida) + "/"+ str(vida_max)
 	self.z_index = get_parent().get_child_count() + 1
-
-func _process(_delta):
-	if Input.is_action_pressed("ui_cancel"):
-		pausa()		
-	puntaje.text = " Score: "+str(self.puntos)
-	barra_vida.value = self.vida
-	actualiza_barras()
+	emit_signal("player_ready")
 	
-
 func aumenta_Area_recoleccion(value):
 	$area_recoleccion.scale.x += value
 	$area_recoleccion.scale.y += value
@@ -140,6 +131,9 @@ func set_atributos():
 	set_cant_proyectiles(atrib.cant_proyectiles)
 	niveles_evol = atrib.niveles_evol
 
+func get_exp():
+	return experiencia
+
 func set_cant_proyectiles(val):
 	arma.set_cant_proyectiles(val)
 
@@ -151,7 +145,10 @@ func set_cant_atraviesa(val):
 
 func get_vida_max():
 	return vida_max
-	
+
+func get_vida():
+	return vida
+
 func set_vida_max(value):
 	vida_max = value
 	
@@ -201,6 +198,7 @@ func incremento_rango(porcentaje):
 
 func recibe_ataque(danio):
 	vida-=danio
+	emit_signal("actualiza_interfaz")
 	if vida<=0:
 		Engine.set_meta("Puntaje",puntos)
 		emit_signal("player_defeated")
@@ -213,19 +211,12 @@ func recupera_vida(cant):
 # --------------------------- EXPERIENCIA y PUNTAJE -----------------------------------
 # -------------------------------------------------------------------------------------
 
-func actualiza_barras():
-	label_vida.text = " " + str(vida) + "/"+ str(vida_max)
-	barra_vida.value = vida
-	barra_vida.max_value = vida_max
-	barra_exp.value = experiencia
-
 func gana_puntos(cantidad):
 	puntos += cantidad
+	emit_signal("actualiza_interfaz")
 
 func gana_exp(value):
 	experiencia += value
-	gana_puntos(nivel)
-	actualiza_barras()
 	if experiencia_necesaria <= experiencia:
 		nivel += 1
 		emit_signal("level_up",nivel)
@@ -237,13 +228,11 @@ func gana_exp(value):
 		experiencia = 0
 		puntos += nivel * 25
 		experiencia_necesaria = actualiza_exp(experiencia_necesaria)
-		barra_exp.max_value = experiencia_necesaria
-		label_nivel.text = "Lvl: " + str(nivel)
 		subiendo_nivel = true
 		vida_max += 5
 		vida += round(vida_max * 0.1)
 		if vida > vida_max: vida= vida_max
-		actualiza_barras()
+	emit_signal("actualiza_interfaz")
 
 func actualiza_exp(experiencia_max):
 	return experiencia_max * 2
@@ -261,25 +250,30 @@ func _adquiere_habilidad():
 	pass
 
 func _evolucion():
+	$Interfaz.esconder()
+	spriteLvlUp.visible =false
 	var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
 	self.z_index = z_index + 20
 	self.add_child(evol_instance)
 	var menu_evol = get_node("MenuEvolucion")
 	menu_evol.set_botones(evolucion_actual)
 	menu_evol.raise()
-	menu_evol.rect_position = Vector2($Control/pos_pausa.position.x/2,$Control/pos_pausa.position.y/2)
-	menu_evol.rect_size = Vector2(2048,1200)
+	var pos_evol = get_viewport().size
+	menu_evol.rect_position = Vector2(-1* pos_evol.x/2 ,-1* pos_evol.y/2)
+	menu_evol.rect_size = pos_evol
 	$Jugador_Sprite.hide()
 	arma.get_node("Arma_Sprite").hide()
 	get_tree().paused = true
 	pass
 
 func on_evol_quit():
+	$Interfaz.mostrar()
 	self.z_index = z_index - 20
 	$Jugador_Sprite.show()
 	arma.get_node("Arma_Sprite").show()
 	spriteLvlUp.visible = true
 	animLvlUp.play("LVL_UP")
+	emit_signal("actualiza_interfaz")
 	pass
 
 func actualiza_atributos(atributos, evol):
@@ -301,9 +295,6 @@ func damage():
 func cadencia():
 	pass
 
-	
-
-	
 func cadencia_velocidad():
 	puede_correr = true
 
@@ -337,36 +328,6 @@ func damage_proyectiles_360():
 # -------------------------------------------------------------------------------------
 # ------------------------------ MANEJO DE LA PAUSA -----------------------------------
 # -------------------------------------------------------------------------------------
-
-func pausa():
-	if paused == null:
-		self.z_index = z_index + 20
-		paused = load("res://producto/assets/scenes/MenuPausa.tscn").instance()
-		btn_pausa.disabled = true
-		btn_pausa.visible = false
-		paused.connect("continuar",self, "on_paused_quit")
-		$Jugador_Sprite.hide()
-		$Lvp_up.hide()
-		arma.get_node("Arma_Sprite").hide()
-		
-		#no se como hacer para que el menu de pausa se ponga bien
-		self.add_child(paused)
-		menu_pausa = get_node("MenuPausa")
-		menu_pausa.raise()
-		menu_pausa.rect_position = $Control/pos_pausa.position
-		menu_pausa.rect_size = Vector2(2048,1200)
-		get_tree().paused = true
-
-func _on_Btn_pausa_pressed():
-	pausa()
-
-func on_paused_quit():
-	self.z_index = z_index - 20
-	$Jugador_Sprite.show()
-	if subiendo_nivel:
-		$Lvp_up.show()
-	arma.get_node("Arma_Sprite").show()
-	paused = null
 
 func guardar_monedas():
 	var monedas = Engine.get_meta("monedas")
