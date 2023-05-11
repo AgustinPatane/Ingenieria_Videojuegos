@@ -1,10 +1,17 @@
 extends Node
 
 # Connection constants
-const HOST = "cecom112.mdp.edu.ar"
-const PORT = 443
+#const HOST = "cecom112.mdp.edu.ar"
+#const PORT = 443
+#const BASIC_HEADERS = ["User-Agent: GAME/1.0", "Accept: */*"]
+#const ROUTE = "/franco/game.php"
+
+
+
+const HOST = "localhost"
+const PORT = 3000
 const BASIC_HEADERS = ["User-Agent: GAME/1.0", "Accept: */*"]
-const ROUTE = "/franco/game.php"
+const ROUTE = "/funciones.php"
 
 # Connection variables
 var http = null
@@ -12,7 +19,7 @@ var is_connected = false
 
 func init_network():
 	http = HTTPClient.new()
-	http.connect_to_host(HOST, PORT,true)
+	http.connect_to_host(HOST, PORT)
 	# Wait until resolved and connected
 	while http.get_status() == HTTPClient.STATUS_CONNECTING or http.get_status() == HTTPClient.STATUS_RESOLVING:
 		http.poll()
@@ -46,6 +53,7 @@ func postHttp(query):
 	init_network()
 	#this is not necesary if the info is sent in String
 	query = http.query_string_from_dict(query)
+	print(query)
 	var headers = BASIC_HEADERS
 	headers.append("Content-Type: application/x-www-form-urlencoded")
 	headers.append("Content-Length: " + str(query.length()))
@@ -54,16 +62,21 @@ func postHttp(query):
 	while http.get_status() == HTTPClient.STATUS_REQUESTING:
 		http.poll()
 		OS.delay_msec(50)
+	
 
 func getHttp(route):
 	init_network()
 	var headers = BASIC_HEADERS
 	headers.append("Content-Type: application/x-www-form-urlencoded")
+	headers.append("Content-Length: 0")
 	http.request(http.METHOD_GET, ROUTE+route, headers)
 	# Keep polling until the request is going on
+	
+
 	while http.get_status() == HTTPClient.STATUS_REQUESTING:
 		http.poll()
 		OS.delay_msec(50)
+		
 	if http.has_response():
 		# Get response headers
 		http.get_response_headers_as_dictionary()

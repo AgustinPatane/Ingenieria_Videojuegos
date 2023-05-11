@@ -23,6 +23,7 @@ func _ready():
 	tiempo_Gusano = tiempos.gusano
 	tiempo_Hechicero = tiempos.hechicero
 	tiempo_curita = tiempos.curita
+	tiempo_Diablito = tiempos.diablito
 	
 	jugador = get_node("Jugador")
 	jugador.connect("level_up",self,"sube_dificultad")
@@ -44,6 +45,7 @@ func _ready():
 
 func start_spawn_enemigo(tipo_enemigo: String):
 	var timer = Timer.new()
+	print("aaaaaaa"+tipo_enemigo)
 	timer.wait_time = self["tiempo_"+tipo_enemigo]
 	timer.connect("timeout", self, "spawn_enemigo",[tipo_enemigo])
 	get_node("/root/Mapa").add_child(timer)

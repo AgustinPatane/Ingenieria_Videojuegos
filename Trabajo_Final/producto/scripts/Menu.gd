@@ -25,6 +25,7 @@ func _ready():
 	slider.min_value = -50
 	slider.value = -30
 	OS.set_window_position(Vector2(255,110))
+	print("333")
 	#OS.set_fullscreen(true)
 	#OS.set_window_maximized(true)
 
@@ -57,10 +58,11 @@ func _on_VSlider_value_changed(value):
 	
 	
 func _on_Ranking_pressed():
+	print("AAAAAAAAAAA")
 	if ranking == null:
 		ranking = load("res://producto/assets/scenes/MenuRanking.tscn").instance()
 		ranking.connect("continuar",self, "on_ranking_quit")
-		
+
 		self.add_child(ranking)
 		menu_ranking = get_node("MenuRanking")
 		menu_ranking.raise()

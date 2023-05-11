@@ -17,6 +17,7 @@ func acomoda_todo():
 func _ready():
 	acomoda_todo()
 	get_highscore_from_saves()
+	##############################DESCOMENTAR CUANDO ESTE EL SERVIDOR####################_get_highscores_from_server()
 
 func _on_Volver_button_down():
 	get_tree().paused = false
@@ -88,3 +89,26 @@ func _on_Button_pressed():
 	genera_saves_vacio()
 	get_highscore_from_saves()
 	
+
+
+
+###################PUNTAJE GLOBAL##################
+func _get_highscores_from_server():
+	var aux2 = Network.getHttp("")
+	var highscores2 = aux2.split(";")
+	var nodo_nombre
+	var nodo_score
+	var aux3
+	print(aux2)
+	
+	for i in range(1,11):
+		nodo_nombre = get_node("Ranking_Mundial/HBoxContainer/Nombres/Nombre" + str(i))
+		nodo_score = get_node("Ranking_Mundial/HBoxContainer/Scores/Score" + str(i))
+		aux3 = highscores2[i-1].split("|")
+		nodo_nombre.text = aux3[0]
+		nodo_nombre.set_editable(false)
+		nodo_score.text = str(aux3[1])
+		nodo_score.set_editable(false)
+	
+	
+
