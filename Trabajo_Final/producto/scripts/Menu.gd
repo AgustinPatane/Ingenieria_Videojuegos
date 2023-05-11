@@ -58,7 +58,6 @@ func _on_VSlider_value_changed(value):
 	
 	
 func _on_Ranking_pressed():
-	print("AAAAAAAAAAA")
 	if ranking == null:
 		ranking = load("res://producto/assets/scenes/MenuRanking.tscn").instance()
 		ranking.connect("continuar",self, "on_ranking_quit")
