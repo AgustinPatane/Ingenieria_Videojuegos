@@ -4,15 +4,9 @@ extends KinematicBody2D
 # ------------------------------------- NODOS -----------------------------------------
 # -------------------------------------------------------------------------------------
 
-onready var puntaje = get_node("Control/Puntaje")
-onready var barra_vida = get_node("Control/BarraVida")
-onready var barra_exp = get_node("Control/BarraExperiencia")
-onready var label_nivel = get_node("Control/Lvl")
-onready var label_vida = get_node("Control/Vida")
 onready var arma = get_node("Arma")
 onready var spriteLvlUp = get_node("Lvp_up")
 onready var animLvlUp = get_node("Lvp_up/Anim_lvl_up")
-onready var btn_pausa = get_node("Control/Btn_pausa")
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- VARIABLES ---------------------------------------
