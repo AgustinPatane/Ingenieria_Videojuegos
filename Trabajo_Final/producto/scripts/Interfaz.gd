@@ -43,6 +43,7 @@ func actualiza():
 
 func _on_Jugador_player_ready():
 	jugador = get_parent()
+	$Control/Sprite.set_texture(load(Engine.get_meta("ruta_skin") + "/head.png"))
 	actualiza()
 
 func _on_Jugador_actualiza_interfaz():
