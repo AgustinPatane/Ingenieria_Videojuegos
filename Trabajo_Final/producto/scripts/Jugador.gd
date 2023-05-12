@@ -250,7 +250,6 @@ func _evolucion():
 	self.z_index = z_index + 20
 	self.add_child(evol_instance)
 	var menu_evol = get_node("MenuEvolucion")
-	menu_evol.set_botones(evolucion_actual)
 	menu_evol.raise()
 	var pos_evol = get_viewport().size
 	menu_evol.rect_position = Vector2(-1* pos_evol.x/2 ,-1* pos_evol.y/2)
@@ -294,6 +293,19 @@ func cadencia_velocidad():
 
 func cadencia_cadencia():
 	arma.set_dispersion_angular(5)
+
+func cadencia_cadencia_doblearma():
+	pass
+
+func cadencia_cadencia_boomerang():
+	pass
+
+func cadencia_velocidad_atraviesamuros():
+	pass
+
+func cadencia_velocidad_nitro():
+	pass
+
 
 func damage_rango():
 	arma.set_cant_atraviesa(3)
