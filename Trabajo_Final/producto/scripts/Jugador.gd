@@ -24,6 +24,8 @@ var menu_pausa
 var subiendo_nivel = false
 var niveles_evol
 var puede_correr = false
+var skin_body
+var skin_arma
 
 # -------------------------------------------------------------------------------------
 # -------------------------------- CARACTERISTICAS ------------------------------------
@@ -58,8 +60,8 @@ func _ready():
 		
 	$Sombra.modulate = Color(1,1,1,0.5)
 	var ruta = Engine.get_meta("ruta_skin")
-	var skin_body = load(ruta + "/body.png")
-	var skin_arma = load(ruta + "/arma_1.png")
+	skin_body = load(ruta + "/body.png")
+	skin_arma = load(ruta + "/arma_1.png")
 	$Jugador_Sprite.set_texture(skin_body)
 	$Arma/Arma_Sprite.set_texture(skin_arma)
 	$AnimationPlayer_body.play("idle")
