@@ -20,8 +20,10 @@ func pausa():
 		paused.connect("continuar",self, "on_paused_quit")
 		self.add_child(paused)
 		menu_pausa = get_node("MenuPausa")
-		menu_pausa.rect_position = $Pos_pausa.position
-		menu_pausa.rect_size = get_viewport().size
+		menu_pausa.jugador = jugador
+		menu_pausa.cambia_skin()
+		#menu_pausa.rect_position = $Pos_pausa.position
+		#menu_pausa.rect_size = get_viewport().size
 		get_tree().paused = true
 
 func _on_Btn_pausa_pressed():
@@ -41,6 +43,7 @@ func actualiza():
 
 func _on_Jugador_player_ready():
 	jugador = get_parent()
+	$Control/Sprite.set_texture(load(Engine.get_meta("ruta_skin") + "/head.png"))
 	actualiza()
 
 func _on_Jugador_actualiza_interfaz():

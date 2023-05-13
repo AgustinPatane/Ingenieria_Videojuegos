@@ -26,7 +26,10 @@ func set_atraviesa(value):
 
 func _ready():
 	var timer = Timer.new()
-	timer.wait_time = rango
+	if rango:
+		timer.wait_time = rango
+	else:
+		timer.wait_time = 0
 	add_child(timer)
 	timer.connect("timeout", self, "eliminar")
 	timer.start()

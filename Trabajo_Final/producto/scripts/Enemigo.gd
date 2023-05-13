@@ -9,6 +9,8 @@ var puntos_muerte
 var experiencia
 var flag_tocando_player = false
 var flag_en_area_ataque = false
+var muerto = 0
+var freeze = Engine.get_meta("freeze")
 
 onready var escena_txt_danio = preload("res://producto/assets/scenes/Texto_danio.tscn")
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
@@ -21,7 +23,7 @@ func recibe_damage(damage, pos):
 	label_danio.z_index = self.z_index + 1
 	get_parent().add_child(label_danio)
 	vida -= damage
-	if vida <= 0:
+	if vida <= 0 and muerto==0:
 		muere()
 
 func set_experiencia(val):
@@ -47,6 +49,7 @@ func ataque():
 
 func muere():
 	#$death.play()
+	muerto  = 1
 	mapa = get_node("/root/Mapa")
 	mapa.cant_enemigos=mapa.cant_enemigos-1
 	#$Sombra.hide()
@@ -74,7 +77,8 @@ func acomodar():
 			self.scale.x = abs(self.scale.x) * -1
 
 func _process(delta):
-	if (vida>0):
+	freeze = Engine.get_meta("freeze")
+	if (vida>0 and freeze == "false"):
 		movimiento(delta)
 		acomodar()
 
@@ -82,6 +86,9 @@ func _on_Enemigo_area_entered(area):
 	if area.is_in_group("Proyectil"):
 		recibe_damage(area.get_damage(), area.position)
 		area.choca()
+	else:
+		if area.name == "area_mascota":
+			recibe_damage(30,self.position)
 
 func drop_on_death():
 	var orbe_exp = escena_exp.instance()

@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/ak-47.png" type="Texture" id=3]
 [ext_resource path="res://producto/scripts/Arma.gd" type="Script" id=4]
+[ext_resource path="res://producto/assets/img/mascota/sprite_armado.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/enemigos/Sombra.png" type="Texture" id=6]
+[ext_resource path="res://producto/assets/scenes/Path2D.gd" type="Script" id=9]
 [ext_resource path="res://producto/assets/img/jugador/explosion_lvl_up.png" type="Texture" id=12]
 [ext_resource path="res://producto/assets/music/sounds/disparo.wav" type="AudioStream" id=15]
 [ext_resource path="res://producto/assets/music/sounds/reload.wav" type="AudioStream" id=16]
@@ -97,6 +99,82 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=8]
 radius = 53.0848
 
+[sub_resource type="Curve2D" id=17]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 64, 22, -5, 60, 5, -60, 117, -33, 0, 0, 0, 0, 60, -92, 10, -60.5, -10, 60.5, 2, -41, 0, 0, 0, 0, 62, 23 )
+}
+
+[sub_resource type="CircleShape2D" id=16]
+radius = 10.198
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "ataque"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "move"
+length = 0.3
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "quieto"
+length = 1.1
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19, 20, 21 ]
+}
+
 [node name="Jugador" type="KinematicBody2D"]
 position = Vector2( 541, 296 )
 script = ExtResource( 1 )
@@ -141,7 +219,7 @@ scale = Vector2( 3.5, 3.5 )
 texture = ExtResource( 3 )
 
 [node name="Position_arma" type="Position2D" parent="Arma"]
-position = Vector2( 76, -2 )
+position = Vector2( 78, -4 )
 scale = Vector2( 2, 2 )
 
 [node name="disparo" type="AudioStreamPlayer" parent="Arma"]
@@ -178,6 +256,72 @@ shape = SubResource( 8 )
 
 [node name="Position2D2" type="Position2D" parent="."]
 
+[node name="Arma2" type="Node2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+script = ExtResource( 4 )
+
+[node name="Arma_Sprite" type="Sprite" parent="Arma2"]
+position = Vector2( 36, 30 )
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 3 )
+
+[node name="Position_arma" type="Position2D" parent="Arma2"]
+position = Vector2( 78, 28 )
+scale = Vector2( 2, 2 )
+
+[node name="disparo" type="AudioStreamPlayer" parent="Arma2"]
+stream = ExtResource( 15 )
+
+[node name="reload" type="AudioStreamPlayer" parent="Arma2"]
+stream = ExtResource( 16 )
+pitch_scale = 1.36
+
+[node name="Mascota" type="Node2D" parent="."]
+position = Vector2( -58, 27 )
+
+[node name="Path2D" type="Path2D" parent="Mascota"]
+position = Vector2( -2, 4 )
+curve = SubResource( 17 )
+script = ExtResource( 9 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Mascota/Path2D"]
+position = Vector2( 64, 22 )
+rotation = 0.0171521
+rotate = false
+
+[node name="sprite" type="Sprite" parent="Mascota/Path2D/PathFollow2D"]
+position = Vector2( 0, -0.563 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
+hframes = 8
+vframes = 3
+
+[node name="area_mascota" type="Area2D" parent="Mascota/Path2D/PathFollow2D/sprite"]
+position = Vector2( -3.36407, 4.16377 )
+scale = Vector2( 0.666667, 0.666667 )
+
+[node name="colision_mascota" type="CollisionShape2D" parent="Mascota/Path2D/PathFollow2D/sprite/area_mascota"]
+position = Vector2( 1.04053, -0.440552 )
+scale = Vector2( 1.88, 1.44 )
+shape = SubResource( 16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mascota/Path2D/PathFollow2D"]
+anims/RESET = SubResource( 18 )
+anims/ataque = SubResource( 19 )
+anims/move = SubResource( 20 )
+anims/quieto = SubResource( 21 )
+
+[node name="Timer_evolucion112" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Timer_freeze" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]
 [connection signal="animation_finished" from="Lvp_up/Anim_lvl_up" to="." method="_on_Anim_lvl_up_animation_finished"]
+[connection signal="area_entered" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_entered"]
+[connection signal="area_exited" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_exited"]
+[connection signal="timeout" from="Timer_evolucion112" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer_freeze" to="." method="_on_Timer_freeze_timeout"]

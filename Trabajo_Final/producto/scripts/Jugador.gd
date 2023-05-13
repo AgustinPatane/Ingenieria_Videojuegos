@@ -8,6 +8,9 @@ onready var arma = get_node("Arma")
 onready var spriteLvlUp = get_node("Lvp_up")
 onready var animLvlUp = get_node("Lvp_up/Anim_lvl_up")
 
+onready var mascota = get_node("Mascota")
+onready var anim_mascota = get_node("Mascota/Path2D/PathFollow2D/AnimationPlayer")
+
 # -------------------------------------------------------------------------------------
 # ----------------------------------- VARIABLES ---------------------------------------
 # -------------------------------------------------------------------------------------
@@ -24,6 +27,8 @@ var menu_pausa
 var subiendo_nivel = false
 var niveles_evol
 var puede_correr = false
+var skin_body
+var skin_arma
 
 # -------------------------------------------------------------------------------------
 # -------------------------------- CARACTERISTICAS ------------------------------------
@@ -48,6 +53,7 @@ signal player_defeated
 signal level_up(nivel)
 signal player_ready
 signal actualiza_interfaz
+signal freeze
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- FUNCIONES ---------------------------------------
@@ -55,11 +61,11 @@ signal actualiza_interfaz
 
 func _ready():
 	set_atributos()
-		
+	preparo_futuras_evoluciones()
 	$Sombra.modulate = Color(1,1,1,0.5)
 	var ruta = Engine.get_meta("ruta_skin")
-	var skin_body = load(ruta + "/body.png")
-	var skin_arma = load(ruta + "/arma_1.png")
+	skin_body = load(ruta + "/body.png")
+	skin_arma = load(ruta + "/arma_1.png")
 	$Jugador_Sprite.set_texture(skin_body)
 	$Arma/Arma_Sprite.set_texture(skin_arma)
 	$AnimationPlayer_body.play("idle")
@@ -106,6 +112,7 @@ func _physics_process(delta):
 				motion = move_and_slide(delta * -SPEED)
 	if !(self.position.x<1651 and self.position.x >-567 and self.position.y<980 and self.position.y >-411):
 		recibe_ataque(1)
+	
 	
 # -------------------------------------------------------------------------------------
 # ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
@@ -250,7 +257,6 @@ func _evolucion():
 	self.z_index = z_index + 20
 	self.add_child(evol_instance)
 	var menu_evol = get_node("MenuEvolucion")
-	menu_evol.set_botones(evolucion_actual)
 	menu_evol.raise()
 	var pos_evol = get_viewport().size
 	menu_evol.rect_position = Vector2(-1* pos_evol.x/2 ,-1* pos_evol.y/2)
@@ -295,6 +301,19 @@ func cadencia_velocidad():
 func cadencia_cadencia():
 	arma.set_dispersion_angular(5)
 
+func cadencia_cadencia_doblearma():
+	pass
+
+func cadencia_cadencia_boomerang():
+	pass
+
+func cadencia_velocidad_atraviesamuros():
+	pass
+
+func cadencia_velocidad_freeze():
+	$Timer_evolucion112.set_process(true)
+	$Timer_evolucion112.start()
+
 func damage_rango():
 	arma.set_cant_atraviesa(3)
 	arma.incrementa_velocidad_proyectil(2)
@@ -309,11 +328,21 @@ func damage_rango_explosivo():
 func damage_proyectiles():
 	arma.mas_proyectiles(3)
 	arma.set_dispersion_angular(30)
+	arma.mas_proyectiles(0)
+	#arma.set_dispersion_angular(30)
 
 func damage_proyectiles_proyectiles():
 	arma.mas_proyectiles(5)
 	arma.cambia_proeyctil("Proyectil_Rebota")
 	arma.set_cant_atraviesa(2)
+
+func damage_proyectiles_doblearma():
+	$Arma2.set_process(true)
+	$Arma2.visible = true
+	$Arma2.position.y += 20
+	set_atributos()
+	pass
+
 
 func damage_proyectiles_360():
 	arma.mas_proyectiles(10)
@@ -335,3 +364,35 @@ func guardar_monedas():
 	file.open(SAVE_PATH, File.WRITE)
 	file.store_line(to_json(skins_cargados))
 	file.close()
+
+
+#---------------------------------------- MASCOTA ---------------------------
+
+func damage_proyectiles_mascota():
+	mascota.set_process(true)
+	mascota.visible = true
+	anim_mascota.play("move")
+	pass
+
+func _on_Area2D_Mascota_area_entered(area):
+	anim_mascota.play("ataque")
+
+func _on_Area2D_Mascota_area_exited(area):
+	anim_mascota.play("move")
+
+#---------------------------------------- MASCOTA ---------------------------
+func preparo_futuras_evoluciones():
+	$Arma2.set_process(false)
+	$Arma2.visible = false
+	mascota.set_process(false)
+	$Timer_evolucion112.set_process(false)
+	Engine.set_meta("freeze","false")
+	mascota.visible = false
+
+func _on_Timer_timeout():
+	Engine.set_meta("freeze","true")
+	emit_signal("freeze")
+	$Timer_freeze.start()
+
+func _on_Timer_freeze_timeout():
+	Engine.set_meta("freeze","false")

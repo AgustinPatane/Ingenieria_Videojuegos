@@ -23,6 +23,7 @@ var cant_enemigos = 0
 var timers_enemigos = []
 
 onready var escena_item = preload("res://producto/assets/scenes/Item_curacion.tscn")
+onready var freeze_sound = get_node("Freeze")
 var jugador
 
 func _ready():
@@ -42,6 +43,7 @@ func _ready():
 	
 	jugador = get_node("Jugador")
 	jugador.connect("level_up",self,"sube_dificultad")
+	jugador.connect("freeze",self,"freeze")
 	randomize()
 
 	var timer_objetos = Timer.new()
@@ -153,3 +155,7 @@ func posicion_aleatoria(tipo_enemigo) -> Vector2:
 
 func _on_Jugador_player_defeated():
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
+
+func freeze():
+	print("___________________LLLLLLLLLEEEEEEGOOOOOO_____________")
+	freeze_sound.play()

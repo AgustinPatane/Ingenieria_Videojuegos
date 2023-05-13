@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://producto/scripts/Interfaz.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/GUI/Barra_vida/Barra_VIDA_fondo.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://producto/assets/img/GUI/Barra_exp/GUI - copia (3).png" type="Texture" id=9]
 [ext_resource path="res://producto/assets/img/GUI/Barra_exp/GUI - copia (3) - copia.png" type="Texture" id=10]
+[ext_resource path="res://producto/assets/img/jugador/skins/Black/head.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 21
@@ -67,6 +68,11 @@ margin_right = 23.0
 margin_bottom = 99.0
 texture = ExtResource( 3 )
 expand = true
+
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( -17.25, 49.5 )
+scale = Vector2( 1.70833, 1.70833 )
+texture = ExtResource( 11 )
 
 [node name="Puntaje" type="Label" parent="."]
 margin_left = 132.0
