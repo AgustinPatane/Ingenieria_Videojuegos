@@ -25,7 +25,6 @@ func _ready():
 	slider.min_value = -50
 	slider.value = -30
 	OS.set_window_position(Vector2(255,110))
-	print("333")
 	#OS.set_fullscreen(true)
 	#OS.set_window_maximized(true)
 
