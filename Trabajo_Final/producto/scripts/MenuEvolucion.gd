@@ -52,31 +52,45 @@ var evolucion_1 = {
 }
 
 var evolucion_1_1 = {
-	"nombre": "cadencia_cadencia",
-	"cadencia": 2,
-	"vida": 1,
+	#nombre": "cadencia_cadencia",
+	#"cadencia": 2,
+	#"vida": 1,
+	#"velocidad": 1,
+	#"damage": 0.75,
+	#"rango": 1,
+	#"arma": "ametralladora"
+	"nombre": "damage_proyectiles",
+	"cadencia": 1,
+	"vida": 1.5,
 	"velocidad": 1,
-	"damage": 0.75,
-	"rango": 1,
-	"arma": "ametralladora"
+	"damage": 1.5,
+	"rango": 0.75,
+	"arma": "escopeta"
 }
 var evolucion_1_1_2 = {
-	"nombre": "cadencia_cadencia_doblearma",
-	"cadencia": 2,
-	"vida": 1,
-	"velocidad": 4,
-	"damage": 0.75,
-	"rango": 1,
-	"arma": "ametralladora"
+	#"nombre": "cadencia_cadencia_doblearma",
+	#"cadencia": 2,
+	#"vida": 1,
+	#"velocidad": 4,
+	#"damage": 0.75,
+	#"rango": 1,
+	#"arma": "ametralladora"
+	"nombre": "damage_proyectiles_proyectiles",
+	"cadencia": 1,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 1.5,
+	"rango": 3,
+	"arma": "escopeta"
 }
 var evolucion_1_1_1 = {
-	"nombre": "cadencia_cadencia_boomerang",
-	"cadencia": 2,
+	"nombre": "damage_proyectiles_360",
+	"cadencia": 1,
 	"vida": 1,
 	"velocidad": 1,
-	"damage": 0.75,
+	"damage": 0.5,
 	"rango": 1,
-	"arma": "ametralladora"
+	"arma": "bobina"
 }
 var evolucion_1_2 = {
 	"nombre": "cadencia_velocidad",
@@ -118,15 +132,15 @@ var evolucion_2 = {
 var evolucion_2_1 = {
 	"nombre": "damage_proyectiles",
 	"cadencia": 1,
-	"vida": 1.5,
-	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 0.75,
+	"vida": 3,
+	"velocidad": 0.75,
+	"damage": 1,
+	"rango": 1,
 	"arma": "escopeta"
 }
 
 var evolucion_2_1_1 = {
-	"nombre": "damage_proyectiles_proyectiles",
+	"nombre": "damage_proyectiles_doblearma",
 	"cadencia": 1,
 	"vida": 1.5,
 	"velocidad": 1,
@@ -136,12 +150,12 @@ var evolucion_2_1_1 = {
 }
 
 var evolucion_2_1_2 = {
-	"nombre": "damage_proyectiles_360",
+	"nombre": "damage_proyectiles_mascota",
 	"cadencia": 1,
 	"vida": 1.5,
 	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 0.75,
+	"damage": 1,
+	"rango": 1,
 	"arma": "bobina"
 }
 
@@ -322,7 +336,7 @@ func _on_evolucion_2_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_1_mouse_entered():
-	ventana_actualizar("LA LLUVIA DE PLOMO","Has adquirido experiencia en el manejo de tu arma, ahora disparas con mucha mas velocidad.","+ DISPAROS")
+	ventana_actualizar("LA LLUVIA DE PLOMO","Has adquirido experiencia en el manejo de tu arma, ahora disparas muchas balasd.","+ DISPAROS")
 
 func _on_evolucion_1_1_mouse_exited():
 	ventana_por_defecto()

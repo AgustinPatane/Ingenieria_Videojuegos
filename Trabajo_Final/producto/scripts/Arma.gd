@@ -1,13 +1,13 @@
 extends Node2D
 
 var mouse_position
-var cadencia_disparo  #es en segundos
+var cadencia_disparo = 0 #es en segundos
 var tiempo_ultimo_disparo = 0.0
-var damage_Arma 
+var damage_Arma = 1
 var rango  #tiempo de vida del disparo
-var velocidad_proyectil
-var cant_atraviesa 
-var cant_proyectiles 
+var velocidad_proyectil= 1
+var cant_atraviesa = 1
+var cant_proyectiles = 1
 var dispersion_angular = 0
 
 onready var escena_proyectil = preload("res://producto/assets/scenes/Proyectil.tscn")

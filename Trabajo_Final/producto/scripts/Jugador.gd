@@ -8,6 +8,9 @@ onready var arma = get_node("Arma")
 onready var spriteLvlUp = get_node("Lvp_up")
 onready var animLvlUp = get_node("Lvp_up/Anim_lvl_up")
 
+onready var mascota = get_node("Mascota")
+onready var anim_mascota = get_node("Mascota/Path2D/PathFollow2D/AnimationPlayer")
+
 # -------------------------------------------------------------------------------------
 # ----------------------------------- VARIABLES ---------------------------------------
 # -------------------------------------------------------------------------------------
@@ -57,7 +60,11 @@ signal actualiza_interfaz
 
 func _ready():
 	set_atributos()
-		
+	#if nivel == 1:
+	$Arma2.set_process(false)
+	$Arma2.visible = false
+	mascota.set_process(false)
+	mascota.visible = false
 	$Sombra.modulate = Color(1,1,1,0.5)
 	var ruta = Engine.get_meta("ruta_skin")
 	skin_body = load(ruta + "/body.png")
@@ -108,6 +115,10 @@ func _physics_process(delta):
 				motion = move_and_slide(delta * -SPEED)
 	if !(self.position.x<1651 and self.position.x >-567 and self.position.y<980 and self.position.y >-411):
 		recibe_ataque(1)
+	if $Mascota/Path2D/PathFollow2D/sprite.position.x< 0 :
+		$Mascota/Path2D/PathFollow2D/sprite.set_flip_h(true)
+	else:
+		$Mascota/Path2D/PathFollow2D/sprite.set_flip_h(true)
 	
 # -------------------------------------------------------------------------------------
 # ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
@@ -323,11 +334,21 @@ func damage_rango_explosivo():
 func damage_proyectiles():
 	arma.mas_proyectiles(3)
 	arma.set_dispersion_angular(30)
+	arma.mas_proyectiles(0)
+	#arma.set_dispersion_angular(30)
 
 func damage_proyectiles_proyectiles():
 	arma.mas_proyectiles(5)
 	arma.cambia_proeyctil("Proyectil_Rebota")
 	arma.set_cant_atraviesa(2)
+
+func damage_proyectiles_doblearma():
+	$Arma2.set_process(true)
+	$Arma2.visible = true
+	$Arma2.position.y += 20
+	set_atributos()
+	pass
+
 
 func damage_proyectiles_360():
 	arma.mas_proyectiles(10)
@@ -349,3 +370,20 @@ func guardar_monedas():
 	file.open(SAVE_PATH, File.WRITE)
 	file.store_line(to_json(skins_cargados))
 	file.close()
+
+
+#---------------------------------------- MASCOTA ---------------------------
+
+func damage_proyectiles_mascota():
+	mascota.set_process(true)
+	mascota.visible = true
+	anim_mascota.play("move")
+	pass
+
+func _on_Area2D_Mascota_area_entered(area):
+	anim_mascota.play("ataque")
+
+func _on_Area2D_Mascota_area_exited(area):
+	anim_mascota.play("move")
+
+#---------------------------------------- MASCOTA ---------------------------
