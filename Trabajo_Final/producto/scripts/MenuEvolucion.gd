@@ -111,12 +111,12 @@ var evolucion_1_2_1 = {
 	"arma": "ak-47"
 }
 var evolucion_1_2_2 = {
-	"nombre": "cadencia_velocidad_nitro",
-	"cadencia": 1.5,
-	"vida": 0.75,
-	"velocidad": 1.2,
+	"nombre": "cadencia_velocidad_freeze",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
 	"damage": 1,
-	"rango": 0.75,
+	"rango": 1,
 	"arma": "ak-47"
 }
 var evolucion_2 = {
@@ -342,7 +342,7 @@ func _on_evolucion_1_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_2_mouse_entered():
-	ventana_actualizar("USAIN MAX BOLT","Tus piernas han entrado en cortocircuito, te desplazas a enorme velocidad","++ VELOCIDAD")
+	ventana_actualizar("FANTASMAX","Te desplazas a tan altas velocidades que te vuelves invisible cada unos segundos","INVISIBILIDAD")
 
 func _on_evolucion_1_2_mouse_exited():
 	ventana_por_defecto()

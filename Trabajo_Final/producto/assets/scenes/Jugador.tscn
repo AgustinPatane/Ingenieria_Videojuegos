@@ -312,8 +312,16 @@ anims/ataque = SubResource( 19 )
 anims/move = SubResource( 20 )
 anims/quieto = SubResource( 21 )
 
+[node name="Timer_evolucion112" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Timer_freeze" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]
 [connection signal="animation_finished" from="Lvp_up/Anim_lvl_up" to="." method="_on_Anim_lvl_up_animation_finished"]
 [connection signal="area_entered" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_entered"]
 [connection signal="area_exited" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_exited"]
+[connection signal="timeout" from="Timer_evolucion112" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer_freeze" to="." method="_on_Timer_freeze_timeout"]

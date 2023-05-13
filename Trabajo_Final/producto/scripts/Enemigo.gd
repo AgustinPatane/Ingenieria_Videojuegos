@@ -10,6 +10,7 @@ var experiencia
 var flag_tocando_player = false
 var flag_en_area_ataque = false
 var muerto = 0
+var freeze = Engine.get_meta("freeze")
 
 onready var escena_txt_danio = preload("res://producto/assets/scenes/Texto_danio.tscn")
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
@@ -76,7 +77,8 @@ func acomodar():
 			self.scale.x = abs(self.scale.x) * -1
 
 func _process(delta):
-	if (vida>0):
+	freeze = Engine.get_meta("freeze")
+	if (vida>0 and freeze == "false"):
 		movimiento(delta)
 		acomodar()
 

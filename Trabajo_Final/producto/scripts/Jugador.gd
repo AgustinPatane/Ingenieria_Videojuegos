@@ -60,11 +60,7 @@ signal actualiza_interfaz
 
 func _ready():
 	set_atributos()
-	#if nivel == 1:
-	$Arma2.set_process(false)
-	$Arma2.visible = false
-	mascota.set_process(false)
-	mascota.visible = false
+	preparo_futuras_evoluciones()
 	$Sombra.modulate = Color(1,1,1,0.5)
 	var ruta = Engine.get_meta("ruta_skin")
 	skin_body = load(ruta + "/body.png")
@@ -316,8 +312,9 @@ func cadencia_cadencia_boomerang():
 func cadencia_velocidad_atraviesamuros():
 	pass
 
-func cadencia_velocidad_nitro():
-	pass
+func cadencia_velocidad_freeze():
+	$Timer_evolucion112.set_process(true)
+	$Timer_evolucion112.start()
 
 
 func damage_rango():
@@ -387,3 +384,17 @@ func _on_Area2D_Mascota_area_exited(area):
 	anim_mascota.play("move")
 
 #---------------------------------------- MASCOTA ---------------------------
+func preparo_futuras_evoluciones():
+	$Arma2.set_process(false)
+	$Arma2.visible = false
+	mascota.set_process(false)
+	$Timer_evolucion112.set_process(false)
+	Engine.set_meta("freeze","false")
+	mascota.visible = false
+
+func _on_Timer_timeout():
+	Engine.set_meta("freeze","true")
+	$Timer_freeze.start()
+
+func _on_Timer_freeze_timeout():
+	Engine.set_meta("freeze","false")
