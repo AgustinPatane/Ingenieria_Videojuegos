@@ -53,6 +53,7 @@ signal player_defeated
 signal level_up(nivel)
 signal player_ready
 signal actualiza_interfaz
+signal freeze
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- FUNCIONES ---------------------------------------
@@ -111,10 +112,7 @@ func _physics_process(delta):
 				motion = move_and_slide(delta * -SPEED)
 	if !(self.position.x<1651 and self.position.x >-567 and self.position.y<980 and self.position.y >-411):
 		recibe_ataque(1)
-	if $Mascota/Path2D/PathFollow2D/sprite.position.x< 0 :
-		$Mascota/Path2D/PathFollow2D/sprite.set_flip_h(true)
-	else:
-		$Mascota/Path2D/PathFollow2D/sprite.set_flip_h(true)
+	
 	
 # -------------------------------------------------------------------------------------
 # ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
@@ -393,6 +391,7 @@ func preparo_futuras_evoluciones():
 
 func _on_Timer_timeout():
 	Engine.set_meta("freeze","true")
+	emit_signal("freeze")
 	$Timer_freeze.start()
 
 func _on_Timer_freeze_timeout():
