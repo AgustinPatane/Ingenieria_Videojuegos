@@ -316,7 +316,6 @@ func cadencia_velocidad_freeze():
 	$Timer_evolucion112.set_process(true)
 	$Timer_evolucion112.start()
 
-
 func damage_rango():
 	arma.set_cant_atraviesa(3)
 	arma.incrementa_velocidad_proyectil(2)

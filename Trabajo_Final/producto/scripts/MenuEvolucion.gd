@@ -342,7 +342,7 @@ func _on_evolucion_1_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_2_mouse_entered():
-	ventana_actualizar("FANTASMAX","Te desplazas a tan altas velocidades que te vuelves invisible cada unos segundos","INVISIBILIDAD")
+	ventana_actualizar("FLASHMAX","Te desplazas a tan altas velocidades que te vuelves invisible cada unos segundos","INVISIBILIDAD")
 
 func _on_evolucion_1_2_mouse_exited():
 	ventana_por_defecto()
@@ -366,13 +366,13 @@ func _on_evolucion_1_1_2_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_1_1_mouse_entered():
-	ventana_actualizar("EL BOOMERANG HUMANO","Obtienes el poder de controlar tus balas, ahora ellas vuelven a tí.","BALAS RETORNANTES")
+	ventana_actualizar("LA RULETA 360","Obtienes el poder de controlar tus balas, ahora ellas vuelven a tí.","BALAS RETORNANTES")
 
 func _on_evolucion_1_1_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_2_2_mouse_entered():
-	ventana_actualizar("EL VIAJERO INTERDIMENSIONAL","Mutaste, ahora controlas tu cuerpo y puedes teletransportarte 5 metros hacia adelante cada 10 segundos.","TELETRANSPORTE")
+	ventana_actualizar("BAJO CERO LETAL","Mutaste, ahora controlas tu cuerpo y puedes teletransportarte 5 metros hacia adelante cada 10 segundos.","TELETRANSPORTE")
 
 func _on_evolucion_1_2_2_mouse_exited():
 	ventana_por_defecto()
@@ -384,7 +384,7 @@ func _on_evolucion_1_2_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_2_1_1_mouse_entered():
-	ventana_actualizar("MISTER REBOTE SANGRIENTO","algo algo algo.","REBOTE DE BALAS")
+	ventana_actualizar("DOBLE PESADILLA","algo algo algo.","REBOTE DE BALAS")
 
 func _on_evolucion_2_1_1_mouse_exited():
 	ventana_por_defecto()
