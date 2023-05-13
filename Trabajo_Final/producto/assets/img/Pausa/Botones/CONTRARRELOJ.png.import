@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fondo.png-5ab1b38788e6100503ce741ce44197de.stex"
+path="res://.import/CONTRARRELOJ.png-6b303f489a4d72c87c72b9f1495c4c7b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/fondos/fondo.png"
-dest_files=[ "res://.import/fondo.png-5ab1b38788e6100503ce741ce44197de.stex" ]
+source_file="res://producto/assets/img/Pausa/Botones/CONTRARRELOJ.png"
+dest_files=[ "res://.import/CONTRARRELOJ.png-6b303f489a4d72c87c72b9f1495c4c7b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

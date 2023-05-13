@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://producto/assets/music/musica_fondo.mp3" type="AudioStream" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=2]
@@ -7,6 +7,18 @@
 [ext_resource path="res://producto/assets/fonts/Scream_al.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir.png" type="Texture" id=6]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir - copia.png" type="Texture" id=7]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/DERECHA PRESIONADO.png" type="Texture" id=8]
+[ext_resource path="res://producto/assets/img/Pausa/Fondos/Marco.png" type="Texture" id=9]
+[ext_resource path="res://producto/assets/img/Mapas/1.png" type="Texture" id=10]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/DERECHA.png" type="Texture" id=11]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/IZQUIERDA PRESIONADO.png" type="Texture" id=12]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/IZQUIERDA.png" type="Texture" id=13]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/NORMAL APRETADO.png" type="Texture" id=14]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/NORMAL.png" type="Texture" id=15]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/CONTRARRELOJ.png" type="Texture" id=16]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/CONTRARRELOJ APRETADO.png" type="Texture" id=17]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/JUGAR.png" type="Texture" id=18]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/JUGAR APRETADO.png" type="Texture" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -192,33 +204,79 @@ texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 7 )
 expand = true
 
+[node name="modo_juego_1" type="TextureButton" parent="Menu_previo"]
+margin_left = 63.0
+margin_top = 188.0
+margin_right = 284.0
+margin_bottom = 265.0
+toggle_mode = true
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 14 )
+expand = true
+
+[node name="modo_juego_2" type="TextureButton" parent="Menu_previo"]
+margin_left = 296.0
+margin_top = 188.0
+margin_right = 558.0
+margin_bottom = 265.0
+toggle_mode = true
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 17 )
+expand = true
+
 [node name="Mapas" type="Control" parent="Menu_previo"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -22.0
+margin_top = -7.0
+margin_right = 18.0
+margin_bottom = 33.0
+
+[node name="FondoMapas" type="TextureRect" parent="Menu_previo/Mapas"]
+margin_left = 149.0
+margin_top = -40.0
+margin_right = 499.0
+margin_bottom = 180.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Mapa" type="TextureRect" parent="Menu_previo/Mapas/FondoMapas"]
+margin_left = 11.0
+margin_top = 18.0
+margin_right = 339.0
+margin_bottom = 205.0
+texture = ExtResource( 10 )
+expand = true
 
 [node name="btn_mapa_der" type="TextureButton" parent="Menu_previo/Mapas"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 515.0
+margin_top = 36.0
+margin_right = 592.0
+margin_bottom = 113.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+expand = true
 
 [node name="btn_mapa_izq" type="TextureButton" parent="Menu_previo/Mapas"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="Modos" type="Control" parent="Menu_previo"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="modo_juego_1" type="TextureButton" parent="Menu_previo/Modos"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="modo_juego_2" type="TextureButton" parent="Menu_previo/Modos"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 55.0
+margin_top = 36.0
+margin_right = 132.0
+margin_bottom = 113.0
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+expand = true
 
 [node name="Btn_ready" type="TextureButton" parent="Menu_previo"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 449.0
+margin_top = 270.0
+margin_right = 682.0
+margin_bottom = 370.0
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 19 )
+texture_hover = ExtResource( 18 )
+expand = true
 
 [connection signal="pressed" from="Botones/Jugar" to="." method="_on_Jugar_pressed"]
 [connection signal="pressed" from="Botones/Ranking" to="." method="_on_Ranking_pressed"]
@@ -227,3 +285,8 @@ margin_bottom = 40.0
 [connection signal="toggled" from="Musica_OnOff" to="." method="_on_CheckButton_toggled"]
 [connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
 [connection signal="pressed" from="Menu_previo/btn_volver" to="." method="_on_btn_volver_pressed"]
+[connection signal="pressed" from="Menu_previo/modo_juego_1" to="." method="_on_modo_juego_1_pressed"]
+[connection signal="pressed" from="Menu_previo/modo_juego_2" to="." method="_on_modo_juego_2_pressed"]
+[connection signal="pressed" from="Menu_previo/Mapas/btn_mapa_der" to="." method="_on_btn_mapa_der_pressed"]
+[connection signal="pressed" from="Menu_previo/Mapas/btn_mapa_izq" to="." method="_on_btn_mapa_izq_pressed"]
+[connection signal="pressed" from="Menu_previo/Btn_ready" to="." method="_on_Btn_ready_pressed"]

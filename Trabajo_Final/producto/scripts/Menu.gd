@@ -8,6 +8,7 @@ onready var escena_tienda = preload("res://producto/assets/scenes/Tienda.tscn")
 var prev_volumen = -20
 var ranking = null
 var menu_ranking
+var mapa_actual = "1"
 
 var registro_tienda = {
 	"nombre":"",
@@ -33,8 +34,7 @@ func _ready():
 	#OS.set_window_maximized(true)
 
 func _on_Jugar_pressed():
-	#$Menu_previo.visible = true
-	var _aux = get_tree().change_scene("res://producto/assets/scenes/Mapa.tscn")
+	$Menu_previo.visible = true
 
 func _on_CheckButton_toggled(button_pressed):
 	if (button_pressed):
@@ -97,3 +97,23 @@ func load_tienda():
 
 func _on_btn_volver_pressed():
 	$Menu_previo.visible = false
+
+
+func _on_btn_mapa_der_pressed():
+	pass # Replace with function body.
+
+
+func _on_btn_mapa_izq_pressed():
+	pass # Replace with function body.
+
+
+func _on_modo_juego_1_pressed():
+	pass # Replace with function body.
+
+
+func _on_modo_juego_2_pressed():
+	pass # Replace with function body.
+
+
+func _on_Btn_ready_pressed():
+	var _aux = get_tree().change_scene("res://producto/assets/scenes/Mapa.tscn")
