@@ -1,9 +1,12 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://producto/assets/music/musica_fondo.mp3" type="AudioStream" id=1]
+[ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=2]
 [ext_resource path="res://producto/scripts/Menu.gd" type="Script" id=3]
 [ext_resource path="res://producto/assets/img/fondos/dalle_background.png" type="Texture" id=4]
 [ext_resource path="res://producto/assets/fonts/Scream_al.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir.png" type="Texture" id=6]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir - copia.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -158,9 +161,69 @@ text = "MAX AND MONSTER
 fit_content_height = true
 scroll_active = false
 
+[node name="Menu_previo" type="Control" parent="."]
+margin_left = 209.0
+margin_top = 149.0
+margin_right = 799.0
+margin_bottom = 488.0
+
+[node name="ColorRect" type="ColorRect" parent="Menu_previo"]
+margin_left = -222.0
+margin_top = -163.0
+margin_right = 830.0
+margin_bottom = 476.0
+color = Color( 0, 0, 0, 0.788235 )
+
+[node name="TextureRect" type="TextureRect" parent="Menu_previo"]
+margin_left = -134.0
+margin_top = -101.0
+margin_right = 732.0
+margin_bottom = 401.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="btn_volver" type="TextureButton" parent="Menu_previo"]
+margin_left = -75.0
+margin_top = 281.0
+margin_right = 2.0
+margin_bottom = 358.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+expand = true
+
+[node name="Mapas" type="Control" parent="Menu_previo"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="btn_mapa_der" type="TextureButton" parent="Menu_previo/Mapas"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="btn_mapa_izq" type="TextureButton" parent="Menu_previo/Mapas"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Modos" type="Control" parent="Menu_previo"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="modo_juego_1" type="TextureButton" parent="Menu_previo/Modos"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="modo_juego_2" type="TextureButton" parent="Menu_previo/Modos"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Btn_ready" type="TextureButton" parent="Menu_previo"]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [connection signal="pressed" from="Botones/Jugar" to="." method="_on_Jugar_pressed"]
 [connection signal="pressed" from="Botones/Ranking" to="." method="_on_Ranking_pressed"]
 [connection signal="pressed" from="Botones/Tienda" to="." method="_on_Tienda_pressed"]
 [connection signal="pressed" from="Botones/Salir" to="." method="_on_Salir_pressed"]
 [connection signal="toggled" from="Musica_OnOff" to="." method="_on_CheckButton_toggled"]
 [connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
+[connection signal="pressed" from="Menu_previo/btn_volver" to="." method="_on_btn_volver_pressed"]

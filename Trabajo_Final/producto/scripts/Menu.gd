@@ -19,6 +19,7 @@ var skins_compradas = Array()
 const SAVE_PATH = "res://Saves/tienda.sav"
 
 func _ready():
+	$Menu_previo.visible = false
 	load_tienda()
 	musica.play()
 	slider.max_value = 5
@@ -32,6 +33,7 @@ func _ready():
 	#OS.set_window_maximized(true)
 
 func _on_Jugar_pressed():
+	#$Menu_previo.visible = true
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Mapa.tscn")
 
 func _on_CheckButton_toggled(button_pressed):
@@ -91,3 +93,7 @@ func load_tienda():
 	else:
 		pass
 	file.close()
+
+
+func _on_btn_volver_pressed():
+	$Menu_previo.visible = false
