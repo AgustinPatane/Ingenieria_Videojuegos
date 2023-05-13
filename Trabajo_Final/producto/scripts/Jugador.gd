@@ -54,6 +54,7 @@ signal level_up(nivel)
 signal player_ready
 signal actualiza_interfaz
 signal freeze
+signal mascota
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- FUNCIONES ---------------------------------------
@@ -372,6 +373,7 @@ func damage_proyectiles_mascota():
 	mascota.set_process(true)
 	mascota.visible = true
 	anim_mascota.play("move")
+	emit_signal("mascota")
 	pass
 
 func _on_Area2D_Mascota_area_entered(area):

@@ -11,6 +11,7 @@ var flag_tocando_player = false
 var flag_en_area_ataque = false
 var muerto = 0
 var freeze = Engine.get_meta("freeze")
+var xpermiso = false
 
 onready var escena_txt_danio = preload("res://producto/assets/scenes/Texto_danio.tscn")
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
@@ -62,7 +63,7 @@ func _ready():
 	$Sombra.modulate = Color(1,1,1,0.5)
 	$AnimationPlayer.play("move")
 	jugador = get_node("/root/Mapa/Jugador")
-	#self.z_index = jugador.z_index + 1
+	jugador.connect("mascota",self,"permiso")
 
 func movimiento(delta):
 	pos_jugador = jugador.position
@@ -87,8 +88,12 @@ func _on_Enemigo_area_entered(area):
 		recibe_damage(area.get_damage(), area.position)
 		area.choca()
 	else:
-		if area.name == "area_mascota":
+		if area.name == "area_mascota" and xpermiso==true:
+			print("______---____----___-__--__--")
 			recibe_damage(30,self.position)
+
+func permiso():
+	xpermiso=true
 
 func drop_on_death():
 	var orbe_exp = escena_exp.instance()
