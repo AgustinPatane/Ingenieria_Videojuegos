@@ -33,6 +33,8 @@ onready var boton_evolucion_2_2 = get_node("evolucion/evolucion_2/evolucion_2_2"
 onready var boton_evolucion_2_2_1 = get_node("evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_1")
 onready var boton_evolucion_2_2_2 = get_node("evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_2")
 
+onready var ramas_arbol = get_node("evolucion/ramas_arbol")
+
 var botones_arbol = Array()
 #____________________________________________________________
 
@@ -188,7 +190,6 @@ func _ready():
 	btn_seleccionar.set_disabled(true)
 	carga_ventana()
 	ventana_por_defecto()
-	pass
 
 func armo_arbol():
 	botones_arbol.append(boton_evolucion)
@@ -233,6 +234,7 @@ func carga_ventana():
 	sprite_jugador.set_texture(skin_body)
 	sprite_arma.set_texture(skin_arma)
 	animacion.play("move")
+	actualizar_rama_arbol(evolucion_actual)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -262,45 +264,73 @@ func ventana_actualizar(xtitulo="",xhistoria="",xhabilidad=""):
 	habilidad.text = xhabilidad
 
 func _on_evolucion_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_1")):
+		actualizar_rama_arbol("evolucion_1")
 	seleccionado = 1
 
 func _on_evolucion_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_2")):
+		actualizar_rama_arbol("evolucion_2")
 	seleccionado = 2
 
 func _on_evolucion_1_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_1_1")):
+		actualizar_rama_arbol("evolucion_1_1")
 	seleccionado = 1
 
 func _on_evolucion_1_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_1_2")):
+		actualizar_rama_arbol("evolucion_1_2")
 	seleccionado = 2
 	
 func _on_evolucion_1_1_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_1_1_1")):
+		actualizar_rama_arbol("evolucion_1_1_1")
 	seleccionado = 1
 
 func _on_evolucion_1_1_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_1_1_2")):
+		actualizar_rama_arbol("evolucion_1_1_2")
 	seleccionado = 2
 
 func _on_evolucion_1_2_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_1_2_1")):
+		actualizar_rama_arbol("evolucion_1_2_1")
 	seleccionado = 1
 
 func _on_evolucion_1_2_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_1_2_2")):
+		actualizar_rama_arbol("evolucion_1_2_2")
 	seleccionado = 2
 
 func _on_evolucion_2_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_2_1")):
+		actualizar_rama_arbol("evolucion_2_1")
 	seleccionado = 1
 
 func _on_evolucion_2_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_2_2")):
+		actualizar_rama_arbol("evolucion_2_2")
 	seleccionado = 2
 
 func _on_evolucion_2_1_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_2_1_1")):
+		actualizar_rama_arbol("evolucion_2_1_1")
 	seleccionado = 1
 
 func _on_evolucion_2_1_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_2_1_2")):
+		actualizar_rama_arbol("evolucion_2_1_2")
 	seleccionado = 2
 
 func _on_evolucion_2_2_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_2_2_1")):
+		actualizar_rama_arbol("evolucion_2_2_1")
 	seleccionado = 1
 
 func _on_evolucion_2_2_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_2_2_2")):
+		actualizar_rama_arbol("evolucion_2_2_2")
 	seleccionado = 2
 
 func _on_evolucion_mouse_entered():
@@ -392,3 +422,7 @@ func _on_evolucion_2_2_2_mouse_entered():
 
 func _on_evolucion_2_2_2_mouse_exited():
 	ventana_por_defecto()
+
+func actualizar_rama_arbol(evol):
+	var ruta_rama = load("res://producto/assets/img/ramas_arbol/"+evol+".png")
+	ramas_arbol.set_texture(ruta_rama)
