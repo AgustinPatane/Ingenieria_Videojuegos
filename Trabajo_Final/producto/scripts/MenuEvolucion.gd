@@ -44,44 +44,30 @@ var seleccionado = 0
 var evolucion_1 = {
 	"nombre": "cadencia",
 	"cadencia": 2,
-	"vida": 0.75,
-	"velocidad": 1.2,
+	"vida": 0.8,
+	"velocidad": 1.25,
 	"damage": 0.75,
-	"rango": 0.75,
+	"rango": 1,
 	"arma": "ak-47"
 }
 
 var evolucion_1_1 = {
-	#nombre": "cadencia_cadencia",
-	#"cadencia": 2,
-	#"vida": 1,
-	#"velocidad": 1,
-	#"damage": 0.75,
-	#"rango": 1,
-	#"arma": "ametralladora"
 	"nombre": "damage_proyectiles",
 	"cadencia": 1,
-	"vida": 1.5,
+	"vida": 1,
 	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 0.75,
-	"arma": "escopeta"
+	"damage": 1,
+	"rango": 1.2,
+	"arma": "ametralladora"
 }
 var evolucion_1_1_2 = {
-	#"nombre": "cadencia_cadencia_doblearma",
-	#"cadencia": 2,
-	#"vida": 1,
-	#"velocidad": 4,
-	#"damage": 0.75,
-	#"rango": 1,
-	#"arma": "ametralladora"
 	"nombre": "damage_proyectiles_proyectiles",
-	"cadencia": 1,
-	"vida": 1.5,
+	"cadencia": 1.2,
+	"vida": 1.2,
 	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 3,
-	"arma": "escopeta"
+	"damage": 1,
+	"rango": 1.2,
+	"arma": "ametralladora"
 }
 var evolucion_1_1_1 = {
 	"nombre": "damage_proyectiles_360",
@@ -95,10 +81,10 @@ var evolucion_1_1_1 = {
 var evolucion_1_2 = {
 	"nombre": "cadencia_velocidad",
 	"cadencia": 1.5,
-	"vida": 0.75,
-	"velocidad": 1.2,
+	"vida": 1,
+	"velocidad": 1.25,
 	"damage": 1,
-	"rango": 0.75,
+	"rango": 1,
 	"arma": "ak-47"
 }
 var evolucion_1_2_1 = {
@@ -135,7 +121,7 @@ var evolucion_2_1 = {
 	"vida": 3,
 	"velocidad": 0.75,
 	"damage": 1,
-	"rango": 1,
+	"rango": 2,
 	"arma": "escopeta"
 }
 
@@ -156,7 +142,7 @@ var evolucion_2_1_2 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "bobina"
+	"arma": "escopeta"
 }
 
 var evolucion_2_2 = {
@@ -165,7 +151,7 @@ var evolucion_2_2 = {
 	"vida": 1.5,
 	"velocidad": 0.75,
 	"damage": 2,
-	"rango": 2,
+	"rango": 3,
 	"arma": "francotirador"
 }
 
