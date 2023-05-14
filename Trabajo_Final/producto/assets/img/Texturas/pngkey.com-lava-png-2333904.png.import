@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/terrain.png-f2a109205921767d523ac65b11bef199.stex"
+path="res://.import/pngkey.com-lava-png-2333904.png-c282989fc4018db404b9e0bfe89f8c62.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/Texturas/terrain.png"
-dest_files=[ "res://.import/terrain.png-f2a109205921767d523ac65b11bef199.stex" ]
+source_file="res://producto/assets/img/Texturas/pngkey.com-lava-png-2333904.png"
+dest_files=[ "res://.import/pngkey.com-lava-png-2333904.png-c282989fc4018db404b9e0bfe89f8c62.stex" ]
 
 [params]
 
