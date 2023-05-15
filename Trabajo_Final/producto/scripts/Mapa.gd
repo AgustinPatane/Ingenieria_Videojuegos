@@ -165,3 +165,6 @@ func establecer_fondo_mapa():
 	var numero = Engine.get_meta("numero_de_mapa")
 	var ruta = load("res://producto/assets/img/Mapas/"+str(numero)+".png")
 	$Fondo_elegido.set_texture(ruta)
+	numero *= 10
+	var ruta2 = load("res://producto/assets/img/Mapas/"+str(numero)+".png")
+	$Fondo_bordes.set_texture(ruta2)
