@@ -10,7 +10,7 @@ var prev_volumen = -20
 var ranking = null
 var menu_ranking
 var mapa_actual = 0
-var cantidad_de_mapas = 4 #CAMBIARLO POR GET_CHILD_COUNT
+var cantidad_de_mapas = (countFilesInFolder("res://producto/assets/img/Mini_mapas/") - 2)/2
 
 var registro_tienda = {
 	"nombre":"",
@@ -22,18 +22,16 @@ var skins_compradas = Array()
 const SAVE_PATH = "res://Saves/tienda.sav"
 
 func _ready():
-	$Menu_previo.visible = false
+	print(cantidad_de_mapas)
 	load_tienda()
 	musica.play()
 	slider.max_value = 5
 	slider.min_value = -50
 	slider.value = -30
 	OS.set_window_position(Vector2(255,110))
-
+	actualiza_minimapa()
 	Engine.set_meta("arma_actual","arma_1")
-
-	#OS.set_fullscreen(true)
-	#OS.set_window_maximized(true)
+	
 
 func _on_Jugar_pressed():
 	$Menu_previo.visible = true
@@ -101,22 +99,23 @@ func _on_btn_volver_pressed():
 	$Menu_previo.visible = false
 
 func _on_btn_mapa_der_pressed():
-	mini_mapa.get_child(mapa_actual).visible = false
 	mapa_actual += 1
 	if mapa_actual == cantidad_de_mapas :
 		mapa_actual = 0
-	var mapa_nuevo = mini_mapa.get_child(mapa_actual)
-	mapa_nuevo.visible = true
-
+	actualiza_minimapa()
 
 func _on_btn_mapa_izq_pressed():
-	mini_mapa.get_child(mapa_actual).visible = false
 	mapa_actual -= 1
-	if mapa_actual == -1:
+	if mapa_actual < 0:
 		mapa_actual = cantidad_de_mapas-1 
-	var mapa_nuevo = mini_mapa.get_child(mapa_actual)
-	mapa_nuevo.visible = true
+	actualiza_minimapa()
 
+func actualiza_minimapa():
+	get_node("Menu_previo/Mapas/FondoMapas/Mapa").texture = load("res://producto/assets/img/Mini_mapas/"+str(mapa_actual)+".png")
+	if mapa_actual != cantidad_de_mapas-1:
+		get_node("Menu_previo/Btn_ready").visible = true
+	else:
+		get_node("Menu_previo/Btn_ready").visible = false
 
 func _on_modo_juego_1_pressed():
 	pass # Replace with function body.
@@ -129,3 +128,17 @@ func _on_modo_juego_2_pressed():
 func _on_Btn_ready_pressed():
 	Engine.set_meta("numero_de_mapa",mapa_actual+1)
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Mapa.tscn")
+
+func countFilesInFolder(folder_path):
+	var dir = Directory.new()
+	var file_count = 0
+
+	if dir.open(folder_path) == OK:
+		dir.list_dir_begin()
+		while true:
+			var file = dir.get_next()
+			if file == "":
+				break
+			file_count += 1
+		dir.list_dir_end()
+	return file_count
