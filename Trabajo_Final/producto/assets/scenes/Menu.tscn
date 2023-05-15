@@ -177,6 +177,7 @@ fit_content_height = true
 scroll_active = false
 
 [node name="Menu_previo" type="Control" parent="."]
+visible = false
 margin_left = 209.0
 margin_top = 149.0
 margin_right = 799.0
