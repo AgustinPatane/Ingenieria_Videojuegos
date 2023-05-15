@@ -4,11 +4,13 @@ onready var musica = get_node("Musica_OnOff/Musica")
 onready var slider = get_node("VSlider")
 onready var escena_mapa = preload("res://producto/assets/scenes/Mapa.tscn")
 onready var escena_tienda = preload("res://producto/assets/scenes/Tienda.tscn")
+onready var mini_mapa = get_node("Menu_previo/Mapas/FondoMapas")
 
 var prev_volumen = -20
 var ranking = null
 var menu_ranking
-var mapa_actual = "1"
+var mapa_actual = 0
+var cantidad_de_mapas = 4 #CAMBIARLO POR GET_CHILD_COUNT
 
 var registro_tienda = {
 	"nombre":"",
@@ -98,13 +100,22 @@ func load_tienda():
 func _on_btn_volver_pressed():
 	$Menu_previo.visible = false
 
-
 func _on_btn_mapa_der_pressed():
-	pass # Replace with function body.
+	mini_mapa.get_child(mapa_actual).visible = false
+	mapa_actual += 1
+	if mapa_actual == cantidad_de_mapas :
+		mapa_actual = 0
+	var mapa_nuevo = mini_mapa.get_child(mapa_actual)
+	mapa_nuevo.visible = true
 
 
 func _on_btn_mapa_izq_pressed():
-	pass # Replace with function body.
+	mini_mapa.get_child(mapa_actual).visible = false
+	mapa_actual -= 1
+	if mapa_actual == -1:
+		mapa_actual = cantidad_de_mapas-1 
+	var mapa_nuevo = mini_mapa.get_child(mapa_actual)
+	mapa_nuevo.visible = true
 
 
 func _on_modo_juego_1_pressed():

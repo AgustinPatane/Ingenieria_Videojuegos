@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://producto/assets/music/musica_fondo.mp3" type="AudioStream" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://producto/assets/img/Pausa/Botones/JUGAR APRETADO.png" type="Texture" id=19]
 [ext_resource path="res://producto/assets/img/Texturas/mapa2.png" type="Texture" id=20]
 [ext_resource path="res://producto/assets/img/Texturas/061.jpg" type="Texture" id=21]
+[ext_resource path="res://producto/assets/img/mapas_armados/mapa_dungeon_bosque.png" type="Texture" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -266,6 +267,15 @@ margin_top = 18.0
 margin_right = 339.0
 margin_bottom = 205.0
 texture = ExtResource( 20 )
+expand = true
+
+[node name="Dungeon" type="TextureRect" parent="Menu_previo/Mapas/FondoMapas"]
+visible = false
+margin_left = 11.0
+margin_top = 18.0
+margin_right = 339.0
+margin_bottom = 205.0
+texture = ExtResource( 22 )
 expand = true
 
 [node name="btn_mapa_der" type="TextureButton" parent="Menu_previo/Mapas"]
