@@ -127,4 +127,5 @@ func _on_modo_juego_2_pressed():
 
 
 func _on_Btn_ready_pressed():
+	Engine.set_meta("numero_de_mapa",mapa_actual+1)
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Mapa.tscn")

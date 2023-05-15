@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://producto/assets/scenes/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://producto/scripts/Mapa.gd" type="Script" id=2]
+[ext_resource path="res://producto/assets/img/Mapas/1.png" type="Texture" id=3]
 [ext_resource path="res://producto/assets/img/Texturas/061.jpg" type="Texture" id=4]
 [ext_resource path="res://producto/assets/img/Texturas/nightskycolor.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/Texturas/lava2.png" type="Texture" id=6]
@@ -70,6 +71,14 @@ tracks/1/keys = {
 scale = Vector2( 1.00096, 1 )
 script = ExtResource( 2 )
 
+[node name="Fondo_elegido" type="TextureRect" parent="."]
+margin_left = -472.546
+margin_top = -420.0
+margin_right = 1827.45
+margin_bottom = 980.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+
 [node name="SpaceBackground" type="TextureRect" parent="."]
 visible = false
 margin_left = -1918.16
@@ -104,6 +113,7 @@ vframes = 3
 frame = 7
 
 [node name="CarbonBackground" type="TextureRect" parent="."]
+visible = false
 margin_left = -472.546
 margin_top = -420.0
 margin_right = 1827.45

@@ -52,6 +52,8 @@ func _ready():
 	timer_objetos.connect("timeout", self, "spawn_item_vida")
 	timer_objetos.start()
 	sube_dificultad(1)
+	establecer_fondo_mapa()
+
 
 func set_niveles_spawn():
 	max_enemigos = Atributos.max_enemigos
@@ -157,5 +159,9 @@ func _on_Jugador_player_defeated():
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
 
 func freeze():
-	print("___________________LLLLLLLLLEEEEEEGOOOOOO_____________")
 	freeze_sound.play()
+
+func establecer_fondo_mapa():
+	var numero = Engine.get_meta("numero_de_mapa")
+	var ruta = load("res://producto/assets/img/Mapas/"+str(numero)+".png")
+	$Fondo_elegido.set_texture(ruta)
