@@ -54,7 +54,6 @@ func _ready():
 	sube_dificultad(1)
 	establecer_fondo_mapa()
 
-
 func set_niveles_spawn():
 	max_enemigos = Atributos.max_enemigos
 	var niveles = Atributos.get_niveles_spawn()
@@ -83,7 +82,6 @@ func set_tiempos():
 func start_spawn_enemigo(tipo_enemigo: String):
 	spawn_enemigo(tipo_enemigo)
 	var timer = Timer.new()
-	print("aaaaaaa"+tipo_enemigo)
 	timer.wait_time = self["tiempo_"+tipo_enemigo]
 	timer.connect("timeout", self, "spawn_enemigo",[tipo_enemigo])
 	get_node("/root/Mapa").add_child(timer)
@@ -168,3 +166,22 @@ func establecer_fondo_mapa():
 	numero *= 10
 	var ruta2 = load("res://producto/assets/img/Mapas/"+str(numero)+".png")
 	$Fondo_bordes.set_texture(ruta2)
+	if numero == 3:
+		$Obstaculos_por_mapa/Mapa_3.set_process(true)
+
+# -------- OBSTACULOS MAPA 3 ----------
+func _on_Lava_1_area_entered(area):
+	#si un enemigo entra a la lava
+	#si un proyectil entra en la lava...
+	pass # Replace with function body.
+
+func _process(delta):
+	#$Obstaculos_por_mapa/Mapa_3/Llamas.position = jugador.position
+	pass
+
+
+func _on_Lava_1_body_entered(body):
+	#if body.name == jugador.name:
+		#$Obstaculos_por_mapa/Mapa_3/Llamas.visible = true
+		#$Obstaculos_por_mapa/Mapa_3/Llamas/AnimatedSprite.play("llamas")
+	pass

@@ -105,7 +105,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id=16]
-radius = 10.198
+radius = 15.9667
 
 [sub_resource type="Animation" id=18]
 length = 0.001
@@ -302,7 +302,7 @@ position = Vector2( -3.36407, 4.16377 )
 scale = Vector2( 0.666667, 0.666667 )
 
 [node name="colision_mascota" type="CollisionShape2D" parent="Mascota/Path2D/PathFollow2D/sprite/area_mascota"]
-position = Vector2( 1.04053, -0.440552 )
+position = Vector2( 11.1832, 3.22885 )
 scale = Vector2( 1.88, 1.44 )
 shape = SubResource( 16 )
 

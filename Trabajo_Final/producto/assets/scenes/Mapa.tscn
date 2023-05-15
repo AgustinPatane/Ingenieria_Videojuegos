@@ -1,10 +1,35 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://producto/assets/scenes/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://producto/scripts/Mapa.gd" type="Script" id=2]
 [ext_resource path="res://producto/assets/img/Mapas/30.png" type="Texture" id=3]
 [ext_resource path="res://producto/assets/img/Mapas/3.png" type="Texture" id=4]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 25.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/Texturas/lava2.png" type="Texture" id=6]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 24.png" type="Texture" id=7]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 23.png" type="Texture" id=8]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 15.png" type="Texture" id=9]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 16.png" type="Texture" id=10]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 02.png" type="Texture" id=11]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 03.png" type="Texture" id=12]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 04.png" type="Texture" id=13]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 05.png" type="Texture" id=14]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 06.png" type="Texture" id=15]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 08.png" type="Texture" id=16]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 09.png" type="Texture" id=17]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 11.png" type="Texture" id=18]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 01.png" type="Texture" id=19]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 07.png" type="Texture" id=20]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 10.png" type="Texture" id=21]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 12.png" type="Texture" id=22]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 13.png" type="Texture" id=23]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 14.png" type="Texture" id=24]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 18.png" type="Texture" id=25]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 19.png" type="Texture" id=26]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 20.png" type="Texture" id=27]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 21.png" type="Texture" id=28]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 22.png" type="Texture" id=29]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 17.png" type="Texture" id=30]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 99.4034, 112.5 )
@@ -65,6 +90,20 @@ tracks/1/keys = {
 "values": [ 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
 
+[sub_resource type="CircleShape2D" id=7]
+radius = 89.9192
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 47.954
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "llamas",
+"speed": 25.0
+} ]
+
 [node name="Mapa" type="Node2D"]
 scale = Vector2( 1.00096, 1 )
 script = ExtResource( 2 )
@@ -124,4 +163,42 @@ autoplay = "lava"
 anims/RESET = SubResource( 5 )
 anims/lava = SubResource( 6 )
 
+[node name="Obstaculos_por_mapa" type="Node2D" parent="."]
+
+[node name="Mapa_1" type="Node2D" parent="Obstaculos_por_mapa"]
+
+[node name="Mapa_2" type="Node2D" parent="Obstaculos_por_mapa"]
+
+[node name="Mapa_3" type="Node2D" parent="Obstaculos_por_mapa"]
+visible = false
+
+[node name="Lava_1" type="Area2D" parent="Obstaculos_por_mapa/Mapa_3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstaculos_por_mapa/Mapa_3/Lava_1"]
+position = Vector2( 225.783, 89 )
+shape = SubResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="Obstaculos_por_mapa/Mapa_3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstaculos_por_mapa/Mapa_3/Area2D"]
+position = Vector2( 891.144, 552 )
+shape = SubResource( 8 )
+
+[node name="Llamas" type="Sprite" parent="Obstaculos_por_mapa/Mapa_3"]
+visible = false
+position = Vector2( 540.481, 297 )
+scale = Vector2( 4, 3 )
+z_index = 20
+texture = ExtResource( 19 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Obstaculos_por_mapa/Mapa_3/Llamas"]
+position = Vector2( 0, 1.33332 )
+frames = SubResource( 9 )
+animation = "llamas"
+frame = 24
+
+[node name="Mapa_4" type="Node2D" parent="Obstaculos_por_mapa"]
+
 [connection signal="player_defeated" from="Jugador" to="." method="_on_Jugador_player_defeated"]
+[connection signal="area_entered" from="Obstaculos_por_mapa/Mapa_3/Lava_1" to="." method="_on_Lava_1_area_entered"]
+[connection signal="body_entered" from="Obstaculos_por_mapa/Mapa_3/Lava_1" to="." method="_on_Lava_1_body_entered"]
