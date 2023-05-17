@@ -33,7 +33,7 @@ func on_paused_quit():
 	paused = null
 
 func actualiza():
-	$Vida.text = " " + str(jugador.vida) + "/"+ str(jugador.vida_max)
+	$Vida.text = " " + str(floor(jugador.vida)) + "/"+ str(jugador.vida_max)
 	$Control/Barra_exp.max_value = jugador.experiencia_necesaria
 	$Control/Barra_exp.value = jugador.experiencia
 	$Control/Barra_vida.max_value = jugador.vida_max

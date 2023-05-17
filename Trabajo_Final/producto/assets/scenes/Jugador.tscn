@@ -218,7 +218,7 @@ animations = [ {
 "frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 42 ), ExtResource( 33 ), ExtResource( 22 ), ExtResource( 36 ), ExtResource( 49 ), ExtResource( 19 ), ExtResource( 41 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 48 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 47 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 40 ), ExtResource( 13 ), ExtResource( 25 ), ExtResource( 45 ), ExtResource( 37 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 46 ), ExtResource( 20 ), ExtResource( 38 ) ],
 "loop": false,
 "name": "carga_escudo",
-"speed": 3.0
+"speed": 5.0
 } ]
 
 [node name="Jugador" type="KinematicBody2D"]
@@ -376,14 +376,18 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 8 )
 
 [node name="timer_de_carga_escudo" type="Timer" parent="Poder_Especial_Tanque"]
-wait_time = 3.0
+wait_time = 10.0
 
 [node name="Cargar_escudo" type="AnimatedSprite" parent="Poder_Especial_Tanque"]
 frames = SubResource( 22 )
 animation = "carga_escudo"
+speed_scale = 0.5
 
 [node name="timer_con_escudo" type="Timer" parent="Poder_Especial_Tanque"]
-wait_time = 10.0
+wait_time = 4.0
+
+[node name="timer_primer_carga" type="Timer" parent="Poder_Especial_Tanque"]
+wait_time = 4.0
 
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]

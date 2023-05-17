@@ -32,7 +32,7 @@ var skin_body
 var skin_arma
 
 var tanque = false
-var pedir_poder = true
+var pedir_poder = false
 
 # -------------------------------------------------------------------------------------
 # -------------------------------- CARACTERISTICAS ------------------------------------
@@ -119,7 +119,7 @@ func _physics_process(delta):
 			if collider.is_in_group("Wall"):
 				motion = move_and_slide(delta * -SPEED)
 	if !(self.position.x<1651 and self.position.x >-567 and self.position.y<980 and self.position.y >-411):
-		recibe_ataque(1)
+		recibe_ataque(0.05)
 	if Input.is_action_pressed("poder_especial"):
 		ejecutar_poder_especial()
 	
@@ -400,7 +400,9 @@ func preparo_futuras_evoluciones():
 
 
 func preparo_futuros_poderes_especiales():
-	pass
+	$Poder_Especial_Tanque/timer_primer_carga.start()
+	$Poder_Especial_Tanque/timer_de_carga_escudo.start()
+	$Poder_Especial_Tanque/Cargar_escudo.play("carga_escudo")
 
 func _on_Timer_timeout():
 	Engine.set_meta("freeze","true")
@@ -416,9 +418,9 @@ func _on_Timer_freeze_timeout():
 #	poder_tanque.escudo()
 func ejecutar_poder_especial():
 	if pedir_poder == true:
-		print("PIDIO EL PODER")
 		pedir_poder = false
 		poder_tanque.escudo()
+		$Poder_Especial_Tanque/timer_con_escudo.start()
 		$Poder_Especial_Tanque/Cargar_escudo.play("carga_escudo")
 	else:
 		print("NO CARGO TODAVIA")
