@@ -395,7 +395,9 @@ func preparo_futuras_evoluciones():
 func _on_Timer_timeout():
 	Engine.set_meta("freeze","true")
 	emit_signal("freeze")
+	$Efecto_Congelacion.visible = true
 	$Timer_freeze.start()
 
 func _on_Timer_freeze_timeout():
+	$Efecto_Congelacion.visible = false
 	Engine.set_meta("freeze","false")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://producto/scripts/Arma.gd" type="Script" id=4]
 [ext_resource path="res://producto/assets/img/mascota/sprite_armado.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/enemigos/Sombra.png" type="Texture" id=6]
+[ext_resource path="res://producto/assets/img/mapas_armados/efecto_congelacion.webp" type="Texture" id=7]
 [ext_resource path="res://producto/scripts/Path2D.gd" type="Script" id=9]
 [ext_resource path="res://producto/assets/img/jugador/explosion_lvl_up.png" type="Texture" id=12]
 [ext_resource path="res://producto/assets/music/sounds/disparo.wav" type="AudioStream" id=15]
@@ -317,6 +318,12 @@ wait_time = 10.0
 
 [node name="Timer_freeze" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="Efecto_Congelacion" type="Sprite" parent="."]
+visible = false
+position = Vector2( -14.0001, 1.50004 )
+scale = Vector2( 4.10156, 4.69531 )
+texture = ExtResource( 7 )
 
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]

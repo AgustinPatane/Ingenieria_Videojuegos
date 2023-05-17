@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://producto/assets/scenes/Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://producto/scripts/Mapa.gd" type="Script" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 21.png" type="Texture" id=28]
 [ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 22.png" type="Texture" id=29]
 [ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 17.png" type="Texture" id=30]
+[ext_resource path="res://producto/assets/music/sounds/freeze.wav" type="AudioStream" id=31]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 99.4034, 112.5 )
@@ -155,6 +156,7 @@ shape = SubResource( 3 )
 disabled = true
 
 [node name="Freeze" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 31 )
 pitch_scale = 2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
