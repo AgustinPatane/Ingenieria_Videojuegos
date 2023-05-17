@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/pisada (2).wav-c3fe9bed532296addbdb9197843c5ccd.sample"
+path="res://.import/pisada (5).wav-b45c03d58388c2a95b3f4412bb29489d.sample"
 
 [deps]
 
-source_file="res://producto/assets/music/sounds/pisadas/pisada (2).wav"
-dest_files=[ "res://.import/pisada (2).wav-c3fe9bed532296addbdb9197843c5ccd.sample" ]
+source_file="res://producto/assets/sounds/pisadas/pisada (5).wav"
+dest_files=[ "res://.import/pisada (5).wav-b45c03d58388c2a95b3f4412bb29489d.sample" ]
 
 [params]
 

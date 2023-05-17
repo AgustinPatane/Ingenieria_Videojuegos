@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/freeze.wav-d3cefaa782ea935bdb49315a435494e3.sample"
+path="res://.import/pisada (3).wav-16fabcbbd5b6db862f06abf071b5944d.sample"
 
 [deps]
 
-source_file="res://producto/assets/music/sounds/freeze.wav"
-dest_files=[ "res://.import/freeze.wav-d3cefaa782ea935bdb49315a435494e3.sample" ]
+source_file="res://producto/assets/sounds/pisadas/pisada (3).wav"
+dest_files=[ "res://.import/pisada (3).wav-16fabcbbd5b6db862f06abf071b5944d.sample" ]
 
 [params]
 

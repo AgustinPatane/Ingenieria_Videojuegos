@@ -22,7 +22,7 @@ func _ready():
 	area_danio.scale.y = tamanio_Area
 	area_danio.set_danio(danio)
 	area_danio.ref_jugador(jugador)
-	get_tree().get_root().add_child(area_danio)
+	get_node("/root/Mapa").add_child(area_danio)
 	
 	var timer = Timer.new()
 	timer.wait_time = 1.2

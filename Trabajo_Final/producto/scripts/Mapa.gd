@@ -23,7 +23,6 @@ var cant_enemigos = 0
 var timers_enemigos = []
 
 onready var escena_item = preload("res://producto/assets/scenes/Item_curacion.tscn")
-onready var freeze_sound = get_node("Freeze")
 var jugador
 
 func _ready():
@@ -158,7 +157,7 @@ func _on_Jugador_player_defeated():
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
 
 func freeze():
-	freeze_sound.play()
+	SoundManager.play_congelar()
 
 func establecer_fondo_mapa():
 	var numero = Engine.get_meta("numero_de_mapa")

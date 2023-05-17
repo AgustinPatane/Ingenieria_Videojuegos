@@ -1,18 +1,20 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://producto/scripts/Sound_Manager.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/scenes/Sound_Queue.tscn" type="PackedScene" id=2]
 [ext_resource path="res://producto/assets/music/sounds/Disparo_unico.wav" type="AudioStream" id=3]
 [ext_resource path="res://producto/assets/scenes/Sound_Pool.tscn" type="PackedScene" id=4]
-[ext_resource path="res://producto/assets/music/sounds/pisadas/pisada (2).wav" type="AudioStream" id=5]
-[ext_resource path="res://producto/assets/music/sounds/pisadas/pisada (1).wav" type="AudioStream" id=6]
-[ext_resource path="res://producto/assets/music/sounds/pisadas/pisada (5).wav" type="AudioStream" id=7]
-[ext_resource path="res://producto/assets/music/sounds/pisadas/pisada (4).wav" type="AudioStream" id=8]
-[ext_resource path="res://producto/assets/music/sounds/pisadas/pisada (6).wav" type="AudioStream" id=9]
-[ext_resource path="res://producto/assets/music/sounds/pisadas/pisada (3).wav" type="AudioStream" id=10]
+[ext_resource path="res://producto/assets/sounds/pisadas/pisada (2).wav" type="AudioStream" id=5]
+[ext_resource path="res://producto/assets/sounds/pisadas/pisada (1).wav" type="AudioStream" id=6]
+[ext_resource path="res://producto/assets/sounds/pisadas/pisada (5).wav" type="AudioStream" id=7]
+[ext_resource path="res://producto/assets/sounds/pisadas/pisada (4).wav" type="AudioStream" id=8]
+[ext_resource path="res://producto/assets/sounds/pisadas/pisada (6).wav" type="AudioStream" id=9]
+[ext_resource path="res://producto/assets/sounds/pisadas/pisada (3).wav" type="AudioStream" id=10]
 [ext_resource path="res://producto/assets/music/musica_fondo.mp3" type="AudioStream" id=11]
 [ext_resource path="res://producto/assets/music/musica_fondo3.mp3" type="AudioStream" id=12]
 [ext_resource path="res://producto/assets/music/derrota.mp3" type="AudioStream" id=13]
+[ext_resource path="res://producto/assets/sounds/boton_1.wav" type="AudioStream" id=14]
+[ext_resource path="res://producto/assets/sounds/freeze.wav" type="AudioStream" id=15]
 
 [node name="Sound_Manager" type="Node"]
 pause_mode = 2
@@ -69,3 +71,13 @@ stream = ExtResource( 12 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musica_derrota"]
 stream = ExtResource( 13 )
+
+[node name="Boton_1" parent="." instance=ExtResource( 2 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Boton_1"]
+stream = ExtResource( 14 )
+
+[node name="Congelar" parent="." instance=ExtResource( 2 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Congelar"]
+stream = ExtResource( 15 )

@@ -29,6 +29,7 @@ func _ready():
 	
 
 func _on_Jugar_pressed():
+	SoundManager.play_boton_1()
 	$Menu_previo.visible = true
 
 func _on_Salir_pressed():
@@ -38,6 +39,7 @@ func _process(_delta):
 	pass
 
 func _on_Ranking_pressed():
+	SoundManager.play_boton_1()
 	if ranking == null:
 		ranking = load("res://producto/assets/scenes/MenuRanking.tscn").instance()
 		ranking.connect("continuar",self, "on_ranking_quit")
@@ -53,6 +55,7 @@ func on_ranking_quit():
 	ranking = null
 
 func _on_Tienda_pressed():
+	SoundManager.play_boton_1()
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Tienda.tscn")
 
 func load_tienda():
@@ -72,15 +75,18 @@ func load_tienda():
 
 
 func _on_btn_volver_pressed():
+	SoundManager.play_boton_1()
 	$Menu_previo.visible = false
 
 func _on_btn_mapa_der_pressed():
+	SoundManager.play_boton_1()
 	mapa_actual += 1
 	if mapa_actual == cantidad_de_mapas :
 		mapa_actual = 0
 	actualiza_minimapa()
 
 func _on_btn_mapa_izq_pressed():
+	SoundManager.play_boton_1()
 	mapa_actual -= 1
 	if mapa_actual < 0:
 		mapa_actual = cantidad_de_mapas-1 
@@ -94,14 +100,17 @@ func actualiza_minimapa():
 		get_node("Menu_previo/Btn_ready").visible = false
 
 func _on_modo_juego_1_pressed():
+	SoundManager.play_boton_1()
 	pass # Replace with function body.
 
 
 func _on_modo_juego_2_pressed():
+	SoundManager.play_boton_1()
 	pass # Replace with function body.
 
 
 func _on_Btn_ready_pressed():
+	SoundManager.play_boton_1()
 	Engine.set_meta("numero_de_mapa",mapa_actual+1)
 	SoundManager.stop_musica_menu()
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Mapa.tscn")

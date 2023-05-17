@@ -24,6 +24,8 @@ var musicas = []
 func _ready():
 	sonidos.append(get_node("Disparo"))
 	sonidos.append(get_node("Pasos"))
+	sonidos.append(get_node("Boton_1"))
+	sonidos.append(get_node("Congelar"))
 	
 	musicas.append(get_node("Musica_menu"))
 	musicas.append(get_node("Musica_partida"))
@@ -77,4 +79,8 @@ func play_musica_derrota():
 func stop_musica_derrota():
 	get_node("Musica_derrota").stop_sound()
 	
+func play_boton_1():
+	get_node("Boton_1").play_sound()
 
+func play_congelar():
+	get_node("Congelar").play_sound()
