@@ -35,6 +35,12 @@ func _ready():
 	set_volumen_sonido(Atributos.volumenes.default_vol_sonido)
 	pass
 
+func actualiza_volumenes():
+	set_volumen_musica(Atributos.volumenes.default_vol_musica)
+	set_volumen_sonido(Atributos.volumenes.default_vol_sonido)
+	set_cond_musica(Atributos.volumenes.music_muted)
+	set_cond_sonido(Atributos.volumenes.sound_muted)
+
 func set_volumen_sonido(val):
 	volumen_sonido = val
 	for i in range(sonidos.size()):

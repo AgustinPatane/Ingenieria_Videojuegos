@@ -19,6 +19,15 @@ var skins_compradas = Array()
 
 const SAVE_PATH = "res://Saves/tienda.sav"
 
+var config = {
+	fullscreen = false,
+	vol_sonido = 0,
+	vol_musica = 0,
+	sound_muted = false,
+	music_muted = false
+}
+
+
 func _ready():
 	SoundManager.play_musica_menu()
 	load_tienda()
@@ -129,3 +138,19 @@ func countFilesInFolder(folder_path):
 			file_count += 1
 		dir.list_dir_end()
 	return file_count
+
+
+func guardar_config():
+	var save_config = File.new()
+	save_config.open("res://Saves/config.sav", File.WRITE)
+	save_config.store_line(to_json(config))
+	save_config.close()
+	
+func cargar_config():
+	var save_config = File.new()
+	if not save_config.file_exists("res://Saves/config.sav"):
+		guardar_config()
+		return # Error! No hay archivo que guardar
+	save_config.open("res://Saves/config.sav", File.READ)
+	config = parse_json(save_config.get_line())
+	save_config.close()

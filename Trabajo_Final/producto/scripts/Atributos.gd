@@ -10,8 +10,18 @@ var volumenes = {
 }
 
 var fullscreen = false
-var tamanio = Vector2(500,290)
-var posicion = Vector2(820,110)
+var tamanio = Vector2(700,400)
+var posicion = Vector2(700,110)
+
+func set_config(config):
+	fullscreen = config.fullscreen
+	OS.set_window_fullscreen(fullscreen)
+	volumenes.default_vol_sonido = config.vol_sonido
+	volumenes.default_vol_musica = config.vol_musica
+	volumenes.sound_muted = config.sound_muted
+	volumenes.music_muted = config.music_muted
+	SoundManager.actualiza_volumenes()
+
 
 # JUGADOR ------------------------------------------------------------
 

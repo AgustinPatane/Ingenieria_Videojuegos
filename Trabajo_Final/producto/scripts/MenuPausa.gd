@@ -6,7 +6,7 @@ var jugador
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	Saves.cargar_config()
 	$Musica/Slider_musica.max_value = Atributos.volumenes.max_vol
 	$Musica/Slider_musica.min_value = Atributos.volumenes.min_vol
 	$Musica/Slider_musica.value = Atributos.volumenes.default_vol_musica
@@ -53,20 +53,26 @@ func _on_Boton_musica_toggled(button_pressed):
 		SoundManager.set_volumen_musica(-100)
 	else:
 		SoundManager.set_volumen_musica($Musica/Slider_musica.value)
+	
+	Saves.guardar_config()
 
 func _on_Boton_sonido_toggled(button_pressed):
 	Atributos.volumenes.sound_muted = button_pressed
 	SoundManager.set_cond_sonido(button_pressed)
+	Saves.guardar_config()
 
 func _on_Boton_pantalla_completa_toggled(button_pressed):
 	Atributos.fullscreen = button_pressed
 	OS.set_window_fullscreen(button_pressed)
+	Saves.guardar_config()
 
 func _on_Slider_sonido_value_changed(value):
 	Atributos.volumenes.default_vol_sonido = value
 	SoundManager.set_volumen_sonido(value)
+	Saves.guardar_config()
 
 func _on_Slider_musica_value_changed(value):
 	Atributos.volumenes.default_vol_musica = value
 	if !$Musica/Boton_musica.is_pressed():
 		SoundManager.set_volumen_musica(value)
+		Saves.guardar_config()
