@@ -251,12 +251,12 @@ func _on_Seleccionar_pressed():
 	#emit_signal("evolucionar")
 	queue_free()
 	Engine.set_meta("evolucion_actual",evolucion_actual)
+	Engine.set_meta("arma_actual",self[evolucion_actual].arma)
 
 func ventana_por_defecto():
 	for evol in botones_arbol:
 		if evolucion_actual == evol.name:
 			evol.emit_signal("mouse_entered")
-	pass
 
 func ventana_actualizar(xtitulo="",xhistoria="",xhabilidad=""):
 	titulo.text = xtitulo
@@ -334,18 +334,21 @@ func _on_evolucion_2_2_2_pressed():
 	seleccionado = 2
 
 func _on_evolucion_mouse_entered():
+	actualizar_sprite_ventana("inicios","arma_1")
 	ventana_actualizar("INICIOS","El joven Max, antes de empezar a aniquilar monstruos, su historia recien ha empezado.","GANAS DE MATAR")
 
 func _on_evolucion_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_mouse_entered():
+	actualizar_sprite_ventana("el_rayo","ametralladora")
 	ventana_actualizar("EL RAYO","Has acabado con muchos monstruos, quienes te han inculcado en tu ADN un gen que te permite realizar movimientos extra veloces.","+ VELOCIDAD")
 
 func _on_evolucion_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_2_mouse_entered():
+	actualizar_sprite_ventana("el_coloso","escopeta")
 	ventana_actualizar("EL COLOSO","Has aguantado y sobrevivido de muchos seres peligrosos, no solo aumentas tu resistencia a ataques sino que ahora produces mucho mas impacto.","+ ATAQUE   + VIDA")
 
 func _on_evolucion_2_mouse_exited():
@@ -426,3 +429,12 @@ func _on_evolucion_2_2_2_mouse_exited():
 func actualizar_rama_arbol(evol):
 	var ruta_rama = load("res://producto/assets/img/ramas_arbol/"+evol+".png")
 	ramas_arbol.set_texture(ruta_rama)
+
+func actualizar_sprite_ventana(skin,arma):
+	#var ruta = Engine.get_meta("ruta_skin")
+	#var arma_actual = arma
+	#var skin_body = load(ruta + "/body.png")
+	#var skin_arma = load(ruta+"/"+arma_actual+".png")
+	#sprite_jugador.set_texture(skin_body)
+	#prite_arma.set_texture(skin_arma)
+	pass
