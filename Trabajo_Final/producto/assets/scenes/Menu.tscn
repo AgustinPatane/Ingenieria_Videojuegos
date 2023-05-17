@@ -1,6 +1,5 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://producto/assets/music/musica_fondo.mp3" type="AudioStream" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=2]
 [ext_resource path="res://producto/scripts/Menu.gd" type="Script" id=3]
 [ext_resource path="res://producto/assets/img/fondos/dalle_background.png" type="Texture" id=4]
@@ -137,30 +136,6 @@ custom_fonts/font = SubResource( 4 )
 custom_styles/normal = SubResource( 9 )
 text = "SALIR"
 
-[node name="Musica_OnOff" type="CheckButton" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -76.0
-margin_bottom = 52.0
-pressed = true
-align = 1
-icon_align = 1
-
-[node name="Musica" type="AudioStreamPlayer" parent="Musica_OnOff"]
-pause_mode = 2
-stream = ExtResource( 1 )
-autoplay = true
-
-[node name="VSlider" type="VSlider" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -23.0
-margin_top = -292.0
-margin_right = -7.0
-margin_bottom = -6.0
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 97.0
 margin_top = 49.0
@@ -283,8 +258,6 @@ expand = true
 [connection signal="pressed" from="Botones/Ranking" to="." method="_on_Ranking_pressed"]
 [connection signal="pressed" from="Botones/Tienda" to="." method="_on_Tienda_pressed"]
 [connection signal="pressed" from="Botones/Salir" to="." method="_on_Salir_pressed"]
-[connection signal="toggled" from="Musica_OnOff" to="." method="_on_CheckButton_toggled"]
-[connection signal="value_changed" from="VSlider" to="." method="_on_VSlider_value_changed"]
 [connection signal="pressed" from="Menu_previo/btn_volver" to="." method="_on_btn_volver_pressed"]
 [connection signal="pressed" from="Menu_previo/modo_juego_1" to="." method="_on_modo_juego_1_pressed"]
 [connection signal="pressed" from="Menu_previo/modo_juego_2" to="." method="_on_modo_juego_2_pressed"]

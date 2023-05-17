@@ -1,7 +1,5 @@
 extends Control
 
-onready var musica = get_node("Musica_OnOff/Musica")
-onready var slider = get_node("VSlider")
 onready var escena_mapa = preload("res://producto/assets/scenes/Mapa.tscn")
 onready var escena_tienda = preload("res://producto/assets/scenes/Tienda.tscn")
 onready var mini_mapa = get_node("Menu_previo/Mapas/FondoMapas")
@@ -22,13 +20,10 @@ var skins_compradas = Array()
 const SAVE_PATH = "res://Saves/tienda.sav"
 
 func _ready():
-	print(cantidad_de_mapas)
+	SoundManager.play_musica_menu()
 	load_tienda()
-	musica.play()
-	slider.max_value = 5
-	slider.min_value = -50
-	slider.value = -30
 	OS.set_window_position(Vector2(255,110))
+	OS.set_window_fullscreen(Atributos.fullscreen)
 	actualiza_minimapa()
 	Engine.set_meta("arma_actual","arma_1")
 	
@@ -36,31 +31,12 @@ func _ready():
 func _on_Jugar_pressed():
 	$Menu_previo.visible = true
 
-func _on_CheckButton_toggled(button_pressed):
-	if (button_pressed):
-		slider.value = -49
-		musica.play()
-	else:
-		slider.value = -50
-		musica.stop()
-
 func _on_Salir_pressed():
 	get_tree().quit()
 	
 func _process(_delta):
 	pass
 
-func _on_VSlider_value_changed(value):
-	if value == -50:
-		get_node("Musica_OnOff").pressed = false
-		musica.stop()
-	elif prev_volumen == -50:
-		get_node("Musica_OnOff").pressed = true
-		musica.play()
-	musica.volume_db = value
-	prev_volumen = value
-	
-	
 func _on_Ranking_pressed():
 	if ranking == null:
 		ranking = load("res://producto/assets/scenes/MenuRanking.tscn").instance()
@@ -127,6 +103,7 @@ func _on_modo_juego_2_pressed():
 
 func _on_Btn_ready_pressed():
 	Engine.set_meta("numero_de_mapa",mapa_actual+1)
+	SoundManager.stop_musica_menu()
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Mapa.tscn")
 
 func countFilesInFolder(folder_path):

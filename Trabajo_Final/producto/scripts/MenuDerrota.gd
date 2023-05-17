@@ -1,7 +1,6 @@
 extends Control
 
 const SAVE_PATH = "res://Saves/saves.sav"
-onready var musica = get_node("AudioStreamPlayer2D")
 onready var sprite = get_node("GameOver")
 
 var highserver
@@ -12,18 +11,11 @@ var player = {
 	"username" : "",
 	"score" : 0
 }
-
-func _maneja_musica():
-	yield(get_tree().create_timer(5.0), "timeout")
-	if aux==0:
-		musica.queue_free()
-		aux=1
 		
 func _ready():
-	musica.play()
+	SoundManager.play_musica_derrota()
 	load_game()
 	player.score = Engine.get_meta("Puntaje")
-	_maneja_musica()
 
 func _process(_delta):
 	pass
@@ -63,6 +55,7 @@ func selecciona_diez():
 	highscores.remove(highscores.size() - 1)
 
 func _on_Menu_pressed():
+	SoundManager.stop_musica_derrota()
 	player.username = get_node("Nombre").text
 	highscores.append(player)
 	selecciona_diez()

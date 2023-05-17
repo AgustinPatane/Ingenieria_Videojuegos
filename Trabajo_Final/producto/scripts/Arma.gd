@@ -22,6 +22,7 @@ func _ready():
 func _dispara():
 	#$disparo.play()
 	for _i in range(cant_proyectiles):
+		SoundManager.play_disparo()
 		var dispersion = rand_range(-dispersion_angular, dispersion_angular)
 		var disparo = escena_proyectil.instance()
 		var direccion = mouse_position - $Position_arma.global_position

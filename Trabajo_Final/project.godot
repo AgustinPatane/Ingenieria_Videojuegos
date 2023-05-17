@@ -18,6 +18,7 @@ run/main_scene="res://producto/assets/scenes/Menu.tscn"
 Network="*res://producto/scripts/Network.gd"
 Saves="*res://producto/scripts/Saves.gd"
 Atributos="*res://producto/scripts/Atributos.gd"
+SoundManager="*res://producto/assets/scenes/Sound_Manager.tscn"
 
 [debug]
 

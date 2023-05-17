@@ -1,5 +1,16 @@
 extends Node
 
+var volumenes = {
+	max_vol = 5,
+	min_vol = -50,
+	default_vol_sonido = 0,
+	default_vol_musica = 0,
+	sound_muted = false,
+	music_muted = false
+}
+
+var fullscreen = false
+
 # JUGADOR ------------------------------------------------------------
 
 var jugador = {

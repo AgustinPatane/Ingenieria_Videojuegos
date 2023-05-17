@@ -27,7 +27,7 @@ onready var freeze_sound = get_node("Freeze")
 var jugador
 
 func _ready():
-
+	SoundManager.play_musica_partida()
 	var tiempos = Atributos.get_tiempos()
 	tiempo_Demonio = tiempos.demonio
 	tiempo_Pilar = tiempos.pilar
@@ -154,6 +154,7 @@ func posicion_aleatoria(tipo_enemigo) -> Vector2:
 	return Vector2(posx,posy)
 
 func _on_Jugador_player_defeated():
+	SoundManager.stop_musica_partida()
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
 
 func freeze():
@@ -178,7 +179,6 @@ func _on_Lava_1_area_entered(area):
 func _process(delta):
 	#$Obstaculos_por_mapa/Mapa_3/Llamas.position = jugador.position
 	pass
-
 
 func _on_Lava_1_body_entered(body):
 	#if body.name == jugador.name:
