@@ -6,7 +6,6 @@ var jugador
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Saves.cargar_config()
 	$Musica/Slider_musica.max_value = Atributos.volumenes.max_vol
 	$Musica/Slider_musica.min_value = Atributos.volumenes.min_vol
 	$Musica/Slider_musica.value = Atributos.volumenes.default_vol_musica
@@ -43,6 +42,7 @@ func _on_Boton_continuar_pressed():
 
 func _on_Boton_salir_pressed():
 	get_tree().paused = false
+	SoundManager.stop_musica()
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Menu.tscn")
 
 func _on_Boton_musica_toggled(button_pressed):
@@ -50,9 +50,10 @@ func _on_Boton_musica_toggled(button_pressed):
 	SoundManager.set_cond_musica(button_pressed)
 
 	if button_pressed:
-		SoundManager.set_volumen_musica(-100)
+		SoundManager.stop_musica()
 	else:
 		SoundManager.set_volumen_musica($Musica/Slider_musica.value)
+		SoundManager.play_musica()
 	
 	Saves.guardar_config()
 

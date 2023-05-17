@@ -21,6 +21,8 @@ var cond_musica = true
 var sonidos = []
 var musicas = []
 
+var musica_reproduciendo = null
+
 func _ready():
 	sonidos.append(get_node("Disparo"))
 	sonidos.append(get_node("Pasos"))
@@ -67,26 +69,37 @@ func play_pasos():
 		get_node("Pasos").play_random_sound()
 		tiempo_ultima_pisada = OS.get_ticks_msec() / 1000.0
 
-func play_musica_menu():
-	get_node("Musica_menu").play_sound()
+func set_musica_menu():
+	musica_reproduciendo = get_node("Musica_menu")
+	if cond_musica:
+		play_musica()
 	
-func stop_musica_menu():
-	get_node("Musica_menu").stop_sound()
+func set_musica_partida():
+	musica_reproduciendo = get_node("Musica_partida")
+	if cond_musica:
+		play_musica()
 
-func play_musica_partida():
-	get_node("Musica_partida").play_sound()
-	
-func stop_musica_partida():
-	get_node("Musica_partida").stop_sound()
+func set_musica_derrota():
+	musica_reproduciendo = get_node("Musica_derrota")
+	if cond_musica:
+		play_musica()
 
-func play_musica_derrota():
-	get_node("Musica_derrota").play_sound()
+func play_musica():
+	if musica_reproduciendo != null:	
+		musica_reproduciendo.play_sound()
+
+func stop_musica():
+	if musica_reproduciendo != null:	
+		musica_reproduciendo.stop_sound()
+		
 
 func stop_musica_derrota():
 	get_node("Musica_derrota").stop_sound()
 	
 func play_boton_1():
-	get_node("Boton_1").play_sound()
+	if cond_sonido:
+		get_node("Boton_1").play_sound()
 
 func play_congelar():
-	get_node("Congelar").play_sound()
+	if cond_sonido:
+		get_node("Congelar").play_sound()

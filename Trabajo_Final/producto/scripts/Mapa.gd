@@ -26,7 +26,7 @@ onready var escena_item = preload("res://producto/assets/scenes/Item_curacion.ts
 var jugador
 
 func _ready():
-	SoundManager.play_musica_partida()
+	SoundManager.set_musica_partida()
 	var tiempos = Atributos.get_tiempos()
 	tiempo_Demonio = tiempos.demonio
 	tiempo_Pilar = tiempos.pilar

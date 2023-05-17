@@ -29,10 +29,10 @@ var config = {
 
 
 func _ready():
-	SoundManager.play_musica_menu()
+	Saves.cargar_config()
+	SoundManager.set_musica_menu()
 	load_tienda()
 	OS.set_window_position(Atributos.posicion)
-	OS.set_window_fullscreen(Atributos.fullscreen)
 	OS.set_window_size(Atributos.tamanio)
 	actualiza_minimapa()
 	Engine.set_meta("arma_actual","arma_1")
@@ -122,7 +122,7 @@ func _on_modo_juego_2_pressed():
 func _on_Btn_ready_pressed():
 	SoundManager.play_boton_1()
 	Engine.set_meta("numero_de_mapa",mapa_actual+1)
-	SoundManager.stop_musica_menu()
+	SoundManager.stop_musica()
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Mapa.tscn")
 
 func countFilesInFolder(folder_path):
