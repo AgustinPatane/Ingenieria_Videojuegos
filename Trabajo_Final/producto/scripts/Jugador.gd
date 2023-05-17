@@ -11,6 +11,7 @@ onready var animLvlUp = get_node("Lvp_up/Anim_lvl_up")
 onready var mascota = get_node("Mascota")
 onready var anim_mascota = get_node("Mascota/Path2D/PathFollow2D/AnimationPlayer")
 
+onready var poder_tanque = get_node("Poder_Especial_Tanque")
 # -------------------------------------------------------------------------------------
 # ----------------------------------- VARIABLES ---------------------------------------
 # -------------------------------------------------------------------------------------
@@ -29,6 +30,9 @@ var niveles_evol
 var puede_correr = false
 var skin_body
 var skin_arma
+
+var tanque = false
+var pedir_poder = true
 
 # -------------------------------------------------------------------------------------
 # -------------------------------- CARACTERISTICAS ------------------------------------
@@ -63,6 +67,7 @@ signal mascota
 func _ready():
 	set_atributos()
 	preparo_futuras_evoluciones()
+	preparo_futuros_poderes_especiales()
 	$Sombra.modulate = Color(1,1,1,0.5)
 	var ruta = Engine.get_meta("ruta_skin")
 	skin_body = load(ruta + "/body.png")
@@ -73,7 +78,8 @@ func _ready():
 	spriteLvlUp.visible = false
 	self.z_index = get_parent().get_child_count() + 1
 	emit_signal("player_ready")
-	
+
+
 func aumenta_Area_recoleccion(value):
 	$area_recoleccion.scale.x += value
 	$area_recoleccion.scale.y += value
@@ -114,7 +120,8 @@ func _physics_process(delta):
 				motion = move_and_slide(delta * -SPEED)
 	if !(self.position.x<1651 and self.position.x >-567 and self.position.y<980 and self.position.y >-411):
 		recibe_ataque(1)
-	
+	if Input.is_action_pressed("poder_especial"):
+		ejecutar_poder_especial()
 	
 # -------------------------------------------------------------------------------------
 # ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
@@ -200,7 +207,8 @@ func incremento_rango(porcentaje):
 	arma.incremento_rango(porcentaje)
 
 func recibe_ataque(danio):
-	vida-=danio
+	if !tanque:
+		vida-=danio
 	emit_signal("actualiza_interfaz")
 	if vida<=0:
 		Engine.set_meta("Puntaje",puntos)
@@ -343,8 +351,6 @@ func damage_proyectiles_doblearma():
 	$Arma2.visible = true
 	$Arma2.position.y += 20
 	set_atributos()
-	pass
-
 
 func damage_proyectiles_360():
 	arma.mas_proyectiles(10)
@@ -392,6 +398,10 @@ func preparo_futuras_evoluciones():
 	Engine.set_meta("freeze","false")
 	mascota.visible = false
 
+
+func preparo_futuros_poderes_especiales():
+	pass
+
 func _on_Timer_timeout():
 	Engine.set_meta("freeze","true")
 	emit_signal("freeze")
@@ -401,3 +411,23 @@ func _on_Timer_timeout():
 func _on_Timer_freeze_timeout():
 	$Efecto_Congelacion.visible = false
 	Engine.set_meta("freeze","false")
+
+#	poder_tanque.set_process(true)
+#	poder_tanque.escudo()
+func ejecutar_poder_especial():
+	if pedir_poder == true:
+		print("PIDIO EL PODER")
+		pedir_poder = false
+		poder_tanque.escudo()
+		$Poder_Especial_Tanque/Cargar_escudo.play("carga_escudo")
+	else:
+		print("NO CARGO TODAVIA")
+		pass
+
+func _on_timer_con_escudo_timeout():
+	self.tanque = false
+	$Poder_Especial_Tanque/timer_de_carga_escudo.start()
+
+func _on_timer_de_carga_escudo_timeout():
+	print("PODER ______- CARGADO")
+	self.pedir_poder = true

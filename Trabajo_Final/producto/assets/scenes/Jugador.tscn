@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -7,11 +7,48 @@
 [ext_resource path="res://producto/assets/img/mascota/sprite_armado.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/enemigos/Sombra.png" type="Texture" id=6]
 [ext_resource path="res://producto/assets/img/mapas_armados/efecto_congelacion.webp" type="Texture" id=7]
+[ext_resource path="res://producto/assets/scenes/Poder_Especial_Tanque.gd" type="Script" id=8]
 [ext_resource path="res://producto/scripts/Path2D.gd" type="Script" id=9]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_19.png" type="Texture" id=10]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_30.png" type="Texture" id=11]
 [ext_resource path="res://producto/assets/img/jugador/explosion_lvl_up.png" type="Texture" id=12]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_10.png" type="Texture" id=13]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_31.png" type="Texture" id=14]
 [ext_resource path="res://producto/assets/music/sounds/disparo.wav" type="AudioStream" id=15]
 [ext_resource path="res://producto/assets/music/sounds/reload.wav" type="AudioStream" id=16]
 [ext_resource path="res://producto/assets/scenes/Interfaz.tscn" type="PackedScene" id=17]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_5.png" type="Texture" id=18]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_24.png" type="Texture" id=19]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_cargado.png" type="Texture" id=20]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_6.png" type="Texture" id=21]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_27.png" type="Texture" id=22]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_12.png" type="Texture" id=23]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_2.png" type="Texture" id=24]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_9.png" type="Texture" id=25]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_16.png" type="Texture" id=26]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_17.png" type="Texture" id=27]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_15.png" type="Texture" id=28]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_13.png" type="Texture" id=29]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_21.png" type="Texture" id=30]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_4.png" type="Texture" id=31]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_1.png" type="Texture" id=32]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_28.png" type="Texture" id=33]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_20.png" type="Texture" id=34]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_22.png" type="Texture" id=35]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_26.png" type="Texture" id=36]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_7.png" type="Texture" id=37]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_verde.png" type="Texture" id=38]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_3.png" type="Texture" id=39]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_11.png" type="Texture" id=40]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_23.png" type="Texture" id=41]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_29.png" type="Texture" id=42]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_33.png" type="Texture" id=43]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_32.png" type="Texture" id=44]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_8.png" type="Texture" id=45]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_0.png" type="Texture" id=46]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_14.png" type="Texture" id=47]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_18.png" type="Texture" id=48]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_25.png" type="Texture" id=49]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 33 )
@@ -176,6 +213,14 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19, 20, 21 ]
 }
 
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 42 ), ExtResource( 33 ), ExtResource( 22 ), ExtResource( 36 ), ExtResource( 49 ), ExtResource( 19 ), ExtResource( 41 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 48 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 47 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 40 ), ExtResource( 13 ), ExtResource( 25 ), ExtResource( 45 ), ExtResource( 37 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 46 ), ExtResource( 20 ), ExtResource( 38 ) ],
+"loop": false,
+"name": "carga_escudo",
+"speed": 3.0
+} ]
+
 [node name="Jugador" type="KinematicBody2D"]
 position = Vector2( 541, 296 )
 script = ExtResource( 1 )
@@ -325,6 +370,21 @@ position = Vector2( -14.0001, 1.50004 )
 scale = Vector2( 4.10156, 4.69531 )
 texture = ExtResource( 7 )
 
+[node name="Poder_Especial_Tanque" type="Sprite" parent="."]
+position = Vector2( -472, -166 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 8 )
+
+[node name="timer_de_carga_escudo" type="Timer" parent="Poder_Especial_Tanque"]
+wait_time = 3.0
+
+[node name="Cargar_escudo" type="AnimatedSprite" parent="Poder_Especial_Tanque"]
+frames = SubResource( 22 )
+animation = "carga_escudo"
+
+[node name="timer_con_escudo" type="Timer" parent="Poder_Especial_Tanque"]
+wait_time = 10.0
+
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]
 [connection signal="animation_finished" from="Lvp_up/Anim_lvl_up" to="." method="_on_Anim_lvl_up_animation_finished"]
@@ -332,3 +392,5 @@ texture = ExtResource( 7 )
 [connection signal="area_exited" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_exited"]
 [connection signal="timeout" from="Timer_evolucion112" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer_freeze" to="." method="_on_Timer_freeze_timeout"]
+[connection signal="timeout" from="Poder_Especial_Tanque/timer_de_carga_escudo" to="." method="_on_timer_de_carga_escudo_timeout"]
+[connection signal="timeout" from="Poder_Especial_Tanque/timer_con_escudo" to="." method="_on_timer_con_escudo_timeout"]
