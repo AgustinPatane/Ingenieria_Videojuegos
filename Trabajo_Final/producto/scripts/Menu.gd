@@ -22,8 +22,9 @@ const SAVE_PATH = "res://Saves/tienda.sav"
 func _ready():
 	SoundManager.play_musica_menu()
 	load_tienda()
-	OS.set_window_position(Vector2(255,110))
+	OS.set_window_position(Atributos.posicion)
 	OS.set_window_fullscreen(Atributos.fullscreen)
+	OS.set_window_size(Atributos.tamanio)
 	actualiza_minimapa()
 	Engine.set_meta("arma_actual","arma_1")
 	

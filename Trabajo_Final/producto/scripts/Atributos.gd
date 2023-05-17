@@ -9,7 +9,9 @@ var volumenes = {
 	music_muted = false
 }
 
-var fullscreen = true
+var fullscreen = false
+var tamanio = Vector2(500,290)
+var posicion = Vector2(820,110)
 
 # JUGADOR ------------------------------------------------------------
 
