@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=2]
@@ -19,6 +19,19 @@
 [ext_resource path="res://producto/assets/img/Pausa/Botones/CONTRARRELOJ APRETADO.png" type="Texture" id=17]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/JUGAR.png" type="Texture" id=18]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/JUGAR APRETADO.png" type="Texture" id=19]
+[ext_resource path="res://producto/assets/img/Menu_principal/EMPEZAR.png" type="Texture" id=20]
+[ext_resource path="res://producto/assets/img/Menu_principal/TIENDA.png" type="Texture" id=21]
+[ext_resource path="res://producto/assets/img/Menu_principal/TIENDA APRETADO.png" type="Texture" id=22]
+[ext_resource path="res://producto/assets/img/Menu_principal/RANKING APRETADO.png" type="Texture" id=23]
+[ext_resource path="res://producto/assets/img/Menu_principal/RANKING.png" type="Texture" id=24]
+[ext_resource path="res://producto/assets/img/Menu_principal/EMPEZAR APRETADO.png" type="Texture" id=25]
+[ext_resource path="res://producto/assets/img/Menu_principal/SALIR.png" type="Texture" id=26]
+[ext_resource path="res://producto/assets/img/Menu_principal/SALIR APRETADO.png" type="Texture" id=27]
+[ext_resource path="res://producto/assets/img/Menu_principal/AYUDA PRESIONADO.png" type="Texture" id=28]
+[ext_resource path="res://producto/assets/img/Menu_principal/AYUDA.png" type="Texture" id=29]
+[ext_resource path="res://producto/assets/img/Menu_principal/CONFIG.png" type="Texture" id=30]
+[ext_resource path="res://producto/assets/img/Menu_principal/marco.png" type="Texture" id=31]
+[ext_resource path="res://producto/assets/img/Menu_principal/CONFIG APRETADO.png" type="Texture" id=32]
 
 [sub_resource type="DynamicFont" id=10]
 size = 63
@@ -82,7 +95,76 @@ text = "MAX
 AND
 MONSTERS"
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 28.0
+margin_top = 240.0
+margin_right = 417.0
+margin_bottom = 592.0
+texture = ExtResource( 31 )
+expand = true
+
+[node name="Empezar" type="TextureButton" parent="TextureRect2"]
+margin_left = 32.0
+margin_top = 18.0
+margin_right = 357.0
+margin_bottom = 95.0
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 25 )
+texture_hover = ExtResource( 25 )
+expand = true
+
+[node name="Tienda" type="TextureButton" parent="TextureRect2"]
+margin_left = 32.0
+margin_top = 98.0
+margin_right = 357.0
+margin_bottom = 175.0
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 22 )
+texture_hover = ExtResource( 22 )
+expand = true
+
+[node name="Ranking" type="TextureButton" parent="TextureRect2"]
+margin_left = 32.0
+margin_top = 177.0
+margin_right = 357.0
+margin_bottom = 254.0
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 23 )
+expand = true
+
+[node name="Salir" type="TextureButton" parent="TextureRect2"]
+margin_left = 32.0
+margin_top = 256.0
+margin_right = 197.0
+margin_bottom = 333.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 27 )
+texture_hover = ExtResource( 27 )
+expand = true
+
+[node name="Ayuda" type="TextureButton" parent="TextureRect2"]
+margin_left = 279.0
+margin_top = 256.0
+margin_right = 356.0
+margin_bottom = 333.0
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 28 )
+expand = true
+
+[node name="Configuracion" type="TextureButton" parent="TextureRect2"]
+margin_left = 199.0
+margin_top = 256.0
+margin_right = 276.0
+margin_bottom = 333.0
+texture_normal = ExtResource( 30 )
+texture_pressed = ExtResource( 32 )
+texture_hover = ExtResource( 32 )
+expand = true
+
 [node name="Botones" type="VBoxContainer" parent="."]
+visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 25.0
@@ -253,10 +335,12 @@ texture_pressed = ExtResource( 19 )
 texture_hover = ExtResource( 18 )
 expand = true
 
-[connection signal="pressed" from="Botones/Jugar" to="." method="_on_Jugar_pressed"]
-[connection signal="pressed" from="Botones/Ranking" to="." method="_on_Ranking_pressed"]
-[connection signal="pressed" from="Botones/Tienda" to="." method="_on_Tienda_pressed"]
-[connection signal="pressed" from="Botones/Salir" to="." method="_on_Salir_pressed"]
+[connection signal="pressed" from="TextureRect2/Empezar" to="." method="_on_Empezar_pressed"]
+[connection signal="pressed" from="TextureRect2/Tienda" to="." method="_on_Tienda_pressed"]
+[connection signal="pressed" from="TextureRect2/Ranking" to="." method="_on_Ranking_pressed"]
+[connection signal="pressed" from="TextureRect2/Salir" to="." method="_on_Salir_pressed"]
+[connection signal="pressed" from="TextureRect2/Ayuda" to="." method="_on_Ayuda_pressed"]
+[connection signal="pressed" from="TextureRect2/Configuracion" to="." method="_on_Configuracion_pressed"]
 [connection signal="pressed" from="Menu_previo/btn_volver" to="." method="_on_btn_volver_pressed"]
 [connection signal="pressed" from="Menu_previo/modo_juego_1" to="." method="_on_modo_juego_1_pressed"]
 [connection signal="pressed" from="Menu_previo/modo_juego_2" to="." method="_on_modo_juego_2_pressed"]

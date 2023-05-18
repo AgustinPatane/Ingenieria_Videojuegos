@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 signal continuar
-var opacidad_fondo = 0.8
 var jugador
 
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +17,7 @@ func _ready():
 	
 	$Boton_pantalla_completa.pressed = Atributos.fullscreen
 	$Jugador/AnimationPlayer.play("idle")
-	$Fondo_negro.set_modulate(Color(1,1,1,opacidad_fondo))
+	$Fondo_negro.set_modulate(Color(1,1,1,Atributos.opacidad_fondo))
 
 func cambia_skin():
 	$Jugador/Skin_jugador.set_texture(jugador.skin_body)

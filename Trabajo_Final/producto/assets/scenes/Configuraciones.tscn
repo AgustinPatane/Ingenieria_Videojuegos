@@ -1,0 +1,151 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://producto/scripts/Configuraciones.gd" type="Script" id=1]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/PANTALLA_COMPLETA.png" type="Texture" id=2]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/PANTALLA_COMPLETA_APRETADO.png" type="Texture" id=3]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/SONIDO.png" type="Texture" id=4]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/MUSICA_APAGADO.png" type="Texture" id=5]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/SONIDO_APRETADO.png" type="Texture" id=6]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/SONIDO_APAGADO.png" type="Texture" id=7]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/MUSICA.png" type="Texture" id=8]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir - copia.png" type="Texture" id=9]
+[ext_resource path="res://producto/assets/img/Pausa/SLIDER.png" type="Texture" id=10]
+[ext_resource path="res://producto/assets/img/Pausa/SLIDER_FONDO.png" type="Texture" id=11]
+[ext_resource path="res://producto/assets/img/Pausa/GRABBER.png" type="Texture" id=12]
+[ext_resource path="res://producto/assets/img/Pausa/Fondos/Marco.png" type="Texture" id=13]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir.png" type="Texture" id=14]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/MUSICA_APRETADO.png" type="Texture" id=15]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 11 )
+normal_map = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 342, 48 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 10 )
+normal_map = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 171, 19 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 10 )
+normal_map = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 171, 19 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 11 )
+normal_map = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 342, 48 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 10 )
+normal_map = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 171, 19 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 10 )
+normal_map = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 171, 19 )
+
+[node name="Configuraciones" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Fondo_negro" type="ColorRect" parent="."]
+margin_right = 1027.0
+margin_bottom = 606.0
+color = Color( 0, 0, 0, 0.690196 )
+
+[node name="Marco" type="TextureRect" parent="."]
+margin_left = 186.0
+margin_top = 188.0
+margin_right = 841.0
+margin_bottom = 434.0
+texture = ExtResource( 13 )
+expand = true
+
+[node name="Boton_salir" type="TextureButton" parent="Marco"]
+pause_mode = 2
+margin_left = 539.0
+margin_top = 132.0
+margin_right = 616.0
+margin_bottom = 209.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="Boton_pantalla_completa" type="TextureButton" parent="Marco"]
+margin_left = 539.0
+margin_top = 42.0
+margin_right = 616.0
+margin_bottom = 119.0
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+expand = true
+
+[node name="Sonido" type="Control" parent="Marco"]
+margin_left = -340.0
+margin_top = -308.0
+margin_right = -300.0
+margin_bottom = -268.0
+
+[node name="Boton_sonido" type="TextureButton" parent="Marco/Sonido"]
+margin_left = 378.0
+margin_top = 440.0
+margin_right = 455.0
+margin_bottom = 517.0
+toggle_mode = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+expand = true
+
+[node name="Slider_sonido" type="HSlider" parent="Marco/Sonido"]
+margin_left = 480.0
+margin_top = 450.0
+margin_right = 853.0
+margin_bottom = 498.0
+custom_icons/grabber_highlight = ExtResource( 12 )
+custom_icons/grabber = ExtResource( 12 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+rounded = true
+
+[node name="Musica" type="Control" parent="Marco"]
+margin_left = -340.0
+margin_top = -308.0
+margin_right = -300.0
+margin_bottom = -268.0
+
+[node name="Boton_musica" type="TextureButton" parent="Marco/Musica"]
+pause_mode = 2
+margin_left = 378.0
+margin_top = 350.0
+margin_right = 455.0
+margin_bottom = 427.0
+toggle_mode = true
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 15 )
+expand = true
+
+[node name="Slider_musica" type="HSlider" parent="Marco/Musica"]
+margin_left = 480.0
+margin_top = 362.0
+margin_right = 853.0
+margin_bottom = 410.0
+custom_icons/grabber_highlight = ExtResource( 12 )
+custom_icons/grabber = ExtResource( 12 )
+custom_styles/slider = SubResource( 4 )
+custom_styles/grabber_area_highlight = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
+rounded = true
+
+[connection signal="pressed" from="Marco/Boton_salir" to="." method="_on_Boton_salir_pressed"]
+[connection signal="toggled" from="Marco/Boton_pantalla_completa" to="." method="_on_Boton_pantalla_completa_toggled"]
+[connection signal="toggled" from="Marco/Sonido/Boton_sonido" to="." method="_on_Boton_sonido_toggled"]
+[connection signal="value_changed" from="Marco/Sonido/Slider_sonido" to="." method="_on_Slider_sonido_value_changed"]
+[connection signal="toggled" from="Marco/Musica/Boton_musica" to="." method="_on_Boton_musica_toggled"]
+[connection signal="value_changed" from="Marco/Musica/Slider_musica" to="." method="_on_Slider_musica_value_changed"]

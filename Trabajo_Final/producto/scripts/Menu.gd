@@ -2,6 +2,7 @@ extends Control
 
 onready var escena_mapa = preload("res://producto/assets/scenes/Mapa.tscn")
 onready var escena_tienda = preload("res://producto/assets/scenes/Tienda.tscn")
+onready var escena_config = preload("res://producto/assets/scenes/Configuraciones.tscn")
 onready var mini_mapa = get_node("Menu_previo/Mapas/FondoMapas")
 
 var prev_volumen = -20
@@ -154,3 +155,15 @@ func cargar_config():
 	save_config.open("res://Saves/config.sav", File.READ)
 	config = parse_json(save_config.get_line())
 	save_config.close()
+
+
+func _on_Empezar_pressed():
+	SoundManager.play_boton_1()
+	$Menu_previo.visible = true
+
+func _on_Ayuda_pressed():
+	pass # Replace with function body.
+
+func _on_Configuracion_pressed():
+	var config = escena_config.instance()
+	self.add_child(config)

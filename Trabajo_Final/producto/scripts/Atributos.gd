@@ -9,6 +9,7 @@ var volumenes = {
 	music_muted = false
 }
 
+var opacidad_fondo = 0.8
 var fullscreen = false
 var tamanio = Vector2(700,400)
 var posicion = Vector2(700,110)
