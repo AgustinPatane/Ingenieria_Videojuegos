@@ -400,8 +400,6 @@ func preparo_futuras_evoluciones():
 
 
 func preparo_futuros_poderes_especiales():
-	$Poder_Especial_Tanque/timer_primer_carga.start()
-	$Poder_Especial_Tanque/timer_de_carga_escudo.start()
 	$Poder_Especial_Tanque/Cargar_escudo.play("carga_escudo")
 
 func _on_Timer_timeout():
@@ -421,15 +419,13 @@ func ejecutar_poder_especial():
 		pedir_poder = false
 		poder_tanque.escudo()
 		$Poder_Especial_Tanque/timer_con_escudo.start()
-		$Poder_Especial_Tanque/Cargar_escudo.play("carga_escudo")
-	else:
-		print("NO CARGO TODAVIA")
-		pass
+		$Poder_Especial_Tanque/Cargar_escudo.play("usandose")
 
 func _on_timer_con_escudo_timeout():
 	self.tanque = false
 	$Poder_Especial_Tanque/timer_de_carga_escudo.start()
+	$Poder_Especial_Tanque/Cargar_escudo.play("carga_escudo")
 
 func _on_timer_de_carga_escudo_timeout():
-	print("PODER ______- CARGADO")
+	$Poder_Especial_Tanque/Cargar_escudo.play("cargado")
 	self.pedir_poder = true

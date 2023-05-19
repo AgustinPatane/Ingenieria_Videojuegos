@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -49,7 +49,10 @@
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_14.png" type="Texture" id=47]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_18.png" type="Texture" id=48]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_25.png" type="Texture" id=49]
-
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_amarillo.png" type="Texture" id=50]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_violeta.png" type="Texture" id=51]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_rojo.png" type="Texture" id=52]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_rosa.png" type="Texture" id=53]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 33 )
@@ -217,8 +220,18 @@ tracks/0/keys = {
 [sub_resource type="SpriteFrames" id=22]
 animations = [ {
 "frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 42 ), ExtResource( 33 ), ExtResource( 22 ), ExtResource( 36 ), ExtResource( 49 ), ExtResource( 19 ), ExtResource( 41 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 48 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 47 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 40 ), ExtResource( 13 ), ExtResource( 25 ), ExtResource( 45 ), ExtResource( 37 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 46 ), ExtResource( 20 ), ExtResource( 38 ) ],
-"loop": false,
+"loop": true,
 "name": "carga_escudo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 38 ) ],
+"loop": true,
+"name": "cargado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 50 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 38 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "usandose",
 "speed": 5.0
 } ]
 
@@ -377,18 +390,18 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 8 )
 
 [node name="timer_de_carga_escudo" type="Timer" parent="Poder_Especial_Tanque"]
-wait_time = 10.0
+wait_time = 14.0
+one_shot = true
+autostart = true
 
 [node name="Cargar_escudo" type="AnimatedSprite" parent="Poder_Especial_Tanque"]
 frames = SubResource( 22 )
-animation = "carga_escudo"
+animation = "usandose"
 speed_scale = 0.5
 
 [node name="timer_con_escudo" type="Timer" parent="Poder_Especial_Tanque"]
-wait_time = 4.0
-
-[node name="timer_primer_carga" type="Timer" parent="Poder_Especial_Tanque"]
-wait_time = 4.0
+wait_time = 5.0
+one_shot = true
 
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]
