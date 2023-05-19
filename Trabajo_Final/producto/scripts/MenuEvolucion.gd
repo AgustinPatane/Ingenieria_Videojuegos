@@ -43,12 +43,13 @@ var evolucion_actual = ""
 var evolucion_siguiente = ""
 var seleccionado = 0
 
+# EVOLUCION 1 : VELOCIDAD
 var evolucion_1 = {
 	"nombre": "cadencia",
-	"cadencia": 2,
-	"vida": 0.8,
-	"velocidad": 1.25,
-	"damage": 0.75,
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1.3,
+	"damage": 1,
 	"rango": 1,
 	"arma": "ak-47"
 }
@@ -57,32 +58,32 @@ var evolucion_1_1 = {
 	"nombre": "damage_proyectiles",
 	"cadencia": 1,
 	"vida": 1,
-	"velocidad": 1,
+	"velocidad": 1.2,
 	"damage": 1,
-	"rango": 1.2,
-	"arma": "ametralladora"
+	"rango": 1.5,
+	"arma": "ak-47"
 }
 var evolucion_1_1_2 = {
 	"nombre": "damage_proyectiles_proyectiles",
-	"cadencia": 1.2,
-	"vida": 1.2,
+	"cadencia": 1,
+	"vida": 0.8,
 	"velocidad": 1,
 	"damage": 1,
-	"rango": 1.2,
-	"arma": "ametralladora"
+	"rango": 1.3,
+	"arma": "ak-47"
 }
 var evolucion_1_1_1 = {
 	"nombre": "damage_proyectiles_360",
 	"cadencia": 1,
 	"vida": 1,
-	"velocidad": 1,
-	"damage": 0.5,
+	"velocidad": 1.3,
+	"damage": 0.2,
 	"rango": 1,
 	"arma": "bobina"
 }
 var evolucion_1_2 = {
 	"nombre": "cadencia_velocidad",
-	"cadencia": 1.5,
+	"cadencia": 1,
 	"vida": 1,
 	"velocidad": 1.25,
 	"damage": 1,
@@ -91,11 +92,11 @@ var evolucion_1_2 = {
 }
 var evolucion_1_2_1 = {
 	"nombre": "cadencia_velocidad_atraviesamuros",
-	"cadencia": 1.5,
-	"vida": 0.75,
+	"cadencia": 1,
+	"vida": 0.7,
 	"velocidad": 1.2,
 	"damage": 1,
-	"rango": 0.75,
+	"rango": 0.8,
 	"arma": "ak-47"
 }
 var evolucion_1_2_2 = {
@@ -107,6 +108,9 @@ var evolucion_1_2_2 = {
 	"rango": 1,
 	"arma": "ak-47"
 }
+
+# EVOLUCION 2 : VIDA
+
 var evolucion_2 = {
 	"nombre": "damage",
 	"cadencia": 0.75,
@@ -175,6 +179,151 @@ var evolucion_2_2_2 = {
 	"damage": 2,
 	"rango": 1,
 	"arma": "bazooka"
+}
+
+# EVOLUCION 3 : IMPACTO
+
+var evolucion_3 = {
+	"nombre": "damage",
+	"cadencia": 0.75,
+	"vida": 1.5,
+	"velocidad": 0.75,
+	"damage": 1.5,
+	"rango": 1.5,
+	"arma": "rifle"
+}
+
+var evolucion_3_1 = {
+	"nombre": "damage_proyectiles",
+	"cadencia": 1,
+	"vida": 3,
+	"velocidad": 0.75,
+	"damage": 1,
+	"rango": 2,
+	"arma": "escopeta"
+}
+
+var evolucion_3_1_1 = {
+	"nombre": "damage_proyectiles_doblearma",
+	"cadencia": 1,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 1.5,
+	"rango": 0.75,
+	"arma": "escopeta"
+}
+
+var evolucion_3_1_2 = {
+	"nombre": "damage_proyectiles_mascota",
+	"cadencia": 1,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "escopeta"
+}
+
+var evolucion_3_2 = {
+	"nombre": "damage_rango",
+	"cadencia": 0.75,
+	"vida": 1.5,
+	"velocidad": 0.75,
+	"damage": 2,
+	"rango": 3,
+	"arma": "francotirador"
+}
+
+var evolucion_3_2_1 = {
+	"nombre": "damage_rango_rango",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1.5,
+	"rango": 1,
+	"arma": "francotirador"
+}
+
+var evolucion_3_2_2 = {
+	"nombre": "damage_rango_explosivo",
+	"cadencia": 0.5,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 2,
+	"rango": 1,
+	"arma": "bazooka"
+}
+
+
+# EVOLUCION 4 : CADENCIA
+
+var evolucion_4 = {
+	"nombre": "cadencia",
+	"cadencia": 1.2,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 0.5,
+	"rango": 1,
+	"arma": "ametralladora"
+}
+
+var evolucion_4_1 = {
+	"nombre": "cadencia_cadencia",
+	"cadencia": 1.2,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "ametralladora"
+}
+
+var evolucion_4_1_1 = {
+	"nombre": "cadencia_cadencia_damage",
+	"cadencia": 1.2,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 4,
+	"rango": 1,
+	"arma": "ametralladora"
+}
+
+var evolucion_4_1_2 = {
+	"nombre": "cadencia_cadencia_rango",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 2,
+	"rango": 3,
+	"arma": "ametralladora"
+}
+
+var evolucion_4_2 = {
+	"nombre": "cadencia_damage",
+	"cadencia": 1.1,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 2,
+	"rango": 3,
+	"arma": "ametralladora"
+}
+
+var evolucion_4_2_1 = {
+	"nombre": "cadencia_damage_damage",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 3,
+	"rango": 1.5,
+	"arma": "ametralladora"
+}
+
+var evolucion_4_2_2 = {
+	"nombre": "cadencia_damage_cadencia",
+	"cadencia": 4,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 0.2,
+	"rango": 1,
+	"arma": "ametralladora"
 }
 
 # Called when the node enters the scene tree for the first time.
