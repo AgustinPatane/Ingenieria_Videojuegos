@@ -505,7 +505,8 @@ func _on_evolucion_2_2_1_pressed():
 		actualizar_rama_arbol("evolucion_2_2_1")
 	seleccionado = 1
 
-func _on_evolucion_2_2_2_pressed():
+func _on_evolucion_2_2_2_pressed():	
+	ventana_actualizar("EL HOMBRE EXPLOSIVOS","algo algo algo.","BAZOOKA")
 	if(len(evolucion_actual)<len("evolucion_2_2_2")):
 		actualizar_rama_arbol("evolucion_2_2_2")
 	seleccionado = 2
@@ -598,6 +599,7 @@ func _on_evolucion_2_2_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_2_2_2_mouse_entered():
+	actualizar_sprite_ventana("el_hombre_explosivos","bazooka")
 	ventana_actualizar("EL HOMBRE EXPLOSIVOS","algo algo algo.","BAZOOKA")
 
 func _on_evolucion_2_2_2_mouse_exited():
@@ -608,12 +610,13 @@ func actualizar_rama_arbol(evol):
 	ramas_arbol.set_texture(ruta_rama)
 
 func actualizar_sprite_ventana(skin,arma):
-	#var ruta = Engine.get_meta("ruta_skin")
-	#var arma_actual = arma
-	#var skin_body = load(ruta + "/body.png")
-	#var skin_arma = load(ruta+"/"+arma_actual+".png")
-	#sprite_jugador.set_texture(skin_body)
-	#prite_arma.set_texture(skin_arma)
+	#var skin es para el accesorio que identifique a cada evolucion
+	var ruta = Engine.get_meta("ruta_skin")
+	var arma_actual = arma
+	var skin_body = load(ruta + "/body.png")
+	var skin_arma = load(ruta+"/"+arma_actual+".png")
+	sprite_jugador.set_texture(skin_body)
+	sprite_arma.set_texture(skin_arma)
 	pass
 
 func _on_evolucion_3_pressed():
@@ -689,3 +692,114 @@ func _on_evolucion_4_2_2_pressed():
 	seleccionado = 2
 
 
+
+func _on_evolucion_3_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_3_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_3_1_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_3_1_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_3_1_1_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_3_1_1_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_3_1_2_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_3_1_2_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_3_2_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_3_2_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_3_2_1_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_3_2_1_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_3_2_2_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_3_2_2_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_4_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_4_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_4_1_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_4_1_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_4_1_1_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_4_1_1_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_4_1_2_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_4_1_2_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_4_2_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_4_2_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_4_2_1_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_4_2_1_mouse_exited():
+	ventana_por_defecto()
+
+
+func _on_evolucion_4_2_2_mouse_entered():
+	pass # Replace with function body.
+
+
+func _on_evolucion_4_2_2_mouse_exited():
+	ventana_por_defecto()
