@@ -13,6 +13,7 @@ onready var habilidad = get_node("Ventana/Habilidad")
 #_________________BOTONES ARBOL DE EVOLUCION_________________
 onready var boton_evolucion = get_node("evolucion")
 
+
 onready var boton_evolucion_1 = get_node("evolucion/evolucion_1")
 
 onready var boton_evolucion_1_1 = get_node("evolucion/evolucion_1/evolucion_1_1")
@@ -23,6 +24,7 @@ onready var boton_evolucion_1_2 = get_node("evolucion/evolucion_1/evolucion_1_2"
 onready var boton_evolucion_1_2_1 = get_node("evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_1")
 onready var boton_evolucion_1_2_2 = get_node("evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_2")
 
+
 onready var boton_evolucion_2 = get_node("evolucion/evolucion_2")
 
 onready var boton_evolucion_2_1 = get_node("evolucion/evolucion_2/evolucion_2_1")
@@ -32,6 +34,29 @@ onready var boton_evolucion_2_1_2 = get_node("evolucion/evolucion_2/evolucion_2_
 onready var boton_evolucion_2_2 = get_node("evolucion/evolucion_2/evolucion_2_2")
 onready var boton_evolucion_2_2_1 = get_node("evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_1")
 onready var boton_evolucion_2_2_2 = get_node("evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_2")
+
+
+onready var boton_evolucion_3 = get_node("evolucion/evolucion_3")
+
+onready var boton_evolucion_3_1 = get_node("evolucion/evolucion_3/evolucion_3_1")
+onready var boton_evolucion_3_1_1 = get_node("evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_1")
+onready var boton_evolucion_3_1_2 = get_node("evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_2")
+
+onready var boton_evolucion_3_2 = get_node("evolucion/evolucion_3/evolucion_3_2")
+onready var boton_evolucion_3_2_1 = get_node("evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_1")
+onready var boton_evolucion_3_2_2 = get_node("evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_2")
+
+
+onready var boton_evolucion_4 = get_node("evolucion/evolucion_4")
+
+onready var boton_evolucion_4_1 = get_node("evolucion/evolucion_4/evolucion_4_1")
+onready var boton_evolucion_4_1_1 = get_node("evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_1")
+onready var boton_evolucion_4_1_2 = get_node("evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_2")
+
+onready var boton_evolucion_4_2 = get_node("evolucion/evolucion_4/evolucion_4_2")
+onready var boton_evolucion_4_2_1 = get_node("evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_1")
+onready var boton_evolucion_4_2_2 = get_node("evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_2")
+
 
 onready var ramas_arbol = get_node("evolucion/ramas_arbol")
 
@@ -328,6 +353,10 @@ var evolucion_4_2_2 = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	boton_evolucion_3.visible = false
+	boton_evolucion_4.visible = false
+	boton_evolucion_3.set_process(false)
+	boton_evolucion_4.set_process(false)
 	if Engine.has_meta("evolucion_actual"):
 		evolucion_actual = Engine.get_meta("evolucion_actual")
 	else:
@@ -368,7 +397,6 @@ func muestro_arbol():
 			if longitud_actual>=len(boton.name):
 				boton.set_disabled(true)
 			else:#mismo nivel
-				print(evolucion_actual)
 				if longitud_actual == 11 and evolucion_actual[10]!=boton.name[10]:
 					boton.set_disabled(true)
 				else:
@@ -587,3 +615,77 @@ func actualizar_sprite_ventana(skin,arma):
 	#sprite_jugador.set_texture(skin_body)
 	#prite_arma.set_texture(skin_arma)
 	pass
+
+func _on_evolucion_3_pressed():
+	if(len(evolucion_actual)<len("evolucion_3")):
+		actualizar_rama_arbol("evolucion_3")
+	seleccionado = 3
+
+func _on_evolucion_3_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_3_1")):
+		actualizar_rama_arbol("evolucion_3_1")
+	seleccionado = 1
+
+func _on_evolucion_3_1_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_3_1_1")):
+		actualizar_rama_arbol("evolucion_3_1_1")
+	seleccionado = 1
+
+func _on_evolucion_3_1_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_3_1_2")):
+		actualizar_rama_arbol("evolucion_3_1_2")
+	seleccionado = 2
+
+func _on_evolucion_3_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_3_2")):
+		actualizar_rama_arbol("evolucion_3_2")
+	seleccionado = 2
+
+func _on_evolucion_3_2_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_3_2_1")):
+		actualizar_rama_arbol("evolucion_3_2_1")
+	seleccionado = 1
+
+func _on_evolucion_3_2_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_3_2_2")):
+		actualizar_rama_arbol("evolucion_3_2_2")
+	seleccionado = 2
+
+
+
+func _on_evolucion_4_pressed():
+	if(len(evolucion_actual)<len("evolucion_4")):
+		actualizar_rama_arbol("evolucion_4")
+	seleccionado = 4
+
+func _on_evolucion_4_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_4_1")):
+		actualizar_rama_arbol("evolucion_4_1")
+	seleccionado = 1
+
+func _on_evolucion_4_1_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_4_1_1")):
+		actualizar_rama_arbol("evolucion_4_1_1")
+	seleccionado = 1
+
+func _on_evolucion_4_1_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_4_1_2")):
+		actualizar_rama_arbol("evolucion_4_1_2")
+	seleccionado = 2
+
+func _on_evolucion_4_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_4_2")):
+		actualizar_rama_arbol("evolucion_4_2")
+	seleccionado = 2
+
+func _on_evolucion_4_2_1_pressed():
+	if(len(evolucion_actual)<len("evolucion_4_2_1")):
+		actualizar_rama_arbol("evolucion_4_2_1")
+	seleccionado = 1
+
+func _on_evolucion_4_2_2_pressed():
+	if(len(evolucion_actual)<len("evolucion_4_2_2")):
+		actualizar_rama_arbol("evolucion_4_2_2")
+	seleccionado = 2
+
+
