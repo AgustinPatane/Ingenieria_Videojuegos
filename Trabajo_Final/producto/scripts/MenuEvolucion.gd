@@ -70,10 +70,10 @@ var seleccionado = 0
 
 # EVOLUCION 1 : VELOCIDAD
 var evolucion_1 = {
-	"nombre": "cadencia",
+	"nombre": "movimiento",
 	"cadencia": 1,
 	"vida": 1,
-	"velocidad": 1.3,
+	"velocidad": 1.5,
 	"damage": 1,
 	"rango": 1,
 	"arma": "ak-47"

@@ -299,6 +299,146 @@ func actualiza_atributos(atributos, evol):
 	call(atributos.nombre)	
 	arma.cambia_skin(atributos.arma)
 
+
+#____________ EVOLUCIONES DE MOVIMIENTO ________________
+func movimiento():
+	print("movimiento")
+	pass
+
+func movimiento_enemigos():
+	print("movimiento_enemigos")
+	pass
+
+func movimiento_propio():
+	print("movimiento_propio")
+	pass
+
+func movimiento_enemigos_ondaralentizadora():
+	print("movimiento_enemigos_ondaralentizadora")
+	pass
+
+func movimiento_enemigos_congelacion():
+	print("movimiento_enemigos_congelacion")
+	$Timer_evolucion112.set_process(true)
+	$Timer_evolucion112.start()
+	pass
+
+func movimiento_propio_atravesarmuros():
+	print("movimiento_propio_atravesarmuros")
+	pass
+
+func movimiento_propio_nitro():
+	print("movimiento_propio_nitro")
+	pass
+
+#____________ EVOLUCIONES DE SALUD ________________
+
+func salud():
+	print("salud")
+	pass
+
+func salud_masvida():
+	print("salud_masvida")
+	pass
+
+func salud_masinmune():
+	print("salud_masinmune")
+	pass
+
+func salud_masvida_tokenvidaextra():
+	print("salud_masvida_tokenvidaextra")
+	pass
+
+func salud_masvida_regeneracion():
+	print("salud_masvida_regeneracion")
+	pass
+
+func salud_masinmune_escudo():
+	print("salud_masinmune_escudo")
+	pass
+
+func salud_masinmune_resiliente():
+	print("salud_masinmune_resiliente")
+	pass
+
+#____________ EVOLUCIONES DE ATAQUE ________________
+
+func ataque():
+	print("ataque")
+	pass
+
+func ataque_cerca():
+	print("ataque_nose")
+	pass
+
+func ataque_oneshoot():
+	print("ataque_oneshoot")
+	arma.set_cant_atraviesa(3)
+	arma.incrementa_velocidad_proyectil(2)
+	pass
+
+func ataque_cerca_areaexplosiva():
+	print("ataque_cerca_areaexplosiva")
+	pass
+
+func ataque_cerca_penetramuros():
+	print("ataque_cerca_penetramuros")
+	arma.set_cant_atraviesa(5)
+	arma.incrementa_velocidad_proyectil(2)
+	pass
+
+func sataque_oneshoot_francotirador():
+	print("ataque_oneshoot_francotirador")
+	pass
+
+func ataque_oneshoot_bazooka():
+	print("ataque_oneshoot_bazooka")
+	arma.cambia_proeyctil("Cohete")
+	pass
+
+#____________ EVOLUCIONES DE TIRO ________________
+
+func tiro():
+	print("tiro")
+	pass
+
+func tiro_dispersion():
+	print("tiro_dispersion")
+	arma.set_dispersion_angular(5)
+	pass
+
+func tiro_cadencia():
+	print("tiro_cadencia")
+	pass
+
+func tiro_dispersion_rebote():
+	print("tiro_dispersion_rebote")
+	arma.mas_proyectiles(5)
+	arma.cambia_proeyctil("Proyectil_Rebota")
+	arma.set_cant_atraviesa(2)
+	pass
+
+func tiro_dispersion_360():
+	print("tiro_dispersion_360")
+	arma.mas_proyectiles(10)
+	arma.set_dispersion_angular(360)
+	pass
+
+func tiro_cadencia_doblearma():
+	print("tiro_cadencia_doblearma")
+	$Arma2.set_process(true)
+	$Arma2.visible = true
+	$Arma2.position.y += 20
+	set_atributos()
+	pass
+
+func tiro_cadencia_infinita():
+	print("tiro_cadencia_infinita")
+	pass
+
+
+# _-_-_-_-_-_-_-_-_- FIN EVOLUCIONES
+
 func damage():
 	pass
 
@@ -309,7 +449,9 @@ func cadencia_velocidad():
 	puede_correr = true
 
 func cadencia_cadencia():
-	arma.set_dispersion_angular(5)
+	arma.mas_proyectiles(3)
+	arma.set_dispersion_angular(30)
+	arma.mas_proyectiles(0)
 
 func cadencia_cadencia_doblearma():
 	pass
@@ -389,7 +531,7 @@ func _on_Area2D_Mascota_area_entered(area):
 func _on_Area2D_Mascota_area_exited(area):
 	anim_mascota.play("move")
 
-#---------------------------------------- MASCOTA ---------------------------
+#---------------------------------------- FIN MASCOTA ---------------------------
 func preparo_futuras_evoluciones():
 	$Arma2.set_process(false)
 	$Arma2.visible = false
