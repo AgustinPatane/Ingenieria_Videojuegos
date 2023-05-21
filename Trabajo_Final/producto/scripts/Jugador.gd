@@ -11,7 +11,7 @@ onready var animLvlUp = get_node("Lvp_up/Anim_lvl_up")
 onready var mascota = get_node("Mascota")
 onready var anim_mascota = get_node("Mascota/Path2D/PathFollow2D/AnimationPlayer")
 
-onready var poder_tanque = get_node("Poder_Especial_")
+onready var poder_especial_seleccionado = get_node("Poder_Especial_")
 onready var timer_carga = get_node("Poder_Especial_/timer_de_carga")
 onready var timer_con_poder = get_node("Poder_Especial_/timer_con_poder")
 onready var sprite_poder = get_node("Poder_Especial_/sprite_poder")
@@ -34,7 +34,7 @@ var puede_correr = false
 var skin_body
 var skin_arma
 
-var tanque = false
+var poder_en_uso = false
 var pedir_poder = false
 var poder_especial = ""
 
@@ -210,7 +210,7 @@ func incremento_rango(porcentaje):
 	arma.incremento_rango(porcentaje)
 
 func recibe_ataque(danio):
-	if !tanque:
+	if poder_especial != "escudo" or poder_en_uso == false:
 		vida-=danio
 	emit_signal("actualiza_interfaz")
 	if vida<=0:
@@ -511,6 +511,7 @@ func habilito_poder_especial():
 	timer_carga.set_process(true)
 	timer_con_poder.set_process(true)
 	sprite_poder.set_process(true)
+	poder_especial_seleccionado.set_tipo(poder_especial)
 
 func activar_poder_especial(poder_especial):
 	sprite_poder.play("carga_"+poder_especial)
@@ -530,17 +531,21 @@ func _on_Timer_freeze_timeout():
 func ejecutar_poder_especial():
 	if pedir_poder == true:
 		pedir_poder = false
-		poder_tanque.escudo()
+		poder_especial_seleccionado.escudo()
 		timer_con_poder.start()
 		sprite_poder.play("usandose_"+poder_especial)
 
-func _on_timer_con_escudo_timeout():
-	self.tanque = false
-	timer_carga.start()
-	sprite_poder.play("carga_"+poder_especial)
 
-func _on_timer_de_carga_escudo_timeout():
+#--------------------------  fin PODER ESPECIAL --------------------------
+
+
+func _on_timer_de_carga_timeout():
+	print("PODER CARGADO")
 	sprite_poder.play("cargado_"+poder_especial)
 	self.pedir_poder = true
 
-#--------------------------  fin PODER ESPECIAL --------------------------
+
+func _on_timer_con_poder_timeout():
+	self.poder_en_uso = false
+	timer_carga.start()
+	sprite_poder.play("carga_"+poder_especial)

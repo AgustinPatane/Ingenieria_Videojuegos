@@ -566,5 +566,5 @@ one_shot = true
 [connection signal="area_exited" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_exited"]
 [connection signal="timeout" from="Timer_evolucion112" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer_freeze" to="." method="_on_Timer_freeze_timeout"]
-[connection signal="timeout" from="Poder_Especial_/timer_de_carga" to="." method="_on_timer_de_carga_escudo_timeout"]
-[connection signal="timeout" from="Poder_Especial_/timer_con_poder" to="." method="_on_timer_con_escudo_timeout"]
+[connection signal="timeout" from="Poder_Especial_/timer_de_carga" to="." method="_on_timer_de_carga_timeout"]
+[connection signal="timeout" from="Poder_Especial_/timer_con_poder" to="." method="_on_timer_con_poder_timeout"]
