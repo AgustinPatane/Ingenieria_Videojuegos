@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -53,6 +53,39 @@
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_violeta.png" type="Texture" id=51]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_rojo.png" type="Texture" id=52]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Escudo/escudo_rosa.png" type="Texture" id=53]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_15.png" type="Texture" id=54]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rojo_3.png" type="Texture" id=55]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rosa_1.png" type="Texture" id=56]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rosa_6.png" type="Texture" id=57]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rojo_1.png" type="Texture" id=58]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_verde.png" type="Texture" id=59]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_celeste_3.png" type="Texture" id=60]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rojo_4.png" type="Texture" id=61]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rojo_6.png" type="Texture" id=62]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rojo_2.png" type="Texture" id=63]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rojo_5.png" type="Texture" id=64]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_celeste_2.png" type="Texture" id=65]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_celeste_1.png" type="Texture" id=66]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rojo.png" type="Texture" id=67]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rosa_3.png" type="Texture" id=68]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_rosa_5.png" type="Texture" id=69]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rosa.png" type="Texture" id=70]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_celeste_4.png" type="Texture" id=71]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_celeste.png" type="Texture" id=72]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_1.png" type="Texture" id=73]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_2.png" type="Texture" id=74]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_6.png" type="Texture" id=75]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_7.png" type="Texture" id=76]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_4.png" type="Texture" id=77]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_12.png" type="Texture" id=78]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_13.png" type="Texture" id=79]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_8.png" type="Texture" id=80]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_3.png" type="Texture" id=81]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_5.png" type="Texture" id=82]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_11.png" type="Texture" id=83]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_14.png" type="Texture" id=84]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_9.png" type="Texture" id=85]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_10.png" type="Texture" id=86]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 33 )
@@ -224,15 +257,30 @@ animations = [ {
 "name": "carga_escudo",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 73 ), ExtResource( 74 ), ExtResource( 81 ), ExtResource( 77 ), ExtResource( 82 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 83 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 84 ), ExtResource( 54 ) ],
+"loop": true,
+"name": "carga_rayo",
+"speed": 2.0
+}, {
 "frames": [ ExtResource( 38 ) ],
 "loop": true,
-"name": "cargado",
+"name": "cargado_escudo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 59 ) ],
+"loop": true,
+"name": "cargado_rayo",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 50 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 38 ), ExtResource( 51 ) ],
 "loop": true,
-"name": "usandose",
+"name": "usandose_escudo",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 72 ), ExtResource( 66 ), ExtResource( 65 ), ExtResource( 60 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 56 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 57 ), ExtResource( 67 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 55 ), ExtResource( 61 ), ExtResource( 64 ), ExtResource( 62 ) ],
+"loop": true,
+"name": "usandose_rayo",
+"speed": 30.0
 } ]
 
 [node name="Jugador" type="KinematicBody2D"]
@@ -396,7 +444,8 @@ autostart = true
 
 [node name="Cargar_escudo" type="AnimatedSprite" parent="Poder_Especial_Tanque"]
 frames = SubResource( 22 )
-animation = "carga_escudo"
+animation = "usandose_rayo"
+frame = 9
 speed_scale = 0.5
 
 [node name="timer_con_escudo" type="Timer" parent="Poder_Especial_Tanque"]

@@ -68,7 +68,7 @@ var evolucion_actual = ""
 var evolucion_siguiente = ""
 var seleccionado = 0
 
-# EVOLUCION 1 : VELOCIDAD
+# EVOLUCION 1 : MOVIMIENTO / VELOCIDAD
 var evolucion_1 = {
 	"nombre": "movimiento",
 	"cadencia": 1,
@@ -134,7 +134,7 @@ var evolucion_1_2_2 = {
 	"arma": "ak-47"
 }
 
-# EVOLUCION 2 : VIDA
+# EVOLUCION 2 : SALUD / VIDA
 
 var evolucion_2 = {
 	"nombre": "damage",
@@ -206,7 +206,7 @@ var evolucion_2_2_2 = {
 	"arma": "bazooka"
 }
 
-# EVOLUCION 3 : IMPACTO
+# EVOLUCION 3 : ATAQUE
 
 var evolucion_3 = {
 	"nombre": "damage",
@@ -279,14 +279,14 @@ var evolucion_3_2_2 = {
 }
 
 
-# EVOLUCION 4 : CADENCIA
+# EVOLUCION 4 : TIRO / DISPARO / CADENCIA
 
 var evolucion_4 = {
 	"nombre": "cadencia",
 	"cadencia": 1.2,
 	"vida": 1,
 	"velocidad": 1,
-	"damage": 0.5,
+	"damage": 1,
 	"rango": 1,
 	"arma": "ametralladora"
 }

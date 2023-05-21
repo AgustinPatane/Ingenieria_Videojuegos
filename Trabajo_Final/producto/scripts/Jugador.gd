@@ -543,6 +543,7 @@ func preparo_futuras_evoluciones():
 
 func preparo_futuros_poderes_especiales():
 	$Poder_Especial_Tanque/Cargar_escudo.play("carga_escudo")
+	#$Poder_Especial_Tanque/Cargar_escudo.play("carga_rayo")
 
 func _on_Timer_timeout():
 	Engine.set_meta("freeze","true")
@@ -561,13 +562,16 @@ func ejecutar_poder_especial():
 		pedir_poder = false
 		poder_tanque.escudo()
 		$Poder_Especial_Tanque/timer_con_escudo.start()
-		$Poder_Especial_Tanque/Cargar_escudo.play("usandose")
+		$Poder_Especial_Tanque/Cargar_escudo.play("usandose_escudo")
+		#$Poder_Especial_Tanque/Cargar_escudo.play("usandose_rayo")
 
 func _on_timer_con_escudo_timeout():
 	self.tanque = false
 	$Poder_Especial_Tanque/timer_de_carga_escudo.start()
 	$Poder_Especial_Tanque/Cargar_escudo.play("carga_escudo")
+	#$Poder_Especial_Tanque/Cargar_escudo.play("carga_rayo")
 
 func _on_timer_de_carga_escudo_timeout():
-	$Poder_Especial_Tanque/Cargar_escudo.play("cargado")
+	$Poder_Especial_Tanque/Cargar_escudo.play("cargado_escudo")
+	#$Poder_Especial_Tanque/Cargar_escudo.play("cargado_rayo")
 	self.pedir_poder = true
