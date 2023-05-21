@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -86,6 +86,23 @@
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_14.png" type="Texture" id=84]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_9.png" type="Texture" id=85]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Rayo/rayo_10.png" type="Texture" id=86]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_cargado.png" type="Texture" id=87]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_2.png" type="Texture" id=88]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_3.png" type="Texture" id=89]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_4.png" type="Texture" id=90]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_7.png" type="Texture" id=91]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_12.png" type="Texture" id=92]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_verde.png" type="Texture" id=93]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_1.png" type="Texture" id=94]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_10.png" type="Texture" id=95]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_13.png" type="Texture" id=96]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_usandose_1.png" type="Texture" id=97]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_5.png" type="Texture" id=98]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_6.png" type="Texture" id=99]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_8.png" type="Texture" id=100]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_9.png" type="Texture" id=101]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_11.png" type="Texture" id=102]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_0.png" type="Texture" id=103]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 33 )
@@ -257,6 +274,11 @@ animations = [ {
 "name": "carga_escudo",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 103 ), ExtResource( 94 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 91 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 95 ), ExtResource( 102 ), ExtResource( 92 ), ExtResource( 96 ), ExtResource( 87 ) ],
+"loop": true,
+"name": "carga_hielo",
+"speed": 2.0
+}, {
 "frames": [ ExtResource( 73 ), ExtResource( 74 ), ExtResource( 81 ), ExtResource( 77 ), ExtResource( 82 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 80 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 83 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 84 ), ExtResource( 54 ) ],
 "loop": true,
 "name": "carga_rayo",
@@ -265,6 +287,11 @@ animations = [ {
 "frames": [ ExtResource( 38 ) ],
 "loop": true,
 "name": "cargado_escudo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 93 ) ],
+"loop": true,
+"name": "cargado_hielo",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 59 ) ],
@@ -276,6 +303,11 @@ animations = [ {
 "loop": true,
 "name": "usandose_escudo",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 87 ), ExtResource( 97 ) ],
+"loop": true,
+"name": "usandose_hielo",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 72 ), ExtResource( 66 ), ExtResource( 65 ), ExtResource( 60 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 56 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 57 ), ExtResource( 67 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 55 ), ExtResource( 61 ), ExtResource( 64 ), ExtResource( 62 ) ],
 "loop": true,
@@ -444,8 +476,7 @@ autostart = true
 
 [node name="Cargar_escudo" type="AnimatedSprite" parent="Poder_Especial_Tanque"]
 frames = SubResource( 22 )
-animation = "usandose_rayo"
-frame = 9
+animation = "usandose_hielo"
 speed_scale = 0.5
 
 [node name="timer_con_escudo" type="Timer" parent="Poder_Especial_Tanque"]
