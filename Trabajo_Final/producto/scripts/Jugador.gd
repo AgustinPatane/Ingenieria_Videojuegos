@@ -478,12 +478,6 @@ func guardar_monedas():
 
 #---------------------------------------- MASCOTA ---------------------------
 
-func damage_proyectiles_mascota():
-	mascota.set_process(true)
-	mascota.visible = true
-	anim_mascota.play("move")
-	emit_signal("mascota")
-	pass
 
 func _on_Area2D_Mascota_area_entered(_area):
 	anim_mascota.play("ataque")
@@ -507,10 +501,16 @@ func preparo_futuras_evoluciones():
 func desactivo_poder_especial():
 	$Poder_Especial_.set_process(false)
 	$Poder_Especial_.visible = false
+	timer_carga.set_process(false)
+	timer_con_poder.set_process(false)
+	sprite_poder.set_process(false)
 
 func habilito_poder_especial():
 	$Poder_Especial_.set_process(true)
 	$Poder_Especial_.visible = true
+	timer_carga.set_process(true)
+	timer_con_poder.set_process(true)
+	sprite_poder.set_process(true)
 
 func activar_poder_especial(poder_especial):
 	sprite_poder.play("carga_"+poder_especial)
