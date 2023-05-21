@@ -80,43 +80,43 @@ var evolucion_1 = {
 }
 
 var evolucion_1_1 = {
-	"nombre": "damage_proyectiles",
+	"nombre": "movimiento_propio",
 	"cadencia": 1,
 	"vida": 1,
-	"velocidad": 1.2,
+	"velocidad": 1.3,
 	"damage": 1,
 	"rango": 1.5,
 	"arma": "ak-47"
 }
 var evolucion_1_1_2 = {
-	"nombre": "damage_proyectiles_proyectiles",
+	"nombre": "movimiento_propio_atravesarmuros",
 	"cadencia": 1,
-	"vida": 0.8,
+	"vida": 1,
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1.3,
 	"arma": "ak-47"
 }
 var evolucion_1_1_1 = {
-	"nombre": "damage_proyectiles_360",
+	"nombre": "movimiento_propio_nitro",
 	"cadencia": 1,
 	"vida": 1,
-	"velocidad": 1.3,
-	"damage": 0.2,
+	"velocidad": 1.1,
+	"damage": 1,
 	"rango": 1,
-	"arma": "bobina"
+	"arma": "ak-47"
 }
 var evolucion_1_2 = {
-	"nombre": "cadencia_velocidad",
+	"nombre": "movimiento_enemigos",
 	"cadencia": 1,
 	"vida": 1,
-	"velocidad": 1.25,
+	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
 	"arma": "ak-47"
 }
 var evolucion_1_2_1 = {
-	"nombre": "cadencia_velocidad_atraviesamuros",
+	"nombre": "movimiento_enemigos_ondaralentizadora",
 	"cadencia": 1,
 	"vida": 0.7,
 	"velocidad": 1.2,
@@ -125,7 +125,7 @@ var evolucion_1_2_1 = {
 	"arma": "ak-47"
 }
 var evolucion_1_2_2 = {
-	"nombre": "cadencia_velocidad_freeze",
+	"nombre": "movimiento_enemigos_congelacion",
 	"cadencia": 1,
 	"vida": 1,
 	"velocidad": 1,
@@ -137,39 +137,39 @@ var evolucion_1_2_2 = {
 # EVOLUCION 2 : SALUD / VIDA
 
 var evolucion_2 = {
-	"nombre": "damage",
-	"cadencia": 0.75,
-	"vida": 1.5,
-	"velocidad": 0.75,
-	"damage": 1.5,
-	"rango": 1.5,
+	"nombre": "salud",
+	"cadencia": 1,
+	"vida": 2,
+	"velocidad": 0.9,
+	"damage": 1,
+	"rango": 1,
 	"arma": "rifle"
 }
 
 var evolucion_2_1 = {
-	"nombre": "damage_proyectiles",
+	"nombre": "salud_masvida",
 	"cadencia": 1,
-	"vida": 3,
-	"velocidad": 0.75,
+	"vida": 2,
+	"velocidad": 1,
 	"damage": 1,
-	"rango": 2,
+	"rango": 1,
 	"arma": "escopeta"
 }
 
 var evolucion_2_1_1 = {
-	"nombre": "damage_proyectiles_doblearma",
+	"nombre": "salud_masvida_tokenvidaextra",
 	"cadencia": 1,
-	"vida": 1.5,
+	"vida": 1.2,
 	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 0.75,
+	"damage": 1,
+	"rango": 1,
 	"arma": "escopeta"
 }
 
 var evolucion_2_1_2 = {
-	"nombre": "damage_proyectiles_mascota",
+	"nombre": "salud_masvida_regeneracion",
 	"cadencia": 1,
-	"vida": 1.5,
+	"vida": 1.2,
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
@@ -177,39 +177,39 @@ var evolucion_2_1_2 = {
 }
 
 var evolucion_2_2 = {
-	"nombre": "damage_rango",
-	"cadencia": 0.75,
-	"vida": 1.5,
-	"velocidad": 0.75,
-	"damage": 2,
-	"rango": 3,
-	"arma": "francotirador"
-}
-
-var evolucion_2_2_1 = {
-	"nombre": "damage_rango_rango",
+	"nombre": "salud_masinmune",
 	"cadencia": 1,
 	"vida": 1,
 	"velocidad": 1,
-	"damage": 1.5,
+	"damage": 1,
 	"rango": 1,
-	"arma": "francotirador"
+	"arma": "escopeta"
+}
+
+var evolucion_2_2_1 = {
+	"nombre": "salud_masinmune_escudo",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "escopeta"
 }
 
 var evolucion_2_2_2 = {
-	"nombre": "damage_rango_explosivo",
-	"cadencia": 0.5,
-	"vida": 1.5,
+	"nombre": "salud_masinmune_resiliente",
+	"cadencia": 1,
+	"vida": 1,
 	"velocidad": 1,
-	"damage": 2,
+	"damage": 1,
 	"rango": 1,
-	"arma": "bazooka"
+	"arma": "escopeta"
 }
 
 # EVOLUCION 3 : ATAQUE
 
 var evolucion_3 = {
-	"nombre": "damage",
+	"nombre": "ataque",
 	"cadencia": 0.75,
 	"vida": 1.5,
 	"velocidad": 0.75,
@@ -219,7 +219,7 @@ var evolucion_3 = {
 }
 
 var evolucion_3_1 = {
-	"nombre": "damage_proyectiles",
+	"nombre": "ataque_cerca",
 	"cadencia": 1,
 	"vida": 3,
 	"velocidad": 0.75,
@@ -229,7 +229,7 @@ var evolucion_3_1 = {
 }
 
 var evolucion_3_1_1 = {
-	"nombre": "damage_proyectiles_doblearma",
+	"nombre": "ataque_cerca_areaexplosiva",
 	"cadencia": 1,
 	"vida": 1.5,
 	"velocidad": 1,
@@ -239,7 +239,7 @@ var evolucion_3_1_1 = {
 }
 
 var evolucion_3_1_2 = {
-	"nombre": "damage_proyectiles_mascota",
+	"nombre": "ataque_cerca_penetramuros",
 	"cadencia": 1,
 	"vida": 1.5,
 	"velocidad": 1,
@@ -249,7 +249,7 @@ var evolucion_3_1_2 = {
 }
 
 var evolucion_3_2 = {
-	"nombre": "damage_rango",
+	"nombre": "ataque_oneshoot",
 	"cadencia": 0.75,
 	"vida": 1.5,
 	"velocidad": 0.75,
@@ -259,7 +259,7 @@ var evolucion_3_2 = {
 }
 
 var evolucion_3_2_1 = {
-	"nombre": "damage_rango_rango",
+	"nombre": "ataque_oneshoot_francotirador",
 	"cadencia": 1,
 	"vida": 1,
 	"velocidad": 1,
@@ -269,7 +269,7 @@ var evolucion_3_2_1 = {
 }
 
 var evolucion_3_2_2 = {
-	"nombre": "damage_rango_explosivo",
+	"nombre": "ataque_oneshoot_bazooka",
 	"cadencia": 0.5,
 	"vida": 1.5,
 	"velocidad": 1,
@@ -282,7 +282,7 @@ var evolucion_3_2_2 = {
 # EVOLUCION 4 : TIRO / DISPARO / CADENCIA
 
 var evolucion_4 = {
-	"nombre": "cadencia",
+	"nombre": "tiro",
 	"cadencia": 1.2,
 	"vida": 1,
 	"velocidad": 1,
@@ -292,7 +292,7 @@ var evolucion_4 = {
 }
 
 var evolucion_4_1 = {
-	"nombre": "cadencia_cadencia",
+	"nombre": "tiro_dispersion",
 	"cadencia": 1.2,
 	"vida": 1,
 	"velocidad": 1,
@@ -302,7 +302,7 @@ var evolucion_4_1 = {
 }
 
 var evolucion_4_1_1 = {
-	"nombre": "cadencia_cadencia_damage",
+	"nombre": "tiro_dispersion_rebote",
 	"cadencia": 1.2,
 	"vida": 1,
 	"velocidad": 1,
@@ -312,7 +312,7 @@ var evolucion_4_1_1 = {
 }
 
 var evolucion_4_1_2 = {
-	"nombre": "cadencia_cadencia_rango",
+	"nombre": "tiro_dispersion_360",
 	"cadencia": 1,
 	"vida": 1,
 	"velocidad": 1,
@@ -322,7 +322,7 @@ var evolucion_4_1_2 = {
 }
 
 var evolucion_4_2 = {
-	"nombre": "cadencia_damage",
+	"nombre": "tiro_cadencia",
 	"cadencia": 1.1,
 	"vida": 1.5,
 	"velocidad": 1,
@@ -332,17 +332,17 @@ var evolucion_4_2 = {
 }
 
 var evolucion_4_2_1 = {
-	"nombre": "cadencia_damage_damage",
+	"nombre": "tiro_cadencia_doblearma",
 	"cadencia": 1,
 	"vida": 1,
 	"velocidad": 1,
 	"damage": 3,
 	"rango": 1.5,
-	"arma": "ametralladora"
+	"arma": "ak-47"
 }
 
 var evolucion_4_2_2 = {
-	"nombre": "cadencia_damage_cadencia",
+	"nombre": "tiro_cadencia_infinita",
 	"cadencia": 4,
 	"vida": 1,
 	"velocidad": 1,

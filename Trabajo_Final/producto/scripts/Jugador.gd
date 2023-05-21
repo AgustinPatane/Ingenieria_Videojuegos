@@ -33,6 +33,7 @@ var skin_arma
 
 var tanque = false
 var pedir_poder = false
+var poder_especial = ""
 
 # -------------------------------------------------------------------------------------
 # -------------------------------- CARACTERISTICAS ------------------------------------
@@ -67,7 +68,6 @@ signal mascota
 func _ready():
 	set_atributos()
 	preparo_futuras_evoluciones()
-	preparo_futuros_poderes_especiales()
 	$Sombra.modulate = Color(1,1,1,0.5)
 	var ruta = Engine.get_meta("ruta_skin")
 	skin_body = load(ruta + "/body.png")
@@ -318,6 +318,8 @@ func movimiento_enemigos_ondaralentizadora():
 	pass
 
 func movimiento_enemigos_congelacion():
+	poder_especial = "hielo"
+	activar_poder_especial(poder_especial)
 	print("movimiento_enemigos_congelacion")
 	$Timer_evolucion112.set_process(true)
 	$Timer_evolucion112.start()
@@ -328,6 +330,8 @@ func movimiento_propio_atravesarmuros():
 	pass
 
 func movimiento_propio_nitro():
+	poder_especial = "rayo"
+	activar_poder_especial(poder_especial)
 	print("movimiento_propio_nitro")
 	pass
 
@@ -354,6 +358,8 @@ func salud_masvida_regeneracion():
 	pass
 
 func salud_masinmune_escudo():
+	poder_especial = "escudo"
+	activar_poder_especial(poder_especial)
 	print("salud_masinmune_escudo")
 	pass
 
@@ -378,6 +384,8 @@ func ataque_oneshoot():
 	pass
 
 func ataque_cerca_areaexplosiva():
+	poder_especial = "bomba"
+	activar_poder_especial(poder_especial)
 	print("ataque_cerca_areaexplosiva")
 	pass
 
@@ -387,7 +395,7 @@ func ataque_cerca_penetramuros():
 	arma.incrementa_velocidad_proyectil(2)
 	pass
 
-func sataque_oneshoot_francotirador():
+func ataque_oneshoot_francotirador():
 	print("ataque_oneshoot_francotirador")
 	pass
 
@@ -432,7 +440,9 @@ func tiro_cadencia_doblearma():
 	set_atributos()
 	pass
 
-func tiro_cadencia_infinita():
+func tiro_cadencia_infinita(): 
+	poder_especial = "balas"
+	activar_poder_especial("balas")
 	print("tiro_cadencia_infinita")
 	pass
 
@@ -541,8 +551,8 @@ func preparo_futuras_evoluciones():
 	mascota.visible = false
 
 
-func preparo_futuros_poderes_especiales():
-	$Poder_Especial_Tanque/Cargar_escudo.play("carga_escudo")
+func activar_poder_especial(poder_especial):
+	$Poder_Especial_Tanque/Cargar_escudo.play("carga_"+poder_especial)
 	#$Poder_Especial_Tanque/Cargar_escudo.play("carga_rayo")
 
 func _on_Timer_timeout():
@@ -562,16 +572,16 @@ func ejecutar_poder_especial():
 		pedir_poder = false
 		poder_tanque.escudo()
 		$Poder_Especial_Tanque/timer_con_escudo.start()
-		$Poder_Especial_Tanque/Cargar_escudo.play("usandose_escudo")
+		$Poder_Especial_Tanque/Cargar_escudo.play("usandose_"+poder_especial)
 		#$Poder_Especial_Tanque/Cargar_escudo.play("usandose_rayo")
 
 func _on_timer_con_escudo_timeout():
 	self.tanque = false
 	$Poder_Especial_Tanque/timer_de_carga_escudo.start()
-	$Poder_Especial_Tanque/Cargar_escudo.play("carga_escudo")
+	$Poder_Especial_Tanque/Cargar_escudo.play("carga_"+poder_especial)
 	#$Poder_Especial_Tanque/Cargar_escudo.play("carga_rayo")
 
 func _on_timer_de_carga_escudo_timeout():
-	$Poder_Especial_Tanque/Cargar_escudo.play("cargado_escudo")
+	$Poder_Especial_Tanque/Cargar_escudo.play("cargado_"+poder_especial)
 	#$Poder_Especial_Tanque/Cargar_escudo.play("cargado_rayo")
 	self.pedir_poder = true
