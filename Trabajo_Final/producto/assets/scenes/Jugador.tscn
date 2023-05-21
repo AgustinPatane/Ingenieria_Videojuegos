@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=163 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -103,6 +103,51 @@
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_9.png" type="Texture" id=101]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_11.png" type="Texture" id=102]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Nieve/hielo_0.png" type="Texture" id=103]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_usada_1.png" type="Texture" id=104]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_usada_2.png" type="Texture" id=105]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_0.png" type="Texture" id=106]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_verde.png" type="Texture" id=107]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_usada_7.png" type="Texture" id=108]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_usada_6.png" type="Texture" id=109]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_usada_5.png" type="Texture" id=110]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_usada_4.png" type="Texture" id=111]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_usada_3.png" type="Texture" id=112]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_1.png" type="Texture" id=113]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_cargada.png" type="Texture" id=114]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_3.png" type="Texture" id=115]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_2.png" type="Texture" id=116]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_5.png" type="Texture" id=117]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_6.png" type="Texture" id=118]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_7.png" type="Texture" id=119]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_13.png" type="Texture" id=120]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_14.png" type="Texture" id=121]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_8.png" type="Texture" id=122]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_9.png" type="Texture" id=123]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_10.png" type="Texture" id=124]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_4.png" type="Texture" id=125]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/bomba_12.png" type="Texture" id=126]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_6.png" type="Texture" id=127]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_verdes.png" type="Texture" id=128]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_usandose_5.png" type="Texture" id=129]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_cargadas.png" type="Texture" id=130]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_13.png" type="Texture" id=131]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_8.png" type="Texture" id=132]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_9.png" type="Texture" id=133]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_usandose_1.png" type="Texture" id=134]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_usandose_6.png" type="Texture" id=135]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_11.png" type="Texture" id=136]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_12.png" type="Texture" id=137]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_4.png" type="Texture" id=138]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_usandose_4.png" type="Texture" id=139]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_2.png" type="Texture" id=140]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_5.png" type="Texture" id=141]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_14.png" type="Texture" id=142]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_10.png" type="Texture" id=143]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_3.png" type="Texture" id=144]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_usandose_2.png" type="Texture" id=145]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_usandose_3.png" type="Texture" id=146]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_1.png" type="Texture" id=147]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_7.png" type="Texture" id=148]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 33 )
@@ -269,6 +314,16 @@ tracks/0/keys = {
 
 [sub_resource type="SpriteFrames" id=22]
 animations = [ {
+"frames": [ ExtResource( 147 ), ExtResource( 140 ), ExtResource( 144 ), ExtResource( 138 ), ExtResource( 141 ), ExtResource( 127 ), ExtResource( 148 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 143 ), ExtResource( 136 ), ExtResource( 137 ), ExtResource( 131 ), ExtResource( 142 ), ExtResource( 130 ) ],
+"loop": true,
+"name": "carga_balas",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 106 ), ExtResource( 113 ), ExtResource( 116 ), ExtResource( 115 ), ExtResource( 125 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 126 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 114 ) ],
+"loop": true,
+"name": "carga_bomba",
+"speed": 2.0
+}, {
 "frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 42 ), ExtResource( 33 ), ExtResource( 22 ), ExtResource( 36 ), ExtResource( 49 ), ExtResource( 19 ), ExtResource( 41 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 48 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 47 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 40 ), ExtResource( 13 ), ExtResource( 25 ), ExtResource( 45 ), ExtResource( 37 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 46 ), ExtResource( 20 ), ExtResource( 38 ) ],
 "loop": true,
 "name": "carga_escudo",
@@ -284,6 +339,16 @@ animations = [ {
 "name": "carga_rayo",
 "speed": 2.0
 }, {
+"frames": [ ExtResource( 128 ) ],
+"loop": true,
+"name": "cargado_balas",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 107 ) ],
+"loop": true,
+"name": "cargado_bomba",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 38 ) ],
 "loop": true,
 "name": "cargado_escudo",
@@ -298,6 +363,16 @@ animations = [ {
 "loop": true,
 "name": "cargado_rayo",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 134 ), ExtResource( 145 ), ExtResource( 146 ), ExtResource( 139 ), ExtResource( 129 ), ExtResource( 135 ) ],
+"loop": true,
+"name": "usandose_balas",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 104 ), ExtResource( 105 ), ExtResource( 112 ), ExtResource( 111 ), ExtResource( 110 ), ExtResource( 109 ), ExtResource( 108 ) ],
+"loop": true,
+"name": "usandose_bomba",
+"speed": 30.0
 }, {
 "frames": [ ExtResource( 50 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 38 ), ExtResource( 51 ) ],
 "loop": true,
@@ -476,7 +551,8 @@ autostart = true
 
 [node name="Cargar_escudo" type="AnimatedSprite" parent="Poder_Especial_Tanque"]
 frames = SubResource( 22 )
-animation = "usandose_hielo"
+animation = "usandose_balas"
+frame = 5
 speed_scale = 0.5
 
 [node name="timer_con_escudo" type="Timer" parent="Poder_Especial_Tanque"]
