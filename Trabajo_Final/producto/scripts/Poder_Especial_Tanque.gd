@@ -40,8 +40,26 @@ func bomba():
 
 func hielo():
 	#esto es lo del efecto congelacion durante el timer
+	Engine.set_meta("freeze","true")
+	emit_signal("freeze")
+	jugador.efecto_Congelacion.visible = true
+	jugador.timer_con_poder.start()
 	pass
 
 func balas():
 	#este timer comparte al de rayo, en este incrementa la cadencia
+	pass
+
+func timeout():
+	if tipo == "escudo":
+		pass
+	if tipo == "rayo":
+		pass
+	if tipo == "bomba":
+		pass
+	if tipo == "hielo":
+		jugador.efecto_Congelacion.visible = false
+		Engine.set_meta("freeze","false")
+	if tipo == "balas":
+		pass
 	pass

@@ -15,6 +15,7 @@ onready var poder_especial_seleccionado = get_node("Poder_Especial_")
 onready var timer_carga = get_node("Poder_Especial_/timer_de_carga")
 onready var timer_con_poder = get_node("Poder_Especial_/timer_con_poder")
 onready var sprite_poder = get_node("Poder_Especial_/sprite_poder")
+onready var efecto_Congelacion = get_node("Efecto_Congelacion")
 # -------------------------------------------------------------------------------------
 # ----------------------------------- VARIABLES ---------------------------------------
 # -------------------------------------------------------------------------------------
@@ -325,8 +326,8 @@ func movimiento_enemigos_congelacion():
 	poder_especial = "hielo"
 	activar_poder_especial(poder_especial)
 	print("movimiento_enemigos_congelacion")
-	$Timer_evolucion112.set_process(true)
-	$Timer_evolucion112.start()
+	#$Timer_evolucion112.set_process(true)
+	#$Timer_evolucion112.start()
 	pass
 
 func movimiento_propio_atravesarmuros():
@@ -478,7 +479,6 @@ func guardar_monedas():
 
 #---------------------------------------- MASCOTA ---------------------------
 
-
 func _on_Area2D_Mascota_area_entered(_area):
 	anim_mascota.play("ataque")
 
@@ -487,13 +487,11 @@ func _on_Area2D_Mascota_area_exited(_area):
 
 #---------------------------------------- FIN MASCOTA ---------------------------
 
-
 #-------------------------- PODER ESPECIAL --------------------------
 func preparo_futuras_evoluciones():
 	$Arma2.set_process(false)
 	$Arma2.visible = false
 	mascota.set_process(false)
-	$Timer_evolucion112.set_process(false)
 	Engine.set_meta("freeze","false")
 	mascota.visible = false
 	desactivo_poder_especial()
@@ -515,16 +513,7 @@ func habilito_poder_especial():
 
 func activar_poder_especial(poder_especial):
 	sprite_poder.play("carga_"+poder_especial)
-
-func _on_Timer_timeout():
-	Engine.set_meta("freeze","true")
-	emit_signal("freeze")
-	$Efecto_Congelacion.visible = true
-	$Timer_freeze.start()
-
-func _on_Timer_freeze_timeout():
-	$Efecto_Congelacion.visible = false
-	Engine.set_meta("freeze","false")
+	timer_carga.start()
 
 #	poder_tanque.set_process(true)
 #	poder_tanque.escudo()
@@ -549,3 +538,4 @@ func _on_timer_con_poder_timeout():
 	self.poder_en_uso = false
 	timer_carga.start()
 	sprite_poder.play("carga_"+poder_especial)
+	poder_especial_seleccionado.timeout()

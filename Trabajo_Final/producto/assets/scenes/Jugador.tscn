@@ -527,12 +527,6 @@ anims/ataque = SubResource( 19 )
 anims/move = SubResource( 20 )
 anims/quieto = SubResource( 21 )
 
-[node name="Timer_evolucion112" type="Timer" parent="."]
-wait_time = 10.0
-
-[node name="Timer_freeze" type="Timer" parent="."]
-wait_time = 2.0
-
 [node name="Efecto_Congelacion" type="Sprite" parent="."]
 visible = false
 position = Vector2( -14.0001, 1.50004 )
@@ -564,7 +558,5 @@ one_shot = true
 [connection signal="animation_finished" from="Lvp_up/Anim_lvl_up" to="." method="_on_Anim_lvl_up_animation_finished"]
 [connection signal="area_entered" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_entered"]
 [connection signal="area_exited" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_exited"]
-[connection signal="timeout" from="Timer_evolucion112" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer_freeze" to="." method="_on_Timer_freeze_timeout"]
 [connection signal="timeout" from="Poder_Especial_/timer_de_carga" to="." method="_on_timer_de_carga_timeout"]
 [connection signal="timeout" from="Poder_Especial_/timer_con_poder" to="." method="_on_timer_con_poder_timeout"]
