@@ -11,7 +11,10 @@ onready var animLvlUp = get_node("Lvp_up/Anim_lvl_up")
 onready var mascota = get_node("Mascota")
 onready var anim_mascota = get_node("Mascota/Path2D/PathFollow2D/AnimationPlayer")
 
-onready var poder_tanque = get_node("Poder_Especial_Tanque")
+onready var poder_tanque = get_node("Poder_Especial_")
+onready var timer_carga = get_node("Poder_Especial_/timer_de_carga")
+onready var timer_con_poder = get_node("Poder_Especial_/timer_con_poder")
+onready var sprite_poder = get_node("Poder_Especial_/sprite_poder")
 # -------------------------------------------------------------------------------------
 # ----------------------------------- VARIABLES ---------------------------------------
 # -------------------------------------------------------------------------------------
@@ -318,6 +321,7 @@ func movimiento_enemigos_ondaralentizadora():
 	pass
 
 func movimiento_enemigos_congelacion():
+	habilito_poder_especial()
 	poder_especial = "hielo"
 	activar_poder_especial(poder_especial)
 	print("movimiento_enemigos_congelacion")
@@ -330,6 +334,7 @@ func movimiento_propio_atravesarmuros():
 	pass
 
 func movimiento_propio_nitro():
+	habilito_poder_especial()
 	poder_especial = "rayo"
 	activar_poder_especial(poder_especial)
 	print("movimiento_propio_nitro")
@@ -358,6 +363,7 @@ func salud_masvida_regeneracion():
 	pass
 
 func salud_masinmune_escudo():
+	habilito_poder_especial()
 	poder_especial = "escudo"
 	activar_poder_especial(poder_especial)
 	print("salud_masinmune_escudo")
@@ -384,6 +390,7 @@ func ataque_oneshoot():
 	pass
 
 func ataque_cerca_areaexplosiva():
+	habilito_poder_especial()
 	poder_especial = "bomba"
 	activar_poder_especial(poder_especial)
 	print("ataque_cerca_areaexplosiva")
@@ -440,7 +447,8 @@ func tiro_cadencia_doblearma():
 	set_atributos()
 	pass
 
-func tiro_cadencia_infinita(): 
+func tiro_cadencia_infinita():
+	habilito_poder_especial()
 	poder_especial = "balas"
 	activar_poder_especial("balas")
 	print("tiro_cadencia_infinita")
@@ -449,64 +457,6 @@ func tiro_cadencia_infinita():
 
 # _-_-_-_-_-_-_-_-_- FIN EVOLUCIONES
 
-func damage():
-	pass
-
-func cadencia():
-	pass
-
-func cadencia_velocidad():
-	puede_correr = true
-
-func cadencia_cadencia():
-	arma.mas_proyectiles(3)
-	arma.set_dispersion_angular(30)
-	arma.mas_proyectiles(0)
-
-func cadencia_cadencia_doblearma():
-	pass
-
-func cadencia_cadencia_boomerang():
-	pass
-
-func cadencia_velocidad_atraviesamuros():
-	pass
-
-func cadencia_velocidad_freeze():
-	$Timer_evolucion112.set_process(true)
-	$Timer_evolucion112.start()
-
-func damage_rango():
-	arma.set_cant_atraviesa(3)
-	arma.incrementa_velocidad_proyectil(2)
-
-func damage_rango_rango():
-	arma.set_cant_atraviesa(5)
-	arma.incrementa_velocidad_proyectil(2)
-
-func damage_rango_explosivo():
-	arma.cambia_proeyctil("Cohete")
-	
-func damage_proyectiles():
-	arma.mas_proyectiles(3)
-	arma.set_dispersion_angular(30)
-	arma.mas_proyectiles(0)
-	#arma.set_dispersion_angular(30)
-
-func damage_proyectiles_proyectiles():
-	arma.mas_proyectiles(5)
-	arma.cambia_proeyctil("Proyectil_Rebota")
-	arma.set_cant_atraviesa(2)
-
-func damage_proyectiles_doblearma():
-	$Arma2.set_process(true)
-	$Arma2.visible = true
-	$Arma2.position.y += 20
-	set_atributos()
-
-func damage_proyectiles_360():
-	arma.mas_proyectiles(10)
-	arma.set_dispersion_angular(360)
 
 # -------------------------------------------------------------------------------------
 # ------------------------------ MANEJO DE LA PAUSA -----------------------------------
@@ -542,6 +492,9 @@ func _on_Area2D_Mascota_area_exited(_area):
 	anim_mascota.play("move")
 
 #---------------------------------------- FIN MASCOTA ---------------------------
+
+
+#-------------------------- PODER ESPECIAL --------------------------
 func preparo_futuras_evoluciones():
 	$Arma2.set_process(false)
 	$Arma2.visible = false
@@ -549,11 +502,18 @@ func preparo_futuras_evoluciones():
 	$Timer_evolucion112.set_process(false)
 	Engine.set_meta("freeze","false")
 	mascota.visible = false
+	desactivo_poder_especial()
 
+func desactivo_poder_especial():
+	$Poder_Especial_.set_process(false)
+	$Poder_Especial_.visible = false
+
+func habilito_poder_especial():
+	$Poder_Especial_.set_process(true)
+	$Poder_Especial_.visible = true
 
 func activar_poder_especial(poder_especial):
-	$Poder_Especial_Tanque/Cargar_escudo.play("carga_"+poder_especial)
-	#$Poder_Especial_Tanque/Cargar_escudo.play("carga_rayo")
+	sprite_poder.play("carga_"+poder_especial)
 
 func _on_Timer_timeout():
 	Engine.set_meta("freeze","true")
@@ -571,17 +531,16 @@ func ejecutar_poder_especial():
 	if pedir_poder == true:
 		pedir_poder = false
 		poder_tanque.escudo()
-		$Poder_Especial_Tanque/timer_con_escudo.start()
-		$Poder_Especial_Tanque/Cargar_escudo.play("usandose_"+poder_especial)
-		#$Poder_Especial_Tanque/Cargar_escudo.play("usandose_rayo")
+		timer_con_poder.start()
+		sprite_poder.play("usandose_"+poder_especial)
 
 func _on_timer_con_escudo_timeout():
 	self.tanque = false
-	$Poder_Especial_Tanque/timer_de_carga_escudo.start()
-	$Poder_Especial_Tanque/Cargar_escudo.play("carga_"+poder_especial)
-	#$Poder_Especial_Tanque/Cargar_escudo.play("carga_rayo")
+	timer_carga.start()
+	sprite_poder.play("carga_"+poder_especial)
 
 func _on_timer_de_carga_escudo_timeout():
-	$Poder_Especial_Tanque/Cargar_escudo.play("cargado_"+poder_especial)
-	#$Poder_Especial_Tanque/Cargar_escudo.play("cargado_rayo")
+	sprite_poder.play("cargado_"+poder_especial)
 	self.pedir_poder = true
+
+#--------------------------  fin PODER ESPECIAL --------------------------

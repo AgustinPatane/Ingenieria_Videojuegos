@@ -539,23 +539,23 @@ position = Vector2( -14.0001, 1.50004 )
 scale = Vector2( 4.10156, 4.69531 )
 texture = ExtResource( 7 )
 
-[node name="Poder_Especial_Tanque" type="Sprite" parent="."]
+[node name="Poder_Especial_" type="Sprite" parent="."]
 position = Vector2( -472, -166 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 8 )
 
-[node name="timer_de_carga_escudo" type="Timer" parent="Poder_Especial_Tanque"]
+[node name="timer_de_carga" type="Timer" parent="Poder_Especial_"]
 wait_time = 14.0
 one_shot = true
 autostart = true
 
-[node name="Cargar_escudo" type="AnimatedSprite" parent="Poder_Especial_Tanque"]
+[node name="sprite_poder" type="AnimatedSprite" parent="Poder_Especial_"]
 frames = SubResource( 22 )
 animation = "usandose_balas"
 frame = 5
 speed_scale = 0.5
 
-[node name="timer_con_escudo" type="Timer" parent="Poder_Especial_Tanque"]
+[node name="timer_con_poder" type="Timer" parent="Poder_Especial_"]
 wait_time = 5.0
 one_shot = true
 
@@ -566,5 +566,5 @@ one_shot = true
 [connection signal="area_exited" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_exited"]
 [connection signal="timeout" from="Timer_evolucion112" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer_freeze" to="." method="_on_Timer_freeze_timeout"]
-[connection signal="timeout" from="Poder_Especial_Tanque/timer_de_carga_escudo" to="." method="_on_timer_de_carga_escudo_timeout"]
-[connection signal="timeout" from="Poder_Especial_Tanque/timer_con_escudo" to="." method="_on_timer_con_escudo_timeout"]
+[connection signal="timeout" from="Poder_Especial_/timer_de_carga" to="." method="_on_timer_de_carga_escudo_timeout"]
+[connection signal="timeout" from="Poder_Especial_/timer_con_poder" to="." method="_on_timer_con_escudo_timeout"]
