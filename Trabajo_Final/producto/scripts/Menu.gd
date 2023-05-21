@@ -165,5 +165,5 @@ func _on_Ayuda_pressed():
 	pass # Replace with function body.
 
 func _on_Configuracion_pressed():
-	var config = escena_config.instance()
-	self.add_child(config)
+	var configuracion = escena_config.instance()
+	self.add_child(configuracion)

@@ -525,10 +525,10 @@ func damage_proyectiles_mascota():
 	emit_signal("mascota")
 	pass
 
-func _on_Area2D_Mascota_area_entered(area):
+func _on_Area2D_Mascota_area_entered(_area):
 	anim_mascota.play("ataque")
 
-func _on_Area2D_Mascota_area_exited(area):
+func _on_Area2D_Mascota_area_exited(_area):
 	anim_mascota.play("move")
 
 #---------------------------------------- FIN MASCOTA ---------------------------

@@ -153,7 +153,7 @@ func posicion_aleatoria(tipo_enemigo) -> Vector2:
 	return Vector2(posx,posy)
 
 func _on_Jugador_player_defeated():
-	SoundManager.stop_musica_partida()
+	SoundManager.stop_musica()
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
 
 func freeze():
@@ -170,16 +170,16 @@ func establecer_fondo_mapa():
 		$Obstaculos_por_mapa/Mapa_3.set_process(true)
 
 # -------- OBSTACULOS MAPA 3 ----------
-func _on_Lava_1_area_entered(area):
+func _on_Lava_1_area_entered(_area):
 	#si un enemigo entra a la lava
 	#si un proyectil entra en la lava...
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	#$Obstaculos_por_mapa/Mapa_3/Llamas.position = jugador.position
 	pass
 
-func _on_Lava_1_body_entered(body):
+func _on_Lava_1_body_entered(_body):
 	#if body.name == jugador.name:
 		#$Obstaculos_por_mapa/Mapa_3/Llamas.visible = true
 		#$Obstaculos_por_mapa/Mapa_3/Llamas/AnimatedSprite.play("llamas")
