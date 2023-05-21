@@ -531,7 +531,7 @@ func _on_Timer_freeze_timeout():
 func ejecutar_poder_especial():
 	if pedir_poder == true:
 		pedir_poder = false
-		poder_especial_seleccionado.escudo()
+		poder_especial_seleccionado.activar()
 		timer_con_poder.start()
 		sprite_poder.play("usandose_"+poder_especial)
 
