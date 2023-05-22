@@ -305,7 +305,6 @@ margin_bottom = 114.0
 text = "BAZOOKA"
 
 [node name="evolucion_4" type="Button" parent="evolucion"]
-visible = false
 margin_left = 159.0
 margin_top = 133.0
 margin_right = 279.0
