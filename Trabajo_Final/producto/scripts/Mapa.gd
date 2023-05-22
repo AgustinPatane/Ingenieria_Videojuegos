@@ -156,6 +156,7 @@ func posicion_aleatoria(tipo_enemigo) -> Vector2:
 
 func _on_Jugador_player_defeated():
 	SoundManager.stop_musica()
+	Engine.set_meta("Mapa",nombre_mapa)
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
 
 func freeze():

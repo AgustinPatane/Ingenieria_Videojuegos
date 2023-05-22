@@ -44,10 +44,8 @@ func _on_Jugar_pressed():
 	$Menu_previo.visible = true
 
 func _on_Salir_pressed():
+	SoundManager.play_boton_1()
 	get_tree().quit()
-	
-func _process(_delta):
-	pass
 
 func _on_Ranking_pressed():
 	SoundManager.play_boton_1()
