@@ -6,6 +6,7 @@ var jugador
 var escala = 0.7
 var en_Area = false
 var tiempo_parpadeo = 15
+var nombre_mapa
 
 func _ready():
 	$Sombra.modulate = Color(1, 1, 1, 0.5)
@@ -13,7 +14,8 @@ func _ready():
 	self.scale.x = escala
 	$AnimationPlayer.play("anim")
 	position.y += 30
-	jugador = get_node("/root/Mapa/Jugador")
+	nombre_mapa=Engine.get_meta("nombre_escena_mapa")
+	jugador = get_node("/root/"+nombre_mapa+"/Jugador")
 	
 	var timer = Timer.new()
 	timer.wait_time = tiempo_parpadeo

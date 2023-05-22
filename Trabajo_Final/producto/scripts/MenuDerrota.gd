@@ -13,7 +13,7 @@ var player = {
 }
 		
 func _ready():
-	SoundManager.play_musica_derrota()
+	#SoundManager.play_musica_derrota()
 	load_game()
 	player.score = Engine.get_meta("Puntaje")
 

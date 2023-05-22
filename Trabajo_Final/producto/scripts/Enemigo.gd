@@ -15,7 +15,8 @@ var xpermiso = false
 
 onready var escena_txt_danio = preload("res://producto/assets/scenes/Texto_danio.tscn")
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
-onready var mapa = get_node("/root/Mapa")
+
+onready var mapa = get_node("/root/"+Engine.get_meta("nombre_escena_mapa"))
 
 func recibe_damage(damage, pos):
 	var label_danio = escena_txt_danio.instance()
@@ -51,7 +52,7 @@ func ataque():
 func muere():
 	#$death.play()
 	muerto  = 1
-	mapa = get_node("/root/Mapa")
+	mapa = get_node("/root/"+Engine.get_meta("nombre_escena_mapa"))
 	mapa.cant_enemigos=mapa.cant_enemigos-1
 	#$Sombra.hide()
 	$AnimationPlayer.play("die")
@@ -62,7 +63,8 @@ func muere():
 func _ready():
 	$Sombra.modulate = Color(1,1,1,0.5)
 	$AnimationPlayer.play("move")
-	jugador = get_node("/root/Mapa/Jugador")
+	var nombre_mapa=Engine.get_meta("nombre_escena_mapa")
+	jugador = get_node("/root/"+nombre_mapa+"/Jugador")
 	jugador.connect("mascota",self,"permiso")
 
 func movimiento(delta):

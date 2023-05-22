@@ -10,7 +10,7 @@ func set_tiempo_parpadeo(value):
 func _ready():
 	$Sombra.modulate = Color(1,1,1,0.5)
 	$AnimationPlayer.play("idle")
-	jugador = get_node("/root/Mapa/Jugador")
+	jugador = get_node("/root/"+Engine.get_meta("nombre_escena_mapa")+"/Jugador")
 	
 	var timer = Timer.new()
 	timer.wait_time = tiempo_parpadeo

@@ -60,19 +60,19 @@ hframes = 7
 vframes = 3
 frame = 7
 
-[node name="Lava_1" type="Area2D" parent="." index="7"]
+[node name="Lava_1" type="Area2D" parent="." index="6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lava_1" index="0"]
 position = Vector2( 225.783, 89 )
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="." index="8"]
+[node name="Area2D" type="Area2D" parent="." index="7"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2( 891.144, 552 )
 shape = SubResource( 2 )
 
-[node name="Llamas" type="Sprite" parent="." index="9"]
+[node name="Llamas" type="Sprite" parent="." index="8"]
 position = Vector2( 540.481, 297 )
 scale = Vector2( 4, 3 )
 z_index = 20

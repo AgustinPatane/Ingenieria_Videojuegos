@@ -24,6 +24,7 @@ var timers_enemigos = []
 
 onready var escena_item = preload("res://producto/assets/scenes/Item_curacion.tscn")
 var jugador
+var nombre_mapa
 
 func _ready():
 	SoundManager.set_musica_partida()
@@ -83,7 +84,7 @@ func start_spawn_enemigo(tipo_enemigo: String):
 	var timer = Timer.new()
 	timer.wait_time = self["tiempo_"+tipo_enemigo]
 	timer.connect("timeout", self, "spawn_enemigo",[tipo_enemigo])
-	get_node("/root/Mapa").add_child(timer)
+	get_node("/root/"+nombre_mapa).add_child(timer)
 	timer.start()
 	timers_enemigos.append(timer)
 
@@ -113,7 +114,8 @@ func spawn_enemigo(tipo_enemigo: String):
 		var enemigo_scene = load("res://producto/assets/scenes/" + tipo_enemigo + ".tscn")
 		var enemigo = enemigo_scene.instance()
 		enemigo.position = posicion_aleatoria(tipo_enemigo)
-		get_node("/root/Mapa").add_child(enemigo)
+		nombre_mapa=Engine.get_meta("nombre_escena_mapa")
+		get_node("/root/"+nombre_mapa).add_child(enemigo)
 
 func spawn_timer(tipo_enemigo: String, tiempo: int):
 	var timer_enemigos = Timer.new()
@@ -125,7 +127,7 @@ func spawn_timer(tipo_enemigo: String, tiempo: int):
 func spawn_item_vida():
 	var item = escena_item.instance()
 	item.position = Vector2(rand_range(-567,1651),rand_range(-411,980))
-	get_node("/root/Mapa").add_child(item)
+	get_node("/root/"+nombre_mapa).add_child(item)
 
 func posicion_aleatoria(tipo_enemigo) -> Vector2:
 	var result
@@ -160,14 +162,25 @@ func freeze():
 	SoundManager.play_congelar()
 
 func establecer_fondo_mapa():
-	var numero = Engine.get_meta("numero_de_mapa")
-	var ruta = load("res://producto/assets/img/Mapas/"+str(numero)+".png")
-	$Fondo_elegido.set_texture(ruta)
-	numero *= 10
-	var ruta2 = load("res://producto/assets/img/Mapas/"+str(numero)+".png")
-	$Fondo_bordes.set_texture(ruta2)
-	if numero == 3:
-		$Obstaculos_por_mapa/Mapa_3.set_process(true)
+	#var numero = Engine.get_meta("numero_de_mapa")
+	#var ruta = load("res://producto/assets/img/Mapas/"+str(numero)+".png")
+	#$Fondo_elegido.set_texture(ruta)
+	#numero *= 10
+	#var ruta2 = load("res://producto/assets/img/Mapas/"+str(numero)+".png")
+	#$Fondo_bordes.set_texture(ruta2)
+	#if numero == 3:
+	#	$Obstaculos_por_mapa/Mapa_3.set_process(true)
+	var escenaMapa = "Mapa"
+	
+	
+	
+	
+	
+	
+	
+	
+
+################ACOMODAR ESTO DE ABAJO##################
 
 # -------- OBSTACULOS MAPA 3 ----------
 func _on_Lava_1_area_entered(_area):

@@ -10,6 +10,7 @@ var ranking = null
 var menu_ranking
 var mapa_actual = 0
 var cantidad_de_mapas = (countFilesInFolder("res://producto/assets/img/Mini_mapas/") - 2)/2
+var mapas = ["MapaArena","MapaLuna","MapaLava"]
 
 var registro_tienda = {
 	"nombre":"",
@@ -122,9 +123,9 @@ func _on_modo_juego_2_pressed():
 
 func _on_Btn_ready_pressed():
 	SoundManager.play_boton_1()
-	Engine.set_meta("numero_de_mapa",mapa_actual+1)
+	Engine.set_meta("nombre_escena_mapa",mapas[mapa_actual])
 	SoundManager.stop_musica()
-	var _aux = get_tree().change_scene("res://producto/assets/scenes/Mapa.tscn")
+	var _aux = get_tree().change_scene("res://producto/assets/scenes/"+mapas[mapa_actual]+".tscn")
 
 func countFilesInFolder(folder_path):
 	var dir = Directory.new()

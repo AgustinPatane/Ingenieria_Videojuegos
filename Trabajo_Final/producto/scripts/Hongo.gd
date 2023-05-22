@@ -2,6 +2,7 @@ extends "res://producto/scripts/Enemigo.gd"
 
 onready var escena_area_danio = preload("res://producto/assets/scenes/Area_hongo.tscn")
 
+
 var tamanio_Area = 0.3
 var max_tamanio
 var tiempo_ultimo_disparo = 0.0
@@ -22,7 +23,7 @@ func _ready():
 	area_danio.scale.y = tamanio_Area
 	area_danio.set_danio(danio)
 	area_danio.ref_jugador(jugador)
-	get_node("/root/Mapa").add_child(area_danio)
+	get_node("/root/"+Engine.get_meta("nombre_escena_mapa")).add_child(area_danio)
 	
 	var timer = Timer.new()
 	timer.wait_time = 1.2
