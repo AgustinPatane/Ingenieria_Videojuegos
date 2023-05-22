@@ -322,8 +322,8 @@ func movimiento_enemigos_ondaralentizadora():
 	pass
 
 func movimiento_enemigos_congelacion():
-	habilito_poder_especial()
 	poder_especial = "hielo"
+	habilito_poder_especial()
 	activar_poder_especial(poder_especial)
 	print("movimiento_enemigos_congelacion")
 	#$Timer_evolucion112.set_process(true)
@@ -335,8 +335,8 @@ func movimiento_propio_atravesarmuros():
 	pass
 
 func movimiento_propio_nitro():
-	habilito_poder_especial()
 	poder_especial = "rayo"
+	habilito_poder_especial()
 	activar_poder_especial(poder_especial)
 	print("movimiento_propio_nitro")
 	pass
@@ -364,8 +364,8 @@ func salud_masvida_regeneracion():
 	pass
 
 func salud_masinmune_escudo():
-	habilito_poder_especial()
 	poder_especial = "escudo"
+	habilito_poder_especial()
 	activar_poder_especial(poder_especial)
 	print("salud_masinmune_escudo")
 	pass
@@ -391,8 +391,8 @@ func ataque_oneshoot():
 	pass
 
 func ataque_cerca_areaexplosiva():
-	habilito_poder_especial()
 	poder_especial = "bomba"
+	habilito_poder_especial()
 	activar_poder_especial(poder_especial)
 	print("ataque_cerca_areaexplosiva")
 	pass
@@ -449,8 +449,8 @@ func tiro_cadencia_doblearma():
 	pass
 
 func tiro_cadencia_infinita():
-	habilito_poder_especial()
 	poder_especial = "balas"
+	habilito_poder_especial()
 	activar_poder_especial("balas")
 	print("tiro_cadencia_infinita")
 	pass
