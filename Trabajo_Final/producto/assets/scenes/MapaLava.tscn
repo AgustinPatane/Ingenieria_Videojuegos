@@ -1,0 +1,85 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://producto/assets/scenes/Mapa.tscn" type="PackedScene" id=1]
+[ext_resource path="res://producto/assets/img/Texturas/lava2.png" type="Texture" id=2]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 14.png" type="Texture" id=3]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 10.png" type="Texture" id=4]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 22.png" type="Texture" id=5]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 12.png" type="Texture" id=6]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 24.png" type="Texture" id=7]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 19.png" type="Texture" id=8]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 09.png" type="Texture" id=9]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 06.png" type="Texture" id=10]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 16.png" type="Texture" id=11]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 05.png" type="Texture" id=12]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 04.png" type="Texture" id=13]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 08.png" type="Texture" id=14]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 25.png" type="Texture" id=15]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 11.png" type="Texture" id=16]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 13.png" type="Texture" id=17]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 20.png" type="Texture" id=18]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 15.png" type="Texture" id=19]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 02.png" type="Texture" id=20]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 07.png" type="Texture" id=21]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 17.png" type="Texture" id=22]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 01.png" type="Texture" id=23]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 18.png" type="Texture" id=24]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 21.png" type="Texture" id=25]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 23.png" type="Texture" id=26]
+[ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 03.png" type="Texture" id=27]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 89.9192
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 47.954
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 23 ), ExtResource( 20 ), ExtResource( 27 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 21 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 16 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 3 ), ExtResource( 19 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 5 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "llamas",
+"speed": 25.0
+} ]
+
+[node name="MapaLava" instance=ExtResource( 1 )]
+
+[node name="lava1" type="Sprite" parent="." index="1"]
+position = Vector2( 240, 94 )
+scale = Vector2( 1.99856, 1.954 )
+texture = ExtResource( 2 )
+hframes = 7
+vframes = 3
+frame = 7
+
+[node name="lava2" type="Sprite" parent="." index="2"]
+position = Vector2( 900, 547.766 )
+scale = Vector2( 1.03945, 1.00425 )
+texture = ExtResource( 2 )
+hframes = 7
+vframes = 3
+frame = 7
+
+[node name="Lava_1" type="Area2D" parent="." index="7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava_1" index="0"]
+position = Vector2( 225.783, 89 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="." index="8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2( 891.144, 552 )
+shape = SubResource( 2 )
+
+[node name="Llamas" type="Sprite" parent="." index="9"]
+position = Vector2( 540.481, 297 )
+scale = Vector2( 4, 3 )
+z_index = 20
+texture = ExtResource( 23 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Llamas" index="0"]
+position = Vector2( 0, 1.33332 )
+frames = SubResource( 3 )
+animation = "llamas"
+frame = 24
