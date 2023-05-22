@@ -3,11 +3,10 @@ extends Control
 onready var escena_mapa = preload("res://producto/assets/scenes/Mapa.tscn")
 onready var escena_tienda = preload("res://producto/assets/scenes/Tienda.tscn")
 onready var escena_config = preload("res://producto/assets/scenes/Configuraciones.tscn")
+onready var escena_ranking = preload("res://producto/assets/scenes/MenuRanking.tscn")
 onready var mini_mapa = get_node("Menu_previo/Mapas/FondoMapas")
 
 var prev_volumen = -20
-var ranking = null
-var menu_ranking
 var mapa_actual = 0
 var cantidad_de_mapas = (countFilesInFolder("res://producto/assets/img/Mini_mapas/") - 2)/2
 var mapas = ["MapaArena","MapaLuna","MapaLava"]
@@ -52,19 +51,8 @@ func _process(_delta):
 
 func _on_Ranking_pressed():
 	SoundManager.play_boton_1()
-	if ranking == null:
-		ranking = load("res://producto/assets/scenes/MenuRanking.tscn").instance()
-		ranking.connect("continuar",self, "on_ranking_quit")
-
-		self.add_child(ranking)
-		menu_ranking = get_node("MenuRanking")
-		menu_ranking.raise()
-		#menu_ranking.rect_position = $Control/pos_pausa.position
-		menu_ranking.rect_size = Vector2(2048,1200)
-		get_tree().paused = true
-	
-func on_ranking_quit():
-	ranking = null
+	var ranking = escena_ranking.instance()
+	self.add_child(ranking)
 
 func _on_Tienda_pressed():
 	SoundManager.play_boton_1()
@@ -113,11 +101,20 @@ func actualiza_minimapa():
 
 func _on_modo_juego_1_pressed():
 	SoundManager.play_boton_1()
+	
+	
+	
+	
+	
 	pass # Replace with function body.
 
 
 func _on_modo_juego_2_pressed():
 	SoundManager.play_boton_1()
+	
+	
+	
+	
 	pass # Replace with function body.
 
 

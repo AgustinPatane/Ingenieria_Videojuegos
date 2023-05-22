@@ -1,7 +1,6 @@
-extends Control
+extends CanvasLayer
 
 const SAVE_PATH = "res://Saves/saves.sav"
-signal continuar
 var highscores = null
 var player = {
 	"username":"",
@@ -20,8 +19,6 @@ func _ready():
 	##############################DESCOMENTAR CUANDO ESTE EL SERVIDOR####################_get_highscores_from_server()
 
 func _on_Volver_button_down():
-	get_tree().paused = false
-	emit_signal("continuar")
 	self.queue_free()
 
 func ordena(puntuaciones):

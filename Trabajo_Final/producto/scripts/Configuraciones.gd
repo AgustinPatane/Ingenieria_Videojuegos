@@ -16,9 +16,11 @@ func _ready():
 	$Fondo_negro.set_modulate(Color(1,1,1,Atributos.opacidad_fondo))
 
 func _on_Boton_salir_pressed():
+	SoundManager.play_boton_1()
 	self.queue_free()
 
 func _on_Boton_pantalla_completa_toggled(button_pressed):
+	SoundManager.play_boton_1()
 	Atributos.fullscreen = button_pressed
 	OS.set_window_fullscreen(button_pressed)
 	Saves.guardar_config()
@@ -27,6 +29,7 @@ func _on_Boton_sonido_toggled(button_pressed):
 	Atributos.volumenes.sound_muted = button_pressed
 	SoundManager.set_cond_sonido(button_pressed)
 	Saves.guardar_config()
+	SoundManager.play_boton_1()
 
 
 func _on_Slider_sonido_value_changed(value):
@@ -43,6 +46,7 @@ func _on_Slider_musica_value_changed(value):
 
 
 func _on_Boton_musica_toggled(button_pressed):
+	SoundManager.play_boton_1()
 	Atributos.volumenes.music_muted = button_pressed
 	SoundManager.set_cond_musica(button_pressed)
 
