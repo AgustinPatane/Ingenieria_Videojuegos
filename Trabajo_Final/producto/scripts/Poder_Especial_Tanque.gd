@@ -47,6 +47,7 @@ func hielo():
 	pass
 
 func balas():
+	jugador.set_cadencia_disparo(jugador.get_cadencia_disparo()*10)
 	#este timer comparte al de rayo, en este incrementa la cadencia
 	pass
 
@@ -62,5 +63,6 @@ func timeout():
 		jugador.efecto_Congelacion.visible = false
 		Engine.set_meta("freeze","false")
 	if tipo == "balas":
+		jugador.set_cadencia_disparo(jugador.get_cadencia_disparo()/10)
 		pass
 	pass
