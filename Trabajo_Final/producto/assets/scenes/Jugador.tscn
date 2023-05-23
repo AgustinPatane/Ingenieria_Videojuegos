@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=2]
+[gd_scene load_steps=163 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -390,9 +390,6 @@ animations = [ {
 "speed": 30.0
 } ]
 
-[sub_resource type="CircleShape2D" id=23]
-radius = 115.004
-
 [node name="Jugador" type="KinematicBody2D"]
 position = Vector2( 541, 296 )
 script = ExtResource( 1 )
@@ -558,11 +555,6 @@ one_shot = true
 [node name="Timer_Regeneracion" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="Area_Poder" type="Area2D" parent="."]
-
-[node name="Area_Accion" type="CollisionShape2D" parent="Area_Poder"]
-shape = SubResource( 23 )
-
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]
 [connection signal="animation_finished" from="Lvp_up/Anim_lvl_up" to="." method="_on_Anim_lvl_up_animation_finished"]
@@ -571,4 +563,3 @@ shape = SubResource( 23 )
 [connection signal="timeout" from="Poder_Especial_/timer_de_carga" to="." method="_on_timer_de_carga_timeout"]
 [connection signal="timeout" from="Poder_Especial_/timer_con_poder" to="." method="_on_timer_con_poder_timeout"]
 [connection signal="timeout" from="Timer_Regeneracion" to="." method="_on_Timer_Regeneracion_timeout"]
-[connection signal="area_entered" from="Area_Poder" to="." method="_on_Area_Poder_area_entered"]

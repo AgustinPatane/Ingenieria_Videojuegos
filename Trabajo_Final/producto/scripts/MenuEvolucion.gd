@@ -60,8 +60,8 @@ onready var boton_evolucion_4_2_2 = get_node("evolucion/evolucion_4/evolucion_4_
 
 onready var ramas_arbol = get_node("evolucion/ramas_arbol")
 
-var n_primer_rama = "1"
-var n_segunda_rama = "4"
+var n_primer_rama = "3"
+var n_segunda_rama = "2"
 var aux1 = "boton_evolucion_"+n_primer_rama
 var aux2 = "boton_evolucion_"+n_segunda_rama
 
@@ -389,13 +389,13 @@ func set_ramas_ok():
 func armo_arbol():
 	botones_arbol.append(boton_evolucion)
 	
-	botones_arbol.append(boton_evolucion_1)
-	botones_arbol.append(boton_evolucion_1_1)
-	botones_arbol.append(boton_evolucion_1_1_1)
-	botones_arbol.append(boton_evolucion_1_1_2)
-	botones_arbol.append(boton_evolucion_1_2)
-	botones_arbol.append(boton_evolucion_1_2_1)
-	botones_arbol.append(boton_evolucion_1_2_2)
+	botones_arbol.append(self[aux1])
+	botones_arbol.append(self[aux1+"_1"])
+	botones_arbol.append(self[aux1+"_1_1"])
+	botones_arbol.append(self[aux1+"_1_2"])
+	botones_arbol.append(self[aux1+"_2"])
+	botones_arbol.append(self[aux1+"_2_1"])
+	botones_arbol.append(self[aux1+"_2_2"])
 	
 	botones_arbol.append(self[aux2])
 	botones_arbol.append(self[aux2+"_1"])

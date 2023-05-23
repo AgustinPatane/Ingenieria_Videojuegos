@@ -67,6 +67,7 @@ signal player_ready
 signal actualiza_interfaz
 signal freeze
 signal mascota
+signal explosion
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- FUNCIONES ---------------------------------------
@@ -569,11 +570,6 @@ func _on_Timer_Regeneracion_timeout():
 	else:
 		rellenar_vida()
 
+func bomba_explosion():
+	emit_signal("explosion")
 
-func _on_Area_Poder_area_entered(area):
-	if area.name == "Enemigo":
-		print("entro un enemigo")
-	else:
-		pass
-	
-	pass # Replace with function body.

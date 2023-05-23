@@ -34,6 +34,8 @@ func rayo():
 	pass
 
 func bomba():
+	jugador.bomba_explosion()	
+	jugador.timer_con_poder.start()
 	#aca agregaria una zona de radio que explotaria con una animacion
 	#y los enemigos en esa area se mueren instantaneamente
 	pass
