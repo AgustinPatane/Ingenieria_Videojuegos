@@ -571,5 +571,11 @@ func _on_Timer_Regeneracion_timeout():
 		rellenar_vida()
 
 func bomba_explosion():
+	$Boom.visible = true
+	$Boom/AnimationPlayer.play("boom")
+	$Boom/Timer_Boom.start()
 	emit_signal("explosion")
 
+
+func _on_Timer_Boom_timeout():
+	$Boom.visible = false
