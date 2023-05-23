@@ -128,3 +128,12 @@ func _on_Enemigo_body_entered(body):
 func _on_Enemigo_body_exited(body):
 	if jugador and "Jugador" in body.name:
 		flag_tocando_player = false
+
+
+func _on_Area_Lenta_body_entered(body):
+	if body.name == "Jugador":
+		set_speed(speed/4)
+
+func _on_Area_Lenta_body_exited(body):
+	if body.name == "Jugador":
+		set_speed(speed*4)

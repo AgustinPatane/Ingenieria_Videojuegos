@@ -47,7 +47,7 @@ func hielo():
 	pass
 
 func balas():
-	jugador.set_cadencia_disparo(jugador.get_cadencia_disparo()*10)
+	jugador.set_cadencia_disparo(jugador.get_cadencia_disparo()*5)
 	#este timer comparte al de rayo, en este incrementa la cadencia
 	pass
 
