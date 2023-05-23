@@ -60,8 +60,8 @@ onready var boton_evolucion_4_2_2 = get_node("evolucion/evolucion_4/evolucion_4_
 
 onready var ramas_arbol = get_node("evolucion/ramas_arbol")
 
-var n_primer_rama = "3"
-var n_segunda_rama = "4"
+var n_primer_rama = "1"
+var n_segunda_rama = "2"
 var aux1 = "boton_evolucion_"+n_primer_rama
 var aux2 = "boton_evolucion_"+n_segunda_rama
 

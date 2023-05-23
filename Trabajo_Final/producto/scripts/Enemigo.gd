@@ -133,12 +133,12 @@ func _on_Enemigo_body_exited(body):
 
 
 func _on_Area_Lenta_body_entered(body):
-	if body.name == "Jugador":
+	if body.name == "Jugador" and jugador.poder_especial == "onda_ralentizadora":
 		riesgo = true
 		set_speed(speed/4)
 
 func _on_Area_Lenta_body_exited(body):
-	if body.name == "Jugador":
+	if body.name == "Jugador" and jugador.poder_especial == "onda_ralentizadora":
 		riesgo = false
 		set_speed(speed*4)
 

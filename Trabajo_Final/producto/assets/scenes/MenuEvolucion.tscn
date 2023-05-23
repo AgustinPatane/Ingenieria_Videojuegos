@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://producto/scripts/MenuEvolucion.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Marco.png" type="Texture" id=2]
@@ -35,6 +35,9 @@ bg_color = Color( 0.721569, 0.435294, 0.313726, 1 )
 
 [sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.454902, 0.247059, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.0941176, 0.0784314, 0.145098, 1 )
 
 [sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0.247059, 0.156863, 0.196078, 1 )
@@ -138,11 +141,12 @@ anchor_bottom = 0.5
 margin_left = -60.0
 margin_top = -30.0
 margin_right = 60.0
-margin_bottom = 30.0
+margin_bottom = 36.0
 custom_fonts/font = SubResource( 19 )
 custom_styles/hover = SubResource( 11 )
 custom_styles/pressed = SubResource( 12 )
 custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 14 )
 text = "INICIOS"
 icon_align = 1
@@ -161,6 +165,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 11 )
 custom_styles/pressed = SubResource( 12 )
 custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 14 )
 action_mode = 0
 text = "MOVIMIENTO"
@@ -178,6 +183,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 action_mode = 0
 text = "PROPIO"
@@ -195,6 +201,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "NITRO"
 
@@ -210,6 +217,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "ATRAVESAR"
 
@@ -226,6 +234,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "ENEMIGOS"
 
@@ -242,6 +251,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "ONDA LENTA"
 
@@ -258,6 +268,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "HIELO"
 
@@ -275,6 +286,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 11 )
 custom_styles/pressed = SubResource( 12 )
 custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 14 )
 text = "SALUD"
 
@@ -291,6 +303,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "MAS VIDA"
 
@@ -307,6 +320,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "VIDA EXTRA"
 
@@ -323,6 +337,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "REGENERACION"
 
@@ -339,6 +354,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "MAS INMUNE"
 
@@ -355,6 +371,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "ESCUDO"
 
@@ -371,6 +388,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "RESILIENTE"
 
@@ -383,6 +401,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 11 )
 custom_styles/pressed = SubResource( 12 )
 custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 14 )
 text = "ATAQUE"
 
@@ -395,6 +414,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "CERCA"
 
@@ -407,6 +427,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "BOMBA"
 
@@ -419,6 +440,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "PENETRA MURO"
 
@@ -431,6 +453,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "ONE SHOOT"
 
@@ -443,6 +466,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "FRANCOTIRADOR"
 
@@ -455,6 +479,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "BAZOOKA"
 
@@ -467,6 +492,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 11 )
 custom_styles/pressed = SubResource( 12 )
 custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 14 )
 text = "TIRO"
 
@@ -479,6 +505,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "DISPERSION"
 
@@ -491,6 +518,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "REBOTE"
 
@@ -503,6 +531,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "360"
 
@@ -515,6 +544,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "CADENCIA"
 
@@ -527,6 +557,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "DOBLE ARMA"
 
@@ -539,6 +570,7 @@ custom_fonts/font = SubResource( 20 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 text = "INFINITA"
 
@@ -560,6 +592,10 @@ margin_bottom = 269.0
 [node name="TextureRect" type="TextureRect" parent="Ventana"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -6.0
+margin_right = 20.0
+margin_bottom = -6.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
@@ -587,10 +623,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -137.0
-margin_top = -210.0
-margin_right = 132.0
-margin_bottom = -128.0
+margin_left = -107.0
+margin_top = -216.0
+margin_right = 162.0
+margin_bottom = -134.0
 custom_fonts/normal_font = SubResource( 4 )
 text = "TITULO"
 
@@ -599,10 +635,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -147.0
-margin_top = 46.0
-margin_right = 153.0
-margin_bottom = 189.0
+margin_left = -130.0
+margin_top = 31.0
+margin_right = 170.0
+margin_bottom = 174.0
 custom_fonts/normal_font = SubResource( 5 )
 
 [node name="Habilidad" type="RichTextLabel" parent="Ventana"]
@@ -610,10 +646,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -127.0
-margin_top = 193.0
-margin_right = 139.0
-margin_bottom = 248.0
+margin_left = -114.0
+margin_top = 168.0
+margin_right = 152.0
+margin_bottom = 223.0
 custom_fonts/normal_font = SubResource( 6 )
 fit_content_height = true
 
