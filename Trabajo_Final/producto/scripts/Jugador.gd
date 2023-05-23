@@ -223,13 +223,14 @@ func recibe_ataque(danio):
 	emit_signal("actualiza_interfaz")
 	if vida<=0:
 		if token == false:
-			Engine.set_meta("Puntaje",puntos)
-			emit_signal("player_defeated")
-			guardar_monedas()
+			muere()
 		else:
 			rellenar_vida()
 			token = false
 
+func muere():
+	emit_signal("player_defeated")
+	guardar_monedas()
 
 func recupera_vida(cant):
 	if (vida+cant) <= vida_max: vida+=cant

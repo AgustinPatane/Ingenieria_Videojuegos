@@ -54,7 +54,8 @@ var tiempos = {
 	hongo = 8,
 	ojo = 5,
 	pilar = 20,
-	curita = 5
+	curita = 5,
+	juego = 300
 }
 
 var niveles_spawn = {

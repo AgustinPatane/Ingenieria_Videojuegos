@@ -6,6 +6,9 @@ onready var escena_config = preload("res://producto/assets/scenes/Configuracione
 onready var escena_ranking = preload("res://producto/assets/scenes/MenuRanking.tscn")
 onready var mini_mapa = get_node("Menu_previo/Mapas/FondoMapas")
 
+onready var btn_normal = get_node("Menu_previo/modo_Normal")
+onready var btn_contrarreloj = get_node("Menu_previo/modo_Contrarreloj")
+
 var prev_volumen = -20
 var mapa_actual = 0
 var cantidad_de_mapas = (countFilesInFolder("res://producto/assets/img/Mini_mapas/") - 2)/2
@@ -30,6 +33,9 @@ var config = {
 
 
 func _ready():
+	Engine.set_meta("contrarreloj",false)
+	btn_contrarreloj.disabled = false
+	btn_normal.disabled = true
 	Saves.cargar_config()
 	SoundManager.set_musica_menu()
 	load_tienda()
@@ -97,24 +103,6 @@ func actualiza_minimapa():
 	else:
 		get_node("Menu_previo/Btn_ready").visible = false
 
-func _on_modo_juego_1_pressed():
-	SoundManager.play_boton_1()
-	
-	
-	
-	
-	
-	pass # Replace with function body.
-
-
-func _on_modo_juego_2_pressed():
-	SoundManager.play_boton_1()
-	
-	
-	
-	
-	pass # Replace with function body.
-
 
 func _on_Btn_ready_pressed():
 	SoundManager.play_boton_1()
@@ -158,8 +146,27 @@ func _on_Empezar_pressed():
 	$Menu_previo.visible = true
 
 func _on_Ayuda_pressed():
+	SoundManager.play_boton_1()
 	pass # Replace with function body.
 
 func _on_Configuracion_pressed():
+	SoundManager.play_boton_1()
 	var configuracion = escena_config.instance()
 	self.add_child(configuracion)
+
+
+func _on_modo_Normal_toggled(_button_pressed):
+	SoundManager.play_boton_1()
+	Engine.set_meta("contrarreloj",false)
+	
+	btn_contrarreloj.disabled = false
+	btn_normal.disabled = true
+	btn_contrarreloj.set_pressed(false)
+
+
+func _on_modo_Contrarreloj_toggled(_button_pressed):
+	SoundManager.play_boton_1()
+	Engine.set_meta("contrarreloj",true)
+	btn_contrarreloj.disabled = true
+	btn_normal.disabled = false
+	btn_normal.set_pressed(false)
