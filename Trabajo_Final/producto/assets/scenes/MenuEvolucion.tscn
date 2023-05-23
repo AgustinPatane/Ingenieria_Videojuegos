@@ -178,6 +178,7 @@ margin_bottom = 9.0
 text = "HIELO"
 
 [node name="evolucion_2" type="Button" parent="evolucion" groups=["boton_ventana"]]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -255,7 +256,6 @@ margin_bottom = 100.0
 text = "RESILIENTE"
 
 [node name="evolucion_3" type="Button" parent="evolucion"]
-visible = false
 margin_left = 157.0
 margin_top = -135.0
 margin_right = 277.0
