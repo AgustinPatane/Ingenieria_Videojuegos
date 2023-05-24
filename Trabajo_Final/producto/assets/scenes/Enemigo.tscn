@@ -83,7 +83,7 @@ radius = 105.846
 
 [node name="Enemigo" type="Area2D" groups=["Enemigo"]]
 scale = Vector2( 1.1, 1.1 )
-z_index = 2
+z_index = 6
 script = ExtResource( 2 )
 
 [node name="Sombra" type="Sprite" parent="."]

@@ -68,6 +68,7 @@ func _ready():
 	jugador = get_node("/root/"+nombre_mapa+"/Jugador")
 	jugador.connect("mascota",self,"permiso")
 	jugador.connect("explosion",self,"explosion")
+	self.z_index = jugador.z_index + 1
 
 func movimiento(delta):
 	pos_jugador = jugador.position

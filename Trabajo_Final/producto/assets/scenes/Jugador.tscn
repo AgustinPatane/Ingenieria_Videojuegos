@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=2]
+[gd_scene load_steps=167 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -422,6 +422,9 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ]
 }
 
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 42, 11.5 )
+
 [node name="Jugador" type="KinematicBody2D"]
 position = Vector2( 541, 296 )
 script = ExtResource( 1 )
@@ -602,6 +605,12 @@ anims/boom = SubResource( 24 )
 
 [node name="Timer_Boom" type="Timer" parent="Boom"]
 
+[node name="Area_superposicion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_superposicion"]
+position = Vector2( -1, -35.5 )
+shape = SubResource( 25 )
+
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]
 [connection signal="animation_finished" from="Lvp_up/Anim_lvl_up" to="." method="_on_Anim_lvl_up_animation_finished"]
@@ -611,3 +620,5 @@ anims/boom = SubResource( 24 )
 [connection signal="timeout" from="Poder_Especial_/timer_con_poder" to="." method="_on_timer_con_poder_timeout"]
 [connection signal="timeout" from="Timer_Regeneracion" to="." method="_on_Timer_Regeneracion_timeout"]
 [connection signal="timeout" from="Boom/Timer_Boom" to="." method="_on_Timer_Boom_timeout"]
+[connection signal="area_entered" from="Area_superposicion" to="." method="_on_Area_superposicion_area_entered"]
+[connection signal="area_exited" from="Area_superposicion" to="." method="_on_Area_superposicion_area_exited"]

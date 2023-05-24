@@ -65,8 +65,8 @@ func _on_Menu_pressed():
 	save_game(highscores)
 	
 	
-
-	##############################DESCOMENTAR CUANDO ESTE EL SERVIDOR####################Network.postHttp(player)
+	#Descomentar cuando este el jugador
+	#Network.postHttp(player)
 	
 	
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Menu.tscn")

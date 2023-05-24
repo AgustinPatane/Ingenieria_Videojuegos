@@ -27,7 +27,7 @@ func set_config(config):
 # JUGADOR ------------------------------------------------------------
 
 var jugador = {
-	vida_max = 100, 
+	vida_max = 10000000, 
 	exp_necesaria = 1,
 	cadencia_disparo = 0.4,
 	danio = 10,

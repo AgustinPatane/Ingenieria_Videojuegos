@@ -580,3 +580,15 @@ func bomba_explosion():
 
 func _on_Timer_Boom_timeout():
 	$Boom.visible = false
+
+
+func _on_Area_superposicion_area_entered(area):
+	if area.is_in_group("Enemigo"):
+		print(area.name)
+		area.z_index -= 2
+
+
+func _on_Area_superposicion_area_exited(area):
+	if area.is_in_group("Enemigo"):
+		print(area.name)
+		area.z_index += 2
