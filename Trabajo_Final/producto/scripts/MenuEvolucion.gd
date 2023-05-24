@@ -1,9 +1,9 @@
-extends Control
+extends CanvasLayer
 
 onready var btn_seleccionar = get_node("Seleccionar")
 onready var ventana = get_node("Ventana")
 onready var sprite_jugador = get_node("Ventana/Jugador")
-onready var sprite_arma = get_node("Ventana/Arma")
+onready var sprite_arma = get_node("Ventana/Jugador/Arma")
 onready var animacion = get_node("Ventana/Animacion")
 onready var titulo = get_node("Ventana/Titulo")
 onready var historia = get_node("Ventana/Historia")

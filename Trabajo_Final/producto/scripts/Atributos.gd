@@ -60,8 +60,8 @@ var tiempos = {
 
 var niveles_spawn = {
 	demonio = 10,
-	diablito = 10,
-	gusano = 10,
+	diablito = 1,
+	gusano = 1,
 	hechicero = 60,
 	hongo = 10, # 3
 	ojo = 1,
@@ -162,6 +162,305 @@ var pilar = {
 	experiencia = 20,
 	puntos_muerte = 40,
 	speed = 10
+}
+
+var evoluciones = {
+	# EVOLUCION 1 : MOVIMIENTO / VELOCIDAD
+	evolucion_1 = {
+	"nombre": "movimiento",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1.5,
+	"damage": 1,
+	"rango": 1,
+	"arma": "ak-47"
+	},
+
+	evolucion_1_1 = {
+	"nombre": "movimiento_propio",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1.3,
+	"damage": 1,
+	"rango": 1.5,
+	"arma": "ak-47"
+	},
+	
+	evolucion_1_1_2 = {
+	"nombre": "movimiento_propio_atravesarmuros",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1.3,
+	"arma": "ak-47"
+	},
+	
+	evolucion_1_1_1 = {
+	"nombre": "movimiento_propio_nitro",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1.1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "ak-47"
+	},
+	
+	evolucion_1_2 = {
+	"nombre": "movimiento_enemigos",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "ak-47"
+	},
+	
+	evolucion_1_2_1 = {
+	"nombre": "movimiento_enemigos_ondaralentizadora",
+	"cadencia": 1,
+	"vida": 0.7,
+	"velocidad": 1.2,
+	"damage": 1,
+	"rango": 0.8,
+	"arma": "ak-47"
+	},
+	
+	evolucion_1_2_2 = {
+	"nombre": "movimiento_enemigos_congelacion",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "ak-47"
+	},
+
+# EVOLUCION 2 : SALUD / VIDA
+
+	evolucion_2 = {
+	"nombre": "salud",
+	"cadencia": 1,
+	"vida": 2,
+	"velocidad": 0.9,
+	"damage": 1,
+	"rango": 1,
+	"arma": "rifle"
+	},
+
+	evolucion_2_1 = {
+	"nombre": "salud_masvida",
+	"cadencia": 1,
+	"vida": 2,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "escopeta"
+	},
+
+	evolucion_2_1_1 = {
+	"nombre": "salud_masvida_tokenvidaextra",
+	"cadencia": 1,
+	"vida": 1.2,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "escopeta"
+	},
+
+	evolucion_2_1_2 = {
+	"nombre": "salud_masvida_regeneracion",
+	"cadencia": 1,
+	"vida": 1.2,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "escopeta"
+	},
+
+	evolucion_2_2 = {
+	"nombre": "salud_masinmune",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "escopeta"
+	},
+
+	evolucion_2_2_1 = {
+	"nombre": "salud_masinmune_escudo",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "escopeta"
+	},
+
+	evolucion_2_2_2 = {
+	"nombre": "salud_masinmune_resiliente",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "escopeta"
+	},
+
+# EVOLUCION 3 : ATAQUE
+
+	evolucion_3 = {
+	"nombre": "ataque",
+	"cadencia": 0.75,
+	"vida": 1.5,
+	"velocidad": 0.75,
+	"damage": 1.5,
+	"rango": 1.5,
+	"arma": "rifle"
+	},
+
+	evolucion_3_1 = {
+	"nombre": "ataque_cerca",
+	"cadencia": 1,
+	"vida": 3,
+	"velocidad": 0.75,
+	"damage": 1,
+	"rango": 2,
+	"arma": "escopeta"
+	},
+
+	evolucion_3_1_1 = {
+	"nombre": "ataque_cerca_areaexplosiva",
+	"cadencia": 1,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 1.5,
+	"rango": 0.75,
+	"arma": "escopeta"
+	},
+
+	evolucion_3_1_2 = {
+	"nombre": "ataque_cerca_penetramuros",
+	"cadencia": 1,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "escopeta"
+	},
+
+	evolucion_3_2 = {
+	"nombre": "ataque_oneshoot",
+	"cadencia": 0.75,
+	"vida": 1.5,
+	"velocidad": 0.75,
+	"damage": 2,
+	"rango": 3,
+	"arma": "francotirador"
+	},
+
+	evolucion_3_2_1 = {
+	"nombre": "ataque_oneshoot_francotirador",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1.5,
+	"rango": 1,
+	"arma": "francotirador"
+	},
+
+	evolucion_3_2_2 = {
+	"nombre": "ataque_oneshoot_bazooka",
+	"cadencia": 0.5,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 2,
+	"rango": 1,
+	"arma": "bazooka"
+	},
+
+
+# EVOLUCION 4 : TIRO / DISPARO / CADENCIA
+
+	evolucion_4 = {
+	"nombre": "tiro",
+	"cadencia": 1.2,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "ametralladora"
+	},
+
+	evolucion_4_1 = {
+	"nombre": "tiro_dispersion",
+	"cadencia": 1.2,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 1,
+	"rango": 1,
+	"arma": "ametralladora"
+	},
+
+	evolucion_4_1_1 = {
+	"nombre": "tiro_dispersion_rebote",
+	"cadencia": 1.2,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 4,
+	"rango": 1,
+	"arma": "ametralladora"
+	},
+
+	evolucion_4_1_2 = {
+	"nombre": "tiro_dispersion_360",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 2,
+	"rango": 3,
+	"arma": "ametralladora"
+	},
+
+	evolucion_4_2 = {
+	"nombre": "tiro_cadencia",
+	"cadencia": 1.1,
+	"vida": 1.5,
+	"velocidad": 1,
+	"damage": 2,
+	"rango": 3,
+	"arma": "ametralladora"
+	},
+
+	evolucion_4_2_1 = {
+	"nombre": "tiro_cadencia_doblearma",
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 3,
+	"rango": 1.5,
+	"arma": "ak-47"
+	},
+
+	evolucion_4_2_2 = {
+	"nombre": "tiro_cadencia_infinita",
+	"cadencia": 4,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 0.2,
+	"rango": 1,
+	"arma": "ametralladora"
+	}
+}
+
+# 1 DANIO
+# 2 VIDA
+# 3 VELOCIDAD
+# 4 CADENCIA
+var evol_mapa_luna = {
+	evol_1 = "1",
+	evol_2 = "2"	
 }
 
 func get_pilar():

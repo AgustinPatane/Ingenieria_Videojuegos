@@ -288,8 +288,8 @@ func _evolucion():
 	var menu_evol = get_node("MenuEvolucion")
 	menu_evol.raise()
 	var pos_evol = get_viewport().size
-	menu_evol.rect_position = Vector2(-1* pos_evol.x/2 ,-1* pos_evol.y/2)
-	menu_evol.rect_size = pos_evol
+	#menu_evol.rect_position = Vector2(-1* pos_evol.x/2 ,-1* pos_evol.y/2)
+	#menu_evol.rect_size = pos_evol
 	$Jugador_Sprite.hide()
 	arma.get_node("Arma_Sprite").hide()
 	get_tree().paused = true
