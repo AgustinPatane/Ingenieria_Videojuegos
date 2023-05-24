@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flags_red.png-fb025e1b7916666c5adddf64463d6c00.stex"
+path="res://.import/amarillo.png-cff7294651028108d9e7bb3727b5daac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/Accesorios/level_1/flags_red.png"
-dest_files=[ "res://.import/flags_red.png-fb025e1b7916666c5adddf64463d6c00.stex" ]
+source_file="res://producto/assets/img/Accesorios/level_1/amarillo.png"
+dest_files=[ "res://.import/amarillo.png-cff7294651028108d9e7bb3727b5daac.stex" ]
 
 [params]
 

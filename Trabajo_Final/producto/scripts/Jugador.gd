@@ -18,6 +18,7 @@ onready var sprite_poder = get_node("Poder_Especial_/sprite_poder")
 onready var efecto_Congelacion = get_node("Efecto_Congelacion")
 onready var timer_regeneracion = get_node("Timer_Regeneracion")
 onready var skin_bandera = get_node("Accesorio_Bandera")
+onready var animacion_bandera = get_node("Accesorio_Bandera/Movimiento_Bandera")
 onready var skin_gorro = get_node("Accesorio_Gorro")
 # -------------------------------------------------------------------------------------
 # ----------------------------------- VARIABLES ---------------------------------------
@@ -342,7 +343,9 @@ func actualiza_atributos(atributos, evol):
 func actualizo_skin_accesorios(atributos):
 	if skin_bandera.visible == false:
 		skin_bandera.visible = true
-		skin_bandera.frame = atributos.skin_accesorio
+		var ruta = load("res://producto/assets/img/Accesorios/level_1/amarillo.png")
+		skin_bandera.set_texture(ruta)
+		animacion_bandera.play("go")
 	else:
 		pass
 	pass

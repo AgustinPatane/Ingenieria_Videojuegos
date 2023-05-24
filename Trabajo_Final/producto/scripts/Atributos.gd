@@ -173,7 +173,8 @@ var evoluciones = {
 	"velocidad": 1.5,
 	"damage": 1,
 	"rango": 1,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "amarillo"
 	},
 
 	evolucion_1_1 = {
@@ -183,7 +184,8 @@ var evoluciones = {
 	"velocidad": 1.3,
 	"damage": 1,
 	"rango": 1.5,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "0"
 	},
 	
 	evolucion_1_1_2 = {
@@ -193,7 +195,8 @@ var evoluciones = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1.3,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "0"
 	},
 	
 	evolucion_1_1_1 = {
@@ -203,7 +206,8 @@ var evoluciones = {
 	"velocidad": 1.1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "0"
 	},
 	
 	evolucion_1_2 = {
@@ -245,7 +249,8 @@ var evoluciones = {
 	"velocidad": 0.9,
 	"damage": 1,
 	"rango": 1,
-	"arma": "rifle"
+	"arma": "rifle",
+	"skin_accesorio" : "verde"
 	},
 
 	evolucion_2_1 = {
@@ -317,7 +322,8 @@ var evoluciones = {
 	"velocidad": 0.75,
 	"damage": 1.5,
 	"rango": 1.5,
-	"arma": "rifle"
+	"arma": "rifle",
+	"skin_accesorio" : "rojo"
 	},
 
 	evolucion_3_1 = {
@@ -390,7 +396,8 @@ var evoluciones = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "ametralladora"
+	"arma": "ametralladora",
+	"skin_accesorio" : "azul"
 	},
 
 	evolucion_4_1 = {
