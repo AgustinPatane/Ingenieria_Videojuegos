@@ -17,6 +17,8 @@ onready var timer_con_poder = get_node("Poder_Especial_/timer_con_poder")
 onready var sprite_poder = get_node("Poder_Especial_/sprite_poder")
 onready var efecto_Congelacion = get_node("Efecto_Congelacion")
 onready var timer_regeneracion = get_node("Timer_Regeneracion")
+onready var skin_bandera = get_node("Accesorio_Bandera")
+onready var skin_gorro = get_node("Accesorio_Gorro")
 # -------------------------------------------------------------------------------------
 # ----------------------------------- VARIABLES ---------------------------------------
 # -------------------------------------------------------------------------------------
@@ -335,7 +337,15 @@ func actualiza_atributos(atributos, evol):
 	#aca pondriamos las caracteristicas especiales de la evol
 	call(atributos.nombre)	
 	arma.cambia_skin(atributos.arma)
+	actualizo_skin_accesorios(atributos)
 
+func actualizo_skin_accesorios(atributos):
+	if skin_bandera.visible == false:
+		skin_bandera.visible = true
+		skin_bandera.frame = atributos.skin_accesorio
+	else:
+		pass
+	pass
 
 #____________ EVOLUCIONES DE MOVIMIENTO ________________
 func movimiento():

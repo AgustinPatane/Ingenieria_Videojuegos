@@ -1,4 +1,4 @@
-[gd_scene load_steps=167 format=2]
+[gd_scene load_steps=169 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -149,6 +149,8 @@
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_1.png" type="Texture" id=147]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_7.png" type="Texture" id=148]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/Explosion.png" type="Texture" id=149]
+[ext_resource path="res://producto/assets/img/Accesorios/level_1/flags_blue.png" type="Texture" id=150]
+[ext_resource path="res://producto/assets/img/Accesorios/level_2/gorros.png" type="Texture" id=151]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 33 )
@@ -610,6 +612,21 @@ anims/boom = SubResource( 24 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_superposicion"]
 position = Vector2( -1, -35.5 )
 shape = SubResource( 25 )
+
+[node name="Accesorio_Bandera" type="Sprite" parent="."]
+position = Vector2( -38, -33 )
+scale = Vector2( 4.06508, 4.19358 )
+texture = ExtResource( 150 )
+flip_h = true
+hframes = 4
+
+[node name="Accesorio_Gorro" type="Sprite" parent="."]
+position = Vector2( 3, -35 )
+scale = Vector2( 1.91446, 1.96405 )
+z_index = 10
+texture = ExtResource( 151 )
+hframes = 4
+vframes = 2
 
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]
