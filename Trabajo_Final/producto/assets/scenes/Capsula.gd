@@ -16,7 +16,8 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	emit_signal("capsula",self)
 
-
+func prueba():
+	pass
 
 
 func arrancar_timer(j):
