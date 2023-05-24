@@ -1,4 +1,4 @@
-[gd_scene load_steps=166 format=2]
+[gd_scene load_steps=163 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -148,7 +148,6 @@
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_usandose_3.png" type="Texture" id=146]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_1.png" type="Texture" id=147]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Balas/balas_7.png" type="Texture" id=148]
-[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/Explosion.png" type="Texture" id=149]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 33 )
@@ -235,7 +234,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=8]
-radius = 58.0775
+radius = 53.0848
 
 [sub_resource type="Curve2D" id=17]
 _data = {
@@ -391,37 +390,6 @@ animations = [ {
 "speed": 30.0
 } ]
 
-[sub_resource type="Animation" id=23]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=24]
-resource_name = "boom"
-length = 1.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ]
-}
-
 [node name="Jugador" type="KinematicBody2D"]
 position = Vector2( 541, 296 )
 script = ExtResource( 1 )
@@ -573,6 +541,7 @@ script = ExtResource( 8 )
 [node name="timer_de_carga" type="Timer" parent="Poder_Especial_"]
 wait_time = 14.0
 one_shot = true
+autostart = true
 
 [node name="sprite_poder" type="AnimatedSprite" parent="Poder_Especial_"]
 frames = SubResource( 22 )
@@ -584,24 +553,6 @@ speed_scale = 0.5
 wait_time = 5.0
 one_shot = true
 
-[node name="Timer_Regeneracion" type="Timer" parent="."]
-wait_time = 5.0
-
-[node name="Boom" type="Sprite" parent="."]
-visible = false
-position = Vector2( 5.93751, -0.75001 )
-scale = Vector2( 2.98047, 2.73438 )
-z_index = 4
-texture = ExtResource( 149 )
-hframes = 12
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Boom"]
-playback_speed = 2.0
-anims/RESET = SubResource( 23 )
-anims/boom = SubResource( 24 )
-
-[node name="Timer_Boom" type="Timer" parent="Boom"]
-
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]
 [connection signal="animation_finished" from="Lvp_up/Anim_lvl_up" to="." method="_on_Anim_lvl_up_animation_finished"]
@@ -609,5 +560,3 @@ anims/boom = SubResource( 24 )
 [connection signal="area_exited" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_exited"]
 [connection signal="timeout" from="Poder_Especial_/timer_de_carga" to="." method="_on_timer_de_carga_timeout"]
 [connection signal="timeout" from="Poder_Especial_/timer_con_poder" to="." method="_on_timer_con_poder_timeout"]
-[connection signal="timeout" from="Timer_Regeneracion" to="." method="_on_Timer_Regeneracion_timeout"]
-[connection signal="timeout" from="Boom/Timer_Boom" to="." method="_on_Timer_Boom_timeout"]

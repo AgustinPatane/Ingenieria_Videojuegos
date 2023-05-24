@@ -16,7 +16,6 @@ onready var timer_carga = get_node("Poder_Especial_/timer_de_carga")
 onready var timer_con_poder = get_node("Poder_Especial_/timer_con_poder")
 onready var sprite_poder = get_node("Poder_Especial_/sprite_poder")
 onready var efecto_Congelacion = get_node("Efecto_Congelacion")
-onready var timer_regeneracion = get_node("Timer_Regeneracion")
 # -------------------------------------------------------------------------------------
 # ----------------------------------- VARIABLES ---------------------------------------
 # -------------------------------------------------------------------------------------
@@ -39,9 +38,7 @@ var skin_arma
 var poder_en_uso = false
 var pedir_poder = false
 var poder_especial = ""
-var factor_resiliencia = 1
-var resiliencia = false
-var token = false
+
 # -------------------------------------------------------------------------------------
 # -------------------------------- CARACTERISTICAS ------------------------------------
 # -------------------------------------------------------------------------------------
@@ -67,7 +64,6 @@ signal player_ready
 signal actualiza_interfaz
 signal freeze
 signal mascota
-signal explosion
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- FUNCIONES ---------------------------------------
@@ -223,22 +219,13 @@ func incremento_rango(porcentaje):
 
 func recibe_ataque(danio):
 	if poder_especial != "escudo" or poder_en_uso == false:
-		if resiliencia == true and self.vida<30:
-			vida-=danio*(factor_resiliencia*0.1)
-		else:
-			vida-=danio*factor_resiliencia
+		vida-=danio
 	emit_signal("actualiza_interfaz")
 	if vida<=0:
-		if token == false:
-			muere()
-		else:
-			rellenar_vida()
-			token = false
-
-func muere():
-	emit_signal("player_defeated")
-	guardar_monedas()
-
+		Engine.set_meta("Puntaje",puntos)
+		emit_signal("player_defeated")
+		guardar_monedas()
+	
 func recupera_vida(cant):
 	if (vida+cant) <= vida_max: vida+=cant
 
@@ -339,12 +326,11 @@ func movimiento_propio():
 
 func movimiento_enemigos_ondaralentizadora():
 	print("movimiento_enemigos_ondaralentizadora")
-	poder_especial = "onda_ralentizadora"
 	pass
 
 func movimiento_enemigos_congelacion():
-	poder_especial = "hielo"
 	habilito_poder_especial()
+	poder_especial = "hielo"
 	activar_poder_especial(poder_especial)
 	print("movimiento_enemigos_congelacion")
 	#$Timer_evolucion112.set_process(true)
@@ -356,8 +342,8 @@ func movimiento_propio_atravesarmuros():
 	pass
 
 func movimiento_propio_nitro():
-	poder_especial = "rayo"
 	habilito_poder_especial()
+	poder_especial = "rayo"
 	activar_poder_especial(poder_especial)
 	print("movimiento_propio_nitro")
 	pass
@@ -365,44 +351,34 @@ func movimiento_propio_nitro():
 #____________ EVOLUCIONES DE SALUD ________________
 
 func salud():
-	rellenar_vida()
 	print("salud")
 	pass
 
 func salud_masvida():
-	rellenar_vida()
 	print("salud_masvida")
 	pass
 
 func salud_masinmune():
-	factor_resiliencia = 0.5
 	print("salud_masinmune")
 	pass
 
 func salud_masvida_tokenvidaextra():
-	token = true
 	print("salud_masvida_tokenvidaextra")
 	pass
 
 func salud_masvida_regeneracion():
-	timer_regeneracion.start()
 	print("salud_masvida_regeneracion")
 	pass
 
 func salud_masinmune_escudo():
-	poder_especial = "escudo"
 	habilito_poder_especial()
+	poder_especial = "escudo"
 	activar_poder_especial(poder_especial)
 	print("salud_masinmune_escudo")
 	pass
 
 func salud_masinmune_resiliente():
-	resiliencia = true
 	print("salud_masinmune_resiliente")
-	pass
-
-func rellenar_vida():
-	self.vida = self.vida_max
 	pass
 
 #____________ EVOLUCIONES DE ATAQUE ________________
@@ -422,8 +398,8 @@ func ataque_oneshoot():
 	pass
 
 func ataque_cerca_areaexplosiva():
-	poder_especial = "bomba"
 	habilito_poder_especial()
+	poder_especial = "bomba"
 	activar_poder_especial(poder_especial)
 	print("ataque_cerca_areaexplosiva")
 	pass
@@ -480,8 +456,8 @@ func tiro_cadencia_doblearma():
 	pass
 
 func tiro_cadencia_infinita():
-	poder_especial = "balas"
 	habilito_poder_especial()
+	poder_especial = "balas"
 	activar_poder_especial("balas")
 	print("tiro_cadencia_infinita")
 	pass
@@ -570,20 +546,3 @@ func _on_timer_con_poder_timeout():
 	timer_carga.start()
 	sprite_poder.play("carga_"+poder_especial)
 	poder_especial_seleccionado.timeout()
-
-
-func _on_Timer_Regeneracion_timeout():
-	if self.vida+5 <= self.vida_max:
-		self.vida+=5
-	else:
-		rellenar_vida()
-
-func bomba_explosion():
-	$Boom.visible = true
-	$Boom/AnimationPlayer.play("boom")
-	$Boom/Timer_Boom.start()
-	emit_signal("explosion")
-
-
-func _on_Timer_Boom_timeout():
-	$Boom.visible = false

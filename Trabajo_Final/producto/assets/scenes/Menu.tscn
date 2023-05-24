@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=2]
 [ext_resource path="res://producto/scripts/Menu.gd" type="Script" id=3]
 [ext_resource path="res://producto/assets/img/fondos/dalle_background.png" type="Texture" id=4]
+[ext_resource path="res://producto/assets/fonts/Scream_al.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir.png" type="Texture" id=6]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir - copia.png" type="Texture" id=7]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/DERECHA PRESIONADO.png" type="Texture" id=8]
@@ -35,6 +36,41 @@
 [sub_resource type="DynamicFont" id=10]
 size = 63
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+use_filter = true
+extra_spacing_top = 10
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.129412, 0.2, 0.0627451, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+use_filter = true
+extra_spacing_top = 10
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.129412, 0.2, 0.0627451, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+use_filter = true
+extra_spacing_top = 10
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.129412, 0.2, 0.0627451, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+extra_spacing_top = 10
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.129412, 0.2, 0.0627451, 1 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -127,7 +163,6 @@ texture_pressed = ExtResource( 32 )
 texture_hover = ExtResource( 32 )
 expand = true
 
-
 [node name="Botones" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -193,7 +228,6 @@ custom_fonts/font = SubResource( 4 )
 custom_styles/normal = SubResource( 9 )
 text = "SALIR"
 
-
 [node name="Menu_previo" type="Control" parent="."]
 margin_left = 209.0
 margin_top = 149.0
@@ -225,7 +259,7 @@ texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 7 )
 expand = true
 
-[node name="modo_Normal" type="TextureButton" parent="Menu_previo"]
+[node name="modo_juego_1" type="TextureButton" parent="Menu_previo"]
 margin_left = 63.0
 margin_top = 188.0
 margin_right = 284.0
@@ -234,10 +268,9 @@ toggle_mode = true
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 14 )
 texture_hover = ExtResource( 14 )
-texture_disabled = ExtResource( 14 )
 expand = true
 
-[node name="modo_Contrarreloj" type="TextureButton" parent="Menu_previo"]
+[node name="modo_juego_2" type="TextureButton" parent="Menu_previo"]
 margin_left = 296.0
 margin_top = 188.0
 margin_right = 558.0
@@ -246,7 +279,6 @@ toggle_mode = true
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 17 )
 texture_hover = ExtResource( 17 )
-texture_disabled = ExtResource( 17 )
 expand = true
 
 [node name="Mapas" type="Control" parent="Menu_previo"]
@@ -308,8 +340,8 @@ expand = true
 [connection signal="pressed" from="TextureRect2/Ayuda" to="." method="_on_Ayuda_pressed"]
 [connection signal="pressed" from="TextureRect2/Configuracion" to="." method="_on_Configuracion_pressed"]
 [connection signal="pressed" from="Menu_previo/btn_volver" to="." method="_on_btn_volver_pressed"]
-[connection signal="toggled" from="Menu_previo/modo_Normal" to="." method="_on_modo_Normal_toggled"]
-[connection signal="toggled" from="Menu_previo/modo_Contrarreloj" to="." method="_on_modo_Contrarreloj_toggled"]
+[connection signal="pressed" from="Menu_previo/modo_juego_1" to="." method="_on_modo_juego_1_pressed"]
+[connection signal="pressed" from="Menu_previo/modo_juego_2" to="." method="_on_modo_juego_2_pressed"]
 [connection signal="pressed" from="Menu_previo/Mapas/btn_mapa_der" to="." method="_on_btn_mapa_der_pressed"]
 [connection signal="pressed" from="Menu_previo/Mapas/btn_mapa_izq" to="." method="_on_btn_mapa_izq_pressed"]
 [connection signal="pressed" from="Menu_previo/Btn_ready" to="." method="_on_Btn_ready_pressed"]

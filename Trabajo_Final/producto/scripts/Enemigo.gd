@@ -12,7 +12,6 @@ var flag_en_area_ataque = false
 var muerto = 0
 var freeze = Engine.get_meta("freeze")
 var xpermiso = false
-var riesgo = false
 
 onready var escena_txt_danio = preload("res://producto/assets/scenes/Texto_danio.tscn")
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
@@ -67,7 +66,6 @@ func _ready():
 	var nombre_mapa=Engine.get_meta("nombre_escena_mapa")
 	jugador = get_node("/root/"+nombre_mapa+"/Jugador")
 	jugador.connect("mascota",self,"permiso")
-	jugador.connect("explosion",self,"explosion")
 
 func movimiento(delta):
 	pos_jugador = jugador.position
@@ -130,19 +128,3 @@ func _on_Enemigo_body_entered(body):
 func _on_Enemigo_body_exited(body):
 	if jugador and "Jugador" in body.name:
 		flag_tocando_player = false
-
-
-func _on_Area_Lenta_body_entered(body):
-	if body.name == "Jugador" and jugador.poder_especial == "onda_ralentizadora":
-		riesgo = true
-		set_speed(speed/4)
-
-func _on_Area_Lenta_body_exited(body):
-	if body.name == "Jugador" and jugador.poder_especial == "onda_ralentizadora":
-		riesgo = false
-		set_speed(speed*4)
-
-func explosion():
-	if riesgo:
-		self.muere()
-		self.drop_on_death()
