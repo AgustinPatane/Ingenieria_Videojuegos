@@ -28,7 +28,7 @@ func _ready():
 	add_child(timer)
 	timer.connect("timeout", self, "eliminar")
 	timer.start()
-	jugador = get_node("/root/Mapa/Jugador")
+	jugador = get_node("/root/"+Engine.get_meta("nombre_escena_mapa")+"/Jugador")
 
 func eliminar():
 	queue_free()

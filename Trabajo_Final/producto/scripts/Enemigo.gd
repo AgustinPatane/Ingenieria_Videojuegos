@@ -84,6 +84,7 @@ func acomodar():
 
 func _process(delta):
 	freeze = Engine.get_meta("freeze")
+	z_index = position.y  + 1200
 	if (vida>0 and freeze == "false"):
 		movimiento(delta)
 		acomodar()

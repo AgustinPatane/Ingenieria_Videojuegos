@@ -15,7 +15,7 @@ func _dispara():
 	disparo.set_damage(self.danio)
 	disparo.set_rango(4)
 	disparo.set_speed(300)
-	get_node("/root/Mapa").add_child(disparo)
+	get_node("/root/"+Engine.get_meta("nombre_escena_mapa")).add_child(disparo)
 	tiempo_ultimo_disparo = OS.get_ticks_msec() / 1000.0
 
 func _ready():
@@ -28,7 +28,14 @@ func _ready():
 	cadencia_disparo = atrib.cadencia_disparo
 
 func ataque():
+	pass
+	#var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0
+	#if cond_disparo: 
+	#	_dispara()
+
+func _process(delta):
 	var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0
 	if cond_disparo: 
 		_dispara()
+	
 

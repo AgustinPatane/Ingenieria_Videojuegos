@@ -74,6 +74,7 @@ signal explosion
 # -------------------------------------------------------------------------------------
 
 func _ready():
+	Engine.set_meta("evolucion_actual","evolucion")
 	set_atributos()
 	preparo_futuras_evoluciones()
 	$Sombra.modulate = Color(1,1,1,0.5)
@@ -97,6 +98,7 @@ func aumenta_Area_recoleccion(value):
 # -------------------------------------------------------------------------------------
 
 func _physics_process(delta):
+	z_index = position.y + 1200
 	motion = Vector2(0,0)
 	if Input.is_action_pressed("ui_right"):
 		motion.x = 100
@@ -551,19 +553,16 @@ func ejecutar_poder_especial():
 
 #--------------------------  fin PODER ESPECIAL --------------------------
 
-
 func _on_timer_de_carga_timeout():
 	print("PODER CARGADO")
 	sprite_poder.play("cargado_"+poder_especial)
 	self.pedir_poder = true
-
 
 func _on_timer_con_poder_timeout():
 	self.poder_en_uso = false
 	timer_carga.start()
 	sprite_poder.play("carga_"+poder_especial)
 	poder_especial_seleccionado.timeout()
-
 
 func _on_Timer_Regeneracion_timeout():
 	if self.vida+5 <= self.vida_max:
@@ -577,18 +576,15 @@ func bomba_explosion():
 	$Boom/Timer_Boom.start()
 	emit_signal("explosion")
 
-
 func _on_Timer_Boom_timeout():
 	$Boom.visible = false
 
-
 func _on_Area_superposicion_area_entered(area):
 	if area.is_in_group("Enemigo"):
-		print(area.name)
-		area.z_index -= 2
-
+		pass
+		#area.z_index -= 2
 
 func _on_Area_superposicion_area_exited(area):
 	if area.is_in_group("Enemigo"):
-		print(area.name)
-		area.z_index += 2
+		pass
+		#area.z_index += 2

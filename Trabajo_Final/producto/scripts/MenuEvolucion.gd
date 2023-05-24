@@ -671,8 +671,6 @@ func _on_evolucion_3_2_2_pressed():
 		actualizar_rama_arbol("evolucion_3_2_2")
 	seleccionado = 2
 
-
-
 func _on_evolucion_4_pressed():
 	if(len(evolucion_actual)<len("evolucion_4")):
 		actualizar_rama_arbol("evolucion_4")

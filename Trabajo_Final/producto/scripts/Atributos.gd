@@ -27,7 +27,7 @@ func set_config(config):
 # JUGADOR ------------------------------------------------------------
 
 var jugador = {
-	vida_max = 10000000, 
+	vida_max = 100, 
 	exp_necesaria = 1,
 	cadencia_disparo = 0.4,
 	danio = 10,
@@ -60,12 +60,12 @@ var tiempos = {
 
 var niveles_spawn = {
 	demonio = 10,
-	diablito = 1,
-	gusano = 1,
-	hechicero = 6,
-	hongo = 1, # 3
-	ojo = 2,
-	pilar = 4
+	diablito = 10,
+	gusano = 10,
+	hechicero = 60,
+	hongo = 10, # 3
+	ojo = 1,
+	pilar = 1
 }
 
 func get_tiempos():

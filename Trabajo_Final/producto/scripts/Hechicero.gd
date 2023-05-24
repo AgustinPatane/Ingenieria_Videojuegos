@@ -24,7 +24,7 @@ func ataque():
 			disparo.set_damage(self.danio)
 			disparo.set_rango(6)
 			disparo.set_speed(100)
-			get_node("/root/Mapa").add_child(disparo)
+			get_node("/root/"+Engine.get_meta("nombre_escena_mapa")).add_child(disparo)
 		puede_disparar = false
 	else:
 		puede_disparar = true
