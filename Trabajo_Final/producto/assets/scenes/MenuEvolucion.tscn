@@ -1,19 +1,61 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://producto/scripts/MenuEvolucion.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Marco.png" type="Texture" id=2]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=3]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/arma_1.png" type="Texture" id=4]
+[ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://producto/assets/img/ramas_arbol/base.png" type="Texture" id=7]
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.14902, 0.168627, 0.266667, 1 )
-border_color = Color( 0.454902, 0.247059, 0.223529, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
 font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.454902, 0.247059, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.721569, 0.435294, 0.313726, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.454902, 0.247059, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.247059, 0.156863, 0.196078, 1 )
+
+[sub_resource type="DynamicFont" id=19]
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.454902, 0.247059, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.721569, 0.435294, 0.313726, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.454902, 0.247059, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.0941176, 0.0784314, 0.145098, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.247059, 0.156863, 0.196078, 1 )
+
+[sub_resource type="DynamicFont" id=20]
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.454902, 0.247059, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.721569, 0.435294, 0.313726, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.454902, 0.247059, 0.223529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.247059, 0.156863, 0.196078, 1 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -64,14 +106,15 @@ pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -615.0
-margin_top = -356.0
-margin_right = 614.0
-margin_bottom = 410.0
-custom_styles/panel = SubResource( 7 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Sprite" type="Sprite" parent="Panel"]
+scale = Vector2( 8.21875, 7.17442 )
+z_index = -2
+texture = ExtResource( 5 )
 
 [node name="Seleccionar" type="Button" parent="."]
 pause_mode = 2
@@ -84,6 +127,10 @@ margin_top = 221.0
 margin_right = 115.0
 margin_bottom = 263.0
 custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 text = "SELECCIONAR"
 
 [node name="evolucion" type="Button" parent="."]
@@ -94,7 +141,13 @@ anchor_bottom = 0.5
 margin_left = -60.0
 margin_top = -30.0
 margin_right = 60.0
-margin_bottom = 30.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 19 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 14 )
 text = "INICIOS"
 icon_align = 1
 expand_icon = true
@@ -108,6 +161,12 @@ margin_left = 96.0
 margin_top = -164.0
 margin_right = 216.0
 margin_bottom = -104.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 14 )
 action_mode = 0
 text = "MOVIMIENTO"
 
@@ -120,6 +179,12 @@ margin_left = 91.0
 margin_top = -137.0
 margin_right = 211.0
 margin_bottom = -77.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 action_mode = 0
 text = "PROPIO"
 
@@ -132,6 +197,12 @@ margin_left = 84.5
 margin_top = 17.0
 margin_right = 204.5
 margin_bottom = 77.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "NITRO"
 
 [node name="evolucion_1_1_2" type="Button" parent="evolucion/evolucion_1/evolucion_1_1" groups=["boton_ventana"]]
@@ -142,6 +213,12 @@ anchor_bottom = 0.5
 margin_left = 85.5
 margin_top = -60.0
 margin_right = 205.5
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "ATRAVESAR"
 
 [node name="evolucion_1_2" type="Button" parent="evolucion/evolucion_1" groups=["boton_ventana"]]
@@ -153,6 +230,12 @@ margin_left = 91.0
 margin_top = 6.0
 margin_right = 211.0
 margin_bottom = 66.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "ENEMIGOS"
 
 [node name="evolucion_1_2_1" type="Button" parent="evolucion/evolucion_1/evolucion_1_2" groups=["boton_ventana"]]
@@ -164,6 +247,12 @@ margin_left = 85.0
 margin_top = 24.0
 margin_right = 205.0
 margin_bottom = 84.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "ONDA LENTA"
 
 [node name="evolucion_1_2_2" type="Button" parent="evolucion/evolucion_1/evolucion_1_2" groups=["boton_ventana"]]
@@ -175,9 +264,16 @@ margin_left = 84.0
 margin_top = -51.0
 margin_right = 204.0
 margin_bottom = 9.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "HIELO"
 
 [node name="evolucion_2" type="Button" parent="evolucion" groups=["boton_ventana"]]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -186,6 +282,12 @@ margin_left = 98.0
 margin_top = 103.0
 margin_right = 218.0
 margin_bottom = 163.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 14 )
 text = "SALUD"
 
 [node name="evolucion_2_1" type="Button" parent="evolucion/evolucion_2" groups=["boton_ventana"]]
@@ -197,6 +299,12 @@ margin_left = 88.0
 margin_top = -106.0
 margin_right = 208.0
 margin_bottom = -46.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "MAS VIDA"
 
 [node name="evolucion_2_1_1" type="Button" parent="evolucion/evolucion_2/evolucion_2_1" groups=["boton_ventana"]]
@@ -208,6 +316,12 @@ margin_left = 85.0
 margin_top = -47.0
 margin_right = 205.0
 margin_bottom = 13.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "VIDA EXTRA"
 
 [node name="evolucion_2_1_2" type="Button" parent="evolucion/evolucion_2/evolucion_2_1" groups=["boton_ventana"]]
@@ -219,6 +333,12 @@ margin_left = 85.0
 margin_top = 28.0
 margin_right = 205.0
 margin_bottom = 88.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "REGENERACION"
 
 [node name="evolucion_2_2" type="Button" parent="evolucion/evolucion_2" groups=["boton_ventana"]]
@@ -230,6 +350,12 @@ margin_left = 89.0
 margin_top = 43.0
 margin_right = 209.0
 margin_bottom = 103.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "MAS INMUNE"
 
 [node name="evolucion_2_2_1" type="Button" parent="evolucion/evolucion_2/evolucion_2_2" groups=["boton_ventana"]]
@@ -241,6 +367,12 @@ margin_left = 85.0
 margin_top = -41.0
 margin_right = 205.0
 margin_bottom = 19.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "ESCUDO"
 
 [node name="evolucion_2_2_2" type="Button" parent="evolucion/evolucion_2/evolucion_2_2" groups=["boton_ventana"]]
@@ -252,14 +384,25 @@ margin_left = 88.0
 margin_top = 40.0
 margin_right = 208.0
 margin_bottom = 100.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "RESILIENTE"
 
 [node name="evolucion_3" type="Button" parent="evolucion"]
-visible = false
 margin_left = 157.0
 margin_top = -135.0
 margin_right = 277.0
 margin_bottom = -75.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 14 )
 text = "ATAQUE"
 
 [node name="evolucion_3_1" type="Button" parent="evolucion/evolucion_3"]
@@ -267,6 +410,12 @@ margin_left = 151.0
 margin_top = -107.0
 margin_right = 271.0
 margin_bottom = -47.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "CERCA"
 
 [node name="evolucion_3_1_1" type="Button" parent="evolucion/evolucion_3/evolucion_3_1"]
@@ -274,6 +423,12 @@ margin_left = 144.0
 margin_top = -29.0
 margin_right = 264.0
 margin_bottom = 31.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "BOMBA"
 
 [node name="evolucion_3_1_2" type="Button" parent="evolucion/evolucion_3/evolucion_3_1"]
@@ -281,6 +436,12 @@ margin_left = 142.0
 margin_top = 48.0
 margin_right = 262.0
 margin_bottom = 108.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "PENETRA MURO"
 
 [node name="evolucion_3_2" type="Button" parent="evolucion/evolucion_3"]
@@ -288,6 +449,12 @@ margin_left = 151.0
 margin_top = 36.0
 margin_right = 271.0
 margin_bottom = 96.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "ONE SHOOT"
 
 [node name="evolucion_3_2_1" type="Button" parent="evolucion/evolucion_3/evolucion_3_2"]
@@ -295,6 +462,12 @@ margin_left = 142.0
 margin_top = -20.0
 margin_right = 265.0
 margin_bottom = 40.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "FRANCOTIRADOR"
 
 [node name="evolucion_3_2_2" type="Button" parent="evolucion/evolucion_3/evolucion_3_2"]
@@ -302,14 +475,25 @@ margin_left = 143.0
 margin_top = 54.0
 margin_right = 263.0
 margin_bottom = 114.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "BAZOOKA"
 
 [node name="evolucion_4" type="Button" parent="evolucion"]
-visible = false
 margin_left = 159.0
 margin_top = 133.0
 margin_right = 279.0
 margin_bottom = 193.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 14 )
 text = "TIRO"
 
 [node name="evolucion_4_1" type="Button" parent="evolucion/evolucion_4"]
@@ -317,6 +501,12 @@ margin_left = 148.0
 margin_top = -76.0
 margin_right = 268.0
 margin_bottom = -16.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "DISPERSION"
 
 [node name="evolucion_4_1_1" type="Button" parent="evolucion/evolucion_4/evolucion_4_1"]
@@ -324,6 +514,12 @@ margin_left = 144.0
 margin_top = -18.0
 margin_right = 264.0
 margin_bottom = 42.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "REBOTE"
 
 [node name="evolucion_4_1_2" type="Button" parent="evolucion/evolucion_4/evolucion_4_1"]
@@ -331,6 +527,12 @@ margin_left = 143.0
 margin_top = 58.0
 margin_right = 263.0
 margin_bottom = 118.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "360"
 
 [node name="evolucion_4_2" type="Button" parent="evolucion/evolucion_4"]
@@ -338,6 +540,12 @@ margin_left = 146.0
 margin_top = 73.0
 margin_right = 266.0
 margin_bottom = 133.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "CADENCIA"
 
 [node name="evolucion_4_2_1" type="Button" parent="evolucion/evolucion_4/evolucion_4_2"]
@@ -345,6 +553,12 @@ margin_left = 147.0
 margin_top = -11.0
 margin_right = 267.0
 margin_bottom = 49.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "DOBLE ARMA"
 
 [node name="evolucion_4_2_2" type="Button" parent="evolucion/evolucion_4/evolucion_4_2"]
@@ -352,6 +566,12 @@ margin_left = 149.0
 margin_top = 68.0
 margin_right = 269.0
 margin_bottom = 128.0
+custom_fonts/font = SubResource( 20 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 18 )
 text = "INFINITA"
 
 [node name="ramas_arbol" type="Sprite" parent="evolucion"]
@@ -372,6 +592,10 @@ margin_bottom = 269.0
 [node name="TextureRect" type="TextureRect" parent="Ventana"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -6.0
+margin_right = 20.0
+margin_bottom = -6.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
@@ -399,10 +623,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -137.0
-margin_top = -210.0
-margin_right = 132.0
-margin_bottom = -128.0
+margin_left = -107.0
+margin_top = -216.0
+margin_right = 162.0
+margin_bottom = -134.0
 custom_fonts/normal_font = SubResource( 4 )
 text = "TITULO"
 
@@ -411,10 +635,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -147.0
-margin_top = 46.0
-margin_right = 153.0
-margin_bottom = 189.0
+margin_left = -130.0
+margin_top = 31.0
+margin_right = 170.0
+margin_bottom = 174.0
 custom_fonts/normal_font = SubResource( 5 )
 
 [node name="Habilidad" type="RichTextLabel" parent="Ventana"]
@@ -422,10 +646,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -127.0
-margin_top = 193.0
-margin_right = 139.0
-margin_bottom = 248.0
+margin_left = -114.0
+margin_top = 168.0
+margin_right = 152.0
+margin_bottom = 223.0
 custom_fonts/normal_font = SubResource( 6 )
 fit_content_height = true
 

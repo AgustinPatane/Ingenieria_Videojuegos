@@ -3,11 +3,13 @@ extends Control
 onready var escena_mapa = preload("res://producto/assets/scenes/Mapa.tscn")
 onready var escena_tienda = preload("res://producto/assets/scenes/Tienda.tscn")
 onready var escena_config = preload("res://producto/assets/scenes/Configuraciones.tscn")
+onready var escena_ranking = preload("res://producto/assets/scenes/MenuRanking.tscn")
 onready var mini_mapa = get_node("Menu_previo/Mapas/FondoMapas")
 
+onready var btn_normal = get_node("Menu_previo/modo_Normal")
+onready var btn_contrarreloj = get_node("Menu_previo/modo_Contrarreloj")
+
 var prev_volumen = -20
-var ranking = null
-var menu_ranking
 var mapa_actual = 0
 var mapas = ["MapaArena","MapaLuna","MapaLava","MapaMadera","MapaArcilla"]
 var cantidad_de_mapas = mapas.size()
@@ -33,6 +35,9 @@ var config = {
 
 
 func _ready():
+	Engine.set_meta("contrarreloj",false)
+	btn_contrarreloj.disabled = false
+	btn_normal.disabled = true
 	Saves.cargar_config()
 	SoundManager.set_musica_menu()
 	load_tienda()
@@ -47,26 +52,13 @@ func _on_Jugar_pressed():
 	$Menu_previo.visible = true
 
 func _on_Salir_pressed():
+	SoundManager.play_boton_1()
 	get_tree().quit()
-	
-func _process(_delta):
-	pass
 
 func _on_Ranking_pressed():
 	SoundManager.play_boton_1()
-	if ranking == null:
-		ranking = load("res://producto/assets/scenes/MenuRanking.tscn").instance()
-		ranking.connect("continuar",self, "on_ranking_quit")
-
-		self.add_child(ranking)
-		menu_ranking = get_node("MenuRanking")
-		menu_ranking.raise()
-		#menu_ranking.rect_position = $Control/pos_pausa.position
-		menu_ranking.rect_size = Vector2(2048,1200)
-		get_tree().paused = true
-	
-func on_ranking_quit():
-	ranking = null
+	var ranking = escena_ranking.instance()
+	self.add_child(ranking)
 
 func _on_Tienda_pressed():
 	SoundManager.play_boton_1()
@@ -111,15 +103,6 @@ func actualiza_minimapa():
 	get_node("Menu_previo/Btn_ready").visible = true
 	
 
-func _on_modo_juego_1_pressed():
-	SoundManager.play_boton_1()
-	pass # Replace with function body.
-
-
-func _on_modo_juego_2_pressed():
-	SoundManager.play_boton_1()
-	pass # Replace with function body.
-
 
 func _on_Btn_ready_pressed():
 	SoundManager.play_boton_1()
@@ -163,8 +146,27 @@ func _on_Empezar_pressed():
 	$Menu_previo.visible = true
 
 func _on_Ayuda_pressed():
+	SoundManager.play_boton_1()
 	pass # Replace with function body.
 
 func _on_Configuracion_pressed():
+	SoundManager.play_boton_1()
 	var configuracion = escena_config.instance()
 	self.add_child(configuracion)
+
+
+func _on_modo_Normal_toggled(_button_pressed):
+	SoundManager.play_boton_1()
+	Engine.set_meta("contrarreloj",false)
+	
+	btn_contrarreloj.disabled = false
+	btn_normal.disabled = true
+	btn_contrarreloj.set_pressed(false)
+
+
+func _on_modo_Contrarreloj_toggled(_button_pressed):
+	SoundManager.play_boton_1()
+	Engine.set_meta("contrarreloj",true)
+	btn_contrarreloj.disabled = true
+	btn_normal.disabled = false
+	btn_normal.set_pressed(false)

@@ -29,11 +29,13 @@ func escudo():
 	pass
 
 func rayo():
+	jugador.set_velocidad(jugador.get_velocidad()*5)
 	#esto incrementaria la velocidad durante el tiempo del timer que comparte con balas
-	jugador.vel_walk*=3
 	pass
 
 func bomba():
+	jugador.bomba_explosion()	
+	jugador.timer_con_poder.start()
 	#aca agregaria una zona de radio que explotaria con una animacion
 	#y los enemigos en esa area se mueren instantaneamente
 	pass
@@ -47,6 +49,7 @@ func hielo():
 	pass
 
 func balas():
+	jugador.set_cadencia_disparo(jugador.get_cadencia_disparo()*5)
 	#este timer comparte al de rayo, en este incrementa la cadencia
 	pass
 
@@ -54,6 +57,7 @@ func timeout():
 	if tipo == "escudo":
 		pass
 	if tipo == "rayo":
+		jugador.set_velocidad(jugador.get_velocidad()/5)
 		pass
 	if tipo == "bomba":
 		pass
@@ -61,5 +65,6 @@ func timeout():
 		jugador.efecto_Congelacion.visible = false
 		Engine.set_meta("freeze","false")
 	if tipo == "balas":
+		jugador.set_cadencia_disparo(jugador.get_cadencia_disparo()/10)
 		pass
 	pass

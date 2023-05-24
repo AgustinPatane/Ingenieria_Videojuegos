@@ -1,28 +1,17 @@
-extends Control
+extends CanvasLayer
 
 const SAVE_PATH = "res://Saves/saves.sav"
-signal continuar
 var highscores = null
 var player = {
 	"username":"",
-	"score":0
+	"score":0,
+	"mapa": ""
 }
-
-func acomoda_todo():
-	get_node("Ranking_Local/LineEdit").set_editable(false)
-	get_node("Ranking_Mundial/LineEdit").set_editable(false)
-	#la idea de esto seria acomodar donde aparecen los nombres y puntuaciones porque se aparecen medio raro
-	pass
+var longitud = 13
 
 func _ready():
-	acomoda_todo()
 	get_highscore_from_saves()
 	##############################DESCOMENTAR CUANDO ESTE EL SERVIDOR####################_get_highscores_from_server()
-
-func _on_Volver_button_down():
-	get_tree().paused = false
-	emit_signal("continuar")
-	self.queue_free()
 
 func ordena(puntuaciones):
 	var n = len(puntuaciones)
@@ -37,11 +26,13 @@ func ordena(puntuaciones):
 func genera_puntajes_random():
 	randomize()
 	var puntuaciones = Array()
+	var mapas = get_parent().mapas
 	var nombres = ["juan","pedro","sofia","miguel","claudia","maria","agustin","franco","nahuel","juliana"]
 	for i in range(0,10):
 		var jugador = {}
 		jugador.username = nombres[i]
 		jugador.score = randi()%1500+1
+		jugador.mapa = mapas[randi()%mapas.size()]
 		puntuaciones.append(jugador)
 	var aux = ordena(puntuaciones)
 	save_game(aux)
@@ -52,6 +43,7 @@ func genera_saves_vacio():
 		var jugador = {}
 		jugador.username = ""
 		jugador.score = 0
+		jugador.mapa = ""
 		puntuaciones.append(jugador)
 	save_game(puntuaciones)
 
@@ -72,14 +64,23 @@ func load_game():
 
 func get_highscore_from_saves():
 	load_game()
+	var nodo_nombre
+	var nodo_score
+	var nodo_mapa
+	var nombre
 	if highscores != null:
 		for i in range(1,11):
-			var nodo_nombre = get_node("Ranking_Local/HBoxContainer/Nombres/Nombre" + str(i))
-			var nodo_score = get_node("Ranking_Local/HBoxContainer/Scores/Score" + str(i))
-			nodo_nombre.text = highscores[i-1].username
-			nodo_nombre.set_editable(false)
+			nodo_nombre = get_node("Frame_local/Nombres/Nombre"+ str(i))
+			nodo_score = get_node("Frame_local/Puntajes/Puntaje"+str(i))
+			nodo_mapa = get_node("Frame_local/Mapas/Mapa"+str(i))
+			
+			nombre = highscores[i-1].username
+			if nombre.length() > longitud:
+				nombre = nombre.substr(0,longitud)
+			
+			nodo_nombre.text = nombre
 			nodo_score.text = str(highscores[i-1].score)
-			nodo_score.set_editable(false)
+			nodo_mapa.text = str(highscores[i-1].mapa)
 
 func _on_Generar_pressed():
 	genera_puntajes_random()
@@ -90,25 +91,31 @@ func _on_Button_pressed():
 	get_highscore_from_saves()
 	
 
-
-
 ###################PUNTAJE GLOBAL##################
+
+#hay que actualizar el puntaje global con el atributo de mapa
+
 func _get_highscores_from_server():
 	var aux2 = Network.getHttp("")
 	var highscores2 = aux2.split(";")
 	var nodo_nombre
 	var nodo_score
+	var nodo_mapa
 	var aux3
 	print(aux2)
 	
 	for i in range(1,11):
-		nodo_nombre = get_node("Ranking_Mundial/HBoxContainer/Nombres/Nombre" + str(i))
-		nodo_score = get_node("Ranking_Mundial/HBoxContainer/Scores/Score" + str(i))
+		nodo_nombre = get_node("Frame_global/Nombres/Nombre"+ str(i))
+		nodo_score = get_node("Frame_global/Puntajes/Puntaje"+str(i))
+		nodo_mapa = get_node("Frame_global/Mapas/Mapa"+str(i))
+		
 		aux3 = highscores2[i-1].split("|")
 		nodo_nombre.text = aux3[0]
-		nodo_nombre.set_editable(false)
 		nodo_score.text = str(aux3[1])
-		nodo_score.set_editable(false)
+		nodo_mapa.text = aux3[2]
 	
 	
 
+func _on_Boton_salir_pressed():
+	SoundManager.play_boton_1()
+	self.queue_free()

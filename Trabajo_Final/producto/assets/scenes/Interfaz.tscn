@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://producto/scripts/Interfaz.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/GUI/Barra_vida/Barra_VIDA_fondo.png" type="Texture" id=2]
@@ -22,6 +22,10 @@ font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 14
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 21
 font_data = ExtResource( 8 )
 
 [node name="Interfaz" type="CanvasLayer"]
@@ -109,5 +113,13 @@ texture_hover = ExtResource( 10 )
 expand = true
 
 [node name="Pos_pausa" type="Position2D" parent="."]
+
+[node name="Tiempo_restante" type="Label" parent="."]
+margin_left = 506.0
+margin_top = 28.0
+margin_right = 560.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 4 )
+text = "05:35"
 
 [connection signal="pressed" from="Btn_pausa" to="." method="_on_Btn_pausa_pressed"]

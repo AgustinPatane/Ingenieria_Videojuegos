@@ -9,13 +9,15 @@ var aux=0
 
 var player = {
 	"username" : "",
-	"score" : 0
+	"score" : 0,
+	"mapa": ""
 }
 		
 func _ready():
 	#SoundManager.play_musica_derrota()
 	load_game()
 	player.score = Engine.get_meta("Puntaje")
+	player.mapa = Engine.get_meta("Mapa")
 
 func _process(_delta):
 	pass
@@ -27,6 +29,7 @@ func genera_saves_vacio():
 		var jugador = {}
 		jugador.username = ""
 		jugador.score = 0
+		jugador.mapa = ""
 		puntuaciones.append(jugador)
 	save_game(puntuaciones)
 

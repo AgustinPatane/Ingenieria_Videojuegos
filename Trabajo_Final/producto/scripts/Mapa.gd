@@ -27,20 +27,12 @@ var jugador
 var nombre_mapa
 
 func _ready():
+	
 	SoundManager.set_musica_partida()
-	var tiempos = Atributos.get_tiempos()
-	tiempo_Demonio = tiempos.demonio
-	tiempo_Pilar = tiempos.pilar
-	tiempo_Ojo_volador = tiempos.ojo
-	tiempo_Gusano = tiempos.gusano
-	tiempo_Hechicero = tiempos.hechicero
-	tiempo_curita = tiempos.curita
-	tiempo_Diablito = tiempos.diablito
 
 	set_tiempos()
 	set_niveles_spawn()
-
-	
+		
 	jugador = get_node("Jugador")
 	jugador.connect("level_up",self,"sube_dificultad")
 	jugador.connect("freeze",self,"freeze")
@@ -77,6 +69,7 @@ func set_tiempos():
 	tiempo_Hongo = tiempos.hongo
 	
 	tiempo_curita = tiempos.curita
+
 
 func start_spawn_enemigo(tipo_enemigo: String):
 	spawn_enemigo(tipo_enemigo)
@@ -155,6 +148,8 @@ func posicion_aleatoria(tipo_enemigo) -> Vector2:
 
 func _on_Jugador_player_defeated():
 	SoundManager.stop_musica()
+	Engine.set_meta("Puntaje",jugador.puntos)
+	Engine.set_meta("Mapa",nombre_mapa)
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
 
 func freeze():

@@ -60,6 +60,11 @@ onready var boton_evolucion_4_2_2 = get_node("evolucion/evolucion_4/evolucion_4_
 
 onready var ramas_arbol = get_node("evolucion/ramas_arbol")
 
+var n_primer_rama = "1"
+var n_segunda_rama = "2"
+var aux1 = "boton_evolucion_"+n_primer_rama
+var aux2 = "boton_evolucion_"+n_segunda_rama
+
 var botones_arbol = Array()
 #____________________________________________________________
 
@@ -353,10 +358,7 @@ var evolucion_4_2_2 = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	boton_evolucion_3.visible = false
-	boton_evolucion_4.visible = false
-	boton_evolucion_3.set_process(false)
-	boton_evolucion_4.set_process(false)
+	set_ramas_ok()
 	if Engine.has_meta("evolucion_actual"):
 		evolucion_actual = Engine.get_meta("evolucion_actual")
 	else:
@@ -369,24 +371,39 @@ func _ready():
 	carga_ventana()
 	ventana_por_defecto()
 
+func set_ramas_ok():
+	boton_evolucion_1.visible = false
+	boton_evolucion_2.visible = false
+	boton_evolucion_3.visible = false
+	boton_evolucion_4.visible = false
+	boton_evolucion_1.set_process(false)
+	boton_evolucion_2.set_process(false)
+	boton_evolucion_3.set_process(false)
+	boton_evolucion_4.set_process(false)
+	self[aux1].set_process(true)
+	self[aux1].visible = true
+	self[aux2].set_process(true)
+	self[aux2].visible = true
+	pass
+
 func armo_arbol():
 	botones_arbol.append(boton_evolucion)
 	
-	botones_arbol.append(boton_evolucion_1)
-	botones_arbol.append(boton_evolucion_1_1)
-	botones_arbol.append(boton_evolucion_1_1_1)
-	botones_arbol.append(boton_evolucion_1_1_2)
-	botones_arbol.append(boton_evolucion_1_2)
-	botones_arbol.append(boton_evolucion_1_2_1)
-	botones_arbol.append(boton_evolucion_1_2_2)
+	botones_arbol.append(self[aux1])
+	botones_arbol.append(self[aux1+"_1"])
+	botones_arbol.append(self[aux1+"_1_1"])
+	botones_arbol.append(self[aux1+"_1_2"])
+	botones_arbol.append(self[aux1+"_2"])
+	botones_arbol.append(self[aux1+"_2_1"])
+	botones_arbol.append(self[aux1+"_2_2"])
 	
-	botones_arbol.append(boton_evolucion_2)
-	botones_arbol.append(boton_evolucion_2_1)
-	botones_arbol.append(boton_evolucion_2_1_1)
-	botones_arbol.append(boton_evolucion_2_1_2)
-	botones_arbol.append(boton_evolucion_2_2)
-	botones_arbol.append(boton_evolucion_2_2_1)
-	botones_arbol.append(boton_evolucion_2_2_2)
+	botones_arbol.append(self[aux2])
+	botones_arbol.append(self[aux2+"_1"])
+	botones_arbol.append(self[aux2+"_1_1"])
+	botones_arbol.append(self[aux2+"_1_2"])
+	botones_arbol.append(self[aux2+"_2"])
+	botones_arbol.append(self[aux2+"_2_1"])
+	botones_arbol.append(self[aux2+"_2_2"])
 
 func muestro_arbol():
 	var longitud_actual = len(evolucion_actual)
