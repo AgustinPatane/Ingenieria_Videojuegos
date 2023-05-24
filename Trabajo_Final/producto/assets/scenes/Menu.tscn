@@ -164,7 +164,6 @@ texture_hover = ExtResource( 32 )
 expand = true
 
 [node name="Botones" type="VBoxContainer" parent="."]
-visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 25.0
@@ -230,7 +229,6 @@ custom_styles/normal = SubResource( 9 )
 text = "SALIR"
 
 [node name="Menu_previo" type="Control" parent="."]
-visible = false
 margin_left = 209.0
 margin_top = 149.0
 margin_right = 799.0

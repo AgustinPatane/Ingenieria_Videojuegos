@@ -122,11 +122,18 @@ func _physics_process(delta):
 			var collider = motion.collider
 			if collider.is_in_group("Wall"):
 				motion = move_and_slide(delta * -SPEED)
-	if !(self.position.x<1651 and self.position.x >-567 and self.position.y<980 and self.position.y >-411):
+	#if !(self.position.x<1651 and self.position.x >-567 and self.position.y<980 and self.position.y >-411):
+		#recibe_ataque(0.05)
+		
+	if fuera_de_mapa():
 		recibe_ataque(0.05)
+		
 	if Input.is_action_pressed("poder_especial"):
 		ejecutar_poder_especial()
 	
+	
+func fuera_de_mapa():
+	pass
 # -------------------------------------------------------------------------------------
 # ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
 # -------------------------------------------------------------------------------------

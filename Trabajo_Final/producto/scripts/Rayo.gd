@@ -16,7 +16,7 @@ func get_is_casting():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	jugador = get_node("/root/Mapa/Jugador")
+	jugador = get_node("/root/"+Engine.get_meta("nombre_escena_mapa")+"/Jugador")
 	fin_rayo.hide()
 	timer = Timer.new()
 	timer.wait_time =5
