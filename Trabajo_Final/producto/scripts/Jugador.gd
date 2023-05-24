@@ -42,6 +42,9 @@ var poder_especial = ""
 var factor_resiliencia = 1
 var resiliencia = false
 var token = false
+var capacidad_evolucion = false
+var capsula_evolucion 
+var primer_toque = false
 # -------------------------------------------------------------------------------------
 # -------------------------------- CARACTERISTICAS ------------------------------------
 # -------------------------------------------------------------------------------------
@@ -132,6 +135,16 @@ func _physics_process(delta):
 		recibe_ataque(0.05)
 	if Input.is_action_pressed("poder_especial"):
 		ejecutar_poder_especial()
+	if Input.is_action_pressed("evolucionar"):
+		if !primer_toque:
+			primer_toque = true
+			chequea_capacidad_evolucion()
+	else:
+		if primer_toque:
+			print("soltaste la tecla")
+			primer_toque = false
+			parar_timer()
+		pass
 	
 # -------------------------------------------------------------------------------------
 # ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
@@ -251,17 +264,10 @@ func gana_exp(value):
 		nivel += 1
 		emit_signal("level_up",nivel)
 		if nivel == niveles_evol[0] or nivel == niveles_evol[1] or nivel == niveles_evol[2]:
-			_evolucion()
+			capacidad_evolucion = true
+			#_evolucion()
 		else:
 			_adquiere_habilidad()
-		
-		experiencia = 0
-		puntos += nivel * 25
-		experiencia_necesaria = actualiza_exp(experiencia_necesaria)
-		subiendo_nivel = true
-		vida_max += 5
-		vida += round(vida_max * 0.1)
-		if vida > vida_max: vida= vida_max
 	emit_signal("actualiza_interfaz")
 
 func actualiza_exp(experiencia_max):
@@ -293,6 +299,18 @@ func _evolucion():
 	$Jugador_Sprite.hide()
 	arma.get_node("Arma_Sprite").hide()
 	get_tree().paused = true
+	culmina_evolucion()
+	pass
+
+func culmina_evolucion():
+		
+	experiencia = 0
+	puntos += nivel * 25
+	experiencia_necesaria = actualiza_exp(experiencia_necesaria)
+	subiendo_nivel = true
+	vida_max += 5
+	vida += round(vida_max * 0.1)
+	if vida > vida_max: vida= vida_max
 	pass
 
 func on_evol_quit():
@@ -588,3 +606,21 @@ func _on_Area_superposicion_area_exited(area):
 	if area.is_in_group("Enemigo"):
 		pass
 		#area.z_index += 2
+
+func en_capsula(cap):
+	print(cap.name)
+	capsula_evolucion = cap
+	pass
+
+func chequea_capacidad_evolucion():
+	if capacidad_evolucion:
+		capsula_evolucion.arrancar_timer(self)
+	else:
+		#mostrar que debe ganar mas exp
+		print("te falta experiencia")
+		pass
+	pass
+
+func parar_timer():
+	if capsula_evolucion:
+		capsula_evolucion.parar_timer()

@@ -26,6 +26,8 @@ onready var escena_item = preload("res://producto/assets/scenes/Item_curacion.ts
 var jugador
 var nombre_mapa
 
+onready var capsula = get_node("Capsula")
+
 func _ready():
 	
 	SoundManager.set_musica_partida()
@@ -45,6 +47,7 @@ func _ready():
 	timer_objetos.start()
 	sube_dificultad(1)
 	establecer_fondo_mapa()
+	capsula.connect("capsula",self,"en_capsula")
 
 func set_niveles_spawn():
 	max_enemigos = Atributos.max_enemigos
@@ -152,6 +155,11 @@ func _on_Jugador_player_defeated():
 	Engine.set_meta("Puntaje",jugador.puntos)
 	Engine.set_meta("Mapa",nombre_mapa)
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
+
+func en_capsula(cap):
+	jugador.en_capsula(cap)
+	pass
+
 
 func freeze():
 	SoundManager.play_congelar()

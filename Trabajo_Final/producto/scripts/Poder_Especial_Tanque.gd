@@ -29,7 +29,7 @@ func escudo():
 	pass
 
 func rayo():
-	jugador.set_velocidad(jugador.get_velocidad()*5)
+	jugador.set_velocidad(jugador.get_velocidad()*2)
 	#esto incrementaria la velocidad durante el tiempo del timer que comparte con balas
 	pass
 
@@ -57,7 +57,7 @@ func timeout():
 	if tipo == "escudo":
 		pass
 	if tipo == "rayo":
-		jugador.set_velocidad(jugador.get_velocidad()/5)
+		jugador.set_velocidad(jugador.get_velocidad()/2)
 		pass
 	if tipo == "bomba":
 		pass
