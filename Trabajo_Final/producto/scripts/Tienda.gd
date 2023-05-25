@@ -137,3 +137,10 @@ func _on_ver_skins_customs_pressed():
 	skins_colores.visible = false
 	skins_customs.visible = true
 
+
+
+func _on_Boton_salir_pressed():
+	var _aux = get_tree().change_scene("res://producto/assets/scenes/Menu.tscn")
+	SoundManager.play_boton_1()
+	self.queue_free()
+
