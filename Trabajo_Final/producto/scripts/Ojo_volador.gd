@@ -29,11 +29,8 @@ func _ready():
 
 func ataque():
 	pass
-	#var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0
-	#if cond_disparo: 
-	#	_dispara()
 
-func _process(delta):
+func _process(_delta):
 	var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0
 	if cond_disparo: 
 		_dispara()

@@ -13,7 +13,7 @@ signal capsula(cap)
 func _ready():
 	pass # Replace with function body.
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
 	emit_signal("capsula",self)
 
 func prueba():
@@ -36,5 +36,5 @@ func _on_Timer_mantener_tecla_timeout():
 	jugador._evolucion()
 
 
-func _on_Area2D_body_exited(body):
+func _on_Area2D_body_exited(_body):
 	parar_timer()

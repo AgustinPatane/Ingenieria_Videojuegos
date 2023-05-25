@@ -111,7 +111,10 @@ func spawn_enemigo(tipo_enemigo: String):
 		var enemigo = enemigo_scene.instance()
 		enemigo.position = posicion_aleatoria(tipo_enemigo)
 		nombre_mapa=Engine.get_meta("nombre_escena_mapa")
-		get_node("/root/"+nombre_mapa).add_child(enemigo)
+		call_deferred("agrega_enemigo",enemigo)
+
+func agrega_enemigo(enemigo):
+	get_node("/root/"+nombre_mapa).add_child(enemigo)
 
 func spawn_timer(tipo_enemigo: String, tiempo: int):
 	var timer_enemigos = Timer.new()

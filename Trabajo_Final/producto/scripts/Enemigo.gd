@@ -13,6 +13,7 @@ var muerto = 0
 var freeze = Engine.get_meta("freeze")
 var xpermiso = false
 var riesgo = false
+var puede_moverse = false
 
 onready var escena_txt_danio = preload("res://producto/assets/scenes/Texto_danio.tscn")
 onready var escena_exp = preload("res://producto/assets/scenes/Orbe_exp.tscn")
@@ -62,18 +63,19 @@ func muere():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Sombra.modulate = Color(1,1,1,0.5)
-	$AnimationPlayer.play("move")
+	
+	$Sombra.hide()
+	$Sprite.hide()
+	$Cruz_spawn/AnimationPlayer_spawn.play("spawn")
 	var nombre_mapa=Engine.get_meta("nombre_escena_mapa")
 	jugador = get_node("/root/"+nombre_mapa+"/Jugador")
-	jugador.connect("mascota",self,"permiso")
-	jugador.connect("explosion",self,"explosion")
 	self.z_index = jugador.z_index + 1
 
 func movimiento(delta):
-	pos_jugador = jugador.position
-	var dir = (pos_jugador - position).normalized()
-	position += dir * speed * delta
+	if puede_moverse:
+		pos_jugador = jugador.position
+		var dir = (pos_jugador - position).normalized()
+		position += dir * speed * delta
 	
 func acomodar():
 	if !flag_tocando_player:
@@ -84,7 +86,7 @@ func acomodar():
 
 func _process(delta):
 	freeze = Engine.get_meta("freeze")
-	z_index = position.y  + 1200
+	z_index = int(position.y)  + 1200
 	if (vida>0 and freeze == "false"):
 		movimiento(delta)
 		acomodar()
@@ -148,3 +150,18 @@ func explosion():
 	if riesgo:
 		self.muere()
 		self.drop_on_death()
+
+func muestra():
+	pass
+
+
+func _on_AnimationPlayer_spawn_animation_finished(_anim_name):
+	muestra()
+	$Sombra.show()
+	$Sprite.show()
+	puede_moverse = true
+	$Sombra.modulate = Color(1,1,1,0.5)
+	$AnimationPlayer.play("move")
+	jugador.connect("mascota",self,"permiso")
+	jugador.connect("explosion",self,"explosion")
+	

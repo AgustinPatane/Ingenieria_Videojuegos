@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://producto/assets/img/enemigos/Sombra.png" type="Texture" id=1]
 [ext_resource path="res://producto/scripts/Enemigo.gd" type="Script" id=2]
 [ext_resource path="res://producto/assets/music/sounds/shoot_enemy.wav" type="AudioStream" id=3]
 [ext_resource path="res://producto/assets/music/sounds/death.wav" type="AudioStream" id=4]
+[ext_resource path="res://producto/assets/img/enemigos/Cruz_spawn.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.5455, 70.9091 )
@@ -81,6 +82,38 @@ radius = 5.13899
 [sub_resource type="CircleShape2D" id=7]
 radius = 105.846
 
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "spawn"
+length = 1.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 0.95, 1.1, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ]
+}
+
 [node name="Enemigo" type="Area2D" groups=["Enemigo"]]
 scale = Vector2( 1.1, 1.1 )
 z_index = 6
@@ -126,6 +159,18 @@ pitch_scale = 0.49
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Lenta"]
 shape = SubResource( 7 )
 
+[node name="Cruz_spawn" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Cruz_spawn"]
+position = Vector2( 2.72727, 3.63636 )
+texture = ExtResource( 5 )
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer_spawn" type="AnimationPlayer" parent="Cruz_spawn"]
+anims/RESET = SubResource( 9 )
+anims/spawn = SubResource( 8 )
+
 [connection signal="area_entered" from="." to="." method="_on_Enemigo_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Enemigo_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Enemigo_body_exited"]
@@ -134,3 +179,4 @@ shape = SubResource( 7 )
 [connection signal="body_exited" from="Area_ataque" to="." method="_on_Area_ataque_body_exited"]
 [connection signal="body_entered" from="Area_Lenta" to="." method="_on_Area_Lenta_body_entered"]
 [connection signal="body_exited" from="Area_Lenta" to="." method="_on_Area_Lenta_body_exited"]
+[connection signal="animation_finished" from="Cruz_spawn/AnimationPlayer_spawn" to="." method="_on_AnimationPlayer_spawn_animation_finished"]

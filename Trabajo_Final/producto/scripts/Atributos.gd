@@ -63,7 +63,7 @@ var niveles_spawn = {
 	diablito = 1,
 	gusano = 1,
 	hechicero = 60,
-	hongo = 10, # 3
+	hongo = 1, # 3
 	ojo = 1,
 	pilar = 1
 }

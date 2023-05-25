@@ -23,6 +23,9 @@ func _ready():
 	area_danio.scale.y = tamanio_Area
 	area_danio.set_danio(danio)
 	area_danio.ref_jugador(jugador)
+	call_deferred("agrega_Area",area_danio)
+	
+func agrega_Area(area_danio):
 	get_node("/root/"+Engine.get_meta("nombre_escena_mapa")).add_child(area_danio)
 	
 	var timer = Timer.new()

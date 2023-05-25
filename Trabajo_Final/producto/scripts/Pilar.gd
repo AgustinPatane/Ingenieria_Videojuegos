@@ -4,6 +4,7 @@ var subiendo = true
 var timer
 
 func _ready():
+	$Pos_disparo/Rayo/inicio.hide()
 	var atrib = Atributos.get_pilar()
 	set_vida(atrib.vida)
 	set_danio(atrib.danio)
@@ -17,6 +18,11 @@ func _ready():
 	timer.connect("timeout",self,"_on_timer_timeout")
 	self.add_child(timer)
 	timer.start()
+
+func muestra():
+	$Sombra.hide()
+	$Pos_disparo/Rayo/inicio.show()
+	
 
 func _on_timer_timeout():
 	subiendo = !subiendo
