@@ -6,7 +6,7 @@ extends Node
 #const BASIC_HEADERS = ["User-Agent: GAME/1.0", "Accept: */*"]
 #const ROUTE = "/franco/game.php"
 
-
+#cecom112.mdp.edu.ar/franco/maxandmonsters.php
 
 const HOST = "cecom112.mdp.edu.ar"
 const PORT = 443
@@ -19,34 +19,34 @@ var is_connected = false
 var flag_conexion = false
 
 func init_network():
-	if flag_conexion:
-		http = HTTPClient.new()
-		http.connect_to_host(HOST, PORT,true)
-		# Wait until resolved and connected
-		while http.get_status() == HTTPClient.STATUS_CONNECTING or http.get_status() == HTTPClient.STATUS_RESOLVING:
-			http.poll()
-			OS.delay_msec(50)
-		# Connection result
-		var status = http.get_status()
-		# Disconnected from the server
-		if status == HTTPClient.STATUS_DISCONNECTED:
-			print("Network disconnected")
-		# DNS failure: Can’t resolve the hostname for the given URL
-		elif status == HTTPClient.STATUS_CANT_RESOLVE:
-			print("Network cant resolve")
-		# Can’t connect to the server
-		elif status == HTTPClient.STATUS_CANT_CONNECT:
-			print("Network cant connect")
-		# Error in HTTP connection
-		elif status == HTTPClient.STATUS_CONNECTION_ERROR:
-			print("Network connection error")
-		# Error in SSL handshake
-		elif status == HTTPClient.STATUS_SSL_HANDSHAKE_ERROR:
-			print("Network ssl handshake error")
-		# Connection established
-		elif status == HTTPClient.STATUS_CONNECTED:
-			is_connected = true
-			print("Connection success")
+	
+	http = HTTPClient.new()
+	http.connect_to_host(HOST, PORT,true)
+	# Wait until resolved and connected
+	while http.get_status() == HTTPClient.STATUS_CONNECTING or http.get_status() == HTTPClient.STATUS_RESOLVING:
+		http.poll()
+		OS.delay_msec(50)
+	# Connection result
+	var status = http.get_status()
+	# Disconnected from the server
+	if status == HTTPClient.STATUS_DISCONNECTED:
+		print("Network disconnected")
+	# DNS failure: Can’t resolve the hostname for the given URL
+	elif status == HTTPClient.STATUS_CANT_RESOLVE:
+		print("Network cant resolve")
+	# Can’t connect to the server
+	elif status == HTTPClient.STATUS_CANT_CONNECT:
+		print("Network cant connect")
+	# Error in HTTP connection
+	elif status == HTTPClient.STATUS_CONNECTION_ERROR:
+		print("Network connection error")
+	# Error in SSL handshake
+	elif status == HTTPClient.STATUS_SSL_HANDSHAKE_ERROR:
+		print("Network ssl handshake error")
+	# Connection established
+	elif status == HTTPClient.STATUS_CONNECTED:
+		is_connected = true
+		print("Connection success")
 
 func _ready():
 	init_network()

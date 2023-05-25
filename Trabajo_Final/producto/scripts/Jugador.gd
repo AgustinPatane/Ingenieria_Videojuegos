@@ -27,7 +27,7 @@ onready var skin_gorro = get_node("Jugador_Sprite/Accesorio_Gorro")
 
 var motion = Vector2()
 var SPEED = 0
-var puntos = 0
+var puntos = 649
 var vida 
 var experiencia = 0
 var nivel = 1
@@ -144,8 +144,8 @@ func _physics_process(delta):
 			var collider = motion.collider
 			if collider.is_in_group("Wall"):
 				motion = move_and_slide(delta * -SPEED)
-	if !(self.position.x<1651 and self.position.x >-567 and self.position.y<980 and self.position.y >-411):
-		recibe_ataque(0.05)
+	#if !(self.position.x<1651 and self.position.x >-567 and self.position.y<980 and self.position.y >-411):
+	#	recibe_ataque(0.05)
 	if Input.is_action_pressed("poder_especial"):
 		ejecutar_poder_especial()
 	if Input.is_action_pressed("evolucionar"):

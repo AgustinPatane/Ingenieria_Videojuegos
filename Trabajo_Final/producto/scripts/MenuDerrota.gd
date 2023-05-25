@@ -10,7 +10,6 @@ var aux=0
 var player = {
 	"username" : "",
 	"score" : 0,
-	"mapa": ""
 }
 		
 func _ready():
@@ -59,14 +58,14 @@ func selecciona_diez():
 
 func _on_Menu_pressed():
 	SoundManager.stop_musica_derrota()
-	player.username = get_node("Nombre").text
+	player.username = get_node("Nombre").text+"|"+Engine.get_meta("nombre_escena_mapa")
 	highscores.append(player)
 	selecciona_diez()
 	save_game(highscores)
 	
 	
-	#Descomentar cuando este el jugador
-	#Network.postHttp(player)
+	
+	Network.postHttp(player)
 	
 	
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Menu.tscn")

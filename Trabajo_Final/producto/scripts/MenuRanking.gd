@@ -11,7 +11,7 @@ var longitud = 13
 
 func _ready():
 	get_highscore_from_saves()
-	##############################DESCOMENTAR CUANDO ESTE EL SERVIDOR####################_get_highscores_from_server()
+	get_highscores_from_server()
 
 func ordena(puntuaciones):
 	var n = len(puntuaciones)
@@ -78,7 +78,9 @@ func get_highscore_from_saves():
 			if nombre.length() > longitud:
 				nombre = nombre.substr(0,longitud)
 			
-			nodo_nombre.text = nombre
+			#print(nombre.split("|"))
+			print(nombre)
+			nodo_nombre.text = nombre.split("|")[0]
 			nodo_score.text = str(highscores[i-1].score)
 			nodo_mapa.text = str(highscores[i-1].mapa)
 
@@ -95,14 +97,15 @@ func _on_Button_pressed():
 
 #hay que actualizar el puntaje global con el atributo de mapa
 
-func _get_highscores_from_server():
+func get_highscores_from_server():
 	var aux2 = Network.getHttp("")
+	print("Esto es aux2: "+aux2)
 	var highscores2 = aux2.split(";")
 	var nodo_nombre
 	var nodo_score
 	var nodo_mapa
 	var aux3
-	print(aux2)
+	
 	
 	for i in range(1,11):
 		nodo_nombre = get_node("Frame_global/Nombres/Nombre"+ str(i))
@@ -111,8 +114,9 @@ func _get_highscores_from_server():
 		
 		aux3 = highscores2[i-1].split("|")
 		nodo_nombre.text = aux3[0]
-		nodo_score.text = str(aux3[1])
-		nodo_mapa.text = aux3[2]
+		nodo_mapa.text=str(aux3[1])
+		nodo_score.text = str(aux3[2])
+		
 	
 	
 
