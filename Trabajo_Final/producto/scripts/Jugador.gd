@@ -104,7 +104,7 @@ func aumenta_Area_recoleccion(value):
 # -------------------------------------------------------------------------------------
 
 func _physics_process(delta):
-	z_index = position.y + 1200
+	z_index = int(position.y)  + 1200
 	motion = Vector2(0,0)
 	if Input.is_action_pressed("ui_right"):
 		motion.x = 100
@@ -289,18 +289,9 @@ func _adquiere_habilidad():
 	pass
 
 func _evolucion():
-	$Interfaz.esconder()
-	spriteLvlUp.visible =false
+	#$Interfaz.esconder()
 	var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
-	self.z_index = z_index + 20
 	self.add_child(evol_instance)
-	var menu_evol = get_node("MenuEvolucion")
-	menu_evol.raise()
-	var pos_evol = get_viewport().size
-	#menu_evol.rect_position = Vector2(-1* pos_evol.x/2 ,-1* pos_evol.y/2)
-	#menu_evol.rect_size = pos_evol
-	$Jugador_Sprite.hide()
-	arma.get_node("Arma_Sprite").hide()
 	get_tree().paused = true
 	culmina_evolucion()
 	pass
@@ -318,9 +309,6 @@ func culmina_evolucion():
 
 func on_evol_quit():
 	$Interfaz.mostrar()
-	self.z_index = z_index - 20
-	$Jugador_Sprite.show()
-	arma.get_node("Arma_Sprite").show()
 	spriteLvlUp.visible = true
 	animLvlUp.play("LVL_UP")
 	emit_signal("actualiza_interfaz")

@@ -29,7 +29,7 @@ var nombre_mapa
 onready var capsula = get_node("Capsula")
 
 func _ready():
-	
+	nombre_mapa=Engine.get_meta("nombre_escena_mapa")
 	SoundManager.set_musica_partida()
 
 	set_tiempos()
@@ -110,8 +110,10 @@ func spawn_enemigo(tipo_enemigo: String):
 		var enemigo_scene = load("res://producto/assets/scenes/" + tipo_enemigo + ".tscn")
 		var enemigo = enemigo_scene.instance()
 		enemigo.position = posicion_aleatoria(tipo_enemigo)
-		nombre_mapa=Engine.get_meta("nombre_escena_mapa")
-		get_node("/root/"+nombre_mapa).add_child(enemigo)
+		call_deferred("agrega_al_mapa",enemigo)
+		
+func agrega_al_mapa(enemigo):
+	get_node("/root/"+nombre_mapa).add_child(enemigo)
 
 func spawn_timer(tipo_enemigo: String, tiempo: int):
 	var timer_enemigos = Timer.new()
