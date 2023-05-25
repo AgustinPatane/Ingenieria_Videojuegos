@@ -131,9 +131,11 @@ func _physics_process(delta):
 	if sprite_jugador.flip_h == true:
 		skin_bandera.position.x = 40
 		skin_bandera.set_flip_h(false) 
+		skin_gorro.set_flip_h(false) 
 	else:
 		skin_bandera.position.x = -40
 		skin_bandera.set_flip_h(true) 
+		skin_gorro.set_flip_h(true) 
 	
 	var slide_count = get_slide_count()
 	if slide_count > 0:
@@ -347,16 +349,6 @@ func actualiza_atributos(atributos, evol):
 	call(atributos.nombre)	
 	arma.cambia_skin(atributos.arma)
 	actualizo_skin_accesorios(atributos)
-
-func actualizo_skin_accesorios(atributos):
-	if skin_bandera.visible == false:
-		skin_bandera.visible = true
-		var ruta = load("res://producto/assets/img/Accesorios/level_1/"+atributos.skin_accesorio+".png")
-		skin_bandera.set_texture(ruta)
-		animacion_bandera.play("go")
-	else:
-		pass
-	pass
 
 #____________ EVOLUCIONES DE MOVIMIENTO ________________
 func movimiento():
@@ -591,6 +583,30 @@ func ejecutar_poder_especial():
 
 
 #--------------------------  fin PODER ESPECIAL --------------------------
+func actualizo_skin_accesorios(atributos):
+	var ruta
+	if skin_bandera.visible == false:
+		skin_bandera.visible = true
+		ruta = load("res://producto/assets/img/Accesorios/level_1/"+atributos.skin_accesorio+".png")
+		skin_bandera.set_texture(ruta)
+		animacion_bandera.play("go")
+	else:
+		if skin_gorro.visible == false:
+			ruta = load("res://producto/assets/img/Accesorios/level_2/gorros.png")
+			skin_gorro.set_texture(ruta)
+			skin_gorro.visible = true
+			skin_gorro.frame = int(atributos.skin_accesorio[1])
+		else:
+			if atributos.skin_accesorio[0] == "0":
+				ruta = load("res://producto/assets/img/Accesorios/level_3/gorros_coronados.png")
+			else:
+				ruta = load("res://producto/assets/img/Accesorios/level_3/gorros_medalla_oro.png")
+			skin_gorro.set_texture(ruta)
+			skin_gorro.visible = true
+			skin_gorro.frame = int(atributos.skin_accesorio[1])
+			pass
+		pass
+	pass
 
 func _on_timer_de_carga_timeout():
 	print("PODER CARGADO")

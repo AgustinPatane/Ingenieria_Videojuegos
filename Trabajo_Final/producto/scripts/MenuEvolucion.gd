@@ -93,7 +93,7 @@ var evolucion_1_1 = {
 	"damage": 1,
 	"rango": 1.5,
 	"arma": "ak-47",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "00"
 }
 var evolucion_1_1_2 = {
 	"nombre": "movimiento_propio_atravesarmuros",
@@ -103,7 +103,7 @@ var evolucion_1_1_2 = {
 	"damage": 1,
 	"rango": 1.3,
 	"arma": "ak-47",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "10"
 }
 var evolucion_1_1_1 = {
 	"nombre": "movimiento_propio_nitro",
@@ -113,7 +113,7 @@ var evolucion_1_1_1 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "ak-47",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "20"
 }
 var evolucion_1_2 = {
 	"nombre": "movimiento_enemigos",
@@ -123,7 +123,7 @@ var evolucion_1_2 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "ak-47",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "01"
 }
 var evolucion_1_2_1 = {
 	"nombre": "movimiento_enemigos_ondaralentizadora",
@@ -133,7 +133,7 @@ var evolucion_1_2_1 = {
 	"damage": 1,
 	"rango": 0.8,
 	"arma": "ak-47",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "11"
 }
 var evolucion_1_2_2 = {
 	"nombre": "movimiento_enemigos_congelacion",
@@ -143,7 +143,7 @@ var evolucion_1_2_2 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "ak-47",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "21"
 }
 
 # EVOLUCION 2 : SALUD / VIDA
@@ -167,7 +167,7 @@ var evolucion_2_1 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "escopeta",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "02"
 }
 
 var evolucion_2_1_1 = {
@@ -178,7 +178,7 @@ var evolucion_2_1_1 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "escopeta",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "12"
 }
 
 var evolucion_2_1_2 = {
@@ -189,7 +189,7 @@ var evolucion_2_1_2 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "escopeta",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "22"
 }
 
 var evolucion_2_2 = {
@@ -200,7 +200,7 @@ var evolucion_2_2 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "escopeta",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "03"
 }
 
 var evolucion_2_2_1 = {
@@ -211,7 +211,7 @@ var evolucion_2_2_1 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "escopeta",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "13"
 }
 
 var evolucion_2_2_2 = {
@@ -222,7 +222,7 @@ var evolucion_2_2_2 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "escopeta",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "23"
 }
 
 # EVOLUCION 3 : ATAQUE
@@ -246,7 +246,7 @@ var evolucion_3_1 = {
 	"damage": 1,
 	"rango": 2,
 	"arma": "escopeta",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "04"
 }
 
 var evolucion_3_1_1 = {
@@ -257,7 +257,7 @@ var evolucion_3_1_1 = {
 	"damage": 1.5,
 	"rango": 0.75,
 	"arma": "escopeta",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "14"
 }
 
 var evolucion_3_1_2 = {
@@ -268,7 +268,7 @@ var evolucion_3_1_2 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "escopeta",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "24"
 }
 
 var evolucion_3_2 = {
@@ -279,7 +279,7 @@ var evolucion_3_2 = {
 	"damage": 2,
 	"rango": 3,
 	"arma": "francotirador",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "05"
 }
 
 var evolucion_3_2_1 = {
@@ -290,7 +290,7 @@ var evolucion_3_2_1 = {
 	"damage": 1.5,
 	"rango": 1,
 	"arma": "francotirador",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "15"
 }
 
 var evolucion_3_2_2 = {
@@ -301,7 +301,7 @@ var evolucion_3_2_2 = {
 	"damage": 2,
 	"rango": 1,
 	"arma": "bazooka",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "25"
 }
 
 
@@ -326,7 +326,7 @@ var evolucion_4_1 = {
 	"damage": 1,
 	"rango": 1,
 	"arma": "ametralladora",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "06"
 }
 
 var evolucion_4_1_1 = {
@@ -337,7 +337,7 @@ var evolucion_4_1_1 = {
 	"damage": 4,
 	"rango": 1,
 	"arma": "ametralladora",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "16"
 }
 
 var evolucion_4_1_2 = {
@@ -348,7 +348,7 @@ var evolucion_4_1_2 = {
 	"damage": 2,
 	"rango": 3,
 	"arma": "ametralladora",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "26"
 }
 
 var evolucion_4_2 = {
@@ -359,7 +359,7 @@ var evolucion_4_2 = {
 	"damage": 2,
 	"rango": 3,
 	"arma": "ametralladora",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "07"
 }
 
 var evolucion_4_2_1 = {
@@ -370,7 +370,7 @@ var evolucion_4_2_1 = {
 	"damage": 3,
 	"rango": 1.5,
 	"arma": "ak-47",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "17"
 }
 
 var evolucion_4_2_2 = {
@@ -381,7 +381,7 @@ var evolucion_4_2_2 = {
 	"damage": 0.2,
 	"rango": 1,
 	"arma": "ametralladora",
-	"skin_accesorio" : "verde"
+	"skin_accesorio" : "27"
 }
 
 # Called when the node enters the scene tree for the first time.
