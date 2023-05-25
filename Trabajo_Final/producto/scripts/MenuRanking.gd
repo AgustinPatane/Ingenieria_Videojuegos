@@ -79,7 +79,7 @@ func get_highscore_from_saves():
 				nombre = nombre.substr(0,longitud)
 			
 			#print(nombre.split("|"))
-			print(nombre)
+			#print(nombre)
 			nodo_nombre.text = nombre.split("|")[0]
 			nodo_score.text = str(highscores[i-1].score)
 			nodo_mapa.text = str(highscores[i-1].mapa)
@@ -99,7 +99,7 @@ func _on_Button_pressed():
 
 func get_highscores_from_server():
 	var aux2 = Network.getHttp("")
-	print("Esto es aux2: "+aux2)
+	#print("Esto es aux2: "+aux2)
 	var highscores2 = aux2.split(";")
 	var nodo_nombre
 	var nodo_score
@@ -113,7 +113,12 @@ func get_highscores_from_server():
 		nodo_mapa = get_node("Frame_global/Mapas/Mapa"+str(i))
 		
 		aux3 = highscores2[i-1].split("|")
-		nodo_nombre.text = aux3[0]
+		
+		var nombre = aux3[0]
+		if nombre.length() > longitud:
+			nombre = nombre.substr(0,longitud)
+		
+		nodo_nombre.text = nombre
 		nodo_mapa.text=str(aux3[1])
 		nodo_score.text = str(aux3[2])
 		

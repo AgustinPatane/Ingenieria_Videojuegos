@@ -15,8 +15,9 @@ var player = {
 func _ready():
 	#SoundManager.play_musica_derrota()
 	load_game()
-	player.score = Engine.get_meta("Puntaje")
-	player.mapa = Engine.get_meta("Mapa")
+	if Engine.has_meta("Puntaje") and Engine.has_meta("Mapa"):
+		player.score = Engine.get_meta("Puntaje")
+		player.mapa = Engine.get_meta("Mapa")
 
 func _process(_delta):
 	pass
@@ -56,25 +57,29 @@ func selecciona_diez():
 				highscores[j+1] = puntajes_aux
 	highscores.remove(highscores.size() - 1)
 
-func _on_Menu_pressed():
+func guardar():
 	SoundManager.stop_musica_derrota()
 	player.username = get_node("Nombre").text+"|"+Engine.get_meta("nombre_escena_mapa")
 	highscores.append(player)
 	selecciona_diez()
 	save_game(highscores)
-	
-	
-	
 	Network.postHttp(player)
-	
-	
+
+
+func _on_Menu_pressed():
+	guardar()
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Menu.tscn")
-	
 	
 
 func _on_Salir_pressed():
+	#guardar()
 	get_tree().quit()
 
+func _on_Btn_Menu_pressed():
+	guardar()
+	var _aux = get_tree().change_scene("res://producto/assets/scenes/Menu.tscn")
 
 
-
+func _on_Btn_Salir_pressed():
+	#guardar()
+	get_tree().quit()

@@ -5,8 +5,12 @@ func _ready():
 
 func accion():
 	$Sprite.hide()
-	$CollisionShape2D.disabled = true
+	call_deferred("deshabilitar")
 	for _i in range(10):
 		jugador.recibe_ataque(1)
 		yield(get_tree().create_timer(0.5), "timeout")
 	queue_free()
+
+func deshabilitar():
+	$CollisionShape2D.disabled = true
+	

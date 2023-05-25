@@ -1,13 +1,23 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://producto/scripts/MenuDerrota.gd" type="Script" id=2]
-[ext_resource path="res://producto/assets/img/fondos/GameOver.png" type="Texture" id=3]
+[ext_resource path="res://producto/assets/img/game over.png" type="Texture" id=3]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir - copia.png" type="Texture" id=4]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir.png" type="Texture" id=5]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/SALIR.png" type="Texture" id=6]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/SALIR APRETADO.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
 use_filter = true
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -37,15 +47,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -287.0
-margin_top = -254.0
-margin_right = 285.0
-margin_bottom = -167.0
+margin_left = -231.0
+margin_top = -232.0
+margin_right = 222.0
+margin_bottom = -174.0
 custom_fonts/font = SubResource( 3 )
+custom_styles/read_only = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 text = "Ingrese su nombre"
 align = 1
+clear_button_enabled = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer (viejo)" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.972
 anchor_right = 0.5
@@ -57,7 +71,7 @@ margin_bottom = -38.0
 rect_scale = Vector2( 0.966417, 1.20759 )
 alignment = 1
 
-[node name="Menu" type="Button" parent="VBoxContainer" groups=["botones"]]
+[node name="Menu" type="Button" parent="VBoxContainer (viejo)" groups=["botones"]]
 margin_top = 24.0
 margin_right = 568.0
 margin_bottom = 72.0
@@ -66,7 +80,7 @@ rect_pivot_offset = Vector2( -303, -33 )
 custom_fonts/font = SubResource( 1 )
 text = "GUARDAR Y VOLVER"
 
-[node name="Salir" type="Button" parent="VBoxContainer" groups=["botones"]]
+[node name="Salir" type="Button" parent="VBoxContainer (viejo)" groups=["botones"]]
 margin_top = 76.0
 margin_right = 568.0
 margin_bottom = 124.0
@@ -75,5 +89,27 @@ rect_pivot_offset = Vector2( -303, -33 )
 custom_fonts/font = SubResource( 2 )
 text = "SALIR"
 
-[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_Menu_pressed"]
-[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_Salir_pressed"]
+[node name="Btn_Salir" type="TextureButton" parent="."]
+margin_left = 136.0
+margin_top = 487.0
+margin_right = 213.0
+margin_bottom = 564.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+expand = true
+
+[node name="Btn_Menu" type="TextureButton" parent="."]
+margin_left = 32.0
+margin_top = 487.0
+margin_right = 109.0
+margin_bottom = 564.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[connection signal="pressed" from="VBoxContainer (viejo)/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="VBoxContainer (viejo)/Salir" to="." method="_on_Salir_pressed"]
+[connection signal="pressed" from="Btn_Salir" to="." method="_on_Btn_Salir_pressed"]
+[connection signal="pressed" from="Btn_Menu" to="." method="_on_Btn_Menu_pressed"]
