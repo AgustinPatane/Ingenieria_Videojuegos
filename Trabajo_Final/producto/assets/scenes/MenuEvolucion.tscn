@@ -153,6 +153,7 @@ icon_align = 1
 expand_icon = true
 
 [node name="evolucion_1" type="Button" parent="evolucion" groups=["boton_ventana"]]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -266,6 +267,7 @@ custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 
 [node name="evolucion_2" type="Button" parent="evolucion" groups=["boton_ventana"]]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -389,7 +391,6 @@ custom_styles/pressed = SubResource( 12 )
 custom_styles/focus = SubResource( 13 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 14 )
-text = "ATAQUE"
 
 [node name="evolucion_3_1" type="Button" parent="evolucion/evolucion_3"]
 margin_left = 151.0
@@ -402,7 +403,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "CERCA"
 
 [node name="evolucion_3_1_1" type="Button" parent="evolucion/evolucion_3/evolucion_3_1"]
 margin_left = 144.0
@@ -415,7 +415,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "BOMBA"
 
 [node name="evolucion_3_1_2" type="Button" parent="evolucion/evolucion_3/evolucion_3_1"]
 margin_left = 142.0
@@ -428,7 +427,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "PENETRA MURO"
 
 [node name="evolucion_3_2" type="Button" parent="evolucion/evolucion_3"]
 margin_left = 151.0
@@ -441,7 +439,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "ONE SHOOT"
 
 [node name="evolucion_3_2_1" type="Button" parent="evolucion/evolucion_3/evolucion_3_2"]
 margin_left = 142.0
@@ -454,7 +451,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "FRANCOTIRADOR"
 
 [node name="evolucion_3_2_2" type="Button" parent="evolucion/evolucion_3/evolucion_3_2"]
 margin_left = 143.0
@@ -467,7 +463,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "BAZOOKA"
 
 [node name="evolucion_4" type="Button" parent="evolucion"]
 visible = false

@@ -229,22 +229,22 @@ var evolucion_2_2_2 = {
 
 var evolucion_3 = {
 	"nombre": "ataque",
-	"cadencia": 0.75,
-	"vida": 1.5,
-	"velocidad": 0.75,
+	"cadencia": 1,
+	"vida": 1,
+	"velocidad": 1,
 	"damage": 1.5,
-	"rango": 1.5,
-	"arma": "rifle",
+	"rango": 1,
+	"arma": "escopeta",
 	"skin_accesorio" : "rojo"
 }
 
 var evolucion_3_1 = {
 	"nombre": "ataque_cerca",
 	"cadencia": 1,
-	"vida": 3,
-	"velocidad": 0.75,
-	"damage": 1,
-	"rango": 2,
+	"vida": 1,
+	"velocidad": 1,
+	"damage": 2,
+	"rango": 0.8,
 	"arma": "escopeta",
 	"skin_accesorio" : "04"
 }
@@ -273,22 +273,22 @@ var evolucion_3_1_2 = {
 
 var evolucion_3_2 = {
 	"nombre": "ataque_oneshoot",
-	"cadencia": 0.75,
-	"vida": 1.5,
-	"velocidad": 0.75,
+	"cadencia": 0.7,
+	"vida": 1,
+	"velocidad": 0.9,
 	"damage": 2,
-	"rango": 3,
+	"rango": 5,
 	"arma": "francotirador",
 	"skin_accesorio" : "05"
 }
 
 var evolucion_3_2_1 = {
 	"nombre": "ataque_oneshoot_francotirador",
-	"cadencia": 1,
+	"cadencia": 0.8,
 	"vida": 1,
 	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 1,
+	"damage": 3,
+	"rango": 3,
 	"arma": "francotirador",
 	"skin_accesorio" : "15"
 }
@@ -312,8 +312,8 @@ var evolucion_4 = {
 	"cadencia": 1.2,
 	"vida": 1,
 	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
+	"damage": 1.2,
+	"rango": 1.3,
 	"arma": "ametralladora",
 	"skin_accesorio" : "amarillo"
 }
@@ -324,7 +324,7 @@ var evolucion_4_1 = {
 	"vida": 1,
 	"velocidad": 1,
 	"damage": 1,
-	"rango": 1,
+	"rango": 2,
 	"arma": "ametralladora",
 	"skin_accesorio" : "06"
 }
@@ -334,7 +334,7 @@ var evolucion_4_1_1 = {
 	"cadencia": 1.2,
 	"vida": 1,
 	"velocidad": 1,
-	"damage": 4,
+	"damage": 0.4,
 	"rango": 1,
 	"arma": "ametralladora",
 	"skin_accesorio" : "16"
@@ -342,22 +342,22 @@ var evolucion_4_1_1 = {
 
 var evolucion_4_1_2 = {
 	"nombre": "tiro_dispersion_360",
-	"cadencia": 1,
+	"cadencia": 1.5,
 	"vida": 1,
 	"velocidad": 1,
-	"damage": 2,
-	"rango": 3,
+	"damage": 0.3,
+	"rango": 2,
 	"arma": "ametralladora",
 	"skin_accesorio" : "26"
 }
 
 var evolucion_4_2 = {
 	"nombre": "tiro_cadencia",
-	"cadencia": 1.1,
-	"vida": 1.5,
+	"cadencia": 1.5,
+	"vida": 1,
 	"velocidad": 1,
-	"damage": 2,
-	"rango": 3,
+	"damage": 1,
+	"rango": 1,
 	"arma": "ametralladora",
 	"skin_accesorio" : "07"
 }
@@ -367,7 +367,7 @@ var evolucion_4_2_1 = {
 	"cadencia": 1,
 	"vida": 1,
 	"velocidad": 1,
-	"damage": 3,
+	"damage": 1.5,
 	"rango": 1.5,
 	"arma": "ak-47",
 	"skin_accesorio" : "17"
@@ -375,10 +375,10 @@ var evolucion_4_2_1 = {
 
 var evolucion_4_2_2 = {
 	"nombre": "tiro_cadencia_infinita",
-	"cadencia": 4,
+	"cadencia": 2,
 	"vida": 1,
 	"velocidad": 1,
-	"damage": 0.2,
+	"damage": 0.8,
 	"rango": 1,
 	"arma": "ametralladora",
 	"skin_accesorio" : "27"
@@ -736,7 +736,9 @@ func _on_evolucion_4_2_2_pressed():
 
 
 
-func _on_evolucion_3_mouse_entered():
+func _on_evolucion_3_mouse_entered():	
+	actualizar_sprite_ventana("","escopeta")
+	ventana_actualizar("FORZAMAX","Incrementas tu fuerza, cada impacto que reciben tus enemigos son mas influyentes.","+ FUERZA")
 	pass # Replace with function body.
 
 
@@ -745,6 +747,8 @@ func _on_evolucion_3_mouse_exited():
 
 
 func _on_evolucion_3_1_mouse_entered():
+	actualizar_sprite_ventana("","escopeta")
+	ventana_actualizar("MAX INTELIGENTE","Aprendes a provocar ataques criticos a poca distnacia.","+ ATAQUE EN - RANGO")
 	pass # Replace with function body.
 
 
@@ -753,6 +757,8 @@ func _on_evolucion_3_1_mouse_exited():
 
 
 func _on_evolucion_3_1_1_mouse_entered():
+	actualizar_sprite_ventana("","escopeta")
+	ventana_actualizar("LA BOMBA DE MAX","Has aprendido a fabricar bombas, ahora, queda en ti saber usarlas.","PODER DE RADIO EXPLOSIVO")
 	pass # Replace with function body.
 
 
@@ -761,6 +767,8 @@ func _on_evolucion_3_1_1_mouse_exited():
 
 
 func _on_evolucion_3_1_2_mouse_entered():
+	actualizar_sprite_ventana("","escopeta")
+	ventana_actualizar("LA LOCURA DE MAX","Tus ataques ahora no respetan las leyes de la fisica, pueden atravesar obstaculos.","ATAQUE PENETRANTE")
 	pass # Replace with function body.
 
 
@@ -769,6 +777,8 @@ func _on_evolucion_3_1_2_mouse_exited():
 
 
 func _on_evolucion_3_2_mouse_entered():
+	actualizar_sprite_ventana("","rifle")
+	ventana_actualizar("OJO DE AGUILA","Involucras todas tus fuerzas en tus disparos, provocas impactos letales.","+ ATAQUE EN + RANGO")
 	pass # Replace with function body.
 
 
@@ -777,6 +787,8 @@ func _on_evolucion_3_2_mouse_exited():
 
 
 func _on_evolucion_3_2_1_mouse_entered():
+	actualizar_sprite_ventana("","francotirador")
+	ventana_actualizar("EL FRANCOTIRADOR","Has aprendido a usar un francotirador, prueba que tan letal es.","ATAQUE LETAL")
 	pass # Replace with function body.
 
 
@@ -785,6 +797,8 @@ func _on_evolucion_3_2_1_mouse_exited():
 
 
 func _on_evolucion_3_2_2_mouse_entered():
+	actualizar_sprite_ventana("","bazooka")
+	ventana_actualizar("MAX BAZOOKAS","Has aprendido a usar una bazooka, cuidado con las explosiones letales.","ATAQUES EXPLOSIVOS")
 	pass # Replace with function body.
 
 
@@ -793,6 +807,8 @@ func _on_evolucion_3_2_2_mouse_exited():
 
 
 func _on_evolucion_4_mouse_entered():
+	actualizar_sprite_ventana("","ametralladora")
+	ventana_actualizar("EXPERTO EN ARMAS","Empiezas tu camino en aprender el uso de armas, mejorar los rangos de disparo y la cantidad","+ CADENCIA + RANGO")
 	pass # Replace with function body.
 
 
@@ -801,6 +817,8 @@ func _on_evolucion_4_mouse_exited():
 
 
 func _on_evolucion_4_1_mouse_entered():
+	actualizar_sprite_ventana("","ametralladora")
+	ventana_actualizar("LA LLUVIA DE PLOMO","Controlas tus disapros y aprendes a disparar mas de una balas a la vez gracias a tu nueva ametralladora.","DISPERSION DE DISPAROS")
 	pass # Replace with function body.
 
 
@@ -809,6 +827,8 @@ func _on_evolucion_4_1_mouse_exited():
 
 
 func _on_evolucion_4_1_1_mouse_entered():
+	actualizar_sprite_ventana("","ametralladora")
+	ventana_actualizar("REBOTES MORTALES","Modificas tus balas con el objetivo de que estas reboten entre enemigos. Puede ser letal para ellos.","REBOTE DE BALAS")
 	pass # Replace with function body.
 
 
@@ -817,6 +837,8 @@ func _on_evolucion_4_1_1_mouse_exited():
 
 
 func _on_evolucion_4_1_2_mouse_entered():
+	actualizar_sprite_ventana("","ametralladora")
+	ventana_actualizar("FUEGOS ARTIFICALES","Has llegado a un nivel tan alto de manejo del arma que puedes disparar a todo tu alrededor.","DISPARO EN 360 GRADOS")
 	pass # Replace with function body.
 
 
@@ -825,6 +847,8 @@ func _on_evolucion_4_1_2_mouse_exited():
 
 
 func _on_evolucion_4_2_mouse_entered():
+	actualizar_sprite_ventana("","ametralladora")
+	ventana_actualizar("EL TREN DE PLOMO","Aprendes a realizar un disparo aturdidor con muchas balas a la vez.","+ CADENCIA")
 	pass # Replace with function body.
 
 
@@ -833,6 +857,8 @@ func _on_evolucion_4_2_mouse_exited():
 
 
 func _on_evolucion_4_2_1_mouse_entered():
+	actualizar_sprite_ventana("","ametralladora")
+	ventana_actualizar("DOBLE PESADILLA","Obtienes una nueva arma gracias a tu habilidad de saber como fabricarlas.","DOBLE ARMA")
 	pass # Replace with function body.
 
 
@@ -841,6 +867,8 @@ func _on_evolucion_4_2_1_mouse_exited():
 
 
 func _on_evolucion_4_2_2_mouse_entered():
+	actualizar_sprite_ventana("","ametralladora")
+	ventana_actualizar("RAFAGA DE PLOMO","Obtienes el poder de tener una cadencia muy alta temporal cada ciertos segundos.","PODER DE CADENCIA INFINITA")
 	pass # Replace with function body.
 
 
