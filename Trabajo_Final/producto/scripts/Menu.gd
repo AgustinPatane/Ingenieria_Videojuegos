@@ -11,8 +11,10 @@ onready var btn_contrarreloj = get_node("Menu_previo/modo_Contrarreloj")
 
 var prev_volumen = -20
 var mapa_actual = 0
-var cantidad_de_mapas = (countFilesInFolder("res://producto/assets/img/Mini_mapas/") - 2)/2
-var mapas = ["MapaArena","MapaLuna","MapaLava"]
+
+var mapas = ["MapaArena","MapaLuna","MapaLava","MapaMadera","MapaArcilla"]
+var cantidad_de_mapas = mapas.size()
+
 
 var registro_tienda = {
 	"nombre":"",
@@ -98,10 +100,9 @@ func _on_btn_mapa_izq_pressed():
 
 func actualiza_minimapa():
 	get_node("Menu_previo/Mapas/FondoMapas/Mapa").texture = load("res://producto/assets/img/Mini_mapas/"+str(mapa_actual)+".png")
-	if mapa_actual != cantidad_de_mapas-1:
-		get_node("Menu_previo/Btn_ready").visible = true
-	else:
-		get_node("Menu_previo/Btn_ready").visible = false
+	get_node("Menu_previo/Btn_ready").visible = true
+	
+		
 
 
 func _on_Btn_ready_pressed():
