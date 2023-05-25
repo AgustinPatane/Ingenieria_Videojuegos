@@ -78,7 +78,7 @@ var evolucion_1 = {
 	"nombre": "movimiento",
 	"cadencia": 1,
 	"vida": 1,
-	"velocidad": 1.5,
+	"velocidad": 1.3,
 	"damage": 1,
 	"rango": 1,
 	"arma": "ak-47",
@@ -89,9 +89,9 @@ var evolucion_1_1 = {
 	"nombre": "movimiento_propio",
 	"cadencia": 1,
 	"vida": 1,
-	"velocidad": 1.3,
+	"velocidad": 1.5,
 	"damage": 1,
-	"rango": 1.5,
+	"rango": 1,
 	"arma": "ak-47",
 	"skin_accesorio" : "00"
 }
@@ -101,7 +101,7 @@ var evolucion_1_1_2 = {
 	"vida": 1,
 	"velocidad": 1,
 	"damage": 1,
-	"rango": 1.3,
+	"rango": 1,
 	"arma": "ak-47",
 	"skin_accesorio" : "10"
 }
@@ -109,7 +109,7 @@ var evolucion_1_1_1 = {
 	"nombre": "movimiento_propio_nitro",
 	"cadencia": 1,
 	"vida": 1,
-	"velocidad": 1.1,
+	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
 	"arma": "ak-47",
@@ -128,10 +128,10 @@ var evolucion_1_2 = {
 var evolucion_1_2_1 = {
 	"nombre": "movimiento_enemigos_ondaralentizadora",
 	"cadencia": 1,
-	"vida": 0.7,
-	"velocidad": 1.2,
+	"vida": 1,
+	"velocidad": 1,
 	"damage": 1,
-	"rango": 0.8,
+	"rango": 1,
 	"arma": "ak-47",
 	"skin_accesorio" : "11"
 }
@@ -152,7 +152,7 @@ var evolucion_2 = {
 	"nombre": "salud",
 	"cadencia": 1,
 	"vida": 2,
-	"velocidad": 0.9,
+	"velocidad": 0.8,
 	"damage": 1,
 	"rango": 1,
 	"arma": "rifle",
@@ -162,8 +162,8 @@ var evolucion_2 = {
 var evolucion_2_1 = {
 	"nombre": "salud_masvida",
 	"cadencia": 1,
-	"vida": 2,
-	"velocidad": 1,
+	"vida": 2.5,
+	"velocidad": 0.9,
 	"damage": 1,
 	"rango": 1,
 	"arma": "escopeta",
@@ -173,7 +173,7 @@ var evolucion_2_1 = {
 var evolucion_2_1_1 = {
 	"nombre": "salud_masvida_tokenvidaextra",
 	"cadencia": 1,
-	"vida": 1.2,
+	"vida": 1,
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
@@ -184,7 +184,7 @@ var evolucion_2_1_1 = {
 var evolucion_2_1_2 = {
 	"nombre": "salud_masvida_regeneracion",
 	"cadencia": 1,
-	"vida": 1.2,
+	"vida": 1,
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
@@ -558,94 +558,94 @@ func _on_evolucion_2_2_2_pressed():
 
 func _on_evolucion_mouse_entered():
 	actualizar_sprite_ventana("inicios","arma_1")
-	ventana_actualizar("INICIOS","El joven Max, antes de empezar a aniquilar monstruos, su historia recien ha empezado.","GANAS DE MATAR")
+	ventana_actualizar("INICIOS","El joven Max, antes de empezar su enfrentamiento con los monstruos, su historia recien ha empezado.","GANAS DE MATAR")
 
 func _on_evolucion_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_mouse_entered():
 	actualizar_sprite_ventana("el_rayo","ametralladora")
-	ventana_actualizar("EL RAYO","Has acabado con muchos monstruos, quienes te han inculcado en tu ADN un gen que te permite realizar movimientos extra veloces.","+ VELOCIDAD")
+	ventana_actualizar("MAX AGIL","Has acabado con muchos monstruos, quienes te han inculcado en tu ADN un gen con el que aprenderas a controlar el movimiento de los seres vivos","+ VELOCIDAD")
 
 func _on_evolucion_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_2_mouse_entered():
 	actualizar_sprite_ventana("el_coloso","escopeta")
-	ventana_actualizar("EL COLOSO","Has aguantado y sobrevivido de muchos seres peligrosos, no solo aumentas tu resistencia a ataques sino que ahora produces mucho mas impacto.","+ ATAQUE   + VIDA")
+	ventana_actualizar("EL COLOSO","Has aguantado y sobrevivido de muchos seres peligrosos, aumentas tu resistencia a ataques.","+ VIDA")
 
 func _on_evolucion_2_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_1_mouse_entered():
-	ventana_actualizar("LA LLUVIA DE PLOMO","Has adquirido experiencia en el manejo de tu arma, ahora disparas muchas balasd.","+ DISPAROS")
+	ventana_actualizar("EL VELOCISTA MAX","Luego de tanto desplazamiento luchando contra los monstruos, has aprendido a moverte mejor.","+ VELOCIDAD")
 
 func _on_evolucion_1_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_2_mouse_entered():
-	ventana_actualizar("FLASHMAX","Te desplazas a tan altas velocidades que te vuelves invisible cada unos segundos","INVISIBILIDAD")
+	ventana_actualizar("EL RALENTIZADOR MAX","Has afectado el terreno de movimiento, ahora logras que tus enemigos se muevan con menos velocidad.","ENEMIGOS MAS LENTOS")
 
 func _on_evolucion_1_2_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_2_1_mouse_entered():
-	ventana_actualizar("DISTORSIONADOR DE PROYECTILES","Has retocado tu arma y ahora disparas varias balas a la vez.","MULTPLES BALAS")
+	ventana_actualizar("EL TANQUE MAX","Has pasado por una mutacion en tu ADN genetico que provoca que tengas muchas mas vida.","++ VIDA")
 
 func _on_evolucion_2_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_2_2_mouse_entered():
-	ventana_actualizar("OJO DE AGUILA","Aprendiste a apuntar como un francotirador profesional, un disparo, uno menos.","DISPARO MORTAL - ONE SHOOT")
+	ventana_actualizar("LA ROCA MAX","Has mutado con tu resistencia, ahora tienes mucho mas aguante a los ataques enemigos.","+ RESISTENCIA")
 
 func _on_evolucion_2_2_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_1_2_mouse_entered():
-	ventana_actualizar("EL DOBLE GATILLO","Has utilizado el gen de clonación artifical para clonar tu arma, ahora tienes dos armas idénticas a tu favor.","DOBLE ARMA")
+	ventana_actualizar("FANTASMAX","Luego de haber aprendido a manejar tu velocidad, has saltado a otro nivel: ahora puedes pasar por encima de lo que quieras, como un fantasma.","ATRAVIESAS OBSTACULOS")
 
 func _on_evolucion_1_1_2_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_1_1_mouse_entered():
-	ventana_actualizar("LA RULETA 360","Obtienes el poder de controlar tus balas, ahora ellas vuelven a tí.","BALAS RETORNANTES")
+	ventana_actualizar("NITROMAX","Obtienes el poder de tener una super velocidad temporal cuando lo desees cada cierto tiempo.","PODER DE SUPER VELOCIDAD")
 
 func _on_evolucion_1_1_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_2_2_mouse_entered():
-	ventana_actualizar("BAJO CERO LETAL","Mutaste, ahora controlas tu cuerpo y puedes teletransportarte 5 metros hacia adelante cada 10 segundos.","TELETRANSPORTE")
+	ventana_actualizar("EL CONGELADOR AMX","Obtienes el pdoer de congelar temporalmente a tus enemigos cada cierto tiempo.","PODER DE CONGELAMIENTO")
 
 func _on_evolucion_1_2_2_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_1_2_1_mouse_entered():
-	ventana_actualizar("EL MEXICANO FURIOSO","Sufres de un cambio en tu genoma humano y ahora estás compuesto de materia mezclada de restos de monstruos. Ahora, atraviesas muros y obstáculos.","ATRAVIESA MUROS Y OBSTÁCULOS")
+	ventana_actualizar("LA AURA RALENTIZADORA","Has comenzado a generar moleculas que provocan que tus enemigos al acercarte a ti se muevan mucho mas lento","RADIO DE RALENTIZACION")
 
 func _on_evolucion_1_2_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_2_1_1_mouse_entered():
-	ventana_actualizar("DOBLE PESADILLA","algo algo algo.","REBOTE DE BALAS")
+	ventana_actualizar("MAXUSCRISTO","Un milagro ocurrira si mueres, probablemente logres un unica resurrecciona, aprovechala.","VIDA EXTRA")
 
 func _on_evolucion_2_1_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_2_1_2_mouse_entered():
-	ventana_actualizar("LA RULETA MORTAL","algo algo algo.","DISPARO EN 360 GRADOS")
+	ventana_actualizar("MAX REGENERATIVO","Han mutado todos tus sistemas, ahora logras regenrar tu vida cada cierto tiempo.","REGENERACION DE VIDA")
 
 func _on_evolucion_2_1_2_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_2_2_1_mouse_entered():
-	ventana_actualizar("EL PENETRADOR","algo algo algo.","DISPARO PENETRANTE")
+	ventana_actualizar("MAX INMUNE","Obtienes el poder de ser inmune temporalmente cada cierto tiempo.","PODER DE ESCUDO")
 
 func _on_evolucion_2_2_1_mouse_exited():
 	ventana_por_defecto()
 
 func _on_evolucion_2_2_2_mouse_entered():
 	actualizar_sprite_ventana("el_hombre_explosivos","bazooka")
-	ventana_actualizar("EL HOMBRE EXPLOSIVOS","algo algo algo.","BAZOOKA")
+	ventana_actualizar("LA RESISTENCIA","Cuando te queda poca vida, los ataques enemigos te afectan menos.","+ RESISTENCIA")
 
 func _on_evolucion_2_2_2_mouse_exited():
 	ventana_por_defecto()

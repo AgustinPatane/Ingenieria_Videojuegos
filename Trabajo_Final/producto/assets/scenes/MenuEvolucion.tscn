@@ -149,7 +149,6 @@ custom_styles/pressed = SubResource( 12 )
 custom_styles/focus = SubResource( 13 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 14 )
-text = "INICIOS"
 icon_align = 1
 expand_icon = true
 
@@ -169,7 +168,6 @@ custom_styles/focus = SubResource( 13 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 14 )
 action_mode = 0
-text = "MOVIMIENTO"
 
 [node name="evolucion_1_1" type="Button" parent="evolucion/evolucion_1" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -187,7 +185,6 @@ custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
 action_mode = 0
-text = "PROPIO"
 
 [node name="evolucion_1_1_1" type="Button" parent="evolucion/evolucion_1/evolucion_1_1" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -204,7 +201,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "NITRO"
 
 [node name="evolucion_1_1_2" type="Button" parent="evolucion/evolucion_1/evolucion_1_1" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -220,7 +216,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "ATRAVESAR"
 
 [node name="evolucion_1_2" type="Button" parent="evolucion/evolucion_1" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -237,7 +232,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "ENEMIGOS"
 
 [node name="evolucion_1_2_1" type="Button" parent="evolucion/evolucion_1/evolucion_1_2" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -254,7 +248,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "ONDA LENTA"
 
 [node name="evolucion_1_2_2" type="Button" parent="evolucion/evolucion_1/evolucion_1_2" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -271,10 +264,8 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "HIELO"
 
 [node name="evolucion_2" type="Button" parent="evolucion" groups=["boton_ventana"]]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -289,7 +280,6 @@ custom_styles/pressed = SubResource( 12 )
 custom_styles/focus = SubResource( 13 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 14 )
-text = "SALUD"
 
 [node name="evolucion_2_1" type="Button" parent="evolucion/evolucion_2" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -306,7 +296,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "MAS VIDA"
 
 [node name="evolucion_2_1_1" type="Button" parent="evolucion/evolucion_2/evolucion_2_1" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -323,7 +312,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "VIDA EXTRA"
 
 [node name="evolucion_2_1_2" type="Button" parent="evolucion/evolucion_2/evolucion_2_1" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -340,7 +328,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "REGENERACION"
 
 [node name="evolucion_2_2" type="Button" parent="evolucion/evolucion_2" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -357,7 +344,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "MAS INMUNE"
 
 [node name="evolucion_2_2_1" type="Button" parent="evolucion/evolucion_2/evolucion_2_2" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -374,7 +360,6 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "ESCUDO"
 
 [node name="evolucion_2_2_2" type="Button" parent="evolucion/evolucion_2/evolucion_2_2" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -391,9 +376,9 @@ custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 21 )
 custom_styles/normal = SubResource( 18 )
-text = "RESILIENTE"
 
 [node name="evolucion_3" type="Button" parent="evolucion"]
+visible = false
 margin_left = 157.0
 margin_top = -135.0
 margin_right = 277.0
@@ -485,6 +470,7 @@ custom_styles/normal = SubResource( 18 )
 text = "BAZOOKA"
 
 [node name="evolucion_4" type="Button" parent="evolucion"]
+visible = false
 margin_left = 159.0
 margin_top = 133.0
 margin_right = 279.0
