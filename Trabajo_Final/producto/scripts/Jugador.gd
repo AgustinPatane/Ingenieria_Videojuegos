@@ -17,9 +17,10 @@ onready var timer_con_poder = get_node("Poder_Especial_/timer_con_poder")
 onready var sprite_poder = get_node("Poder_Especial_/sprite_poder")
 onready var efecto_Congelacion = get_node("Efecto_Congelacion")
 onready var timer_regeneracion = get_node("Timer_Regeneracion")
-onready var skin_bandera = get_node("Accesorio_Bandera")
-onready var animacion_bandera = get_node("Accesorio_Bandera/Movimiento_Bandera")
-onready var skin_gorro = get_node("Accesorio_Gorro")
+onready var sprite_jugador = get_node("Jugador_Sprite")
+onready var skin_bandera = get_node("Jugador_Sprite/Accesorio_Bandera")
+onready var animacion_bandera = get_node("Jugador_Sprite/Accesorio_Bandera/Movimiento_Bandera")
+onready var skin_gorro = get_node("Jugador_Sprite/Accesorio_Gorro")
 # -------------------------------------------------------------------------------------
 # ----------------------------------- VARIABLES ---------------------------------------
 # -------------------------------------------------------------------------------------
@@ -103,15 +104,15 @@ func aumenta_Area_recoleccion(value):
 # ---------------------------------- MOVIMIENTO ---------------------------------------
 # -------------------------------------------------------------------------------------
 
+##sprite_jugador.set_flip_h(valor_booleano)
+
 func _physics_process(delta):
 	z_index = position.y + 1200
 	motion = Vector2(0,0)
 	if Input.is_action_pressed("ui_right"):
 		motion.x = 100
-		get_node("Jugador_Sprite").set_flip_h(false)
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -100
-		get_node("Jugador_Sprite").set_flip_h(true)
 	if Input.is_action_pressed("ui_up"):
 		motion.y = -100
 	elif Input.is_action_pressed("ui_down"):
@@ -126,6 +127,13 @@ func _physics_process(delta):
 	if Input.is_action_pressed("run") and puede_correr : SPEED = vel_run
 	else: SPEED = vel_walk
 	motion = move_and_slide(motion*delta*SPEED)
+	
+	if sprite_jugador.flip_h == true:
+		skin_bandera.position.x = 40
+		skin_bandera.set_flip_h(false) 
+	else:
+		skin_bandera.position.x = -40
+		skin_bandera.set_flip_h(true) 
 	
 	var slide_count = get_slide_count()
 	if slide_count > 0:
@@ -148,7 +156,7 @@ func _physics_process(delta):
 			primer_toque = false
 			parar_timer()
 		pass
-	
+
 # -------------------------------------------------------------------------------------
 # ---------------------------- MANEJO ATRIBUTOS PERSONAJE -----------------------------
 # -------------------------------------------------------------------------------------
@@ -343,7 +351,7 @@ func actualiza_atributos(atributos, evol):
 func actualizo_skin_accesorios(atributos):
 	if skin_bandera.visible == false:
 		skin_bandera.visible = true
-		var ruta = load("res://producto/assets/img/Accesorios/level_1/amarillo.png")
+		var ruta = load("res://producto/assets/img/Accesorios/level_1/"+atributos.skin_accesorio+".png")
 		skin_bandera.set_texture(ruta)
 		animacion_bandera.play("go")
 	else:

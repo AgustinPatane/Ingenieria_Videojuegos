@@ -81,7 +81,8 @@ var evolucion_1 = {
 	"velocidad": 1.5,
 	"damage": 1,
 	"rango": 1,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "azul"
 }
 
 var evolucion_1_1 = {
@@ -91,7 +92,8 @@ var evolucion_1_1 = {
 	"velocidad": 1.3,
 	"damage": 1,
 	"rango": 1.5,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "verde"
 }
 var evolucion_1_1_2 = {
 	"nombre": "movimiento_propio_atravesarmuros",
@@ -100,7 +102,8 @@ var evolucion_1_1_2 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1.3,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "verde"
 }
 var evolucion_1_1_1 = {
 	"nombre": "movimiento_propio_nitro",
@@ -109,7 +112,8 @@ var evolucion_1_1_1 = {
 	"velocidad": 1.1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "verde"
 }
 var evolucion_1_2 = {
 	"nombre": "movimiento_enemigos",
@@ -118,7 +122,8 @@ var evolucion_1_2 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "verde"
 }
 var evolucion_1_2_1 = {
 	"nombre": "movimiento_enemigos_ondaralentizadora",
@@ -127,7 +132,8 @@ var evolucion_1_2_1 = {
 	"velocidad": 1.2,
 	"damage": 1,
 	"rango": 0.8,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "verde"
 }
 var evolucion_1_2_2 = {
 	"nombre": "movimiento_enemigos_congelacion",
@@ -136,7 +142,8 @@ var evolucion_1_2_2 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "verde"
 }
 
 # EVOLUCION 2 : SALUD / VIDA
@@ -148,7 +155,8 @@ var evolucion_2 = {
 	"velocidad": 0.9,
 	"damage": 1,
 	"rango": 1,
-	"arma": "rifle"
+	"arma": "rifle",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_2_1 = {
@@ -158,7 +166,8 @@ var evolucion_2_1 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "escopeta"
+	"arma": "escopeta",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_2_1_1 = {
@@ -168,7 +177,8 @@ var evolucion_2_1_1 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "escopeta"
+	"arma": "escopeta",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_2_1_2 = {
@@ -178,7 +188,8 @@ var evolucion_2_1_2 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "escopeta"
+	"arma": "escopeta",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_2_2 = {
@@ -188,7 +199,8 @@ var evolucion_2_2 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "escopeta"
+	"arma": "escopeta",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_2_2_1 = {
@@ -198,7 +210,8 @@ var evolucion_2_2_1 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "escopeta"
+	"arma": "escopeta",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_2_2_2 = {
@@ -208,7 +221,8 @@ var evolucion_2_2_2 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "escopeta"
+	"arma": "escopeta",
+	"skin_accesorio" : "verde"
 }
 
 # EVOLUCION 3 : ATAQUE
@@ -220,7 +234,8 @@ var evolucion_3 = {
 	"velocidad": 0.75,
 	"damage": 1.5,
 	"rango": 1.5,
-	"arma": "rifle"
+	"arma": "rifle",
+	"skin_accesorio" : "rojo"
 }
 
 var evolucion_3_1 = {
@@ -230,7 +245,8 @@ var evolucion_3_1 = {
 	"velocidad": 0.75,
 	"damage": 1,
 	"rango": 2,
-	"arma": "escopeta"
+	"arma": "escopeta",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_3_1_1 = {
@@ -240,7 +256,8 @@ var evolucion_3_1_1 = {
 	"velocidad": 1,
 	"damage": 1.5,
 	"rango": 0.75,
-	"arma": "escopeta"
+	"arma": "escopeta",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_3_1_2 = {
@@ -250,7 +267,8 @@ var evolucion_3_1_2 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "escopeta"
+	"arma": "escopeta",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_3_2 = {
@@ -260,7 +278,8 @@ var evolucion_3_2 = {
 	"velocidad": 0.75,
 	"damage": 2,
 	"rango": 3,
-	"arma": "francotirador"
+	"arma": "francotirador",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_3_2_1 = {
@@ -270,7 +289,8 @@ var evolucion_3_2_1 = {
 	"velocidad": 1,
 	"damage": 1.5,
 	"rango": 1,
-	"arma": "francotirador"
+	"arma": "francotirador",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_3_2_2 = {
@@ -280,7 +300,8 @@ var evolucion_3_2_2 = {
 	"velocidad": 1,
 	"damage": 2,
 	"rango": 1,
-	"arma": "bazooka"
+	"arma": "bazooka",
+	"skin_accesorio" : "verde"
 }
 
 
@@ -293,7 +314,8 @@ var evolucion_4 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "ametralladora"
+	"arma": "ametralladora",
+	"skin_accesorio" : "amarillo"
 }
 
 var evolucion_4_1 = {
@@ -303,7 +325,8 @@ var evolucion_4_1 = {
 	"velocidad": 1,
 	"damage": 1,
 	"rango": 1,
-	"arma": "ametralladora"
+	"arma": "ametralladora",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_4_1_1 = {
@@ -313,7 +336,8 @@ var evolucion_4_1_1 = {
 	"velocidad": 1,
 	"damage": 4,
 	"rango": 1,
-	"arma": "ametralladora"
+	"arma": "ametralladora",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_4_1_2 = {
@@ -323,7 +347,8 @@ var evolucion_4_1_2 = {
 	"velocidad": 1,
 	"damage": 2,
 	"rango": 3,
-	"arma": "ametralladora"
+	"arma": "ametralladora",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_4_2 = {
@@ -333,7 +358,8 @@ var evolucion_4_2 = {
 	"velocidad": 1,
 	"damage": 2,
 	"rango": 3,
-	"arma": "ametralladora"
+	"arma": "ametralladora",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_4_2_1 = {
@@ -343,7 +369,8 @@ var evolucion_4_2_1 = {
 	"velocidad": 1,
 	"damage": 3,
 	"rango": 1.5,
-	"arma": "ak-47"
+	"arma": "ak-47",
+	"skin_accesorio" : "verde"
 }
 
 var evolucion_4_2_2 = {
@@ -353,7 +380,8 @@ var evolucion_4_2_2 = {
 	"velocidad": 1,
 	"damage": 0.2,
 	"rango": 1,
-	"arma": "ametralladora"
+	"arma": "ametralladora",
+	"skin_accesorio" : "verde"
 }
 
 # Called when the node enters the scene tree for the first time.
