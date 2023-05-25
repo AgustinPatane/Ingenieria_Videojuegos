@@ -1,11 +1,11 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/soldadoarg_buy.png" type="Texture" id=1]
 [ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/pela_buy.png" type="Texture" id=2]
 [ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/nba_buy.png" type="Texture" id=3]
 [ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/rambo_buy.png" type="Texture" id=4]
 [ext_resource path="res://producto/scripts/Tienda.gd" type="Script" id=5]
-[ext_resource path="res://producto/assets/fonts/Scream_al.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://producto/assets/img/tienda/coin.png" type="Texture" id=7]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Marco.png" type="Texture" id=8]
 [ext_resource path="res://producto/assets/img/tienda/seleccionados/pela_buy.png" type="Texture" id=9]
@@ -32,21 +32,16 @@
 [ext_resource path="res://producto/assets/img/tienda/arrow.png" type="Texture" id=30]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir.png" type="Texture" id=31]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir - copia.png" type="Texture" id=32]
+[ext_resource path="res://producto/assets/img/fondo.png" type="Texture" id=33]
+[ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=34]
 
-[sub_resource type="DynamicFont" id=9]
-size = 32
-use_filter = true
-extra_spacing_top = 10
+[sub_resource type="DynamicFont" id=12]
 font_data = ExtResource( 6 )
-
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0.533333, 0, 0.105882, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.533333, 0, 0.105882, 1 )
 
 [sub_resource type="DynamicFont" id=7]
-outline_color = Color( 1, 0.776471, 0.180392, 1 )
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=8]
@@ -70,42 +65,39 @@ margin_bottom = 8.0
 size_flags_horizontal = 2
 script = ExtResource( 5 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -11.0
+texture = ExtResource( 33 )
+expand = true
+stretch_mode = 1
+flip_h = true
+
 [node name="Marco" type="TextureRect" parent="."]
 margin_left = 23.0
 margin_top = 25.0
 margin_right = 999.0
 margin_bottom = 563.0
-texture = ExtResource( 8 )
+rect_scale = Vector2( 1.01306, 1.03 )
+texture = ExtResource( 34 )
 expand = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 502, 333 )
+scale = Vector2( 1.53864, 1.60351 )
+texture = ExtResource( 8 )
 
 [node name="Boton_salir" type="TextureButton" parent="."]
 pause_mode = 2
-margin_left = 56.0
-margin_top = 71.0
-margin_right = 126.0
-margin_bottom = 141.0
+margin_left = 84.0
+margin_top = 69.0
+margin_right = 154.0
+margin_bottom = 139.0
 texture_normal = ExtResource( 31 )
 texture_pressed = ExtResource( 32 )
 texture_hover = ExtResource( 32 )
 expand = true
-
-[node name="volver_a_menu" type="Button" parent="." groups=["botones"]]
-visible = false
-margin_left = 26.0
-margin_top = 15.0
-margin_right = 273.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 0, 40 )
-rect_pivot_offset = Vector2( -303, -33 )
-custom_colors/font_color_focus = Color( 0.482353, 0.956863, 0.364706, 1 )
-custom_colors/font_color = Color( 1, 0.764706, 0.137255, 1 )
-custom_colors/font_color_hover = Color( 0.619608, 0.980392, 0.298039, 1 )
-custom_colors/font_color_pressed = Color( 0.258824, 1, 0, 1 )
-custom_fonts/font = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
-text = "VOLVER"
-icon_align = 1
-expand_icon = true
 
 [node name="skins_jugador" type="Control" parent="."]
 anchor_left = 0.5
@@ -125,6 +117,7 @@ margin_left = 238.0
 margin_top = -14.0
 margin_right = -391.0
 margin_bottom = 17.0
+custom_fonts/font = SubResource( 12 )
 custom_styles/normal = SubResource( 6 )
 align = 1
 valign = 1
@@ -133,11 +126,11 @@ valign = 1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 341.0
-margin_top = -14.0
-margin_right = -249.0
-margin_bottom = 17.0
-custom_colors/font_color = Color( 1, 0.764706, 0.137255, 1 )
+margin_left = 339.0
+margin_top = -12.0
+margin_right = -251.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
 text = "COMPRAR"
@@ -146,11 +139,11 @@ text = "COMPRAR"
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 293.0
-margin_top = 22.0
-margin_right = -297.0
-margin_bottom = 53.0
-custom_colors/font_color = Color( 1, 0.764706, 0.137255, 1 )
+margin_left = 291.0
+margin_top = 24.0
+margin_right = -299.0
+margin_bottom = 55.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
 text = "EQUIPAR"
@@ -299,7 +292,7 @@ margin_left = -120.5
 margin_top = 83.0
 margin_right = 104.5
 margin_bottom = 188.0
-custom_colors/font_color = Color( 0.533333, 0, 0.105882, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "TIENDA
 "
@@ -325,7 +318,6 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 
 [connection signal="pressed" from="Boton_salir" to="." method="_on_Boton_salir_pressed"]
-[connection signal="pressed" from="volver_a_menu" to="." method="_on_volver_a_menu_pressed"]
 [connection signal="pressed" from="skins_jugador/comprar" to="." method="_on_comprar_pressed"]
 [connection signal="pressed" from="skins_jugador/equipar" to="." method="_on_equipar_pressed"]
 [connection signal="pressed" from="skins_jugador/skins_de_colores/Yellow" to="." method="_on_Yellow_pressed"]
