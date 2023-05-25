@@ -8,10 +8,10 @@ extends Node
 
 
 
-const HOST = "localhost"
-const PORT = 3000
+const HOST = "cecom112.mdp.edu.ar"
+const PORT = 443
 const BASIC_HEADERS = ["User-Agent: GAME/1.0", "Accept: */*"]
-const ROUTE = "/funciones.php"
+const ROUTE = "/franco/maxandmonsters.php"
 
 # Connection variables
 var http = null
@@ -21,7 +21,7 @@ var flag_conexion = false
 func init_network():
 	if flag_conexion:
 		http = HTTPClient.new()
-		http.connect_to_host(HOST, PORT)
+		http.connect_to_host(HOST, PORT,true)
 		# Wait until resolved and connected
 		while http.get_status() == HTTPClient.STATUS_CONNECTING or http.get_status() == HTTPClient.STATUS_RESOLVING:
 			http.poll()
@@ -70,7 +70,7 @@ func getHttp(route):
 	init_network()
 	var headers = BASIC_HEADERS
 	headers.append("Content-Type: application/x-www-form-urlencoded")
-	headers.append("Content-Length: 0")
+	#headers.append("Content-Length: 0")
 	http.request(http.METHOD_GET, ROUTE+route, headers)
 	# Keep polling until the request is going on
 	
