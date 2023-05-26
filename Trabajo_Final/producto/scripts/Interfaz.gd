@@ -57,6 +57,7 @@ func mostrar():
 
 func pausa():
 	if paused == null:
+		Atributos.set_cursor_menu()
 		paused = load("res://producto/assets/scenes/MenuPausa.tscn").instance()
 		paused.connect("continuar",self, "on_paused_quit")
 		self.add_child(paused)
@@ -69,6 +70,7 @@ func _on_Btn_pausa_pressed():
 	pausa()
 
 func on_paused_quit():
+	Atributos.set_cursor_juego()
 	paused = null
 
 func actualiza():

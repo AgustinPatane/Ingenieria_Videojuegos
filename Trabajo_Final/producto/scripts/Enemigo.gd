@@ -92,13 +92,21 @@ func _process(delta):
 		acomodar()
 
 func _on_Enemigo_area_entered(area):
-	if area.is_in_group("Proyectil"):
+	#se podria modificar poniendo tmb un or area.is_in_group("obstaculo") para hacer que el
+	#enemigo choque con los obstaculos
+	if area.is_in_group("Enemigo") and !self.is_in_group("Inamovible"):
+		if self.get_overlapping_areas().find(area) != -1:
+			var push_vector = self.position - area.position
+			push_vector = push_vector.normalized() * 10
+			self.translate(push_vector)
+			
+	elif area.is_in_group("Proyectil"):
 		recibe_damage(area.get_damage(), area.position)
 		area.choca()
-	else:
-		if area.name == "area_mascota" and xpermiso==true:
-			print("______---____----___-__--__--")
-			recibe_damage(30,self.position)
+		
+	elif area.name == "area_mascota" and xpermiso==true:
+		print("______---____----___-__--__--")
+		recibe_damage(30,self.position)
 
 func permiso():
 	xpermiso=true

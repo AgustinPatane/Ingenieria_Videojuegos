@@ -301,6 +301,7 @@ func _adquiere_habilidad():
 func _evolucion():
 	$Interfaz.esconder()
 	var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
+	Atributos.set_cursor_menu()
 	self.add_child(evol_instance)
 	get_tree().paused = true
 	culmina_evolucion()
@@ -321,6 +322,7 @@ func on_evol_quit():
 	$Interfaz.mostrar()
 	animLvlUp.play("LVL_UP")
 	emit_signal("actualiza_interfaz")
+	Atributos.set_cursor_juego()
 	pass
 
 func actualiza_atributos(atributos, evol):

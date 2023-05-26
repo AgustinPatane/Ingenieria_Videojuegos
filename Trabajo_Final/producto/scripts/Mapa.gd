@@ -29,7 +29,7 @@ var nombre_mapa
 onready var capsula = get_node("Capsula")
 
 func _ready():
-	
+	Atributos.set_cursor_juego()
 	SoundManager.set_musica_partida()
 
 	set_tiempos()

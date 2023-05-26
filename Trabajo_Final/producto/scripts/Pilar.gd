@@ -25,6 +25,7 @@ func muestra():
 	
 
 func _on_timer_timeout():
+	$Sombra.hide()
 	subiendo = !subiendo
 
 func acomodar():

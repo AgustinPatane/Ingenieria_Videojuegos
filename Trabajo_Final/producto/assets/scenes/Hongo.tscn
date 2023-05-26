@@ -10,7 +10,7 @@ radius = 13.6364
 [sub_resource type="SegmentShape2D" id=2]
 b = Vector2( 0, 1.41414 )
 
-[node name="Hongo" instance=ExtResource( 1 )]
+[node name="Hongo" groups=["Inamovible"] instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
 [node name="Sombra" parent="." index="0"]

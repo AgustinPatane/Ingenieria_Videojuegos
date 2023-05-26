@@ -418,6 +418,7 @@ var evolucion_4_2_2 = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	set_ramas_ok()
 	if Engine.has_meta("evolucion_actual"):
 		evolucion_actual = Engine.get_meta("evolucion_actual")

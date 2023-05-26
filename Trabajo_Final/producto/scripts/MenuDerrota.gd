@@ -13,6 +13,7 @@ var player = {
 }
 		
 func _ready():
+	Atributos.set_cursor_menu()
 	#SoundManager.play_musica_derrota()
 	load_game()
 	if Engine.has_meta("Puntaje") and Engine.has_meta("Mapa"):

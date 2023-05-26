@@ -35,6 +35,7 @@ var config = {
 
 
 func _ready():
+	Atributos.set_cursor_menu()
 	Engine.set_meta("contrarreloj",false)
 	btn_contrarreloj.disabled = false
 	btn_normal.disabled = true

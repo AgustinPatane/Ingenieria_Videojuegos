@@ -14,6 +14,15 @@ var fullscreen = false
 var tamanio = Vector2(700,400)
 var posicion = Vector2(700,110)
 
+var cursor_menu = load("res://producto/assets/img/Cursores/Cursor_Menu.png")
+var cursor_juego = load("res://producto/assets/img/Cursores/Cursor_juego.png")
+
+func set_cursor_menu():
+	Input.set_custom_mouse_cursor(cursor_menu,0,Vector2(0,0))
+
+func set_cursor_juego():
+	Input.set_custom_mouse_cursor(cursor_juego,0,Vector2(15,15))
+
 func set_config(config):
 	fullscreen = config.fullscreen
 	OS.set_window_fullscreen(fullscreen)
@@ -57,6 +66,7 @@ var tiempos = {
 	curita = 5,
 	juego = 300
 }
+
 
 var niveles_spawn = {
 	demonio = 10,
