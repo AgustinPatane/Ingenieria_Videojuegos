@@ -483,6 +483,7 @@ vframes = 2
 frame = 1
 
 [node name="Accesorio_Gorro" type="Sprite" parent="Jugador_Sprite"]
+visible = false
 position = Vector2( 0, -39.875 )
 scale = Vector2( 2.01182, 1.97909 )
 z_index = 10
