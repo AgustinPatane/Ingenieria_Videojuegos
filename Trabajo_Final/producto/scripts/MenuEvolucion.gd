@@ -58,7 +58,39 @@ onready var boton_evolucion_4_2_1 = get_node("evolucion/evolucion_4/evolucion_4_
 onready var boton_evolucion_4_2_2 = get_node("evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_2")
 
 
-onready var ramas_arbol = get_node("evolucion/ramas_arbol")
+onready var _1 = get_node("evolucion/evolucion_1/_1")
+onready var _1_1 = get_node("evolucion/evolucion_1/evolucion_1_1/_1_1")
+onready var _1_2 = get_node("evolucion/evolucion_1/evolucion_1_2/_1_2")
+onready var _1_1_1 = get_node("evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_1/_1_1_1")
+onready var _1_1_2 = get_node("evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_2/_1_1_2")
+onready var _1_2_1 = get_node("evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_1/_1_2_1")
+onready var _1_2_2 = get_node("evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_2/_1_2_2")
+
+onready var _2 = get_node("evolucion/evolucion_2/_2")
+onready var _2_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+onready var _2_1_1 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1/_2_1_1")
+onready var _2_1_2 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2/_2_1_2")
+onready var _2_2 = get_node("evolucion/evolucion_2/evolucion_2_2/_2_2")
+onready var _2_2_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+onready var _2_2_2 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+
+onready var _3 = get_node("evolucion/evolucion_2/_2")
+onready var _3_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+onready var _3_1_1 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1/_2_1_1")
+onready var _3_1_2 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2/_2_1_2")
+onready var _3_2 = get_node("evolucion/evolucion_2/evolucion_2_2/_2_2")
+onready var _3_2_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+onready var _3_2_2 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+
+
+onready var _4 = get_node("evolucion/evolucion_2/_2")
+onready var _4_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+onready var _4_1_1 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1/_2_1_1")
+onready var _4_1_2 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2/_2_1_2")
+onready var _4_2 = get_node("evolucion/evolucion_2/evolucion_2_2/_2_2")
+onready var _4_2_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+onready var _4_2_2 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+
 
 var n_primer_rama = "1"
 var n_segunda_rama = "2"
@@ -485,6 +517,9 @@ func ventana_actualizar(xtitulo="",xhistoria="",xhabilidad=""):
 	historia.text = xhistoria
 	habilidad.text = xhabilidad
 
+func actualizar_rama_arbol(evolucion):
+	pass
+
 func _on_evolucion_1_pressed():
 	if(len(evolucion_actual)<len("evolucion_1")):
 		actualizar_rama_arbol("evolucion_1")
@@ -649,10 +684,6 @@ func _on_evolucion_2_2_2_mouse_entered():
 
 func _on_evolucion_2_2_2_mouse_exited():
 	ventana_por_defecto()
-
-func actualizar_rama_arbol(evol):
-	var ruta_rama = load("res://producto/assets/img/ramas_arbol/"+evol+".png")
-	ramas_arbol.set_texture(ruta_rama)
 
 func actualizar_sprite_ventana(skin,arma):
 	#var skin es para el accesorio que identifique a cada evolucion
