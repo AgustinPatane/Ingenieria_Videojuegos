@@ -523,12 +523,24 @@ func ventana_actualizar(xtitulo="",xhistoria="",xhabilidad=""):
 	habilidad.text = xhabilidad
 
 func actualizar_rama_arbol(evolucion):
+	
+	var rama_primer_nivel = ""
+	var rama_segundo_nivel = ""
+	
+	#unifico ramas superiores e inferiores
 	if len(evolucion)>=11:
 		if evolucion[10] == "3":
 			evolucion[10] = "1"
 		else:
 			if evolucion[10] == "4":
 				evolucion[10] = "2"
+				
+	if len(evolucion) >= 13:
+		rama_primer_nivel = formo_palabra(evolucion,10)
+	if len(evolucion) >= 15:
+		rama_segundo_nivel = formo_palabra(evolucion,12)
+	
+	#recorro cada rama para ver si hay que mostrarla como seleccionada
 	for rama in sprites_ramas_arbol:
 		if len(evolucion) == len(rama.name)+9:
 			if "evolucion"+rama.name == evolucion:
@@ -537,7 +549,16 @@ func actualizar_rama_arbol(evolucion):
 				rama.visible = false
 		else:
 			pass
+		if  "evolucion"+rama.name == rama_primer_nivel or "evolucion"+rama.name == rama_segundo_nivel:
+			rama.visible = true
 	pass
+
+func formo_palabra(palabra,limite):
+	var aux = ""
+	for i in range (0,len(palabra)):
+		if i<= limite:
+			aux += palabra[i]
+	return aux
 
 func _on_evolucion_1_pressed():
 	if(len(evolucion_actual)<len("evolucion_1")):
