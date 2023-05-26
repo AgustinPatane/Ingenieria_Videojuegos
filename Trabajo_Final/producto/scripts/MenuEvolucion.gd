@@ -60,39 +60,21 @@ onready var boton_evolucion_4_2_1 = get_node("evolucion/evolucion_4/evolucion_4_
 onready var boton_evolucion_4_2_2 = get_node("evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_2")
 
 
-onready var _1 = get_node("evolucion/evolucion_1/_1")
-onready var _1_1 = get_node("evolucion/evolucion_1/evolucion_1_1/_1_1")
-onready var _1_2 = get_node("evolucion/evolucion_1/evolucion_1_2/_1_2")
-onready var _1_1_1 = get_node("evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_1/_1_1_1")
-onready var _1_1_2 = get_node("evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_2/_1_1_2")
-onready var _1_2_1 = get_node("evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_1/_1_2_1")
-onready var _1_2_2 = get_node("evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_2/_1_2_2")
+onready var _1 = get_node("evolucion/Contenedor_Ramas/_1")
+onready var _1_1 = get_node("evolucion/Contenedor_Ramas/_1_1")
+onready var _1_2 = get_node("evolucion/Contenedor_Ramas/_1_2")
+onready var _1_1_1 = get_node("evolucion/Contenedor_Ramas/_1_1_1")
+onready var _1_1_2 = get_node("evolucion/Contenedor_Ramas/_1_1_2")
+onready var _1_2_1 = get_node("evolucion/Contenedor_Ramas/_1_2_1")
+onready var _1_2_2 = get_node("evolucion/Contenedor_Ramas/_1_2_2")
 
-onready var _2 = get_node("evolucion/evolucion_2/_2")
-onready var _2_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
-onready var _2_1_1 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1/_2_1_1")
-onready var _2_1_2 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2/_2_1_2")
-onready var _2_2 = get_node("evolucion/evolucion_2/evolucion_2_2/_2_2")
-onready var _2_2_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
-onready var _2_2_2 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
-
-onready var _3 = get_node("evolucion/evolucion_3/_3")
-onready var _3_1 = get_node("evolucion/evolucion_3/evolucion_3_1/_3_1")
-onready var _3_1_1 = get_node("evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_1/_3_1_1")
-onready var _3_1_2 = get_node("evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_2/_3_1_2")
-onready var _3_2 = get_node("evolucion/evolucion_3/evolucion_3_2/_3_2")
-onready var _3_2_1 = get_node("evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_1/_3_2_1")
-onready var _3_2_2 = get_node("evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_2/_3_2_2")
-
-
-onready var _4 = get_node("evolucion/evolucion_4/_4")
-onready var _4_1 = get_node("evolucion/evolucion_4/evolucion_4_1/_4_1")
-onready var _4_1_1 = get_node("evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_1/_4_1_1")
-onready var _4_1_2 = get_node("evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_2/_4_1_2")
-onready var _4_2 = get_node("evolucion/evolucion_4/evolucion_4_2/_4_2")
-onready var _4_2_1 = get_node("evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_1/_4_1_1")
-onready var _4_2_2 = get_node("evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_2/_4_2_2")
-
+onready var _2 = get_node("evolucion/Contenedor_Ramas/_2")
+onready var _2_1 = get_node("evolucion/Contenedor_Ramas/_2_1")
+onready var _2_1_1 = get_node("evolucion/Contenedor_Ramas/_2_1_1")
+onready var _2_1_2 = get_node("evolucion/Contenedor_Ramas/_2_1_2")
+onready var _2_2 = get_node("evolucion/Contenedor_Ramas/_2_2")
+onready var _2_2_1 = get_node("evolucion/Contenedor_Ramas/_2_2_1")
+onready var _2_2_2 = get_node("evolucion/Contenedor_Ramas/_2_2_2")
 
 var n_primer_rama = "1"
 var n_segunda_rama = "2"
@@ -100,6 +82,7 @@ var aux1 = "boton_evolucion_"+n_primer_rama
 var aux2 = "boton_evolucion_"+n_segunda_rama
 
 var botones_arbol = Array()
+var sprites_ramas_arbol = Array()
 #____________________________________________________________
 
 
@@ -467,6 +450,23 @@ func armo_arbol():
 	botones_arbol.append(self[aux2+"_2"])
 	botones_arbol.append(self[aux2+"_2_1"])
 	botones_arbol.append(self[aux2+"_2_2"])
+	
+	
+	sprites_ramas_arbol.append(_1)
+	sprites_ramas_arbol.append(_1_1)
+	sprites_ramas_arbol.append(_1_1_1)
+	sprites_ramas_arbol.append(_1_1_2)
+	sprites_ramas_arbol.append(_1_2)
+	sprites_ramas_arbol.append(_1_2_1)
+	sprites_ramas_arbol.append(_1_2_2)
+	
+	sprites_ramas_arbol.append(_2)
+	sprites_ramas_arbol.append(_2_1)
+	sprites_ramas_arbol.append(_2_1_1)
+	sprites_ramas_arbol.append(_2_1_2)
+	sprites_ramas_arbol.append(_2_2)
+	sprites_ramas_arbol.append(_2_2_1)
+	sprites_ramas_arbol.append(_2_2_2)
 
 func muestro_arbol():
 	var longitud_actual = len(evolucion_actual)
@@ -523,24 +523,35 @@ func ventana_actualizar(xtitulo="",xhistoria="",xhabilidad=""):
 	habilidad.text = xhabilidad
 
 func actualizar_rama_arbol(evolucion):
+	if len(evolucion)>=11:
+		if evolucion[10] == "3":
+			evolucion[10] = "1"
+		else:
+			if evolucion[10] == "4":
+				evolucion[10] = "2"
+	for rama in sprites_ramas_arbol:
+		if len(evolucion) == len(rama.name)+9:
+			if "evolucion"+rama.name == evolucion:
+				rama.visible = true
+			else:
+				rama.visible = false
+		else:
+			pass
 	pass
 
 func _on_evolucion_1_pressed():
 	if(len(evolucion_actual)<len("evolucion_1")):
 		actualizar_rama_arbol("evolucion_1")
-	_1.visible = true
 	seleccionado = 1
 
 func _on_evolucion_2_pressed():
 	if(len(evolucion_actual)<len("evolucion_2")):
 		actualizar_rama_arbol("evolucion_2")
-	_2.visible = true
 	seleccionado = 2
 
 func _on_evolucion_1_1_pressed():
 	if(len(evolucion_actual)<len("evolucion_1_1")):
 		actualizar_rama_arbol("evolucion_1_1")
-	_1_1.visible = true
 	seleccionado = 1
 
 func _on_evolucion_1_2_pressed():
@@ -594,7 +605,6 @@ func _on_evolucion_2_2_1_pressed():
 	seleccionado = 1
 
 func _on_evolucion_2_2_2_pressed():	
-	ventana_actualizar("EL HOMBRE EXPLOSIVOS","algo algo algo.","BAZOOKA")
 	if(len(evolucion_actual)<len("evolucion_2_2_2")):
 		actualizar_rama_arbol("evolucion_2_2_2")
 	seleccionado = 2

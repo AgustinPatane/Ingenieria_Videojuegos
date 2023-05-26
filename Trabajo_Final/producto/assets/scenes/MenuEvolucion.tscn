@@ -183,12 +183,6 @@ icon = ExtResource( 8 )
 flat = true
 icon_align = 1
 
-[node name="_1" type="Sprite" parent="evolucion/evolucion_1"]
-visible = false
-position = Vector2( -17, 74 )
-z_index = -1
-texture = ExtResource( 13 )
-
 [node name="evolucion_1_1" type="Button" parent="evolucion/evolucion_1" groups=["boton_ventana"]]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -209,12 +203,6 @@ icon = ExtResource( 8 )
 flat = true
 icon_align = 1
 
-[node name="_1_1" type="Sprite" parent="evolucion/evolucion_1/evolucion_1_1"]
-visible = false
-position = Vector2( -17, 44 )
-z_index = -1
-texture = ExtResource( 7 )
-
 [node name="evolucion_1_1_1" type="Button" parent="evolucion/evolucion_1/evolucion_1_1" groups=["boton_ventana"]]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -232,12 +220,6 @@ custom_styles/normal = SubResource( 18 )
 icon = ExtResource( 8 )
 flat = true
 icon_align = 1
-
-[node name="_1_1_1" type="Sprite" parent="evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_1"]
-visible = false
-position = Vector2( -16, 26 )
-z_index = -1
-texture = ExtResource( 14 )
 
 [node name="evolucion_1_1_2" type="Button" parent="evolucion/evolucion_1/evolucion_1_1" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -258,13 +240,6 @@ icon = ExtResource( 8 )
 flat = true
 icon_align = 1
 
-[node name="_1_1_2" type="Sprite" parent="evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_2"]
-visible = false
-position = Vector2( -16, 21 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
-
 [node name="evolucion_1_2" type="Button" parent="evolucion/evolucion_1" groups=["boton_ventana"]]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -284,13 +259,6 @@ icon = ExtResource( 8 )
 flat = true
 icon_align = 1
 
-[node name="_1_2" type="Sprite" parent="evolucion/evolucion_1/evolucion_1_2"]
-visible = false
-position = Vector2( -17, 4 )
-z_index = -1
-texture = ExtResource( 7 )
-flip_v = true
-
 [node name="evolucion_1_2_1" type="Button" parent="evolucion/evolucion_1/evolucion_1_2" groups=["boton_ventana"]]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -308,12 +276,6 @@ custom_styles/normal = SubResource( 18 )
 icon = ExtResource( 8 )
 flat = true
 icon_align = 1
-
-[node name="_1_2_1" type="Sprite" parent="evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_1"]
-visible = false
-position = Vector2( -16, 26 )
-z_index = -1
-texture = ExtResource( 14 )
 
 [node name="evolucion_1_2_2" type="Button" parent="evolucion/evolucion_1/evolucion_1_2" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -334,13 +296,6 @@ icon = ExtResource( 8 )
 flat = true
 icon_align = 1
 
-[node name="_1_2_2" type="Sprite" parent="evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_2"]
-visible = false
-position = Vector2( -16, 21 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
-
 [node name="evolucion_2" type="Button" parent="evolucion" groups=["boton_ventana"]]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -359,13 +314,6 @@ custom_styles/normal = SubResource( 14 )
 icon = ExtResource( 9 )
 flat = true
 icon_align = 1
-
-[node name="_2" type="Sprite" parent="evolucion/evolucion_2"]
-visible = false
-position = Vector2( -15, -26 )
-z_index = -1
-texture = ExtResource( 13 )
-flip_v = true
 
 [node name="evolucion_2_1" type="Button" parent="evolucion/evolucion_2" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -386,12 +334,6 @@ icon = ExtResource( 9 )
 flat = true
 icon_align = 1
 
-[node name="_2_1" type="Sprite" parent="evolucion/evolucion_2/evolucion_2_1"]
-visible = false
-position = Vector2( -15, 44 )
-z_index = -1
-texture = ExtResource( 7 )
-
 [node name="evolucion_2_1_1" type="Button" parent="evolucion/evolucion_2/evolucion_2_1" groups=["boton_ventana"]]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -409,12 +351,6 @@ custom_styles/normal = SubResource( 18 )
 icon = ExtResource( 9 )
 flat = true
 icon_align = 1
-
-[node name="_2_1_1" type="Sprite" parent="evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1"]
-visible = false
-position = Vector2( -15, 26 )
-z_index = -1
-texture = ExtResource( 14 )
 
 [node name="evolucion_2_1_2" type="Button" parent="evolucion/evolucion_2/evolucion_2_1" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -435,13 +371,6 @@ icon = ExtResource( 9 )
 flat = true
 icon_align = 1
 
-[node name="_2_1_2" type="Sprite" parent="evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2"]
-visible = false
-position = Vector2( -15, 21 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
-
 [node name="evolucion_2_2" type="Button" parent="evolucion/evolucion_2" groups=["boton_ventana"]]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -461,13 +390,6 @@ icon = ExtResource( 9 )
 flat = true
 icon_align = 1
 
-[node name="_2_2" type="Sprite" parent="evolucion/evolucion_2/evolucion_2_2"]
-visible = false
-position = Vector2( -15, 4 )
-z_index = -1
-texture = ExtResource( 7 )
-flip_v = true
-
 [node name="evolucion_2_2_1" type="Button" parent="evolucion/evolucion_2/evolucion_2_2" groups=["boton_ventana"]]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -485,12 +407,6 @@ custom_styles/normal = SubResource( 18 )
 icon = ExtResource( 9 )
 flat = true
 icon_align = 1
-
-[node name="_2_1_1" type="Sprite" parent="evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_1"]
-visible = false
-position = Vector2( -15, 26 )
-z_index = -1
-texture = ExtResource( 14 )
 
 [node name="evolucion_2_2_2" type="Button" parent="evolucion/evolucion_2/evolucion_2_2" groups=["boton_ventana"]]
 anchor_left = 0.5
@@ -511,13 +427,6 @@ icon = ExtResource( 9 )
 flat = true
 icon_align = 1
 
-[node name="_2_2_2" type="Sprite" parent="evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_2"]
-visible = false
-position = Vector2( -15, 21 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
-
 [node name="evolucion_3" type="Button" parent="evolucion"]
 visible = false
 margin_left = 100.0
@@ -534,12 +443,6 @@ icon = ExtResource( 10 )
 flat = true
 icon_align = 1
 
-[node name="_3" type="Sprite" parent="evolucion/evolucion_3"]
-visible = false
-position = Vector2( -17, 74 )
-z_index = -1
-texture = ExtResource( 13 )
-
 [node name="evolucion_3_1" type="Button" parent="evolucion/evolucion_3"]
 margin_left = 100.0
 margin_top = -60.0
@@ -554,12 +457,6 @@ custom_styles/normal = SubResource( 18 )
 icon = ExtResource( 10 )
 flat = true
 icon_align = 1
-
-[node name="_3_1" type="Sprite" parent="evolucion/evolucion_3/evolucion_3_1"]
-visible = false
-position = Vector2( -17, 44 )
-z_index = -1
-texture = ExtResource( 7 )
 
 [node name="evolucion_3_1_1" type="Button" parent="evolucion/evolucion_3/evolucion_3_1"]
 margin_left = 100.0
@@ -576,12 +473,6 @@ icon = ExtResource( 10 )
 flat = true
 icon_align = 1
 
-[node name="_3_1_1" type="Sprite" parent="evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_1"]
-visible = false
-position = Vector2( -16, 26 )
-z_index = -1
-texture = ExtResource( 14 )
-
 [node name="evolucion_3_1_2" type="Button" parent="evolucion/evolucion_3/evolucion_3_1"]
 margin_left = 100.0
 margin_top = 30.0
@@ -596,13 +487,6 @@ custom_styles/normal = SubResource( 18 )
 icon = ExtResource( 10 )
 flat = true
 icon_align = 1
-
-[node name="_3_1_2" type="Sprite" parent="evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_2"]
-visible = false
-position = Vector2( -16, 21 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
 
 [node name="evolucion_3_2" type="Button" parent="evolucion/evolucion_3"]
 margin_left = 100.0
@@ -619,13 +503,6 @@ icon = ExtResource( 10 )
 flat = true
 icon_align = 1
 
-[node name="_3_2" type="Sprite" parent="evolucion/evolucion_3/evolucion_3_2"]
-visible = false
-position = Vector2( -17, 4 )
-z_index = -1
-texture = ExtResource( 7 )
-flip_v = true
-
 [node name="evolucion_3_2_1" type="Button" parent="evolucion/evolucion_3/evolucion_3_2"]
 margin_left = 100.0
 margin_top = -25.0
@@ -641,12 +518,6 @@ icon = ExtResource( 10 )
 flat = true
 icon_align = 1
 
-[node name="_3_2_1" type="Sprite" parent="evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_1"]
-visible = false
-position = Vector2( -16, 26 )
-z_index = -1
-texture = ExtResource( 14 )
-
 [node name="evolucion_3_2_2" type="Button" parent="evolucion/evolucion_3/evolucion_3_2"]
 margin_left = 100.0
 margin_top = 30.0
@@ -661,13 +532,6 @@ custom_styles/normal = SubResource( 18 )
 icon = ExtResource( 10 )
 flat = true
 icon_align = 1
-
-[node name="_3_2_2" type="Sprite" parent="evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_2"]
-visible = false
-position = Vector2( -16, 21 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
 
 [node name="evolucion_4" type="Button" parent="evolucion"]
 visible = false
@@ -685,13 +549,6 @@ icon = ExtResource( 11 )
 flat = true
 icon_align = 1
 
-[node name="_4" type="Sprite" parent="evolucion/evolucion_4"]
-visible = false
-position = Vector2( -15, -26 )
-z_index = -1
-texture = ExtResource( 13 )
-flip_v = true
-
 [node name="evolucion_4_1" type="Button" parent="evolucion/evolucion_4"]
 margin_left = 100.0
 margin_top = -60.0
@@ -706,12 +563,6 @@ custom_styles/normal = SubResource( 18 )
 icon = ExtResource( 11 )
 flat = true
 icon_align = 1
-
-[node name="_4_1" type="Sprite" parent="evolucion/evolucion_4/evolucion_4_1"]
-visible = false
-position = Vector2( -15, 44 )
-z_index = -1
-texture = ExtResource( 7 )
 
 [node name="evolucion_4_1_1" type="Button" parent="evolucion/evolucion_4/evolucion_4_1"]
 margin_left = 100.0
@@ -728,12 +579,6 @@ icon = ExtResource( 11 )
 flat = true
 icon_align = 1
 
-[node name="_4_1_1" type="Sprite" parent="evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_1"]
-visible = false
-position = Vector2( -15, 26 )
-z_index = -1
-texture = ExtResource( 14 )
-
 [node name="evolucion_4_1_2" type="Button" parent="evolucion/evolucion_4/evolucion_4_1"]
 margin_left = 100.0
 margin_top = 30.0
@@ -748,13 +593,6 @@ custom_styles/normal = SubResource( 18 )
 icon = ExtResource( 11 )
 flat = true
 icon_align = 1
-
-[node name="_4_1_2" type="Sprite" parent="evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_2"]
-visible = false
-position = Vector2( -15, 21 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
 
 [node name="evolucion_4_2" type="Button" parent="evolucion/evolucion_4"]
 margin_left = 100.0
@@ -771,13 +609,6 @@ icon = ExtResource( 11 )
 flat = true
 icon_align = 1
 
-[node name="_4_2" type="Sprite" parent="evolucion/evolucion_4/evolucion_4_2"]
-visible = false
-position = Vector2( -15, 4 )
-z_index = -1
-texture = ExtResource( 7 )
-flip_v = true
-
 [node name="evolucion_4_2_1" type="Button" parent="evolucion/evolucion_4/evolucion_4_2"]
 margin_left = 100.0
 margin_top = -25.0
@@ -792,12 +623,6 @@ custom_styles/normal = SubResource( 18 )
 icon = ExtResource( 11 )
 flat = true
 icon_align = 1
-
-[node name="_4_1_1" type="Sprite" parent="evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_1"]
-visible = false
-position = Vector2( -15, 26 )
-z_index = -1
-texture = ExtResource( 14 )
 
 [node name="evolucion_4_2_2" type="Button" parent="evolucion/evolucion_4/evolucion_4_2"]
 margin_left = 100.0
@@ -814,9 +639,97 @@ icon = ExtResource( 11 )
 flat = true
 icon_align = 1
 
-[node name="_4_2_2" type="Sprite" parent="evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_2"]
+[node name="Contenedor_Ramas" type="Control" parent="evolucion"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="_2_1_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
 visible = false
-position = Vector2( -15, 21 )
+position = Vector2( 285, 61 )
+z_index = -1
+texture = ExtResource( 14 )
+
+[node name="_2_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 185, 104 )
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 83, -46 )
+z_index = -1
+texture = ExtResource( 13 )
+
+[node name="_1_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 183, -136 )
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="_1_1_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 284, -179 )
+z_index = -1
+texture = ExtResource( 14 )
+
+[node name="_1_1_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 284, -129 )
+z_index = -1
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="_1_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 183, -56 )
+z_index = -1
+texture = ExtResource( 7 )
+flip_v = true
+
+[node name="_1_2_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 284, -59 )
+z_index = -1
+texture = ExtResource( 14 )
+
+[node name="_1_2_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 284, -9 )
+z_index = -1
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 85, 94 )
+z_index = -1
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="_2_1_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 285, 111 )
+z_index = -1
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="_2_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 185, 184 )
+z_index = -1
+texture = ExtResource( 7 )
+flip_v = true
+
+[node name="_2_2_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 285, 181 )
+z_index = -1
+texture = ExtResource( 14 )
+
+[node name="_2_2_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
+visible = false
+position = Vector2( 285, 231 )
 z_index = -1
 texture = ExtResource( 14 )
 flip_v = true
