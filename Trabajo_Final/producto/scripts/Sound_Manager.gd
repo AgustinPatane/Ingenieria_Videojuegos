@@ -4,6 +4,8 @@ extends Node
 #  1) Agregar escena hija "Sound_Queue" 
 #  2) Ponerle un AudioStreamPlay como hijo
 #  3) Settear el .wav al AudioStreamPlay
+#  4) Hacer un sonidos.append(Sound queue nuevo) en el ready()
+#  5) Agregar la funcion play para reproducir el sonido
 
 #Para crear sonidos aleatorios (como los pasos):
 #  1) Agregar una escena hija "Sound_Pool"
@@ -28,6 +30,7 @@ func _ready():
 	sonidos.append(get_node("Pasos"))
 	sonidos.append(get_node("Boton_1"))
 	sonidos.append(get_node("Congelar"))
+	sonidos.appemd(get_node("Exp"))
 	
 	musicas.append(get_node("Musica_menu"))
 	musicas.append(get_node("Musica_partida"))
@@ -103,3 +106,7 @@ func play_boton_1():
 func play_congelar():
 	if cond_sonido:
 		get_node("Congelar").play_sound()
+		
+func play_exp():
+	if cond_sonido:
+		get_node("Exp").play_sound()
