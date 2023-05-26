@@ -30,7 +30,7 @@ func _ready():
 	sonidos.append(get_node("Pasos"))
 	sonidos.append(get_node("Boton_1"))
 	sonidos.append(get_node("Congelar"))
-	sonidos.appemd(get_node("Exp"))
+	sonidos.append(get_node("Exp"))
 	
 	musicas.append(get_node("Musica_menu"))
 	musicas.append(get_node("Musica_partida"))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://producto/scripts/Sound_Manager.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/scenes/Sound_Queue.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://producto/assets/music/derrota.mp3" type="AudioStream" id=13]
 [ext_resource path="res://producto/assets/sounds/boton_1.wav" type="AudioStream" id=14]
 [ext_resource path="res://producto/assets/sounds/freeze.wav" type="AudioStream" id=15]
+[ext_resource path="res://producto/assets/sounds/Exp.wav" type="AudioStream" id=16]
 
 [node name="Sound_Manager" type="Node"]
 pause_mode = 2
@@ -85,3 +86,4 @@ stream = ExtResource( 15 )
 [node name="Exp" parent="." instance=ExtResource( 2 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Exp"]
+stream = ExtResource( 16 )

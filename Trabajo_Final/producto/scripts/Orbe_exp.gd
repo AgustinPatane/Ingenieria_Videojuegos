@@ -41,6 +41,7 @@ func _process(delta):
 
 func _on_Orbe_exp_body_entered(body):
 	if "Jugador" in body.name:
+		SoundManager.play_exp()
 		jugador.gana_exp(value)
 		queue_free()
 
