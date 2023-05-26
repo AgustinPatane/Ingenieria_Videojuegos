@@ -76,8 +76,8 @@ onready var _2_2 = get_node("evolucion/Contenedor_Ramas/_2_2")
 onready var _2_2_1 = get_node("evolucion/Contenedor_Ramas/_2_2_1")
 onready var _2_2_2 = get_node("evolucion/Contenedor_Ramas/_2_2_2")
 
-var n_primer_rama = "1"
-var n_segunda_rama = "2"
+var n_primer_rama = "3"
+var n_segunda_rama = "4"
 var aux1 = "boton_evolucion_"+n_primer_rama
 var aux2 = "boton_evolucion_"+n_segunda_rama
 
