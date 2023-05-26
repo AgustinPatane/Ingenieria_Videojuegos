@@ -74,22 +74,22 @@ onready var _2_2 = get_node("evolucion/evolucion_2/evolucion_2_2/_2_2")
 onready var _2_2_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
 onready var _2_2_2 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
 
-onready var _3 = get_node("evolucion/evolucion_2/_2")
-onready var _3_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
-onready var _3_1_1 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1/_2_1_1")
-onready var _3_1_2 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2/_2_1_2")
-onready var _3_2 = get_node("evolucion/evolucion_2/evolucion_2_2/_2_2")
-onready var _3_2_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
-onready var _3_2_2 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+onready var _3 = get_node("evolucion/evolucion_3/_3")
+onready var _3_1 = get_node("evolucion/evolucion_3/evolucion_3_1/_3_1")
+onready var _3_1_1 = get_node("evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_1/_3_1_1")
+onready var _3_1_2 = get_node("evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_2/_3_1_2")
+onready var _3_2 = get_node("evolucion/evolucion_3/evolucion_3_2/_3_2")
+onready var _3_2_1 = get_node("evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_1/_3_2_1")
+onready var _3_2_2 = get_node("evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_2/_3_2_2")
 
 
-onready var _4 = get_node("evolucion/evolucion_2/_2")
-onready var _4_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
-onready var _4_1_1 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1/_2_1_1")
-onready var _4_1_2 = get_node("evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2/_2_1_2")
-onready var _4_2 = get_node("evolucion/evolucion_2/evolucion_2_2/_2_2")
-onready var _4_2_1 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
-onready var _4_2_2 = get_node("evolucion/evolucion_2/evolucion_2_1/_2_1")
+onready var _4 = get_node("evolucion/evolucion_4/_4")
+onready var _4_1 = get_node("evolucion/evolucion_4/evolucion_4_1/_4_1")
+onready var _4_1_1 = get_node("evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_1/_4_1_1")
+onready var _4_1_2 = get_node("evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_2/_4_1_2")
+onready var _4_2 = get_node("evolucion/evolucion_4/evolucion_4_2/_4_2")
+onready var _4_2_1 = get_node("evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_1/_4_1_1")
+onready var _4_2_2 = get_node("evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_2/_4_2_2")
 
 
 var n_primer_rama = "1"
@@ -523,16 +523,19 @@ func actualizar_rama_arbol(evolucion):
 func _on_evolucion_1_pressed():
 	if(len(evolucion_actual)<len("evolucion_1")):
 		actualizar_rama_arbol("evolucion_1")
+	_1.visible = true
 	seleccionado = 1
 
 func _on_evolucion_2_pressed():
 	if(len(evolucion_actual)<len("evolucion_2")):
 		actualizar_rama_arbol("evolucion_2")
+	_2.visible = true
 	seleccionado = 2
 
 func _on_evolucion_1_1_pressed():
 	if(len(evolucion_actual)<len("evolucion_1_1")):
 		actualizar_rama_arbol("evolucion_1_1")
+	_1_1.visible = true
 	seleccionado = 1
 
 func _on_evolucion_1_2_pressed():

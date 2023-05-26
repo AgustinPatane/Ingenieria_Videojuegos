@@ -747,7 +747,7 @@ icon = ExtResource( 11 )
 flat = true
 icon_align = 1
 
-[node name="_4_1_1" type="Sprite" parent="evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_2"]
+[node name="_4_1_2" type="Sprite" parent="evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_2"]
 visible = false
 position = Vector2( -15, 21 )
 z_index = -1
