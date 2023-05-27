@@ -545,20 +545,6 @@ func actualizar_rama_arbol(evolucion):
 	#recorro cada rama para ver si hay que mostrarla como seleccionada
 	pass
 
-
-
-	print("La evolucion seleccionada despues de modificarse es: ", evolucion)
-	for rama in sprites_ramas_arbol:
-		print(rama.name)
-		if len(evolucion) == len(rama.name)+9:
-			if "evolucion"+rama.name == evolucion:
-				rama.visible = true
-			else:
-				rama.visible = false
-		else:
-			pass
-	pass
-
 func _on_evolucion_1_pressed(): # len("evolucion_1") = 11
 	if( len(evolucion_actual) < 11 ):
 		actualizar_rama_arbol("evolucion_"+evol_superior)
