@@ -516,6 +516,8 @@ func ventana_actualizar(xtitulo="",xhistoria="",xhabilidad=""):
 	habilidad.text = xhabilidad
 
 func actualizar_rama_arbol(evolucion):
+	var rama_primer_nivel = ""
+	var rama_segundo_nivel = ""
 	print("La evolucion seleccionada es: ", evolucion)
 	if len(evolucion) >= 10:
 		if evolucion[10] != "1" or evolucion[10] != "2":
@@ -526,7 +528,24 @@ func actualizar_rama_arbol(evolucion):
 				evolucion[10] = "1"
 			elif evolucion[10] == evol_inferior:
 				evolucion[10] = "2"
-				
+	if len(evolucion) >= 13:
+		rama_primer_nivel = formo_palabra(evolucion,10)
+	if len(evolucion) >= 15:
+		rama_segundo_nivel = formo_palabra(evolucion,12)
+	for rama in sprites_ramas_arbol:
+		if len(evolucion) == len(rama.name)+9:
+			if "evolucion"+rama.name == evolucion:
+				rama.visible = true
+			else:
+				rama.visible = false
+		else:
+			pass
+		if  "evolucion"+rama.name == rama_primer_nivel or "evolucion"+rama.name == rama_segundo_nivel:
+			rama.visible = true
+	#recorro cada rama para ver si hay que mostrarla como seleccionada
+	pass
+
+
 
 	print("La evolucion seleccionada despues de modificarse es: ", evolucion)
 	for rama in sprites_ramas_arbol:
