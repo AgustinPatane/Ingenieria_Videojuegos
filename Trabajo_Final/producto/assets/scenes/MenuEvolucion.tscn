@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://producto/scripts/MenuEvolucion.gd" type="Script" id=1]
-[ext_resource path="res://producto/assets/img/Pausa/Fondos/Marco.png" type="Texture" id=2]
+[ext_resource path="res://producto/assets/img/Pausa/Fondos/Marco - copia.png" type="Texture" id=2]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=3]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/arma_1.png" type="Texture" id=4]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=5]
@@ -112,17 +112,18 @@ font_data = ExtResource( 6 )
 pause_mode = 2
 script = ExtResource( 1 )
 
-[node name="Panel" type="Panel" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1029.0
+margin_bottom = 612.0
+color = Color( 0, 0, 0, 0.854902 )
 
-[node name="Sprite" type="Sprite" parent="Panel"]
-position = Vector2( 1.00003, 1 )
-scale = Vector2( 7.75, 6.67733 )
-z_index = -2
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 21.0
+margin_top = 13.0
+margin_right = 1010.0
+margin_bottom = 598.0
 texture = ExtResource( 5 )
+expand = true
 
 [node name="Seleccionar" type="Button" parent="."]
 pause_mode = 2
@@ -140,6 +141,90 @@ custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
 text = "SELECCIONAR"
+
+[node name="Contenedor_Ramas" type="Control" parent="."]
+margin_left = 578.0
+margin_top = 268.0
+margin_right = 618.0
+margin_bottom = 308.0
+
+[node name="_2_1_1" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 285, 61 )
+texture = ExtResource( 14 )
+
+[node name="_2_1" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 185, 104 )
+z_index = 2
+texture = ExtResource( 7 )
+
+[node name="_1" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 83, -46 )
+texture = ExtResource( 13 )
+
+[node name="_1_1" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 183, -136 )
+texture = ExtResource( 7 )
+
+[node name="_1_1_1" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 284, -179 )
+texture = ExtResource( 14 )
+
+[node name="_1_1_2" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 284, -129 )
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="_1_2" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 183, -56 )
+texture = ExtResource( 7 )
+flip_v = true
+
+[node name="_1_2_1" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 284, -59 )
+texture = ExtResource( 14 )
+
+[node name="_1_2_2" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 284, -9 )
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="_2" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 85, 94 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="_2_1_2" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 285, 111 )
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="_2_2" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 185, 184 )
+texture = ExtResource( 7 )
+flip_v = true
+
+[node name="_2_2_1" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 285, 181 )
+texture = ExtResource( 14 )
+
+[node name="_2_2_2" type="Sprite" parent="Contenedor_Ramas"]
+visible = false
+position = Vector2( 285, 231 )
+texture = ExtResource( 14 )
+flip_v = true
 
 [node name="evolucion" type="Button" parent="."]
 anchor_left = 0.5
@@ -425,101 +510,6 @@ icon = ExtResource( 9 )
 flat = true
 icon_align = 1
 
-[node name="Contenedor_Ramas" type="Control" parent="evolucion"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="_2_1_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 285, 61 )
-z_index = -1
-texture = ExtResource( 14 )
-
-[node name="_2_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 185, 104 )
-z_index = -1
-texture = ExtResource( 7 )
-
-[node name="_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 83, -46 )
-z_index = -1
-texture = ExtResource( 13 )
-
-[node name="_1_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 183, -136 )
-z_index = -1
-texture = ExtResource( 7 )
-
-[node name="_1_1_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 284, -179 )
-z_index = -1
-texture = ExtResource( 14 )
-
-[node name="_1_1_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 284, -129 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
-
-[node name="_1_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 183, -56 )
-z_index = -1
-texture = ExtResource( 7 )
-flip_v = true
-
-[node name="_1_2_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 284, -59 )
-z_index = -1
-texture = ExtResource( 14 )
-
-[node name="_1_2_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 284, -9 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
-
-[node name="_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 85, 94 )
-z_index = -1
-texture = ExtResource( 13 )
-flip_v = true
-
-[node name="_2_1_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 285, 111 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
-
-[node name="_2_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 185, 184 )
-z_index = -1
-texture = ExtResource( 7 )
-flip_v = true
-
-[node name="_2_2_1" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 285, 181 )
-z_index = -1
-texture = ExtResource( 14 )
-
-[node name="_2_2_2" type="Sprite" parent="evolucion/Contenedor_Ramas"]
-visible = false
-position = Vector2( 285, 231 )
-z_index = -1
-texture = ExtResource( 14 )
-flip_v = true
-
 [node name="Ventana" type="Control" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -533,16 +523,16 @@ margin_bottom = 271.0
 [node name="TextureRect" type="TextureRect" parent="Ventana"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = -6.0
-margin_right = 20.0
+margin_left = -10.0
+margin_top = -1.0
+margin_right = 42.0
 margin_bottom = -6.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 1
 
 [node name="Jugador" type="Sprite" parent="Ventana"]
-position = Vector2( 178, 211 )
+position = Vector2( 185, 200 )
 scale = Vector2( 2.51042, 2.44 )
 texture = ExtResource( 3 )
 hframes = 6
@@ -580,10 +570,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -107.0
-margin_top = -216.0
-margin_right = 162.0
-margin_bottom = -134.0
+margin_left = -126.0
+margin_top = -211.0
+margin_right = 143.0
+margin_bottom = -149.0
 custom_fonts/normal_font = SubResource( 4 )
 text = "TITULO"
 
@@ -592,22 +582,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -130.0
-margin_top = 31.0
-margin_right = 170.0
-margin_bottom = 174.0
+margin_left = -131.0
+margin_top = 26.0
+margin_right = 161.0
+margin_bottom = 169.0
 custom_fonts/normal_font = SubResource( 5 )
+text = "asdafafalsjfaljflasdjakldjakdasjdjklasjkldaskdjklajkldjklsadjlkaklfgklgrionvioionmainodnioasindasdafsbsfefef"
 
 [node name="Habilidad" type="RichTextLabel" parent="Ventana"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -114.0
-margin_top = 168.0
-margin_right = 152.0
-margin_bottom = 223.0
+margin_left = -126.0
+margin_top = 166.0
+margin_right = 161.0
+margin_bottom = 216.0
 custom_fonts/normal_font = SubResource( 6 )
+text = "asdasdasdadasdasdasdasdadaa"
 fit_content_height = true
 
 [connection signal="pressed" from="Seleccionar" to="." method="_on_Seleccionar_pressed"]

@@ -37,21 +37,21 @@ onready var boton_evolucion_2_2 = get_node("evolucion/evolucion_2/evolucion_2_2"
 onready var boton_evolucion_2_2_1 = get_node("evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_1")
 onready var boton_evolucion_2_2_2 = get_node("evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_2")
 
-onready var _1 = get_node("evolucion/Contenedor_Ramas/_1")
-onready var _1_1 = get_node("evolucion/Contenedor_Ramas/_1_1")
-onready var _1_2 = get_node("evolucion/Contenedor_Ramas/_1_2")
-onready var _1_1_1 = get_node("evolucion/Contenedor_Ramas/_1_1_1")
-onready var _1_1_2 = get_node("evolucion/Contenedor_Ramas/_1_1_2")
-onready var _1_2_1 = get_node("evolucion/Contenedor_Ramas/_1_2_1")
-onready var _1_2_2 = get_node("evolucion/Contenedor_Ramas/_1_2_2")
+onready var _1 = get_node("Contenedor_Ramas/_1")
+onready var _1_1 = get_node("Contenedor_Ramas/_1_1")
+onready var _1_2 = get_node("Contenedor_Ramas/_1_2")
+onready var _1_1_1 = get_node("Contenedor_Ramas/_1_1_1")
+onready var _1_1_2 = get_node("Contenedor_Ramas/_1_1_2")
+onready var _1_2_1 = get_node("Contenedor_Ramas/_1_2_1")
+onready var _1_2_2 = get_node("Contenedor_Ramas/_1_2_2")
 
-onready var _2 = get_node("evolucion/Contenedor_Ramas/_2")
-onready var _2_1 = get_node("evolucion/Contenedor_Ramas/_2_1")
-onready var _2_1_1 = get_node("evolucion/Contenedor_Ramas/_2_1_1")
-onready var _2_1_2 = get_node("evolucion/Contenedor_Ramas/_2_1_2")
-onready var _2_2 = get_node("evolucion/Contenedor_Ramas/_2_2")
-onready var _2_2_1 = get_node("evolucion/Contenedor_Ramas/_2_2_1")
-onready var _2_2_2 = get_node("evolucion/Contenedor_Ramas/_2_2_2")
+onready var _2 = get_node("Contenedor_Ramas/_2")
+onready var _2_1 = get_node("Contenedor_Ramas/_2_1")
+onready var _2_1_1 = get_node("Contenedor_Ramas/_2_1_1")
+onready var _2_1_2 = get_node("Contenedor_Ramas/_2_1_2")
+onready var _2_2 = get_node("Contenedor_Ramas/_2_2")
+onready var _2_2_1 = get_node("Contenedor_Ramas/_2_2_1")
+onready var _2_2_2 = get_node("Contenedor_Ramas/_2_2_2")
 
 # EVOLUCION 1 : MOVIMIENTO / VELOCIDAD
 var evolucion_1 = {
@@ -362,7 +362,7 @@ var rama_inferior
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-
+	
 	#---------------------------------------
 	if !Engine.has_meta("evolucion_actual"):
 		Engine.set_meta("evolucion_actual","evolucion")
@@ -437,13 +437,13 @@ func muestro_arbol():
 	var evolucion_actual_aux = evolucion_actual
 	
 	if evolucion_actual_aux.find("3") != -1:
-		if evolucion_actual_aux.find(evol_superior) != -1:
+		if evolucion_actual_aux[10] == evol_superior:
 			evolucion_actual_aux[10] = "1"
 		else:
 			evolucion_actual_aux[10] = "2"
 			
 	elif evolucion_actual_aux.find("4") != -1:
-		if evolucion_actual_aux.find(evol_superior) != -1:
+		if evolucion_actual_aux[10] == evol_superior:
 			evolucion_actual_aux[10] = "1"
 		else:
 			evolucion_actual_aux[10] = "2"
