@@ -53,7 +53,6 @@ onready var _2_2 = get_node("evolucion/Contenedor_Ramas/_2_2")
 onready var _2_2_1 = get_node("evolucion/Contenedor_Ramas/_2_2_1")
 onready var _2_2_2 = get_node("evolucion/Contenedor_Ramas/_2_2_2")
 
-
 # EVOLUCION 1 : MOVIMIENTO / VELOCIDAD
 var evolucion_1 = {
 	"nombre": "movimiento",
@@ -541,6 +540,13 @@ func _on_evolucion_1_pressed(): # len("evolucion_1") = 11
 		#actualizar_rama_arbol("evolucion_1")
 	seleccionado = int(evol_superior)
 	#seleccionado = 1
+
+func formo_palabra(palabra,limite):
+	var aux = ""
+	for i in range (0,len(palabra)):
+		if i<= limite:
+			aux += palabra[i]
+	return aux
 
 func _on_evolucion_2_pressed():
 	if( len(evolucion_actual) < 11 ):
