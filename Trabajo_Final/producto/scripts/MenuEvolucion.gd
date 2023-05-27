@@ -418,6 +418,9 @@ func armo_arbol():
 	sprites_ramas_arbol.append(_1_2_1)
 	sprites_ramas_arbol.append(_1_2_2)
 	
+	#for i in range(7):
+	#	sprites_ramas_arbol[i].name = "_"+evol_superior
+	
 	sprites_ramas_arbol.append(_2)
 	sprites_ramas_arbol.append(_2_1)
 	sprites_ramas_arbol.append(_2_1_1)
@@ -426,6 +429,8 @@ func armo_arbol():
 	sprites_ramas_arbol.append(_2_2_1)
 	sprites_ramas_arbol.append(_2_2_2)
 
+	#for i in range(7,13):
+	#	sprites_ramas_arbol[i].name = "_"+evol_superior
 
 func muestro_arbol():
 	var longitud_actual = len(evolucion_actual)
@@ -480,10 +485,10 @@ func _process(_delta):
 		btn_seleccionar.set_disabled(false)
 		
 func _on_Seleccionar_pressed():
-	print("longitud: ",len(evolucion_actual))
-	print("evol seleccionada: ",seleccionado)
-	print("evol superior: ",evol_superior)
-	print("evol inferior: ",evol_inferior)
+	#print("longitud: ",len(evolucion_actual))
+	#print("evol seleccionada: ",seleccionado)
+	#print("evol superior: ",evol_superior)
+	#print("evol inferior: ",evol_inferior)
 	
 	if len(evolucion_actual) >= 11:
 		if str(seleccionado) == evol_superior:
@@ -512,19 +517,20 @@ func ventana_actualizar(xtitulo="",xhistoria="",xhabilidad=""):
 
 func actualizar_rama_arbol(evolucion):
 	print("La evolucion seleccionada es: ", evolucion)
-	if evolucion.find("3") != -1:
-		if evolucion.find(evol_superior) != -1:
-			evolucion[10] = "1"
-		else:
-			evolucion[10] = "2"
-			
-	elif evolucion.find("4") != -1:
-		if evolucion.find(evol_superior) != -1:
-			evolucion[10] = "1"
-		else:
-			evolucion[10] = "2"
-	
+	if len(evolucion) >= 10:
+		if evolucion[10] != "1" or evolucion[10] != "2":
+			print("evol_sup ",evol_superior)
+			print("evol_inf ",evol_inferior)
+				
+			if evolucion[10] == evol_superior:
+				evolucion[10] = "1"
+			elif evolucion[10] == evol_inferior:
+				evolucion[10] = "2"
+				
+
+	print("La evolucion seleccionada despues de modificarse es: ", evolucion)
 	for rama in sprites_ramas_arbol:
+		print(rama.name)
 		if len(evolucion) == len(rama.name)+9:
 			if "evolucion"+rama.name == evolucion:
 				rama.visible = true

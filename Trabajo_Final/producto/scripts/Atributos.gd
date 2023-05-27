@@ -609,7 +609,7 @@ var evoluciones = {
 
 var evol_MapaArena = {
 	evol_1 = "1", 
-	evol_2 = "2" 
+	evol_2 = "4" 
 }
 
 var evol_MapaLuna = {
