@@ -15,7 +15,7 @@ onready var botones = get_node("skins_jugador")
 onready var skins_colores = get_node("skins_jugador/skins_de_colores")
 var lista_skins_colores = ["Yellow","Red","Blue","Black"]
 onready var skins_customs = get_node("skins_jugador/skins_customs")
-var lista_skins_customs = ["","","","Rambo"]
+var lista_skins_customs = ["Pela","Soldado-arg","Nba","Rambo"]
 
 const SAVE_PATH = "res://Saves/tienda.sav"
 
@@ -37,6 +37,7 @@ func _on_comprar_pressed():
 					boton = skins_customs.get_node(skin_seleccionada)
 				else:
 					pass
+			print(lista_skins_customs)
 			boton.texture_normal = boton.texture_pressed
 			
 			for i in range(0,len(skins_cargados)):
