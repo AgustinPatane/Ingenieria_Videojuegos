@@ -15,7 +15,7 @@ onready var botones = get_node("skins_jugador")
 onready var skins_colores = get_node("skins_jugador/skins_de_colores")
 var lista_skins_colores = ["Yellow","Red","Blue","Black"]
 onready var skins_customs = get_node("skins_jugador/skins_customs")
-var lista_skins_customs = ["Pela","Soldado-arg","Nba","Rambo"]
+var lista_skins_customs = ["","","","Rambo"]
 
 const SAVE_PATH = "res://Saves/tienda.sav"
 
@@ -37,7 +37,6 @@ func _on_comprar_pressed():
 					boton = skins_customs.get_node(skin_seleccionada)
 				else:
 					pass
-			print(lista_skins_customs)
 			boton.texture_normal = boton.texture_pressed
 			
 			for i in range(0,len(skins_cargados)):
@@ -50,35 +49,35 @@ func _on_comprar_pressed():
 		pass #mostrar monedas insuficientes
 
 func _on_skin_pela_pressed():
-	valor.text = "15000"
+	valor.text = "100"
 	skin_seleccionada = "Pela"
 
 func _on_skin_soldado_pressed():
-	valor.text = "20000"
+	valor.text = "200"
 	skin_seleccionada = "Soldado_arg"
 
 func _on_skin_bask_pressed():
-	valor.text = "70000"
+	valor.text = "300"
 	skin_seleccionada = "Nba"
 
 func _on_skin_rambo_pressed():
-	valor.text = "40000"
+	valor.text = "500"
 	skin_seleccionada = "Rambo"
 
 func _on_Yellow_pressed():
-	valor.text = "0"
+	valor.text = "50"
 	skin_seleccionada = "Yellow"
 
 func _on_Red_pressed():
-	valor.text = "7000"
+	valor.text = "20"
 	skin_seleccionada = "Red"
 
 func _on_Blue_pressed():
-	valor.text = "7000"
+	valor.text = "400"
 	skin_seleccionada = "Blue"
 
 func _on_Black_pressed():
-	valor.text = "10000"
+	valor.text = "3000"
 	skin_seleccionada = "Black"
 
 func _on_volver_a_menu_pressed():
