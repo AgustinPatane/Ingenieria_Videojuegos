@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://producto/scripts/MenuEvolucion.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Marco.png" type="Texture" id=2]
@@ -9,8 +9,6 @@
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/evolucion_segundo_nivel.png" type="Texture" id=7]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/icono_velocidad.png" type="Texture" id=8]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/icono_vida.png" type="Texture" id=9]
-[ext_resource path="res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/icono_espada.png" type="Texture" id=10]
-[ext_resource path="res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/icono_tiro.png" type="Texture" id=11]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/icono_raiz.png" type="Texture" id=12]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/evolucior_primer_nivel.png" type="Texture" id=13]
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/evolucion_tercer_nivel.png" type="Texture" id=14]
@@ -427,218 +425,6 @@ icon = ExtResource( 9 )
 flat = true
 icon_align = 1
 
-[node name="evolucion_3" type="Button" parent="evolucion"]
-visible = false
-margin_left = 100.0
-margin_top = -120.0
-margin_right = 150.0
-margin_bottom = -70.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 14 )
-icon = ExtResource( 10 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_3_1" type="Button" parent="evolucion/evolucion_3"]
-margin_left = 100.0
-margin_top = -60.0
-margin_right = 150.0
-margin_bottom = -10.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 10 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_3_1_1" type="Button" parent="evolucion/evolucion_3/evolucion_3_1"]
-margin_left = 100.0
-margin_top = -25.0
-margin_right = 150.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 10 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_3_1_2" type="Button" parent="evolucion/evolucion_3/evolucion_3_1"]
-margin_left = 100.0
-margin_top = 30.0
-margin_right = 150.0
-margin_bottom = 80.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 10 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_3_2" type="Button" parent="evolucion/evolucion_3"]
-margin_left = 100.0
-margin_top = 60.0
-margin_right = 150.0
-margin_bottom = 110.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 10 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_3_2_1" type="Button" parent="evolucion/evolucion_3/evolucion_3_2"]
-margin_left = 100.0
-margin_top = -25.0
-margin_right = 150.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 10 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_3_2_2" type="Button" parent="evolucion/evolucion_3/evolucion_3_2"]
-margin_left = 100.0
-margin_top = 30.0
-margin_right = 150.0
-margin_bottom = 80.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 10 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_4" type="Button" parent="evolucion"]
-visible = false
-margin_left = 100.0
-margin_top = 120.0
-margin_right = 150.0
-margin_bottom = 170.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 14 )
-icon = ExtResource( 11 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_4_1" type="Button" parent="evolucion/evolucion_4"]
-margin_left = 100.0
-margin_top = -60.0
-margin_right = 150.0
-margin_bottom = -10.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 11 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_4_1_1" type="Button" parent="evolucion/evolucion_4/evolucion_4_1"]
-margin_left = 100.0
-margin_top = -25.0
-margin_right = 150.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 11 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_4_1_2" type="Button" parent="evolucion/evolucion_4/evolucion_4_1"]
-margin_left = 100.0
-margin_top = 30.0
-margin_right = 150.0
-margin_bottom = 80.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 11 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_4_2" type="Button" parent="evolucion/evolucion_4"]
-margin_left = 100.0
-margin_top = 60.0
-margin_right = 150.0
-margin_bottom = 110.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 11 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_4_2_1" type="Button" parent="evolucion/evolucion_4/evolucion_4_2"]
-margin_left = 100.0
-margin_top = -25.0
-margin_right = 150.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 11 )
-flat = true
-icon_align = 1
-
-[node name="evolucion_4_2_2" type="Button" parent="evolucion/evolucion_4/evolucion_4_2"]
-margin_left = 100.0
-margin_top = 30.0
-margin_right = 150.0
-margin_bottom = 80.0
-custom_fonts/font = SubResource( 20 )
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 21 )
-custom_styles/normal = SubResource( 18 )
-icon = ExtResource( 11 )
-flat = true
-icon_align = 1
-
 [node name="Contenedor_Ramas" type="Control" parent="evolucion"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -756,7 +542,7 @@ expand = true
 stretch_mode = 1
 
 [node name="Jugador" type="Sprite" parent="Ventana"]
-position = Vector2( 178, 229 )
+position = Vector2( 178, 211 )
 scale = Vector2( 2.51042, 2.44 )
 texture = ExtResource( 3 )
 hframes = 6
@@ -828,86 +614,44 @@ fit_content_height = true
 [connection signal="mouse_entered" from="evolucion" to="." method="_on_evolucion_mouse_entered"]
 [connection signal="mouse_exited" from="evolucion" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="mouse_entered" from="evolucion/evolucion_1" to="." method="_on_evolucion_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_1" to="." method="_on_evolucion_1_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_1" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_1" to="." method="_on_evolucion_1_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_1/evolucion_1_1" to="." method="_on_evolucion_1_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_1" to="." method="_on_evolucion_1_1_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_1" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_1/evolucion_1_1" to="." method="_on_evolucion_1_1_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_1" to="." method="_on_evolucion_1_1_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_1" to="." method="_on_evolucion_1_1_1_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_1" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_1" to="." method="_on_evolucion_1_1_1_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_2" to="." method="_on_evolucion_1_1_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_2" to="." method="_on_evolucion_1_1_2_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_2" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_1/evolucion_1_1/evolucion_1_1_2" to="." method="_on_evolucion_1_1_2_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_1/evolucion_1_2" to="." method="_on_evolucion_1_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_2" to="." method="_on_evolucion_1_2_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_2" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_1/evolucion_1_2" to="." method="_on_evolucion_1_2_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_1" to="." method="_on_evolucion_1_2_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_1" to="." method="_on_evolucion_1_2_1_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_1" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_1" to="." method="_on_evolucion_1_2_1_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_2" to="." method="_on_evolucion_1_2_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_2" to="." method="_on_evolucion_1_2_2_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_2" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_1/evolucion_1_2/evolucion_1_2_2" to="." method="_on_evolucion_1_2_2_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_2" to="." method="_on_evolucion_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_2" to="." method="_on_evolucion_2_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_2" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_2" to="." method="_on_evolucion_2_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_2/evolucion_2_1" to="." method="_on_evolucion_2_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_1" to="." method="_on_evolucion_2_1_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_1" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_2/evolucion_2_1" to="." method="_on_evolucion_2_1_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1" to="." method="_on_evolucion_2_1_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1" to="." method="_on_evolucion_2_1_1_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_1" to="." method="_on_evolucion_2_1_1_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2" to="." method="_on_evolucion_2_1_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2" to="." method="_on_evolucion_2_1_2_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_2/evolucion_2_1/evolucion_2_1_2" to="." method="_on_evolucion_2_1_2_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_2/evolucion_2_2" to="." method="_on_evolucion_2_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_2" to="." method="_on_evolucion_2_2_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_2" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_2/evolucion_2_2" to="." method="_on_evolucion_2_2_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_1" to="." method="_on_evolucion_2_2_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_1" to="." method="_on_evolucion_2_2_1_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_1" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_1" to="." method="_on_evolucion_2_2_1_pressed"]
 [connection signal="mouse_entered" from="evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_2" to="." method="_on_evolucion_2_2_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_2" to="." method="_on_evolucion_2_2_2_mouse_exited"]
+[connection signal="mouse_exited" from="evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_2" to="." method="_on_evolucion_mouse_exited"]
 [connection signal="pressed" from="evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_2" to="." method="_on_evolucion_2_2_2_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_3" to="." method="_on_evolucion_3_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_3" to="." method="_on_evolucion_3_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_3" to="." method="_on_evolucion_3_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_3/evolucion_3_1" to="." method="_on_evolucion_3_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_3/evolucion_3_1" to="." method="_on_evolucion_3_1_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_3/evolucion_3_1" to="." method="_on_evolucion_3_1_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_1" to="." method="_on_evolucion_3_1_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_1" to="." method="_on_evolucion_3_1_1_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_1" to="." method="_on_evolucion_3_1_1_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_2" to="." method="_on_evolucion_3_1_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_2" to="." method="_on_evolucion_3_1_2_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_2" to="." method="_on_evolucion_3_1_2_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_3/evolucion_3_2" to="." method="_on_evolucion_3_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_3/evolucion_3_2" to="." method="_on_evolucion_3_2_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_3/evolucion_3_2" to="." method="_on_evolucion_3_2_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_1" to="." method="_on_evolucion_3_2_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_1" to="." method="_on_evolucion_3_2_1_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_1" to="." method="_on_evolucion_3_2_1_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_2" to="." method="_on_evolucion_3_2_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_2" to="." method="_on_evolucion_3_2_2_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_2" to="." method="_on_evolucion_3_2_2_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_4" to="." method="_on_evolucion_4_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_4" to="." method="_on_evolucion_4_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_4" to="." method="_on_evolucion_4_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_4/evolucion_4_1" to="." method="_on_evolucion_4_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_4/evolucion_4_1" to="." method="_on_evolucion_4_1_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_4/evolucion_4_1" to="." method="_on_evolucion_4_1_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_1" to="." method="_on_evolucion_4_1_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_1" to="." method="_on_evolucion_4_1_1_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_1" to="." method="_on_evolucion_4_1_1_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_2" to="." method="_on_evolucion_4_1_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_2" to="." method="_on_evolucion_4_1_2_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_2" to="." method="_on_evolucion_4_1_2_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_4/evolucion_4_2" to="." method="_on_evolucion_4_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_4/evolucion_4_2" to="." method="_on_evolucion_4_2_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_4/evolucion_4_2" to="." method="_on_evolucion_4_2_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_1" to="." method="_on_evolucion_4_2_1_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_1" to="." method="_on_evolucion_4_2_1_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_1" to="." method="_on_evolucion_4_2_1_pressed"]
-[connection signal="mouse_entered" from="evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_2" to="." method="_on_evolucion_4_2_2_mouse_entered"]
-[connection signal="mouse_exited" from="evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_2" to="." method="_on_evolucion_4_2_2_mouse_exited"]
-[connection signal="pressed" from="evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_2" to="." method="_on_evolucion_4_2_2_pressed"]

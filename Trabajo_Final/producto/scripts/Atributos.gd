@@ -36,7 +36,7 @@ func set_config(config):
 # JUGADOR ------------------------------------------------------------
 
 var jugador = {
-	vida_max = 100, 
+	vida_max = 10000, 
 	exp_necesaria = 1,
 	cadencia_disparo = 0.4,
 	danio = 10,
@@ -174,310 +174,462 @@ var pilar = {
 	speed = 10
 }
 
+# EVOLUCIONES -------------------------------------------------------
 var evoluciones = {
 	# EVOLUCION 1 : MOVIMIENTO / VELOCIDAD
 	evolucion_1 = {
-	"nombre": "movimiento",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1.5,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47",
-	"skin_accesorio" : "amarillo"
+		"nombre": "movimiento",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1.3,
+		"damage": 1,
+		"rango": 1,
+		"arma": "ak-47",
+		"skin_accesorio" : "azul",
+		"titulo": "MAX AGIL",
+		"historia": "Has acabado con muchos monstruos, quienes te han inculcado en tu ADN un gen con el que aprenderas a controlar el movimiento de los seres vivos",
+		"habilidad": "+ VELOCIDAD",
+		"gorro" : ""
 	},
 
 	evolucion_1_1 = {
-	"nombre": "movimiento_propio",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1.3,
-	"damage": 1,
-	"rango": 1.5,
-	"arma": "ak-47",
-	"skin_accesorio" : "0"
+		"nombre": "movimiento_propio",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1.5,
+		"damage": 1,
+		"rango": 1,
+		"arma": "ak-47",
+		"skin_accesorio" : "azul",
+		"titulo": "MAX EL VELOCISTA",
+		"historia": "uego de tanto desplazamiento luchando contra los monstruos, has aprendido a moverte mejor.",
+		"habilidad": "+ VELOCIDAD",
+		"gorro" : "200"
 	},
-	
 	evolucion_1_1_2 = {
-	"nombre": "movimiento_propio_atravesarmuros",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1.3,
-	"arma": "ak-47",
-	"skin_accesorio" : "0"
+		"nombre": "movimiento_propio_atravesarmuros",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "ak-47",
+		"skin_accesorio" : "azul",
+		"titulo": "FANTASMAX",
+		"historia": "Luego de haber aprendido a manejar tu velocidad, has saltado a otro nivel: ahora puedes pasar por encima de lo que quieras, como un fantasma.",
+		"habilidad": "ATRAVIESAS OBSTACULOS",
+		"gorro" : "301"
 	},
-	
 	evolucion_1_1_1 = {
-	"nombre": "movimiento_propio_nitro",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1.1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47",
-	"skin_accesorio" : "0"
+		"nombre": "movimiento_propio_nitro",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "ak-47",
+		"skin_accesorio" : "azul",
+		"titulo": "NITROMAX",
+		"historia": "Obtienes el poder de tener una super velocidad temporal cuando lo desees cada cierto tiempo.",
+		"habilidad": "PODER DE SUPER VELOCIDAD",
+		"gorro" : "300"
 	},
-	
 	evolucion_1_2 = {
-	"nombre": "movimiento_enemigos",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47"
+		"nombre": "movimiento_enemigos",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "ak-47",
+		"skin_accesorio" : "azul",
+		"titulo": "EL RALENTIZADOR MAX",
+		"historia": "Has afectado el terreno de movimiento, ahora logras que tus enemigos se muevan con menos velocidad.",
+		"habilidad": "ENEMIGOS MAS LENTOS",
+		"gorro" : "210"
 	},
-	
 	evolucion_1_2_1 = {
-	"nombre": "movimiento_enemigos_ondaralentizadora",
-	"cadencia": 1,
-	"vida": 0.7,
-	"velocidad": 1.2,
-	"damage": 1,
-	"rango": 0.8,
-	"arma": "ak-47"
+		"nombre": "movimiento_enemigos_ondaralentizadora",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "ak-47",
+		"skin_accesorio" : "azul",
+		"titulo": "EL AURA RALENTIZADORA",
+		"historia": "Has comenzado a generar moleculas que provocan que tus enemigos al acercarte a ti se muevan mucho mas lento",
+		"habilidad": "RADIO DE RALENTIZACION",
+		"gorro" : "310"
 	},
-	
 	evolucion_1_2_2 = {
-	"nombre": "movimiento_enemigos_congelacion",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47"
+		"nombre": "movimiento_enemigos_congelacion",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "ak-47",
+		"skin_accesorio" : "azul",
+		"titulo": "EL CONGELADOR MAX",
+		"historia": "Obtienes el pdoer de congelar temporalmente a tus enemigos cada cierto tiempo.",
+		"habilidad": "PODER DE CONGELAMIENTO",
+		"gorro" : "311"
 	},
 
-# EVOLUCION 2 : SALUD / VIDA
+	# EVOLUCION 2 : SALUD / VIDA
 
 	evolucion_2 = {
-	"nombre": "salud",
-	"cadencia": 1,
-	"vida": 2,
-	"velocidad": 0.9,
-	"damage": 1,
-	"rango": 1,
-	"arma": "rifle",
-	"skin_accesorio" : "verde"
+		"nombre": "salud",
+		"cadencia": 1,
+		"vida": 2,
+		"velocidad": 0.8,
+		"damage": 1,
+		"rango": 1,
+		"arma": "rifle",
+		"skin_accesorio" : "verde",
+		"titulo": "EL COLOSO",
+		"historia": "Has aguantado y sobrevivido de muchos seres peligrosos, aumentas tu resistencia a ataques.",
+		"habilidad": "+ VIDA",
+		"gorro" : ""
 	},
 
 	evolucion_2_1 = {
-	"nombre": "salud_masvida",
-	"cadencia": 1,
-	"vida": 2,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta"
+		"nombre": "salud_masvida",
+		"cadencia": 1,
+		"vida": 2.5,
+		"velocidad": 0.9,
+		"damage": 1,
+		"rango": 1,
+		"arma": "escopeta",
+		"skin_accesorio" : "verde",
+		"titulo": "EL TANQUE MAX",
+		"historia": "Has pasado por una mutacion en tu ADN genetico que provoca que tengas muchas mas vida.",
+		"habilidad": "++ VIDA",
+		"gorro" : "220"
 	},
 
 	evolucion_2_1_1 = {
-	"nombre": "salud_masvida_tokenvidaextra",
-	"cadencia": 1,
-	"vida": 1.2,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta"
+		"nombre": "salud_masvida_tokenvidaextra",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "escopeta",
+		"skin_accesorio" : "verde",
+		"titulo": "MAXUSCRISTO",
+		"historia": "Un milagro ocurrira si mueres, probablemente logres un unica resurrecciona, aprovechala.",
+		"habilidad": "VIDA EXTRA",
+		"gorro" : "320"
 	},
 
 	evolucion_2_1_2 = {
-	"nombre": "salud_masvida_regeneracion",
-	"cadencia": 1,
-	"vida": 1.2,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta"
+		"nombre": "salud_masvida_regeneracion",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "escopeta",
+		"skin_accesorio" : "verde",
+		"titulo": "MAX REGENERATIVO",
+		"historia": "Han mutado todos tus sistemas, ahora logras regenrar tu vida cada cierto tiempo.",
+		"habilidad": "REGENERACION DE VIDA",
+		"gorro" : "321"
 	},
 
 	evolucion_2_2 = {
-	"nombre": "salud_masinmune",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta"
+		"nombre": "salud_masinmune",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "escopeta",
+		"skin_accesorio" : "verde",
+		"titulo": "LA ROCA MAX",
+		"historia": "Has mutado con tu resistencia, ahora tienes mucho mas aguante a los ataques enemigos.",
+		"habilidad": "+ RESISTENCIA",
+		"gorro" : "230"
 	},
 
 	evolucion_2_2_1 = {
-	"nombre": "salud_masinmune_escudo",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta"
+		"nombre": "salud_masinmune_escudo",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "escopeta",
+		"skin_accesorio" : "verde",
+		"titulo": "MAX INMUNE",
+		"historia": "Obtienes el poder de ser inmune temporalmente cada cierto tiempo.",
+		"habilidad": "PODER DE ESCUDO",
+		"gorro" : "330"
 	},
 
 	evolucion_2_2_2 = {
-	"nombre": "salud_masinmune_resiliente",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta"
+		"nombre": "salud_masinmune_resiliente",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "escopeta",
+		"skin_accesorio" : "verde",
+		"titulo": "LA RESISTENCIA",
+		"historia": "Cuando te queda poca vida, los ataques enemigos te afectan menos.",
+		"habilidad": "+ RESISTENCIA",
+		"gorro" : "331"
 	},
 
-# EVOLUCION 3 : ATAQUE
+	# EVOLUCION 3 : ATAQUE
 
 	evolucion_3 = {
-	"nombre": "ataque",
-	"cadencia": 0.75,
-	"vida": 1.5,
-	"velocidad": 0.75,
-	"damage": 1.5,
-	"rango": 1.5,
-	"arma": "rifle",
-	"skin_accesorio" : "rojo"
+		"nombre": "ataque",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1.5,
+		"rango": 1,
+		"arma": "escopeta",
+		"skin_accesorio" : "rojo",
+		"titulo": "FORZAMAX",
+		"historia": "Incrementas tu fuerza, cada impacto que reciben tus enemigos es mas efectivo.",
+		"habilidad": "+ FUERZA",
+		"gorro" : ""
 	},
 
 	evolucion_3_1 = {
-	"nombre": "ataque_cerca",
-	"cadencia": 1,
-	"vida": 3,
-	"velocidad": 0.75,
-	"damage": 1,
-	"rango": 2,
-	"arma": "escopeta"
+		"nombre": "ataque_cerca",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 2,
+		"rango": 0.8,
+		"arma": "rifle",
+		"skin_accesorio" : "rojo",
+		"titulo": "SMART MAX",
+		"historia": "Aprendes a provocar ataques criticos a poca distnacia.",
+		"habilidad": "+ ATAQUE EN - RANGO",
+		"gorro" : "240"
 	},
 
 	evolucion_3_1_1 = {
-	"nombre": "ataque_cerca_areaexplosiva",
-	"cadencia": 1,
-	"vida": 1.5,
-	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 0.75,
-	"arma": "escopeta"
+		"nombre": "ataque_cerca_areaexplosiva",
+		"cadencia": 1,
+		"vida": 1.5,
+		"velocidad": 1,
+		"damage": 1.5,
+		"rango": 0.75,
+		"arma": "bazooka",
+		"skin_accesorio" : "rojo",
+		"titulo": "MAX DA BOMB",
+		"historia": "Has aprendido a fabricar bombas, ahora, queda en ti saber usarlas.",
+		"habilidad": "PODER DE RADIO EXPLOSIVO",
+		"gorro" : "340"
 	},
 
 	evolucion_3_1_2 = {
-	"nombre": "ataque_cerca_penetramuros",
-	"cadencia": 1,
-	"vida": 1.5,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta"
+		"nombre": "ataque_cerca_penetramuros",
+		"cadencia": 1,
+		"vida": 1.5,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "rifle",
+		"skin_accesorio" : "rojo",
+		"titulo": "LA LOCURA DE MAX",
+		"historia": "Tus ataques ahora no respetan las leyes de la fisica, pueden atravesar obstaculos.",
+		"habilidad": "ATAQUE PENETRANTE",
+		"gorro" : "341"
 	},
 
 	evolucion_3_2 = {
-	"nombre": "ataque_oneshoot",
-	"cadencia": 0.75,
-	"vida": 1.5,
-	"velocidad": 0.75,
-	"damage": 2,
-	"rango": 3,
-	"arma": "francotirador"
+		"nombre": "ataque_oneshoot",
+		"cadencia": 0.7,
+		"vida": 1,
+		"velocidad": 0.9,
+		"damage": 2,
+		"rango": 5,
+		"arma": "rifle",
+		"skin_accesorio" : "rojo",
+		"titulo": "OJO DE AGUILA",
+		"historia": "Involucras todas tus fuerzas en tus disparos, provocas impactos letales.",
+		"habilidad": "+ ATAQUE EN + RANGO",
+		"gorro" : "250"
 	},
 
 	evolucion_3_2_1 = {
-	"nombre": "ataque_oneshoot_francotirador",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 1,
-	"arma": "francotirador"
+		"nombre": "ataque_oneshoot_francotirador",
+		"cadencia": 0.8,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 3,
+		"rango": 3,
+		"arma": "francotirador",
+		"skin_accesorio" : "rojo",
+		"titulo": "EL FRANCOTIRADOR",
+		"historia": "Has aprendido a usar un francotirador, prueba que tan letal es.",
+		"habilidad": "ATAQUE LETAL",
+		"gorro" : "350"
 	},
 
 	evolucion_3_2_2 = {
-	"nombre": "ataque_oneshoot_bazooka",
-	"cadencia": 0.5,
-	"vida": 1.5,
-	"velocidad": 1,
-	"damage": 2,
-	"rango": 1,
-	"arma": "bazooka"
+		"nombre": "ataque_oneshoot_bazooka",
+		"cadencia": 0.5,
+		"vida": 1.5,
+		"velocidad": 1,
+		"damage": 2,
+		"rango": 1,
+		"arma": "bazooka",
+		"skin_accesorio" : "rojo",
+		"titulo": "MAXOOKA",
+		"historia": "Boom.",
+		"habilidad": "ATAQUES EXPLOSIVOS",
+		"gorro" : "351"
 	},
 
 
-# EVOLUCION 4 : TIRO / DISPARO / CADENCIA
+	# EVOLUCION 4 : TIRO / DISPARO / CADENCIA
 
 	evolucion_4 = {
-	"nombre": "tiro",
-	"cadencia": 1.2,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ametralladora",
-	"skin_accesorio" : "azul"
+		"nombre": "tiro",
+		"cadencia": 1.2,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1.2,
+		"rango": 1.3,
+		"arma": "ametralladora",
+		"skin_accesorio" : "amarillo",
+		"titulo": "EXPERTO EN ARMAS",
+		"historia": "Empiezas tu camino en aprender el uso de armas, mejorar los rangos de disparo y la cantidad",
+		"habilidad": "+ CADENCIA + RANGO",
+		"gorro" : ""
 	},
 
 	evolucion_4_1 = {
-	"nombre": "tiro_dispersion",
-	"cadencia": 1.2,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ametralladora"
+		"nombre": "tiro_dispersion",
+		"cadencia": 1.2,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 2,
+		"arma": "ametralladora",
+		"skin_accesorio" : "amarillo",
+		"titulo": "LA LLUVIA DE PLOMO",
+		"historia": "Controlas tus disapros y aprendes a disparar mas de una bala a la vez gracias a tu nueva ametralladora.",
+		"habilidad": "DISPERSION DE DISPAROS",
+		"gorro" : "260"
 	},
 
 	evolucion_4_1_1 = {
-	"nombre": "tiro_dispersion_rebote",
-	"cadencia": 1.2,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 4,
-	"rango": 1,
-	"arma": "ametralladora"
+		"nombre": "tiro_dispersion_rebote",
+		"cadencia": 1.2,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 0.4,
+		"rango": 1,
+		"arma": "ametralladora",
+		"skin_accesorio" : "amarillo",
+		"titulo": "REBOTES MORTALES",
+		"historia": "Modificas tus balas con el objetivo de que estas reboten entre enemigos. Puede ser letal para ellos.",
+		"habilidad": "REBOTE DE BALAS",
+		"gorro" : "360"
 	},
 
 	evolucion_4_1_2 = {
-	"nombre": "tiro_dispersion_360",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 2,
-	"rango": 3,
-	"arma": "ametralladora"
+		"nombre": "tiro_dispersion_360",
+		"cadencia": 1.5,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 0.3,
+		"rango": 2,
+		"arma": "ametralladora",
+		"skin_accesorio" : "amarillo",
+		"titulo": "FUEGOS ARTIFICALES",
+		"historia": "Has llegado a un nivel tan alto de manejo del arma que puedes disparar a todo tu alrededor.",
+		"habilidad": "DISPARO EN 360 GRADOS",
+		"gorro" : "361"
 	},
 
 	evolucion_4_2 = {
-	"nombre": "tiro_cadencia",
-	"cadencia": 1.1,
-	"vida": 1.5,
-	"velocidad": 1,
-	"damage": 2,
-	"rango": 3,
-	"arma": "ametralladora"
+		"nombre": "tiro_cadencia",
+		"cadencia": 1.5,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1,
+		"rango": 1,
+		"arma": "ametralladora",
+		"skin_accesorio" : "amarillo",
+		"titulo": "EL TREN DE PLOMO",
+		"historia": "Aprendes a realizar un disparo aturdidor con muchas balas a la vez.",
+		"habilidad": "+ CADENCIA",
+		"gorro" : "370"
 	},
 
 	evolucion_4_2_1 = {
-	"nombre": "tiro_cadencia_doblearma",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 3,
-	"rango": 1.5,
-	"arma": "ak-47"
+		"nombre": "tiro_cadencia_doblearma",
+		"cadencia": 1,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 1.5,
+		"rango": 1.5,
+		"arma": "ak-47",
+		"skin_accesorio" : "amarillo",
+		"titulo": "DOBLE PESADILLA",
+		"historia": "Obtienes una nueva arma gracias a tu habilidad de saber como fabricarlas.",
+		"habilidad": "DOBLE ARMA",
+		"gorro" : "370"
 	},
 
 	evolucion_4_2_2 = {
-	"nombre": "tiro_cadencia_infinita",
-	"cadencia": 4,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 0.2,
-	"rango": 1,
-	"arma": "ametralladora"
+		"nombre": "tiro_cadencia_infinita",
+		"cadencia": 2,
+		"vida": 1,
+		"velocidad": 1,
+		"damage": 0.8,
+		"rango": 1,
+		"arma": "ametralladora",
+		"skin_accesorio" : "amarillo",
+		"titulo": "RAFAGA DE PLOMO",
+		"historia": "Hacen falta tantas balas?",
+		"habilidad": "PODER DE CADENCIA INFINITA",
+		"gorro" : "371"
 	}
 }
 
-# 1 DANIO
+# 1 VELOCIDAD
 # 2 VIDA
-# 3 VELOCIDAD
+# 3 DANIO
 # 4 CADENCIA
-var evol_mapa_luna = {
-	evol_1 = "1",
-	evol_2 = "2"	
+
+#var mapas = ["MapaArena","MapaLuna","MapaLava","MapaMadera","MapaArcilla"]
+
+var evol_MapaArena = {
+	evol_1 = "1", 
+	evol_2 = "2" 
+}
+
+var evol_MapaLuna = {
+	evol_1 = "3", 
+	evol_2 = "4"
+}
+
+var evol_MapaLava = {
+	evol_1 = "1", 
+	evol_2 = "3" 
+}
+
+var evol_MapaMadera = {
+	evol_1 = "2", 
+	evol_2 = "4"
+}
+
+var evol_MapaArcilla = {
+	evol_1 = "1", 
+	evol_2 = "4" 
 }
 
 func get_pilar():

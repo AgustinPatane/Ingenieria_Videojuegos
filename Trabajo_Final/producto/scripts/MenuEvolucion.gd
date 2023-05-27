@@ -37,29 +37,6 @@ onready var boton_evolucion_2_2 = get_node("evolucion/evolucion_2/evolucion_2_2"
 onready var boton_evolucion_2_2_1 = get_node("evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_1")
 onready var boton_evolucion_2_2_2 = get_node("evolucion/evolucion_2/evolucion_2_2/evolucion_2_2_2")
 
-
-onready var boton_evolucion_3 = get_node("evolucion/evolucion_3")
-
-onready var boton_evolucion_3_1 = get_node("evolucion/evolucion_3/evolucion_3_1")
-onready var boton_evolucion_3_1_1 = get_node("evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_1")
-onready var boton_evolucion_3_1_2 = get_node("evolucion/evolucion_3/evolucion_3_1/evolucion_3_1_2")
-
-onready var boton_evolucion_3_2 = get_node("evolucion/evolucion_3/evolucion_3_2")
-onready var boton_evolucion_3_2_1 = get_node("evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_1")
-onready var boton_evolucion_3_2_2 = get_node("evolucion/evolucion_3/evolucion_3_2/evolucion_3_2_2")
-
-
-onready var boton_evolucion_4 = get_node("evolucion/evolucion_4")
-
-onready var boton_evolucion_4_1 = get_node("evolucion/evolucion_4/evolucion_4_1")
-onready var boton_evolucion_4_1_1 = get_node("evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_1")
-onready var boton_evolucion_4_1_2 = get_node("evolucion/evolucion_4/evolucion_4_1/evolucion_4_1_2")
-
-onready var boton_evolucion_4_2 = get_node("evolucion/evolucion_4/evolucion_4_2")
-onready var boton_evolucion_4_2_1 = get_node("evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_1")
-onready var boton_evolucion_4_2_2 = get_node("evolucion/evolucion_4/evolucion_4_2/evolucion_4_2_2")
-
-
 onready var _1 = get_node("evolucion/Contenedor_Ramas/_1")
 onready var _1_1 = get_node("evolucion/Contenedor_Ramas/_1_1")
 onready var _1_2 = get_node("evolucion/Contenedor_Ramas/_1_2")
@@ -76,19 +53,6 @@ onready var _2_2 = get_node("evolucion/Contenedor_Ramas/_2_2")
 onready var _2_2_1 = get_node("evolucion/Contenedor_Ramas/_2_2_1")
 onready var _2_2_2 = get_node("evolucion/Contenedor_Ramas/_2_2_2")
 
-var n_primer_rama = "1"
-var n_segunda_rama = "2"
-var aux1 = "boton_evolucion_"+n_primer_rama
-var aux2 = "boton_evolucion_"+n_segunda_rama
-
-var botones_arbol = Array()
-var sprites_ramas_arbol = Array()
-#____________________________________________________________
-
-
-var evolucion_actual = ""
-var evolucion_siguiente = ""
-var seleccionado = 0
 
 # EVOLUCION 1 : MOVIMIENTO / VELOCIDAD
 var evolucion_1 = {
@@ -101,7 +65,6 @@ var evolucion_1 = {
 	"arma": "ak-47",
 	"skin_accesorio" : "azul"
 }
-
 var evolucion_1_1 = {
 	"nombre": "movimiento_propio",
 	"cadencia": 1,
@@ -162,9 +125,7 @@ var evolucion_1_2_2 = {
 	"arma": "ak-47",
 	"skin_accesorio" : "21"
 }
-
 # EVOLUCION 2 : SALUD / VIDA
-
 var evolucion_2 = {
 	"nombre": "salud",
 	"cadencia": 1,
@@ -175,7 +136,6 @@ var evolucion_2 = {
 	"arma": "rifle",
 	"skin_accesorio" : "verde"
 }
-
 var evolucion_2_1 = {
 	"nombre": "salud_masvida",
 	"cadencia": 1,
@@ -186,7 +146,6 @@ var evolucion_2_1 = {
 	"arma": "escopeta",
 	"skin_accesorio" : "02"
 }
-
 var evolucion_2_1_1 = {
 	"nombre": "salud_masvida_tokenvidaextra",
 	"cadencia": 1,
@@ -197,7 +156,6 @@ var evolucion_2_1_1 = {
 	"arma": "escopeta",
 	"skin_accesorio" : "12"
 }
-
 var evolucion_2_1_2 = {
 	"nombre": "salud_masvida_regeneracion",
 	"cadencia": 1,
@@ -208,7 +166,6 @@ var evolucion_2_1_2 = {
 	"arma": "escopeta",
 	"skin_accesorio" : "22"
 }
-
 var evolucion_2_2 = {
 	"nombre": "salud_masinmune",
 	"cadencia": 1,
@@ -219,7 +176,6 @@ var evolucion_2_2 = {
 	"arma": "escopeta",
 	"skin_accesorio" : "03"
 }
-
 var evolucion_2_2_1 = {
 	"nombre": "salud_masinmune_escudo",
 	"cadencia": 1,
@@ -230,7 +186,6 @@ var evolucion_2_2_1 = {
 	"arma": "escopeta",
 	"skin_accesorio" : "13"
 }
-
 var evolucion_2_2_2 = {
 	"nombre": "salud_masinmune_resiliente",
 	"cadencia": 1,
@@ -241,9 +196,7 @@ var evolucion_2_2_2 = {
 	"arma": "escopeta",
 	"skin_accesorio" : "23"
 }
-
 # EVOLUCION 3 : ATAQUE
-
 var evolucion_3 = {
 	"nombre": "ataque",
 	"cadencia": 1,
@@ -254,7 +207,6 @@ var evolucion_3 = {
 	"arma": "escopeta",
 	"skin_accesorio" : "rojo"
 }
-
 var evolucion_3_1 = {
 	"nombre": "ataque_cerca",
 	"cadencia": 1,
@@ -265,7 +217,6 @@ var evolucion_3_1 = {
 	"arma": "escopeta",
 	"skin_accesorio" : "04"
 }
-
 var evolucion_3_1_1 = {
 	"nombre": "ataque_cerca_areaexplosiva",
 	"cadencia": 1,
@@ -276,7 +227,6 @@ var evolucion_3_1_1 = {
 	"arma": "escopeta",
 	"skin_accesorio" : "14"
 }
-
 var evolucion_3_1_2 = {
 	"nombre": "ataque_cerca_penetramuros",
 	"cadencia": 1,
@@ -287,7 +237,6 @@ var evolucion_3_1_2 = {
 	"arma": "escopeta",
 	"skin_accesorio" : "24"
 }
-
 var evolucion_3_2 = {
 	"nombre": "ataque_oneshoot",
 	"cadencia": 0.7,
@@ -298,7 +247,6 @@ var evolucion_3_2 = {
 	"arma": "francotirador",
 	"skin_accesorio" : "05"
 }
-
 var evolucion_3_2_1 = {
 	"nombre": "ataque_oneshoot_francotirador",
 	"cadencia": 0.8,
@@ -320,10 +268,7 @@ var evolucion_3_2_2 = {
 	"arma": "bazooka",
 	"skin_accesorio" : "25"
 }
-
-
 # EVOLUCION 4 : TIRO / DISPARO / CADENCIA
-
 var evolucion_4 = {
 	"nombre": "tiro",
 	"cadencia": 1.2,
@@ -334,7 +279,6 @@ var evolucion_4 = {
 	"arma": "ametralladora",
 	"skin_accesorio" : "amarillo"
 }
-
 var evolucion_4_1 = {
 	"nombre": "tiro_dispersion",
 	"cadencia": 1.2,
@@ -345,7 +289,6 @@ var evolucion_4_1 = {
 	"arma": "ametralladora",
 	"skin_accesorio" : "06"
 }
-
 var evolucion_4_1_1 = {
 	"nombre": "tiro_dispersion_rebote",
 	"cadencia": 1.2,
@@ -356,7 +299,6 @@ var evolucion_4_1_1 = {
 	"arma": "ametralladora",
 	"skin_accesorio" : "16"
 }
-
 var evolucion_4_1_2 = {
 	"nombre": "tiro_dispersion_360",
 	"cadencia": 1.5,
@@ -367,7 +309,6 @@ var evolucion_4_1_2 = {
 	"arma": "ametralladora",
 	"skin_accesorio" : "26"
 }
-
 var evolucion_4_2 = {
 	"nombre": "tiro_cadencia",
 	"cadencia": 1.5,
@@ -378,7 +319,6 @@ var evolucion_4_2 = {
 	"arma": "ametralladora",
 	"skin_accesorio" : "07"
 }
-
 var evolucion_4_2_1 = {
 	"nombre": "tiro_cadencia_doblearma",
 	"cadencia": 1,
@@ -389,7 +329,6 @@ var evolucion_4_2_1 = {
 	"arma": "ak-47",
 	"skin_accesorio" : "17"
 }
-
 var evolucion_4_2_2 = {
 	"nombre": "tiro_cadencia_infinita",
 	"cadencia": 2,
@@ -401,56 +340,76 @@ var evolucion_4_2_2 = {
 	"skin_accesorio" : "27"
 }
 
+var botones_arbol = Array()
+var sprites_ramas_arbol = Array()
+
+var evolucion_actual = ""
+var evolucion_siguiente = ""
+var seleccionado = 0
+
+#----------------------------------------------------------
+
+#var nombre_mapa = "MapaArena"
+var nombre_mapa = Engine.get_meta("nombre_escena_mapa")
+var evol_superior = Atributos["evol_"+nombre_mapa].evol_1 # por ej tendria "1"
+var evol_inferior = Atributos["evol_"+nombre_mapa].evol_2 # por ej tendria "2"
+
+var boton_superior = "boton_evolucion_"+evol_superior # "boton_evolucion_1"
+var boton_inferior = "boton_evolucion_"+evol_inferior # "boton_evolucion_2"
+
+var rama_superior
+var rama_inferior
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	set_ramas_ok()
-	if Engine.has_meta("evolucion_actual"):
-		evolucion_actual = Engine.get_meta("evolucion_actual")
-	else:
+
+	#---------------------------------------
+	if !Engine.has_meta("evolucion_actual"):
 		Engine.set_meta("evolucion_actual","evolucion")
+		
 	evolucion_actual = Engine.get_meta("evolucion_actual")
-	evolucion_siguiente = evolucion_actual+"xx"
 	armo_arbol()
+	set_iconos_ramas()
+	
+	#--------------------------------------------------
+	evolucion_siguiente = evolucion_actual+"xx"
 	muestro_arbol()
 	btn_seleccionar.set_disabled(true)
 	carga_ventana()
 	ventana_por_defecto()
 
-func set_ramas_ok():
-	boton_evolucion_1.visible = false
-	boton_evolucion_2.visible = false
-	boton_evolucion_3.visible = false
-	boton_evolucion_4.visible = false
-	boton_evolucion_1.set_process(false)
-	boton_evolucion_2.set_process(false)
-	boton_evolucion_3.set_process(false)
-	boton_evolucion_4.set_process(false)
-	self[aux1].set_process(true)
-	self[aux1].visible = true
-	self[aux2].set_process(true)
-	self[aux2].visible = true
-	pass
+func set_iconos_ramas():	
+	var icono_1 = load("res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/Evoluciones/_"+evol_superior+".png")
+	var icono_2 = load("res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/Evoluciones/_"+evol_inferior+".png")
+	
+	for i in range(1,8):
+		botones_arbol[i].icon = icono_1
+		botones_arbol[i+7].icon = icono_2
 
+#actualizado
 func armo_arbol():
 	botones_arbol.append(boton_evolucion)
 	
-	botones_arbol.append(self[aux1])
-	botones_arbol.append(self[aux1+"_1"])
-	botones_arbol.append(self[aux1+"_1_1"])
-	botones_arbol.append(self[aux1+"_1_2"])
-	botones_arbol.append(self[aux1+"_2"])
-	botones_arbol.append(self[aux1+"_2_1"])
-	botones_arbol.append(self[aux1+"_2_2"])
+	var aux = "boton_evolucion_1"
 	
-	botones_arbol.append(self[aux2])
-	botones_arbol.append(self[aux2+"_1"])
-	botones_arbol.append(self[aux2+"_1_1"])
-	botones_arbol.append(self[aux2+"_1_2"])
-	botones_arbol.append(self[aux2+"_2"])
-	botones_arbol.append(self[aux2+"_2_1"])
-	botones_arbol.append(self[aux2+"_2_2"])
+	botones_arbol.append(self[aux])
+	botones_arbol.append(self[aux+"_1"])
+	botones_arbol.append(self[aux+"_1_1"])
+	botones_arbol.append(self[aux+"_1_2"])
+	botones_arbol.append(self[aux+"_2"])
+	botones_arbol.append(self[aux+"_2_1"])
+	botones_arbol.append(self[aux+"_2_2"])
 	
+	aux = "boton_evolucion_2"
+	
+	botones_arbol.append(self[aux])
+	botones_arbol.append(self[aux+"_1"])
+	botones_arbol.append(self[aux+"_1_1"])
+	botones_arbol.append(self[aux+"_1_2"])
+	botones_arbol.append(self[aux+"_2"])
+	botones_arbol.append(self[aux+"_2_1"])
+	botones_arbol.append(self[aux+"_2_2"])
 	
 	sprites_ramas_arbol.append(_1)
 	sprites_ramas_arbol.append(_1_1)
@@ -468,21 +427,40 @@ func armo_arbol():
 	sprites_ramas_arbol.append(_2_2_1)
 	sprites_ramas_arbol.append(_2_2_2)
 
+
 func muestro_arbol():
 	var longitud_actual = len(evolucion_actual)
+	var evolucion_actual_aux = evolucion_actual
+	
+	if evolucion_actual_aux.find("3") != -1:
+		if evolucion_actual_aux.find(evol_superior) != -1:
+			evolucion_actual_aux[10] = "1"
+		else:
+			evolucion_actual_aux[10] = "2"
+			
+	elif evolucion_actual_aux.find("4") != -1:
+		if evolucion_actual_aux.find(evol_superior) != -1:
+			evolucion_actual_aux[10] = "1"
+		else:
+			evolucion_actual_aux[10] = "2"
+	
+	
 	for boton in botones_arbol:
+		print(boton.name)
+		
 		if longitud_actual+2<len(boton.name):#evoluciones que no llegaron
 			boton.visible = false
 		else:#evoluciones que ya pasaron
 			if longitud_actual>=len(boton.name):
 				boton.set_disabled(true)
 			else:#mismo nivel
-				if longitud_actual == 11 and evolucion_actual[10]!=boton.name[10]:
+				if longitud_actual == 11 and evolucion_actual_aux[10]!=boton.name[10]:
 					boton.set_disabled(true)
 				else:
-					if longitud_actual == 13 and (evolucion_actual[10]!=boton.name[10] or evolucion_actual[12]!=boton.name[12]):
+					if longitud_actual == 13 and (evolucion_actual_aux[10]!=boton.name[10] or evolucion_actual_aux[12]!=boton.name[12]):
 						boton.set_disabled(true)
-						
+
+
 func carga_ventana():
 	var ruta = Engine.get_meta("ruta_skin")
 	var arma_actual = Engine.get_meta("arma_actual")
@@ -503,6 +481,17 @@ func _process(_delta):
 		btn_seleccionar.set_disabled(false)
 		
 func _on_Seleccionar_pressed():
+	print("longitud: ",len(evolucion_actual))
+	print("evol seleccionada: ",seleccionado)
+	print("evol superior: ",evol_superior)
+	print("evol inferior: ",evol_inferior)
+	
+	if len(evolucion_actual) >= 11:
+		if str(seleccionado) == evol_superior:
+			seleccionado = 1
+		elif str(seleccionado) == evol_inferior:
+			seleccionado = 2
+		
 	get_parent().actualiza_atributos(self[evolucion_actual + "_" + str(seleccionado)], str(seleccionado))
 	evolucion_actual = evolucion_actual + "_" + str(seleccionado)
 	get_tree().paused = false
@@ -523,12 +512,19 @@ func ventana_actualizar(xtitulo="",xhistoria="",xhabilidad=""):
 	habilidad.text = xhabilidad
 
 func actualizar_rama_arbol(evolucion):
-	if len(evolucion)>=11:
-		if evolucion[10] == "3":
+	print("La evolucion seleccionada es: ", evolucion)
+	if evolucion.find("3") != -1:
+		if evolucion.find(evol_superior) != -1:
 			evolucion[10] = "1"
 		else:
-			if evolucion[10] == "4":
-				evolucion[10] = "2"
+			evolucion[10] = "2"
+			
+	elif evolucion.find("4") != -1:
+		if evolucion.find(evol_superior) != -1:
+			evolucion[10] = "1"
+		else:
+			evolucion[10] = "2"
+	
 	for rama in sprites_ramas_arbol:
 		if len(evolucion) == len(rama.name)+9:
 			if "evolucion"+rama.name == evolucion:
@@ -539,75 +535,103 @@ func actualizar_rama_arbol(evolucion):
 			pass
 	pass
 
-func _on_evolucion_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_1")):
-		actualizar_rama_arbol("evolucion_1")
-	seleccionado = 1
+func _on_evolucion_1_pressed(): # len("evolucion_1") = 11
+	if( len(evolucion_actual) < 11 ):
+		actualizar_rama_arbol("evolucion_"+evol_superior)
+		#actualizar_rama_arbol("evolucion_1")
+	seleccionado = int(evol_superior)
+	#seleccionado = 1
 
 func _on_evolucion_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_2")):
-		actualizar_rama_arbol("evolucion_2")
-	seleccionado = 2
+	if( len(evolucion_actual) < 11 ):
+		actualizar_rama_arbol("evolucion_"+evol_inferior)
+		#actualizar_rama_arbol("evolucion_2")
+	seleccionado = int(evol_inferior)
+	#seleccionado = 2
 
 func _on_evolucion_1_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_1_1")):
-		actualizar_rama_arbol("evolucion_1_1")
-	seleccionado = 1
+	if( len(evolucion_actual) < 13 ):
+		actualizar_rama_arbol("evolucion_"+evol_superior+"_1")
+		#actualizar_rama_arbol("evolucion_1_1")
+	seleccionado = int(evol_superior)
+	#seleccionado = 1
 
 func _on_evolucion_1_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_1_2")):
-		actualizar_rama_arbol("evolucion_1_2")
-	seleccionado = 2
+	if( len(evolucion_actual) < 13 ):
+		actualizar_rama_arbol("evolucion_"+evol_superior+"_2")
+		#actualizar_rama_arbol("evolucion_1_2")
+	seleccionado = int(evol_inferior)
+	#seleccionado = 2
 	
 func _on_evolucion_1_1_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_1_1_1")):
-		actualizar_rama_arbol("evolucion_1_1_1")
-	seleccionado = 1
+	if( len(evolucion_actual) < 15 ):
+		actualizar_rama_arbol("evolucion_"+evol_superior+"_1_1")
+		#actualizar_rama_arbol("evolucion_1_1_1")
+	seleccionado = int(evol_superior)
+	#seleccionado = 1
 
 func _on_evolucion_1_1_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_1_1_2")):
-		actualizar_rama_arbol("evolucion_1_1_2")
-	seleccionado = 2
+	if( len(evolucion_actual) < 15 ):
+		actualizar_rama_arbol("evolucion_"+evol_superior+"_1_2")
+		#actualizar_rama_arbol("evolucion_1_1_2")
+	seleccionado = int(evol_inferior)
+	#seleccionado = 2
 
 func _on_evolucion_1_2_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_1_2_1")):
-		actualizar_rama_arbol("evolucion_1_2_1")
-	seleccionado = 1
+	if( len(evolucion_actual) < 15 ):
+		actualizar_rama_arbol("evolucion_"+evol_superior+"_2_1")
+		#actualizar_rama_arbol("evolucion_1_2_1")
+	seleccionado = int(evol_superior)
+	#seleccionado = 1
 
 func _on_evolucion_1_2_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_1_2_2")):
-		actualizar_rama_arbol("evolucion_1_2_2")
-	seleccionado = 2
+	if( len(evolucion_actual) < 15 ):
+		actualizar_rama_arbol("evolucion_"+evol_superior+"_2_2")
+		#actualizar_rama_arbol("evolucion_1_2_2")
+	seleccionado = int(evol_inferior)
+	#seleccionado = 2
 
 func _on_evolucion_2_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_2_1")):
-		actualizar_rama_arbol("evolucion_2_1")
-	seleccionado = 1
+	if( len(evolucion_actual) < 13 ):
+		actualizar_rama_arbol("evolucion_"+evol_inferior+"_1")
+		#actualizar_rama_arbol("evolucion_2_1")
+	seleccionado = int(evol_superior)
+	#seleccionado = 1
 
 func _on_evolucion_2_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_2_2")):
-		actualizar_rama_arbol("evolucion_2_2")
-	seleccionado = 2
+	if( len(evolucion_actual) < 13 ):
+		actualizar_rama_arbol("evolucion_"+evol_inferior+"_2")
+		#actualizar_rama_arbol("evolucion_2_2")
+	seleccionado = int(evol_inferior)
+	#seleccionado = 2
 
 func _on_evolucion_2_1_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_2_1_1")):
-		actualizar_rama_arbol("evolucion_2_1_1")
-	seleccionado = 1
+	if( len(evolucion_actual) < 15 ):
+		actualizar_rama_arbol("evolucion_"+evol_inferior+"_1_1")
+		#actualizar_rama_arbol("evolucion_2_1_1")
+	seleccionado = int(evol_superior)
+	#seleccionado = 1
 
 func _on_evolucion_2_1_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_2_1_2")):
-		actualizar_rama_arbol("evolucion_2_1_2")
-	seleccionado = 2
+	if( len(evolucion_actual) < 15 ):
+		actualizar_rama_arbol("evolucion_"+evol_inferior+"_1_2")
+		#actualizar_rama_arbol("evolucion_2_1_2")
+	seleccionado = int(evol_inferior)
+	#seleccionado = 2
 
 func _on_evolucion_2_2_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_2_2_1")):
-		actualizar_rama_arbol("evolucion_2_2_1")
-	seleccionado = 1
+	if( len(evolucion_actual) < 15 ):
+		actualizar_rama_arbol("evolucion_"+evol_inferior+"_2_1")
+		#actualizar_rama_arbol("evolucion_2_2_1")
+	seleccionado = int(evol_superior)
+	#seleccionado = 1
 
-func _on_evolucion_2_2_2_pressed():	
-	if(len(evolucion_actual)<len("evolucion_2_2_2")):
-		actualizar_rama_arbol("evolucion_2_2_2")
-	seleccionado = 2
+func _on_evolucion_2_2_2_pressed():
+	if( len(evolucion_actual) < 15 ):
+		actualizar_rama_arbol("evolucion_"+evol_inferior+"_2_2")
+		#actualizar_rama_arbol("evolucion_2_2_2")
+	seleccionado = int(evol_inferior)
+	#seleccionado = 2
 
 func _on_evolucion_mouse_entered():
 	actualizar_sprite_ventana("arma_1","","")
@@ -616,103 +640,59 @@ func _on_evolucion_mouse_entered():
 func _on_evolucion_mouse_exited():
 	ventana_por_defecto()
 
-func _on_evolucion_1_mouse_entered():
-	actualizar_sprite_ventana("ak-47","azul","")
-	ventana_actualizar("MAX AGIL","Has acabado con muchos monstruos, quienes te han inculcado en tu ADN un gen con el que aprenderas a controlar el movimiento de los seres vivos","+ VELOCIDAD")
+func actualiza(nombre_evol):
+	var _arma      = Atributos.evoluciones[nombre_evol].arma
+	var _accesorio = Atributos.evoluciones[nombre_evol].skin_accesorio
+	var _gorro     = Atributos.evoluciones[nombre_evol].gorro
+	actualizar_sprite_ventana(_arma,_accesorio,_gorro)
+	
+	var _titulo    = Atributos.evoluciones[nombre_evol].titulo
+	var _historia  = Atributos.evoluciones[nombre_evol].historia
+	var _habilidad = Atributos.evoluciones[nombre_evol].habilidad
+	ventana_actualizar(_titulo,_historia,_habilidad)
 
-func _on_evolucion_1_mouse_exited():
-	ventana_por_defecto()
+
+func _on_evolucion_1_mouse_entered():
+	actualiza("evolucion_"+evol_superior)
 
 func _on_evolucion_2_mouse_entered():
-	actualizar_sprite_ventana("escopeta","verde","")
-	ventana_actualizar("EL COLOSO","Has aguantado y sobrevivido de muchos seres peligrosos, aumentas tu resistencia a ataques.","+ VIDA")
-
-func _on_evolucion_2_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_inferior)
 
 func _on_evolucion_1_1_mouse_entered():
-	actualizar_sprite_ventana("ak-47","azul","200")
-	ventana_actualizar("EL VELOCISTA MAX","Luego de tanto desplazamiento luchando contra los monstruos, has aprendido a moverte mejor.","+ VELOCIDAD")
-
-func _on_evolucion_1_1_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_superior+"_1")
 
 func _on_evolucion_1_2_mouse_entered():
-	actualizar_sprite_ventana("ak-47","azul","210")
-	ventana_actualizar("EL RALENTIZADOR MAX","Has afectado el terreno de movimiento, ahora logras que tus enemigos se muevan con menos velocidad.","ENEMIGOS MAS LENTOS")
-
-func _on_evolucion_1_2_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_superior+"_2")
 
 func _on_evolucion_2_1_mouse_entered():
-	actualizar_sprite_ventana("bazooka","verde","220")
-	ventana_actualizar("EL TANQUE MAX","Has pasado por una mutacion en tu ADN genetico que provoca que tengas muchas mas vida.","++ VIDA")
-
-func _on_evolucion_2_1_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_inferior+"_1")
 
 func _on_evolucion_2_2_mouse_entered():
-	actualizar_sprite_ventana("bazooka","verde","230")
-	ventana_actualizar("LA ROCA MAX","Has mutado con tu resistencia, ahora tienes mucho mas aguante a los ataques enemigos.","+ RESISTENCIA")
-
-func _on_evolucion_2_2_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_inferior+"_2")
 
 func _on_evolucion_1_1_2_mouse_entered():
-	actualizar_sprite_ventana("ak-47","verde","301")
-	ventana_actualizar("FANTASMAX","Luego de haber aprendido a manejar tu velocidad, has saltado a otro nivel: ahora puedes pasar por encima de lo que quieras, como un fantasma.","ATRAVIESAS OBSTACULOS")
-
-func _on_evolucion_1_1_2_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_superior+"_1_2")
 
 func _on_evolucion_1_1_1_mouse_entered():
-	actualizar_sprite_ventana("ak-47","verde","300")
-	ventana_actualizar("NITROMAX","Obtienes el poder de tener una super velocidad temporal cuando lo desees cada cierto tiempo.","PODER DE SUPER VELOCIDAD")
-
-func _on_evolucion_1_1_1_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_superior+"_1_1")
 
 func _on_evolucion_1_2_2_mouse_entered():
-	actualizar_sprite_ventana("ak-47","verde","311")
-	ventana_actualizar("EL CONGELADOR AMX","Obtienes el pdoer de congelar temporalmente a tus enemigos cada cierto tiempo.","PODER DE CONGELAMIENTO")
-
-func _on_evolucion_1_2_2_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_superior+"_2_2")
 
 func _on_evolucion_1_2_1_mouse_entered():
-	actualizar_sprite_ventana("ak-47","verde","310")
-	ventana_actualizar("LA AURA RALENTIZADORA","Has comenzado a generar moleculas que provocan que tus enemigos al acercarte a ti se muevan mucho mas lento","RADIO DE RALENTIZACION")
-
-func _on_evolucion_1_2_1_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_superior+"_2_1")
 
 func _on_evolucion_2_1_1_mouse_entered():
-	actualizar_sprite_ventana("escopeta","verde","320")
-	ventana_actualizar("MAXUSCRISTO","Un milagro ocurrira si mueres, probablemente logres un unica resurrecciona, aprovechala.","VIDA EXTRA")
-
-func _on_evolucion_2_1_1_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_inferior+"_1_1")
 
 func _on_evolucion_2_1_2_mouse_entered():
-	actualizar_sprite_ventana("escopeta","verde","321")
-	ventana_actualizar("MAX REGENERATIVO","Han mutado todos tus sistemas, ahora logras regenrar tu vida cada cierto tiempo.","REGENERACION DE VIDA")
-
-func _on_evolucion_2_1_2_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_inferior+"_1_2")
 
 func _on_evolucion_2_2_1_mouse_entered():
-	actualizar_sprite_ventana("bazooka","verde","330")
-	ventana_actualizar("MAX INMUNE","Obtienes el poder de ser inmune temporalmente cada cierto tiempo.","PODER DE ESCUDO")
-
-func _on_evolucion_2_2_1_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_inferior+"_2_1")
 
 func _on_evolucion_2_2_2_mouse_entered():
-	actualizar_sprite_ventana("bazooka","verde","331")
-	ventana_actualizar("LA RESISTENCIA","Cuando te queda poca vida, los ataques enemigos te afectan menos.","+ RESISTENCIA")
-
-func _on_evolucion_2_2_2_mouse_exited():
-	ventana_por_defecto()
+	actualiza("evolucion_"+evol_inferior+"_2_2")
 
 func actualizar_sprite_ventana(arma,bandera,gorro):
 	#var skin es para el accesorio que identifique a cada evolucion
@@ -745,214 +725,3 @@ func actualizar_sprite_ventana(arma,bandera,gorro):
 	else:
 		sprite_gorro.visible = false
 	pass
-
-func _on_evolucion_3_pressed():
-	if(len(evolucion_actual)<len("evolucion_3")):
-		actualizar_rama_arbol("evolucion_3")
-	seleccionado = 3
-
-func _on_evolucion_3_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_3_1")):
-		actualizar_rama_arbol("evolucion_3_1")
-	seleccionado = 1
-
-func _on_evolucion_3_1_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_3_1_1")):
-		actualizar_rama_arbol("evolucion_3_1_1")
-	seleccionado = 1
-
-func _on_evolucion_3_1_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_3_1_2")):
-		actualizar_rama_arbol("evolucion_3_1_2")
-	seleccionado = 2
-
-func _on_evolucion_3_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_3_2")):
-		actualizar_rama_arbol("evolucion_3_2")
-	seleccionado = 2
-
-func _on_evolucion_3_2_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_3_2_1")):
-		actualizar_rama_arbol("evolucion_3_2_1")
-	seleccionado = 1
-
-func _on_evolucion_3_2_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_3_2_2")):
-		actualizar_rama_arbol("evolucion_3_2_2")
-	seleccionado = 2
-
-func _on_evolucion_4_pressed():
-	if(len(evolucion_actual)<len("evolucion_4")):
-		actualizar_rama_arbol("evolucion_4")
-	seleccionado = 4
-
-func _on_evolucion_4_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_4_1")):
-		actualizar_rama_arbol("evolucion_4_1")
-	seleccionado = 1
-
-func _on_evolucion_4_1_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_4_1_1")):
-		actualizar_rama_arbol("evolucion_4_1_1")
-	seleccionado = 1
-
-func _on_evolucion_4_1_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_4_1_2")):
-		actualizar_rama_arbol("evolucion_4_1_2")
-	seleccionado = 2
-
-func _on_evolucion_4_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_4_2")):
-		actualizar_rama_arbol("evolucion_4_2")
-	seleccionado = 2
-
-func _on_evolucion_4_2_1_pressed():
-	if(len(evolucion_actual)<len("evolucion_4_2_1")):
-		actualizar_rama_arbol("evolucion_4_2_1")
-	seleccionado = 1
-
-func _on_evolucion_4_2_2_pressed():
-	if(len(evolucion_actual)<len("evolucion_4_2_2")):
-		actualizar_rama_arbol("evolucion_4_2_2")
-	seleccionado = 2
-
-
-
-func _on_evolucion_3_mouse_entered():	
-	actualizar_sprite_ventana("escopeta","rojo","")
-	ventana_actualizar("FORZAMAX","Incrementas tu fuerza, cada impacto que reciben tus enemigos son mas influyentes.","+ FUERZA")
-	pass # Replace with function body.
-
-
-func _on_evolucion_3_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_3_1_mouse_entered():
-	actualizar_sprite_ventana("escopeta","rojo","240")
-	ventana_actualizar("MAX INTELIGENTE","Aprendes a provocar ataques criticos a poca distnacia.","+ ATAQUE EN - RANGO")
-	pass # Replace with function body.
-
-
-func _on_evolucion_3_1_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_3_1_1_mouse_entered():
-	actualizar_sprite_ventana("escopeta","rojo","340")
-	ventana_actualizar("LA BOMBA DE MAX","Has aprendido a fabricar bombas, ahora, queda en ti saber usarlas.","PODER DE RADIO EXPLOSIVO")
-	pass # Replace with function body.
-
-
-func _on_evolucion_3_1_1_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_3_1_2_mouse_entered():
-	actualizar_sprite_ventana("escopeta","rojo","341")
-	ventana_actualizar("LA LOCURA DE MAX","Tus ataques ahora no respetan las leyes de la fisica, pueden atravesar obstaculos.","ATAQUE PENETRANTE")
-	pass # Replace with function body.
-
-
-func _on_evolucion_3_1_2_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_3_2_mouse_entered():
-	actualizar_sprite_ventana("rifle","rojo","250")
-	ventana_actualizar("OJO DE AGUILA","Involucras todas tus fuerzas en tus disparos, provocas impactos letales.","+ ATAQUE EN + RANGO")
-	pass # Replace with function body.
-
-
-func _on_evolucion_3_2_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_3_2_1_mouse_entered():
-	actualizar_sprite_ventana("francotirador","rojo","350")
-	ventana_actualizar("EL FRANCOTIRADOR","Has aprendido a usar un francotirador, prueba que tan letal es.","ATAQUE LETAL")
-	pass # Replace with function body.
-
-
-func _on_evolucion_3_2_1_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_3_2_2_mouse_entered():
-	actualizar_sprite_ventana("bazooka","rojo","351")
-	ventana_actualizar("MAX BAZOOKAS","Has aprendido a usar una bazooka, cuidado con las explosiones letales.","ATAQUES EXPLOSIVOS")
-	pass # Replace with function body.
-
-
-func _on_evolucion_3_2_2_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_4_mouse_entered():
-	actualizar_sprite_ventana("ametralladora","amarillo","")
-	ventana_actualizar("EXPERTO EN ARMAS","Empiezas tu camino en aprender el uso de armas, mejorar los rangos de disparo y la cantidad","+ CADENCIA + RANGO")
-	pass # Replace with function body.
-
-
-func _on_evolucion_4_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_4_1_mouse_entered():
-	actualizar_sprite_ventana("ametralladora","amarillo","260")
-	ventana_actualizar("LA LLUVIA DE PLOMO","Controlas tus disapros y aprendes a disparar mas de una balas a la vez gracias a tu nueva ametralladora.","DISPERSION DE DISPAROS")
-	pass # Replace with function body.
-
-
-func _on_evolucion_4_1_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_4_1_1_mouse_entered():
-	actualizar_sprite_ventana("ametralladora","amarillo","360")
-	ventana_actualizar("REBOTES MORTALES","Modificas tus balas con el objetivo de que estas reboten entre enemigos. Puede ser letal para ellos.","REBOTE DE BALAS")
-	pass # Replace with function body.
-
-
-func _on_evolucion_4_1_1_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_4_1_2_mouse_entered():
-	actualizar_sprite_ventana("ametralladora","amarillo","361")
-	ventana_actualizar("FUEGOS ARTIFICALES","Has llegado a un nivel tan alto de manejo del arma que puedes disparar a todo tu alrededor.","DISPARO EN 360 GRADOS")
-	pass # Replace with function body.
-
-
-func _on_evolucion_4_1_2_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_4_2_mouse_entered():
-	actualizar_sprite_ventana("ametralladora","amarillo","270")
-	ventana_actualizar("EL TREN DE PLOMO","Aprendes a realizar un disparo aturdidor con muchas balas a la vez.","+ CADENCIA")
-	pass # Replace with function body.
-
-
-func _on_evolucion_4_2_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_4_2_1_mouse_entered():
-	actualizar_sprite_ventana("ametralladora","amarillo","370")
-	ventana_actualizar("DOBLE PESADILLA","Obtienes una nueva arma gracias a tu habilidad de saber como fabricarlas.","DOBLE ARMA")
-	pass # Replace with function body.
-
-
-func _on_evolucion_4_2_1_mouse_exited():
-	ventana_por_defecto()
-
-
-func _on_evolucion_4_2_2_mouse_entered():
-	actualizar_sprite_ventana("ametralladora","amarillo","371")
-	ventana_actualizar("RAFAGA DE PLOMO","Obtienes el poder de tener una cadencia muy alta temporal cada ciertos segundos.","PODER DE CADENCIA INFINITA")
-	pass # Replace with function body.
-
-
-func _on_evolucion_4_2_2_mouse_exited():
-	ventana_por_defecto()
