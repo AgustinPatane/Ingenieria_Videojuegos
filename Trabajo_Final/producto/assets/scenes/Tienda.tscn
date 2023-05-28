@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/soldadoarg_buy.png" type="Texture" id=1]
 [ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/pela_buy.png" type="Texture" id=2]
@@ -38,6 +38,10 @@
 [ext_resource path="res://producto/assets/img/tienda/botones/boton_equipar_apretado.png" type="Texture" id=36]
 [ext_resource path="res://producto/assets/img/tienda/botones/boton_comprar.png" type="Texture" id=37]
 [ext_resource path="res://producto/assets/img/tienda/botones/boton_comprar_apretado.png" type="Texture" id=38]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/DERECHA PRESIONADO.png" type="Texture" id=39]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/DERECHA.png" type="Texture" id=40]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/IZQUIERDA PRESIONADO.png" type="Texture" id=41]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/IZQUIERDA.png" type="Texture" id=42]
 
 [sub_resource type="DynamicFont" id=12]
 font_data = ExtResource( 6 )
@@ -53,17 +57,16 @@ font_data = ExtResource( 6 )
 size = 24
 font_data = ExtResource( 6 )
 
-[node name="Tienda" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -9.0
-margin_top = 1.0
-margin_right = 2.0
-margin_bottom = 8.0
-size_flags_horizontal = 2
+[node name="Tienda" type="CanvasLayer"]
 script = ExtResource( 5 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1051.0
+margin_bottom = 612.0
+color = Color( 0, 0, 0, 0.886275 )
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -11.0
@@ -82,8 +85,8 @@ texture = ExtResource( 34 )
 expand = true
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 502, 333 )
-scale = Vector2( 1.53864, 1.60351 )
+position = Vector2( 519.975, 329.995 )
+scale = Vector2( 1.60295, 1.63058 )
 texture = ExtResource( 8 )
 
 [node name="Boton_salir" type="TextureButton" parent="."]
@@ -151,13 +154,14 @@ texture_focused = ExtResource( 36 )
 expand = true
 
 [node name="skins_de_colores" type="Control" parent="skins_jugador"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -356.0
+margin_left = -341.0
 margin_top = -150.0
-margin_right = 349.0
+margin_right = 364.0
 margin_bottom = 21.0
 
 [node name="Yellow" type="TextureButton" parent="skins_jugador/skins_de_colores"]
@@ -205,14 +209,13 @@ texture_focused = ExtResource( 27 )
 expand = true
 
 [node name="skins_customs" type="Control" parent="skins_jugador"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -356.0
+margin_left = -341.0
 margin_top = -150.0
-margin_right = 349.0
+margin_right = 364.0
 margin_bottom = 21.0
 
 [node name="Pela" type="TextureButton" parent="skins_jugador/skins_customs"]
@@ -260,6 +263,7 @@ texture_focused = ExtResource( 25 )
 expand = true
 
 [node name="ver_skins_colores" type="Button" parent="skins_jugador"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -274,6 +278,7 @@ flat = true
 icon_align = 1
 
 [node name="ver_skins_customs" type="Button" parent="skins_jugador"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -286,6 +291,30 @@ rect_scale = Vector2( 0.1, 0.15 )
 icon = ExtResource( 30 )
 flat = true
 icon_align = 1
+
+[node name="Izquierda" type="TextureButton" parent="skins_jugador"]
+anchor_left = -0.188
+anchor_top = -3.003
+anchor_right = -0.188
+anchor_bottom = -3.003
+margin_left = 123.116
+margin_top = 391.3
+margin_right = 200.116
+margin_bottom = 468.3
+texture_normal = ExtResource( 42 )
+texture_pressed = ExtResource( 41 )
+texture_hover = ExtResource( 41 )
+expand = true
+
+[node name="Derecha" type="TextureButton" parent="skins_jugador"]
+margin_left = 704.0
+margin_top = 91.0
+margin_right = 781.0
+margin_bottom = 168.0
+texture_normal = ExtResource( 40 )
+texture_pressed = ExtResource( 39 )
+texture_hover = ExtResource( 39 )
+expand = true
 
 [node name="Titulo" type="Label" parent="."]
 anchor_left = 0.5
@@ -304,10 +333,10 @@ valign = 1
 [node name="Monedas" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -176.0
-margin_top = 128.0
-margin_right = -62.0
-margin_bottom = 153.0
+margin_left = -221.0
+margin_top = 89.0
+margin_right = -104.0
+margin_bottom = 114.0
 custom_colors/font_color = Color( 0.866667, 0.752941, 0.203922, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "100"
@@ -315,7 +344,7 @@ align = 1
 valign = 1
 
 [node name="monedas_sprite" type="Sprite" parent="Monedas"]
-position = Vector2( 55, -28 )
+position = Vector2( 125, 9 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 
@@ -332,3 +361,5 @@ texture = ExtResource( 7 )
 [connection signal="pressed" from="skins_jugador/skins_customs/Rambo" to="." method="_on_skin_rambo_pressed"]
 [connection signal="pressed" from="skins_jugador/ver_skins_colores" to="." method="_on_ver_skins_colores_pressed"]
 [connection signal="pressed" from="skins_jugador/ver_skins_customs" to="." method="_on_ver_skins_customs_pressed"]
+[connection signal="pressed" from="skins_jugador/Izquierda" to="." method="_on_Izquierda_pressed"]
+[connection signal="pressed" from="skins_jugador/Derecha" to="." method="_on_Derecha_pressed"]

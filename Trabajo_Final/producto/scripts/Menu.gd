@@ -63,7 +63,10 @@ func _on_Ranking_pressed():
 
 func _on_Tienda_pressed():
 	SoundManager.play_boton_1()
-	var _aux = get_tree().change_scene("res://producto/assets/scenes/Tienda.tscn")
+	var ranking = escena_tienda.instance()
+	self.add_child(ranking)
+	
+	#var _aux = get_tree().change_scene("res://producto/assets/scenes/Tienda.tscn")
 
 func load_tienda():
 	var file = File.new()
@@ -103,9 +106,6 @@ func actualiza_minimapa():
 	get_node("Menu_previo/Mapas/FondoMapas/Mapa").texture = load("res://producto/assets/img/Mini_mapas/"+str(mapa_actual)+".png")
 	get_node("Menu_previo/Btn_ready").visible = true
 	
-		
-
-
 func _on_Btn_ready_pressed():
 	SoundManager.play_boton_1()
 	Engine.set_meta("nombre_escena_mapa",mapas[mapa_actual])

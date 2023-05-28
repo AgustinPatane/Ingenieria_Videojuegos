@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 var monedas
 var skins_cargados = Array()
@@ -23,6 +23,7 @@ func _ready():
 	load_tienda()
 
 func _on_comprar_pressed():
+	SoundManager.play_boton_1()
 	var costo = int(valor.text)
 	if monedas>=costo:
 		if !(skins_compradas.has(skin_seleccionada)):
@@ -50,41 +51,52 @@ func _on_comprar_pressed():
 		pass #mostrar monedas insuficientes
 
 func _on_skin_pela_pressed():
+	SoundManager.play_boton_1()
 	valor.text = "15000"
 	skin_seleccionada = "Pela"
 
 func _on_skin_soldado_pressed():
+	SoundManager.play_boton_1()
 	valor.text = "20000"
 	skin_seleccionada = "Soldado_arg"
 
 func _on_skin_bask_pressed():
+	SoundManager.play_boton_1()
 	valor.text = "70000"
 	skin_seleccionada = "Nba"
 
 func _on_skin_rambo_pressed():
+	SoundManager.play_boton_1()
 	valor.text = "40000"
 	skin_seleccionada = "Rambo"
 
 func _on_Yellow_pressed():
+	SoundManager.play_boton_1()
 	valor.text = "0"
 	skin_seleccionada = "Yellow"
 
 func _on_Red_pressed():
+	SoundManager.play_boton_1()
 	valor.text = "7000"
 	skin_seleccionada = "Red"
 
 func _on_Blue_pressed():
+	SoundManager.play_boton_1()
 	valor.text = "7000"
 	skin_seleccionada = "Blue"
 
 func _on_Black_pressed():
+	SoundManager.play_boton_1()
 	valor.text = "10000"
 	skin_seleccionada = "Black"
 
 func _on_volver_a_menu_pressed():
+	SoundManager.play_boton_1()
+	queue_free()
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/Menu.tscn")
 
 func _on_equipar_pressed():
+	SoundManager.play_boton_1()
 	if skins_compradas.has(skin_seleccionada):
 		var ruta = "res://producto/assets/img/jugador/skins/" + skin_seleccionada
 		Engine.set_meta("ruta_skin",ruta)
@@ -131,17 +143,27 @@ func load_tienda():
 
 
 func _on_ver_skins_colores_pressed():
+	SoundManager.play_boton_1()
 	skins_colores.visible = true
 	skins_customs.visible = false
 
 func _on_ver_skins_customs_pressed():
+	SoundManager.play_boton_1()
 	skins_colores.visible = false
 	skins_customs.visible = true
 
 
 
 func _on_Boton_salir_pressed():
-	var _aux = get_tree().change_scene("res://producto/assets/scenes/Menu.tscn")
 	SoundManager.play_boton_1()
 	self.queue_free()
 
+func _on_Izquierda_pressed():
+	SoundManager.play_boton_1()
+	skins_colores.visible = false
+	skins_customs.visible = true
+
+func _on_Derecha_pressed():
+	SoundManager.play_boton_1()
+	skins_colores.visible = true
+	skins_customs.visible = false
