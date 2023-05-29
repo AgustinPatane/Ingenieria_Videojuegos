@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mapa_dungeon_bosque.png-e0378c377b29b35fd10554611ad148e4.stex"
+path="res://.import/5.png-6d485c3a8a19dda0056170bee65d5ac6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/mapas_armados/mapa_dungeon_bosque.png"
-dest_files=[ "res://.import/mapa_dungeon_bosque.png-e0378c377b29b35fd10554611ad148e4.stex" ]
+source_file="res://producto/assets/img/Mini_mapas/5.png"
+dest_files=[ "res://.import/5.png-6d485c3a8a19dda0056170bee65d5ac6.stex" ]
 
 [params]
 

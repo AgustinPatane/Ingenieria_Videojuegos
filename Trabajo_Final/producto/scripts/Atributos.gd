@@ -632,5 +632,10 @@ var evol_MapaArcilla = {
 	evol_2 = "4" 
 }
 
+var evol_MapaDungeon = {
+	evol_1 = "1", 
+	evol_2 = "4" 
+}
+
 func get_pilar():
 	return pilar

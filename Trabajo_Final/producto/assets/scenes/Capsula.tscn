@@ -73,7 +73,7 @@ anims/RESET = SubResource( 2 )
 anims/go = SubResource( 3 )
 
 [node name="Sprite_capusla" type="Sprite" parent="."]
-position = Vector2( 701, 72 )
+position = Vector2( 516, -32 )
 scale = Vector2( 1.82891, 2.11545 )
 z_index = 80
 texture = ExtResource( 5 )
