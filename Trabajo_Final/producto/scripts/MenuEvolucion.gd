@@ -450,8 +450,6 @@ func muestro_arbol():
 	
 	
 	for boton in botones_arbol:
-		print(boton.name)
-		
 		if longitud_actual+2<len(boton.name):#evoluciones que no llegaron
 			boton.visible = false
 		else:#evoluciones que ya pasaron
@@ -485,11 +483,6 @@ func _process(_delta):
 		btn_seleccionar.set_disabled(false)
 		
 func _on_Seleccionar_pressed():
-	#print("longitud: ",len(evolucion_actual))
-	#print("evol seleccionada: ",seleccionado)
-	#print("evol superior: ",evol_superior)
-	#print("evol inferior: ",evol_inferior)
-	
 	if len(evolucion_actual) >= 11:
 		if str(seleccionado) == evol_superior:
 			seleccionado = 1
@@ -518,12 +511,8 @@ func ventana_actualizar(xtitulo="",xhistoria="",xhabilidad=""):
 func actualizar_rama_arbol(evolucion):
 	var rama_primer_nivel = ""
 	var rama_segundo_nivel = ""
-	print("La evolucion seleccionada es: ", evolucion)
 	if len(evolucion) >= 10:
 		if evolucion[10] != "1" or evolucion[10] != "2":
-			print("evol_sup ",evol_superior)
-			print("evol_inf ",evol_inferior)
-				
 			if evolucion[10] == evol_superior:
 				evolucion[10] = "1"
 			elif evolucion[10] == evol_inferior:

@@ -598,7 +598,6 @@ func actualizo_skin_accesorios(atributos):
 	pass
 
 func _on_timer_de_carga_timeout():
-	print("PODER CARGADO")
 	sprite_poder.play("cargado_"+poder_especial)
 	self.pedir_poder = true
 
@@ -634,7 +633,6 @@ func _on_Area_superposicion_area_exited(area):
 		#area.z_index += 2
 
 func en_capsula(cap):
-	print(cap.name)
 	capsula_evolucion = cap
 	pass
 
