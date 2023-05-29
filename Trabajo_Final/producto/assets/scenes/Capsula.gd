@@ -38,4 +38,5 @@ func _on_Timer_mantener_tecla_timeout():
 
 
 func _on_Area2D_body_exited(_body):
+	emit_signal("exit_capsula")
 	parar_timer()

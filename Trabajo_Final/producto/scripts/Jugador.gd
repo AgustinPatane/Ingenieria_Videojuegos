@@ -31,6 +31,9 @@ var puntos = 649
 var vida 
 var experiencia = 0
 var nivel = 1
+var contador_niveles_arbol = 0
+var max_nivel_arbol = 3
+var mas_evoluciones = true
 var dentro_de_capsula = false
 var experiencia_necesaria
 var paused = null
@@ -279,8 +282,6 @@ func gana_exp(value):
 		if nivel == niveles_evol[0] or nivel == niveles_evol[1] or nivel == niveles_evol[2]:
 			capacidad_evolucion = true
 			#_evolucion()
-		else:
-			_adquiere_habilidad()
 	emit_signal("actualiza_interfaz")
 
 func actualiza_exp(experiencia_max):
@@ -295,16 +296,19 @@ func _on_Anim_lvl_up_animation_finished(_anim_name):
 # ---------------------------------- EVOLUCION ----------------------------------------
 # -------------------------------------------------------------------------------------
 
-func _adquiere_habilidad():
-	pass
-
 func _evolucion():
-	$Interfaz.esconder()
-	var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
-	Atributos.set_cursor_menu()
-	self.add_child(evol_instance)
-	get_tree().paused = true
-	culmina_evolucion()
+	if mas_evoluciones:
+		$Interfaz.esconder()
+		contador_niveles_arbol += 1
+		if contador_niveles_arbol == max_nivel_arbol:
+			mas_evoluciones = false
+		var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
+		Atributos.set_cursor_menu()
+		self.add_child(evol_instance)
+		get_tree().paused = true
+		culmina_evolucion()
+	else:
+		print("NO HAY MAS EVOLUCIONES")
 	pass
 
 func culmina_evolucion():
