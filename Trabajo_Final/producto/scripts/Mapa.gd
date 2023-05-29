@@ -48,6 +48,7 @@ func _ready():
 	sube_dificultad(1)
 	establecer_fondo_mapa()
 	capsula.connect("capsula",self,"en_capsula")
+	capsula.connect("exit_capsula",self,"ya_no_en_capsula")
 
 func set_niveles_spawn():
 	max_enemigos = Atributos.max_enemigos
@@ -160,9 +161,13 @@ func _on_Jugador_player_defeated():
 	var _aux = get_tree().change_scene("res://producto/assets/scenes/MenuDerrota.tscn")
 
 func en_capsula(cap):
+	jugador.set_dentro(true)
 	jugador.en_capsula(cap)
 	pass
 
+func ya_no_en_capsula():
+	jugador.set_dentro(false)
+	pass
 
 func freeze():
 	SoundManager.play_congelar()

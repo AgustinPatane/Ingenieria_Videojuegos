@@ -9,6 +9,7 @@ onready var sprite_capsula = get_node("Sprite_capusla/AnimatedSprite")
 var jugador
 
 signal capsula(cap)
+signal exit_capsula
 
 func _ready():
 	pass # Replace with function body.

@@ -31,6 +31,7 @@ var puntos = 649
 var vida 
 var experiencia = 0
 var nivel = 1
+var dentro_de_capsula = false
 var experiencia_necesaria
 var paused = null
 var menu_pausa
@@ -148,13 +149,12 @@ func _physics_process(delta):
 	#	recibe_ataque(0.05)
 	if Input.is_action_pressed("poder_especial"):
 		ejecutar_poder_especial()
-	if Input.is_action_pressed("evolucionar"):
+	if Input.is_action_pressed("evolucionar") and dentro_de_capsula:
 		if !primer_toque:
 			primer_toque = true
 			chequea_capacidad_evolucion()
 	else:
 		if primer_toque:
-			print("soltaste la tecla")
 			primer_toque = false
 			parar_timer()
 		pass
@@ -648,3 +648,7 @@ func chequea_capacidad_evolucion():
 func parar_timer():
 	if capsula_evolucion:
 		capsula_evolucion.parar_timer()
+
+func set_dentro(valor):
+	print("entrada / salida de capsula")
+	dentro_de_capsula = valor
