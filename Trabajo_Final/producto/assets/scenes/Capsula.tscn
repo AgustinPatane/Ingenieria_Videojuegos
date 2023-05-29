@@ -7,7 +7,7 @@
 [ext_resource path="res://producto/assets/img/Capsula/Capsule1.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/Capsula/Capsule5.png" type="Texture" id=6]
 [ext_resource path="res://producto/assets/img/Capsula/teleport_128.png" type="Texture" id=7]
-[ext_resource path="res://producto/assets/scenes/Capsula.gd" type="Script" id=8]
+[ext_resource path="res://producto/scripts/Capsula.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
