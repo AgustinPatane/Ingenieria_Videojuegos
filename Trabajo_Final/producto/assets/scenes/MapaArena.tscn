@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://producto/assets/img/Mini_mapas/5.png" type="Texture" id=1]
+[ext_resource path="res://producto/assets/img/Mini_mapas/0.png" type="Texture" id=1]
 [ext_resource path="res://producto/assets/scenes/Mapa.tscn" type="PackedScene" id=2]
 [ext_resource path="res://producto/assets/img/mapas_armados/mapa_dungeon_bosque_fondo.png" type="Texture" id=3]
 

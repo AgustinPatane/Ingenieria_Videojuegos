@@ -609,7 +609,7 @@ var evoluciones = {
 
 var evol_MapaArena = {
 	evol_1 = "1", 
-	evol_2 = "4" 
+	evol_2 = "2" 
 }
 
 var evol_MapaLuna = {
@@ -619,21 +619,21 @@ var evol_MapaLuna = {
 
 var evol_MapaLava = {
 	evol_1 = "1", 
-	evol_2 = "3" 
+	evol_2 = "4" 
 }
 
 var evol_MapaMadera = {
 	evol_1 = "2", 
-	evol_2 = "4"
+	evol_2 = "3"
 }
 
 var evol_MapaArcilla = {
 	evol_1 = "1", 
-	evol_2 = "4" 
+	evol_2 = "3" 
 }
 
 var evol_MapaDungeon = {
-	evol_1 = "1", 
+	evol_1 = "2", 
 	evol_2 = "4" 
 }
 
