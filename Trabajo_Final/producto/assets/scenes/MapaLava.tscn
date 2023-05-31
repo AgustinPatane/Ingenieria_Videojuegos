@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://producto/assets/scenes/Mapa.tscn" type="PackedScene" id=1]
 [ext_resource path="res://producto/assets/img/Texturas/lava2.png" type="Texture" id=2]
@@ -27,7 +27,6 @@
 [ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 21.png" type="Texture" id=25]
 [ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 23.png" type="Texture" id=26]
 [ext_resource path="res://producto/assets/img/probando_llamas/fire1_ 03.png" type="Texture" id=27]
-[ext_resource path="res://producto/assets/img/Mapas/3.png" type="Texture" id=28]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 89.9192
@@ -61,8 +60,8 @@ hframes = 7
 vframes = 3
 frame = 7
 
-[node name="Fondo_elegido" parent="." index="3"]
-texture = ExtResource( 28 )
+[node name="Capsula" parent="." index="4"]
+position = Vector2( 45.9559, -114 )
 
 [node name="Lava_1" type="Area2D" parent="." index="6"]
 
@@ -88,6 +87,3 @@ position = Vector2( 0, 1.33332 )
 frames = SubResource( 3 )
 animation = "llamas"
 frame = 24
-
-[node name="Capsula" parent="." index="9"]
-position = Vector2( 45.9559, -114 )
