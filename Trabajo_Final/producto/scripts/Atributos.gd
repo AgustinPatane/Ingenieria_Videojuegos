@@ -174,6 +174,9 @@ var pilar = {
 	speed = 10
 }
 
+func get_pilar():
+	return pilar
+	
 # EVOLUCIONES -------------------------------------------------------
 var evoluciones = {
 	# EVOLUCION 1 : MOVIMIENTO / VELOCIDAD
@@ -605,8 +608,7 @@ var evoluciones = {
 # 3 DANIO
 # 4 CADENCIA
 
-#var mapas = ["MapaArena","MapaLuna","MapaLava","MapaMadera","MapaArcilla"]
-
+#var mapas = ["MapaArena","MapaLuna","MapaLava","MapaMadera","MapaArcilla","MapaDungeon"]
 var evol_MapaArena = {
 	evol_1 = "1", 
 	evol_2 = "2" 
@@ -637,5 +639,4 @@ var evol_MapaDungeon = {
 	evol_2 = "4" 
 }
 
-func get_pilar():
-	return pilar
+
