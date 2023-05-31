@@ -37,3 +37,6 @@ shape = SubResource( 2 )
 visible = false
 position = Vector2( -21.3333, 1.33333 )
 scale = Vector2( 90, 90 )
+
+[node name="CollisionShape2D" parent="area_colision_enemigos" index="0"]
+position = Vector2( -2.66667, 14 )

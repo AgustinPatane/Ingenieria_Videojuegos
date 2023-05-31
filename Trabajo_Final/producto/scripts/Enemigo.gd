@@ -173,3 +173,13 @@ func _on_AnimationPlayer_spawn_animation_finished(_anim_name):
 	jugador.connect("mascota",self,"permiso")
 	jugador.connect("explosion",self,"explosion")
 	
+
+
+func _on_area_colision_enemigos_area_entered(area):
+	#se podria modificar poniendo tmb un or area.is_in_group("obstaculo") para hacer que el
+	#enemigo choque con los obstaculos
+	if area.is_in_group("colision_enemigo") and !self.is_in_group("Inamovible"):
+		if self.get_overlapping_areas().find(area) != -1:
+			var push_vector = self.position - area.position
+			push_vector = push_vector.normalized() * 10
+			self.translate(push_vector)

@@ -34,3 +34,6 @@ shape = SubResource( 3 )
 
 [node name="Pos_disparo" type="Position2D" parent="." index="7"]
 position = Vector2( 14.5455, -78.1818 )
+
+[node name="CollisionShape2D" parent="area_colision_enemigos" index="0"]
+position = Vector2( -10, 7.27273 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://producto/assets/scenes/Enemigo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://producto/assets/img/enemigos/diablito/Diablito.png" type="Texture" id=2]
@@ -9,6 +9,9 @@ extents = Vector2( 21, 20 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 7.59168
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 19, 6.66667 )
 
 [node name="Diablito" instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
@@ -31,3 +34,7 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" parent="Area_ataque" index="0"]
 position = Vector2( -32.6667, -17.3333 )
 shape = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="area_colision_enemigos" index="0"]
+position = Vector2( -9, 3.33333 )
+shape = SubResource( 3 )
