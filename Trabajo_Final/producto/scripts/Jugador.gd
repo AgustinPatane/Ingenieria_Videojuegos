@@ -496,6 +496,7 @@ func tiro_cadencia_doblearma():
 	$Arma2.set_process(true)
 	$Arma2.visible = true
 	$Arma2.position.y += 20
+	$Arma2.cambia_proeyctil("Proyectil_Fuego")
 	set_atributos()
 	pass
 

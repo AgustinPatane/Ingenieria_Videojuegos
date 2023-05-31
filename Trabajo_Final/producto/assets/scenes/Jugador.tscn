@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=2]
+[gd_scene load_steps=215 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -151,6 +151,49 @@
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/Explosion.png" type="Texture" id=149]
 [ext_resource path="res://producto/assets/img/Accesorios/level_1/azul.png" type="Texture" id=150]
 [ext_resource path="res://producto/assets/img/Accesorios/level_2/gorros.png" type="Texture" id=151]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0029.png" type="Texture" id=153]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0041.png" type="Texture" id=154]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0026.png" type="Texture" id=156]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0030.png" type="Texture" id=157]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0027.png" type="Texture" id=158]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0009.png" type="Texture" id=163]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0012.png" type="Texture" id=164]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0010.png" type="Texture" id=165]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0015.png" type="Texture" id=166]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0025.png" type="Texture" id=167]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0033.png" type="Texture" id=168]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0035.png" type="Texture" id=169]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0013.png" type="Texture" id=170]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0037.png" type="Texture" id=171]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0046.png" type="Texture" id=172]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0048.png" type="Texture" id=173]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0049.png" type="Texture" id=174]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0032.png" type="Texture" id=175]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0050.png" type="Texture" id=176]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0022.png" type="Texture" id=177]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0017.png" type="Texture" id=178]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0016.png" type="Texture" id=179]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0028.png" type="Texture" id=180]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0038.png" type="Texture" id=181]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0024.png" type="Texture" id=182]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0019.png" type="Texture" id=183]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0040.png" type="Texture" id=184]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0011.png" type="Texture" id=185]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0045.png" type="Texture" id=186]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0031.png" type="Texture" id=187]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0021.png" type="Texture" id=188]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0047.png" type="Texture" id=189]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0014.png" type="Texture" id=190]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0044.png" type="Texture" id=191]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0034.png" type="Texture" id=193]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0018.png" type="Texture" id=194]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0020.png" type="Texture" id=195]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0023.png" type="Texture" id=196]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0042.png" type="Texture" id=197]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0039.png" type="Texture" id=198]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0043.png" type="Texture" id=199]
+[ext_resource path="res://producto/assets/img/proyectil_de_fuego/0036.png" type="Texture" id=200]
+[ext_resource path="res://producto/assets/img/armas/armgun.png" type="Texture" id=201]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 33 )
@@ -270,6 +313,14 @@ tracks/0/keys = {
 
 [sub_resource type="CircleShape2D" id=8]
 radius = 58.0775
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ ExtResource( 163 ), ExtResource( 165 ), ExtResource( 185 ), ExtResource( 164 ), ExtResource( 170 ), ExtResource( 190 ), ExtResource( 166 ), ExtResource( 179 ), ExtResource( 178 ), ExtResource( 194 ), ExtResource( 183 ), ExtResource( 195 ), ExtResource( 188 ), ExtResource( 177 ), ExtResource( 196 ), ExtResource( 182 ), ExtResource( 167 ), ExtResource( 156 ), ExtResource( 158 ), ExtResource( 180 ), ExtResource( 153 ), ExtResource( 157 ), ExtResource( 187 ), ExtResource( 175 ), ExtResource( 168 ), ExtResource( 193 ), ExtResource( 169 ), ExtResource( 200 ), ExtResource( 171 ), ExtResource( 181 ), ExtResource( 198 ), ExtResource( 184 ), ExtResource( 154 ), ExtResource( 197 ), ExtResource( 199 ), ExtResource( 191 ), ExtResource( 186 ), ExtResource( 172 ), ExtResource( 189 ), ExtResource( 173 ), ExtResource( 174 ), ExtResource( 176 ) ],
+"loop": true,
+"name": "fire",
+"speed": 30.0
+} ]
 
 [sub_resource type="Curve2D" id=17]
 _data = {
@@ -567,12 +618,25 @@ z_index = 1
 script = ExtResource( 4 )
 
 [node name="Arma_Sprite" type="Sprite" parent="Arma2"]
-position = Vector2( 36, 30 )
-scale = Vector2( 3.5, 3.5 )
-texture = ExtResource( 3 )
+position = Vector2( 57.9999, 12 )
+scale = Vector2( 2.35434, 2.25217 )
+texture = ExtResource( 201 )
+
+[node name="Sprite" type="Sprite" parent="Arma2"]
+position = Vector2( 40, 10 )
+scale = Vector2( 2.03785, 2.47101 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Arma2/Sprite"]
+position = Vector2( -7.4187, 3.71338 )
+rotation = -1.5708
+scale = Vector2( 0.205161, 0.212623 )
+frames = SubResource( 28 )
+animation = "fire"
+frame = 39
+playing = true
 
 [node name="Position_arma" type="Position2D" parent="Arma2"]
-position = Vector2( 78, 28 )
+position = Vector2( 52, 18 )
 scale = Vector2( 2, 2 )
 
 [node name="disparo" type="AudioStreamPlayer" parent="Arma2"]
