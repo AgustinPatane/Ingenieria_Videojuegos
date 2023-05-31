@@ -14,14 +14,26 @@ var fullscreen = false
 var tamanio = Vector2(700,400)
 var posicion = Vector2(700,110)
 
-var cursor_menu = load("res://producto/assets/img/Cursores/Cursor_Menu_2.png")
-var cursor_juego = load("res://producto/assets/img/Cursores/Cursor_juego_2.png")
+var cursor_normal
+var cursor_apretado
 
 func set_cursor_menu():
-	Input.set_custom_mouse_cursor(cursor_menu,0,Vector2(0,0))
+	cursor_normal = load("res://producto/assets/img/Cursores/Cursor_Menu.png")
+	cursor_apretado = load("res://producto/assets/img/Cursores/Cursor_Menu_apretado.png")
+	Input.set_custom_mouse_cursor(cursor_normal,0,Vector2(0,0))
 
 func set_cursor_juego():
-	Input.set_custom_mouse_cursor(cursor_juego,0,Vector2(15,15))
+	cursor_normal = load("res://producto/assets/img/Cursores/Cursor_juego.png")
+	cursor_apretado = load("res://producto/assets/img/Cursores/Cursor_juego_apretado.png")
+	Input.set_custom_mouse_cursor(cursor_normal,0,Vector2(15,15))
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			Input.set_custom_mouse_cursor(cursor_apretado)
+		else:
+			Input.set_custom_mouse_cursor(cursor_normal)
+
 
 func set_config(config):
 	fullscreen = config.fullscreen

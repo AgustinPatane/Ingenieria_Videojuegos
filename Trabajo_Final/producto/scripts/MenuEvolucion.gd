@@ -53,291 +53,7 @@ onready var _2_2 = get_node("Contenedor_Ramas/_2_2")
 onready var _2_2_1 = get_node("Contenedor_Ramas/_2_2_1")
 onready var _2_2_2 = get_node("Contenedor_Ramas/_2_2_2")
 
-# EVOLUCION 1 : MOVIMIENTO / VELOCIDAD
-var evolucion_1 = {
-	"nombre": "movimiento",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1.3,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47",
-	"skin_accesorio" : "azul"
-}
-var evolucion_1_1 = {
-	"nombre": "movimiento_propio",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1.5,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47",
-	"skin_accesorio" : "00"
-}
-var evolucion_1_1_2 = {
-	"nombre": "movimiento_propio_atravesarmuros",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47",
-	"skin_accesorio" : "10"
-}
-var evolucion_1_1_1 = {
-	"nombre": "movimiento_propio_nitro",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47",
-	"skin_accesorio" : "20"
-}
-var evolucion_1_2 = {
-	"nombre": "movimiento_enemigos",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47",
-	"skin_accesorio" : "01"
-}
-var evolucion_1_2_1 = {
-	"nombre": "movimiento_enemigos_ondaralentizadora",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47",
-	"skin_accesorio" : "11"
-}
-var evolucion_1_2_2 = {
-	"nombre": "movimiento_enemigos_congelacion",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ak-47",
-	"skin_accesorio" : "21"
-}
-# EVOLUCION 2 : SALUD / VIDA
-var evolucion_2 = {
-	"nombre": "salud",
-	"cadencia": 1,
-	"vida": 2,
-	"velocidad": 0.8,
-	"damage": 1,
-	"rango": 1,
-	"arma": "rifle",
-	"skin_accesorio" : "verde"
-}
-var evolucion_2_1 = {
-	"nombre": "salud_masvida",
-	"cadencia": 1,
-	"vida": 2.5,
-	"velocidad": 0.9,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta",
-	"skin_accesorio" : "02"
-}
-var evolucion_2_1_1 = {
-	"nombre": "salud_masvida_tokenvidaextra",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta",
-	"skin_accesorio" : "12"
-}
-var evolucion_2_1_2 = {
-	"nombre": "salud_masvida_regeneracion",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta",
-	"skin_accesorio" : "22"
-}
-var evolucion_2_2 = {
-	"nombre": "salud_masinmune",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta",
-	"skin_accesorio" : "03"
-}
-var evolucion_2_2_1 = {
-	"nombre": "salud_masinmune_escudo",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta",
-	"skin_accesorio" : "13"
-}
-var evolucion_2_2_2 = {
-	"nombre": "salud_masinmune_resiliente",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta",
-	"skin_accesorio" : "23"
-}
-# EVOLUCION 3 : ATAQUE
-var evolucion_3 = {
-	"nombre": "ataque",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 1,
-	"arma": "escopeta",
-	"skin_accesorio" : "rojo"
-}
-var evolucion_3_1 = {
-	"nombre": "ataque_cerca",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 2,
-	"rango": 0.8,
-	"arma": "escopeta",
-	"skin_accesorio" : "04"
-}
-var evolucion_3_1_1 = {
-	"nombre": "ataque_cerca_areaexplosiva",
-	"cadencia": 1,
-	"vida": 1.5,
-	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 0.75,
-	"arma": "escopeta",
-	"skin_accesorio" : "14"
-}
-var evolucion_3_1_2 = {
-	"nombre": "ataque_cerca_penetramuros",
-	"cadencia": 1,
-	"vida": 1.5,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "escopeta",
-	"skin_accesorio" : "24"
-}
-var evolucion_3_2 = {
-	"nombre": "ataque_oneshoot",
-	"cadencia": 0.7,
-	"vida": 1,
-	"velocidad": 0.9,
-	"damage": 2,
-	"rango": 5,
-	"arma": "francotirador",
-	"skin_accesorio" : "05"
-}
-var evolucion_3_2_1 = {
-	"nombre": "ataque_oneshoot_francotirador",
-	"cadencia": 0.8,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 3,
-	"rango": 3,
-	"arma": "francotirador",
-	"skin_accesorio" : "15"
-}
 
-var evolucion_3_2_2 = {
-	"nombre": "ataque_oneshoot_bazooka",
-	"cadencia": 0.5,
-	"vida": 1.5,
-	"velocidad": 1,
-	"damage": 2,
-	"rango": 1,
-	"arma": "bazooka",
-	"skin_accesorio" : "25"
-}
-# EVOLUCION 4 : TIRO / DISPARO / CADENCIA
-var evolucion_4 = {
-	"nombre": "tiro",
-	"cadencia": 1.2,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1.2,
-	"rango": 1.3,
-	"arma": "ametralladora",
-	"skin_accesorio" : "amarillo"
-}
-var evolucion_4_1 = {
-	"nombre": "tiro_dispersion",
-	"cadencia": 1.2,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 2,
-	"arma": "ametralladora",
-	"skin_accesorio" : "06"
-}
-var evolucion_4_1_1 = {
-	"nombre": "tiro_dispersion_rebote",
-	"cadencia": 1.2,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 0.4,
-	"rango": 1,
-	"arma": "ametralladora",
-	"skin_accesorio" : "16"
-}
-var evolucion_4_1_2 = {
-	"nombre": "tiro_dispersion_360",
-	"cadencia": 1.5,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 0.3,
-	"rango": 2,
-	"arma": "ametralladora",
-	"skin_accesorio" : "26"
-}
-var evolucion_4_2 = {
-	"nombre": "tiro_cadencia",
-	"cadencia": 1.5,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1,
-	"rango": 1,
-	"arma": "ametralladora",
-	"skin_accesorio" : "07"
-}
-var evolucion_4_2_1 = {
-	"nombre": "tiro_cadencia_doblearma",
-	"cadencia": 1,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 1.5,
-	"rango": 1.5,
-	"arma": "ak-47",
-	"skin_accesorio" : "17"
-}
-var evolucion_4_2_2 = {
-	"nombre": "tiro_cadencia_infinita",
-	"cadencia": 2,
-	"vida": 1,
-	"velocidad": 1,
-	"damage": 0.8,
-	"rango": 1,
-	"arma": "ametralladora",
-	"skin_accesorio" : "27"
-}
 
 var botones_arbol = Array()
 var sprites_ramas_arbol = Array()
@@ -361,8 +77,6 @@ var rama_inferior
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	
 	#---------------------------------------
 	if !Engine.has_meta("evolucion_actual"):
 		Engine.set_meta("evolucion_actual","evolucion")
@@ -377,6 +91,10 @@ func _ready():
 	btn_seleccionar.set_disabled(true)
 	carga_ventana()
 	ventana_por_defecto()
+
+func set_modo(evolucion):
+	get_node("Seleccionar").visible = evolucion
+	get_node("Salir").visible = !evolucion
 
 func set_iconos_ramas():	
 	var icono_1 = load("res://producto/assets/img/Iconos_Poderes/Iconos_Nodos_Arbol/Evoluciones/_"+evol_superior+".png")
@@ -489,14 +207,14 @@ func _on_Seleccionar_pressed():
 		elif str(seleccionado) == evol_inferior:
 			seleccionado = 2
 		
-	get_parent().actualiza_atributos(self[evolucion_actual + "_" + str(seleccionado)], str(seleccionado))
+	get_parent().actualiza_atributos(Atributos.evoluciones[evolucion_actual + "_" + str(seleccionado)], str(seleccionado))
 	evolucion_actual = evolucion_actual + "_" + str(seleccionado)
 	get_tree().paused = false
 	get_parent().on_evol_quit()
 	#emit_signal("evolucionar")
 	queue_free()
 	Engine.set_meta("evolucion_actual",evolucion_actual)
-	Engine.set_meta("arma_actual",self[evolucion_actual].arma)
+	Engine.set_meta("arma_actual",Atributos.evoluciones[evolucion_actual].arma)
 
 func ventana_por_defecto():
 	for evol in botones_arbol:

@@ -39,6 +39,13 @@ func salir_pausa():
 func _on_Boton_continuar_pressed():
 	salir_pausa()
 
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			Input.set_custom_mouse_cursor(Atributos.cursor_apretado)
+		else:
+			Input.set_custom_mouse_cursor(Atributos.cursor_normal)
+
 func _on_Boton_salir_pressed():
 	get_tree().paused = false
 	SoundManager.stop_musica()

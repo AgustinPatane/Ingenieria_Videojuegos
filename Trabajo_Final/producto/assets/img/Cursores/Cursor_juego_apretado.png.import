@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cruz_spawn - copia.png-0fdc2bc1811093af5496468186026d05.stex"
+path="res://.import/Cursor_juego_apretado.png-ac8262e5b7896f6de94520dcac4f4ddd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/Cursores/Cruz_spawn - copia.png"
-dest_files=[ "res://.import/Cruz_spawn - copia.png-0fdc2bc1811093af5496468186026d05.stex" ]
+source_file="res://producto/assets/img/Cursores/Cursor_juego_apretado.png"
+dest_files=[ "res://.import/Cursor_juego_apretado.png-ac8262e5b7896f6de94520dcac4f4ddd.stex" ]
 
 [params]
 
