@@ -4,6 +4,7 @@ onready var escena_mapa = preload("res://producto/assets/scenes/Mapa.tscn")
 onready var escena_tienda = preload("res://producto/assets/scenes/Tienda.tscn")
 onready var escena_config = preload("res://producto/assets/scenes/Configuraciones.tscn")
 onready var escena_ranking = preload("res://producto/assets/scenes/MenuRanking.tscn")
+onready var escena_controles = preload("res://producto/assets/scenes/Menu_Controles.tscn")
 onready var mini_mapa = get_node("Menu_previo/Mapas/FondoMapas")
 
 onready var btn_normal = get_node("Menu_previo/modo_Normal")
@@ -149,7 +150,8 @@ func _on_Empezar_pressed():
 
 func _on_Ayuda_pressed():
 	SoundManager.play_boton_1()
-	pass # Replace with function body.
+	var controles = escena_controles.instance()
+	self.add_child(controles)
 
 func _on_Configuracion_pressed():
 	SoundManager.play_boton_1()

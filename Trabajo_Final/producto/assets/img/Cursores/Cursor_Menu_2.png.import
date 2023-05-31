@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SPACE.png-7c6c4c772e1885a8cad3e8f51dfd01b4.stex"
+path="res://.import/Cursor_Menu_2.png-42e0681ca79f005b20d8c6fec858e5ed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://producto/assets/img/controles/SPACE.png"
-dest_files=[ "res://.import/SPACE.png-7c6c4c772e1885a8cad3e8f51dfd01b4.stex" ]
+source_file="res://producto/assets/img/Cursores/Cursor_Menu_2.png"
+dest_files=[ "res://.import/Cursor_Menu_2.png-42e0681ca79f005b20d8c6fec858e5ed.stex" ]
 
 [params]
 

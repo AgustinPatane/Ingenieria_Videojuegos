@@ -4,6 +4,7 @@
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=2]
 [ext_resource path="res://producto/scripts/Menu.gd" type="Script" id=3]
 [ext_resource path="res://producto/assets/img/fondo.png" type="Texture" id=4]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_jugar apretado.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir.png" type="Texture" id=6]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir - copia.png" type="Texture" id=7]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/DERECHA PRESIONADO.png" type="Texture" id=8]
@@ -16,8 +17,7 @@
 [ext_resource path="res://producto/assets/img/Pausa/Botones/NORMAL.png" type="Texture" id=15]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/CONTRARRELOJ.png" type="Texture" id=16]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/CONTRARRELOJ APRETADO.png" type="Texture" id=17]
-[ext_resource path="res://producto/assets/img/Pausa/Botones/JUGAR.png" type="Texture" id=18]
-[ext_resource path="res://producto/assets/img/Pausa/Botones/JUGAR APRETADO.png" type="Texture" id=19]
+[ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_jugar.png" type="Texture" id=18]
 [ext_resource path="res://producto/assets/img/Menu_principal/EMPEZAR.png" type="Texture" id=20]
 [ext_resource path="res://producto/assets/img/Menu_principal/TIENDA.png" type="Texture" id=21]
 [ext_resource path="res://producto/assets/img/Menu_principal/TIENDA APRETADO.png" type="Texture" id=22]
@@ -229,13 +229,13 @@ texture_hover = ExtResource( 12 )
 expand = true
 
 [node name="Btn_ready" type="TextureButton" parent="Menu_previo"]
-margin_left = 449.0
-margin_top = 270.0
-margin_right = 682.0
-margin_bottom = 370.0
+margin_left = 480.0
+margin_top = 281.0
+margin_right = 680.0
+margin_bottom = 358.0
 texture_normal = ExtResource( 18 )
-texture_pressed = ExtResource( 19 )
-texture_hover = ExtResource( 18 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
 expand = true
 
 [connection signal="pressed" from="TextureRect2/Empezar" to="." method="_on_Empezar_pressed"]

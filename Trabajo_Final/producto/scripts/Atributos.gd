@@ -14,8 +14,8 @@ var fullscreen = false
 var tamanio = Vector2(700,400)
 var posicion = Vector2(700,110)
 
-var cursor_menu = load("res://producto/assets/img/Cursores/Cursor_Menu.png")
-var cursor_juego = load("res://producto/assets/img/Cursores/Cursor_juego.png")
+var cursor_menu = load("res://producto/assets/img/Cursores/Cursor_Menu_2.png")
+var cursor_juego = load("res://producto/assets/img/Cursores/Cursor_juego_2.png")
 
 func set_cursor_menu():
 	Input.set_custom_mouse_cursor(cursor_menu,0,Vector2(0,0))
