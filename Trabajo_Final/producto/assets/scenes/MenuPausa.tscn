@@ -343,6 +343,7 @@ nine_patch_stretch = true
 
 [connection signal="pressed" from="Boton_continuar" to="." method="_on_Boton_continuar_pressed"]
 [connection signal="pressed" from="Boton_salir" to="." method="_on_Boton_salir_pressed"]
+[connection signal="pressed" from="Boton_arbol" to="." method="_on_Boton_arbol_pressed"]
 [connection signal="toggled" from="Musica/Boton_musica" to="." method="_on_Boton_musica_toggled"]
 [connection signal="value_changed" from="Musica/Slider_musica" to="." method="_on_Slider_musica_value_changed"]
 [connection signal="toggled" from="Sonido/Boton_sonido" to="." method="_on_Boton_sonido_toggled"]

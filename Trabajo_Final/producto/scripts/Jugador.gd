@@ -303,6 +303,7 @@ func _evolucion():
 		if contador_niveles_arbol == max_nivel_arbol:
 			mas_evoluciones = false
 		var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
+		evol_instance.set_modo(true)
 		Atributos.set_cursor_menu()
 		self.add_child(evol_instance)
 		get_tree().paused = true

@@ -83,3 +83,10 @@ func _on_Slider_musica_value_changed(value):
 	if !$Musica/Boton_musica.is_pressed():
 		SoundManager.set_volumen_musica(value)
 		Saves.guardar_config()
+
+
+func _on_Boton_arbol_pressed():
+	SoundManager.play_boton_1()
+	var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
+	evol_instance.set_modo(false)
+	self.add_child(evol_instance)

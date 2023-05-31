@@ -449,3 +449,8 @@ func actualizar_sprite_ventana(arma,bandera,gorro):
 	else:
 		sprite_gorro.visible = false
 	pass
+
+
+func _on_Salir_pressed():
+	SoundManager.play_boton_1()
+	self.queue_free()
