@@ -651,4 +651,7 @@ var evol_MapaDungeon = {
 	evol_2 = "4" 
 }
 
-
+var evol_MapaIsla = {
+	evol_1 = "3", 
+	evol_2 = "4" 
+}
