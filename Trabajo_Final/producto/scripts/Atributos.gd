@@ -447,17 +447,17 @@ var evoluciones = {
 	},
 
 	evolucion_3_1_2 = {
-		"nombre": "ataque_cerca_penetramuros",
+		"nombre": "ataque_cerca_balasxxl",
 		"cadencia": 1,
 		"vida": 1.5,
 		"velocidad": 1,
 		"damage": 1,
 		"rango": 1,
-		"arma": "rifle",
+		"arma": "arma_xxl",
 		"skin_accesorio" : "rojo",
-		"titulo": "LA LOCURA DE MAX",
-		"historia": "Tus ataques ahora no respetan las leyes de la fisica, pueden atravesar obstaculos.",
-		"habilidad": "ATAQUE PENETRANTE",
+		"titulo": "MAX BALOTAS",
+		"historia": "Consigues un arma que dispara BALAS GIGANTES.",
+		"habilidad": "BALAS ENORMES",
 		"gorro" : "341"
 	},
 

@@ -448,10 +448,9 @@ func ataque_cerca_areaexplosiva():
 	print("ataque_cerca_areaexplosiva")
 	pass
 
-func ataque_cerca_penetramuros():
-	print("ataque_cerca_penetramuros")
-	arma.set_cant_atraviesa(5)
-	arma.incrementa_velocidad_proyectil(2)
+func ataque_cerca_balasxxl():
+	print("ataque_cerca_balasxxl")
+	#agregar que se empiecen a agrandar las balas
 	pass
 
 func ataque_oneshoot_francotirador():
