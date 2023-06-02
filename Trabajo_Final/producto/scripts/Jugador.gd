@@ -658,3 +658,13 @@ func parar_timer():
 func set_dentro(valor):
 	print("entrada / salida de capsula")
 	dentro_de_capsula = valor
+
+func activa_metralladora():
+	var atrib = Atributos.get_atrib_jugador()
+	set_cadencia_disparo(20)
+	pass
+
+func desactiva_metralladora():
+	var atrib = Atributos.get_atrib_jugador()
+	set_cadencia_disparo(atrib.cadencia_disparo)
+	pass
