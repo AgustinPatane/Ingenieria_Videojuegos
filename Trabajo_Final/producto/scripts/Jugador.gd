@@ -450,6 +450,7 @@ func ataque_cerca_areaexplosiva():
 
 func ataque_cerca_balasxxl():
 	print("ataque_cerca_balasxxl")
+	Engine.set_meta("balasxxl",true)
 	#agregar que se empiecen a agrandar las balas
 	pass
 

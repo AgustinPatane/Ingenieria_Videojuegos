@@ -448,11 +448,11 @@ var evoluciones = {
 
 	evolucion_3_1_2 = {
 		"nombre": "ataque_cerca_balasxxl",
-		"cadencia": 1,
-		"vida": 1.5,
+		"cadencia": 0.8,
+		"vida": 1,
 		"velocidad": 1,
-		"damage": 1,
-		"rango": 1,
+		"damage": 10,
+		"rango": 2,
 		"arma": "arma_xxl",
 		"skin_accesorio" : "rojo",
 		"titulo": "MAX BALOTAS",

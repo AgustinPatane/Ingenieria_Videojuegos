@@ -11,6 +11,7 @@ var cant_proyectiles = 1
 var dispersion_angular = 0
 var sprite_proyectil
 var disparo
+var agrandar
 
 onready var escena_proyectil = preload("res://producto/assets/scenes/Proyectil.tscn")
 
@@ -22,6 +23,11 @@ func _ready():
 # -------------------------------------------------------------------------------------
 
 func _dispara():
+	var aux = Engine.get_meta("balasxxl")
+	if aux:
+		agrandar = aux
+	else:
+		agrandar = false
 	#$disparo.play()
 	for _i in range(cant_proyectiles):
 		SoundManager.play_disparo()
@@ -35,7 +41,8 @@ func _dispara():
 		disparo.set_rango(rango)
 		disparo.set_atraviesa(cant_atraviesa)
 		disparo.set_velocidad(velocidad_proyectil)
-		self.agrandar_balas()
+		if agrandar:
+			self.agrandar_balas()
 		get_tree().get_root().add_child(disparo)
 	tiempo_ultimo_disparo = OS.get_ticks_msec() / 1000.0
 	
@@ -125,8 +132,14 @@ func set_cant_atraviesa(value):
 	cant_atraviesa = value
 
 func agrandar_balas():
+	var forma_colision
 	var aux = disparo
 	sprite_proyectil = aux.get_node("Sprite")
 	var ruta = load("res://producto/assets/img/armas/proyectiles/bala_xxl.png")
 	sprite_proyectil.set_texture(ruta)
+	sprite_proyectil.scale.x = 2
+	sprite_proyectil.scale.y = 2
+	forma_colision = aux.get_node("CollisionShape2D")
+	forma_colision.scale.x = 2
+	forma_colision.scale.y = 2
 	pass
