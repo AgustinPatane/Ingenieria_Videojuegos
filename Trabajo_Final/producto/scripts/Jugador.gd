@@ -264,7 +264,11 @@ func muere():
 	guardar_monedas()
 
 func recupera_vida(cant):
-	if (vida+cant) <= vida_max: vida+=cant
+	vida+=cant
+	if vida > vida_max: 
+		vida=vida_max
+	emit_signal("actualiza_interfaz")
+	
 
 # -------------------------------------------------------------------------------------
 # --------------------------- EXPERIENCIA y PUNTAJE -----------------------------------

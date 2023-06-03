@@ -17,9 +17,10 @@ func _process(delta):
 		indicador.visible=true
 		$Label.visible=true
 		$Shift.visible=true
+		print(capsula.position)
 		var diff = capsula.position.y-jugador.position.y
 		var direction = capsula.position - jugador.position
-		direction.y-=160
+		direction.y-=620
 		var rotation = direction.angle()*180/3.14
 		indicador.rotation_degrees=rotation
 	else:
