@@ -3,11 +3,12 @@
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Marco.png" type="Texture" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir.png" type="Texture" id=2]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir - copia.png" type="Texture" id=3]
-[ext_resource path="res://producto/assets/scenes/Menu_Controles.gd" type="Script" id=4]
+[ext_resource path="res://producto/scripts/Menu_Controles.gd" type="Script" id=4]
 [ext_resource path="res://producto/assets/img/controles/mouse.png" type="Texture" id=5]
 [ext_resource path="res://producto/assets/img/controles/shift.png" type="Texture" id=6]
 [ext_resource path="res://producto/assets/img/controles/WASD.png" type="Texture" id=7]
 [ext_resource path="res://producto/assets/img/controles/SPACE.png" type="Texture" id=8]
+
 
 [node name="Menu_Controles" type="CanvasLayer"]
 script = ExtResource( 4 )

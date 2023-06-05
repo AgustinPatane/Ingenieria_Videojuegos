@@ -1,6 +1,6 @@
 [gd_scene load_steps=54 format=2]
 
-[ext_resource path="res://producto/assets/scenes/Proyectil_Fuego.gd" type="Script" id=1]
+[ext_resource path="res://producto/scripts/Proyectil_Fuego.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0002.png" type="Texture" id=2]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0001.png" type="Texture" id=3]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0029.png" type="Texture" id=4]
@@ -51,6 +51,7 @@
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0039.png" type="Texture" id=49]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0043.png" type="Texture" id=50]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0036.png" type="Texture" id=51]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

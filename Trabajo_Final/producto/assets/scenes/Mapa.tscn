@@ -4,7 +4,7 @@
 [ext_resource path="res://producto/scripts/Mapa.gd" type="Script" id=2]
 [ext_resource path="res://producto/assets/scenes/Capsula.tscn" type="PackedScene" id=5]
 [ext_resource path="res://producto/assets/img/Pointer.png" type="Texture" id=6]
-[ext_resource path="res://producto/assets/scenes/Control.gd" type="Script" id=7]
+[ext_resource path="res://producto/scripts/Control.gd" type="Script" id=7]
 [ext_resource path="res://producto/assets/img/shift_button.png" type="Texture" id=8]
 
 [node name="Mapa" type="Node2D"]

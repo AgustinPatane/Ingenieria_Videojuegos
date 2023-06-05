@@ -9,7 +9,7 @@
 [ext_resource path="res://producto/assets/img/Capsula/teleport_128.png" type="Texture" id=7]
 [ext_resource path="res://producto/scripts/Capsula.gd" type="Script" id=8]
 [ext_resource path="res://producto/assets/img/mapas_armados/Mapa_Naturaleza/castillo.png" type="Texture" id=9]
-[ext_resource path="res://producto/assets/scenes/Capsula.gdshader" type="Shader" id=10]
+[ext_resource path="res://producto/scripts/Capsula.gdshader" type="Shader" id=10]
 
 [sub_resource type="ShaderMaterial" id=11]
 shader = ExtResource( 10 )
