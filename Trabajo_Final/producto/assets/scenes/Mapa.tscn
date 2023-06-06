@@ -27,8 +27,8 @@ margin_bottom = 40.0
 script = ExtResource( 7 )
 
 [node name="Indicador" type="Sprite" parent="CanvasLayer/Control"]
-position = Vector2( 550, 64 )
-scale = Vector2( 3.34211, 2.07143 )
+position = Vector2( 541.954, 64 )
+scale = Vector2( 2.57582, 2.07143 )
 texture = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]

@@ -27,7 +27,7 @@ onready var skin_gorro = get_node("Jugador_Sprite/Accesorio_Gorro")
 
 var motion = Vector2()
 var SPEED = 0
-var puntos = 649
+var puntos = 0
 var vida 
 var experiencia = 0
 var nivel = 1

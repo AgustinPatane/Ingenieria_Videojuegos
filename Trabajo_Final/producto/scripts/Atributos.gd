@@ -79,15 +79,14 @@ var tiempos = {
 	juego = 300
 }
 
-
 var niveles_spawn = {
 	demonio = 10,
-	diablito = 1,
+	diablito = 5,
 	gusano = 1,
-	hechicero = 60,
-	hongo = 1, # 3
-	ojo = 1,
-	pilar = 1
+	hechicero = 6,
+	hongo = 3, # 3
+	ojo = 2,
+	pilar = 4
 }
 
 func get_tiempos():

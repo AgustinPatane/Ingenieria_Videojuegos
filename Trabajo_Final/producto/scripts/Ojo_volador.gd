@@ -1,6 +1,5 @@
 extends "res://producto/scripts/Enemigo.gd"
 
-onready var atributos = preload("res://producto/scripts/Atributos.gd")
 onready var escena_proyectil = preload("res://producto/assets/scenes/MunicionEnemigo.tscn")
 
 var tiempo_ultimo_disparo=0.0

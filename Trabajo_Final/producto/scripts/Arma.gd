@@ -23,7 +23,10 @@ func _ready():
 # -------------------------------------------------------------------------------------
 
 func _dispara():
-	var aux = Engine.get_meta("balasxxl")
+	var aux
+	if Engine.has_meta("balasxxl"):
+		aux = Engine.get_meta("balasxxl")
+		
 	if aux:
 		agrandar = aux
 	else:

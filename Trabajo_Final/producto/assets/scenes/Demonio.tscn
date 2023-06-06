@@ -23,7 +23,6 @@ scale = Vector2( 2.33333, 1.2913 )
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 3 )
-frame = 11
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( -9, -17.6 )
@@ -36,3 +35,8 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" parent="area_colision_enemigos" index="0"]
 position = Vector2( -8.5, 2 )
 shape = SubResource( 3 )
+
+[node name="Pos_Ataque" type="Position2D" parent="." index="10"]
+position = Vector2( -98.5, 1.6 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished2"]
