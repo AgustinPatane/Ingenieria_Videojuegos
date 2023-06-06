@@ -23,6 +23,7 @@ var registro_tienda = {
 }
 var lista_registro_tienda = Array()
 var skins_compradas = Array()
+var meteorito = false
 
 const SAVE_PATH = "res://Saves/tienda.sav"
 
@@ -47,6 +48,9 @@ func _ready():
 	OS.set_window_size(Atributos.tamanio)
 	actualiza_minimapa()
 	Engine.set_meta("arma_actual","arma_1")
+	$Meteorito/Sprite.position.x = 20
+	$Meteorito/Sprite.position.y = 11
+	$Meteorito.visible = false
 	
 
 func _on_Jugar_pressed():
@@ -109,9 +113,19 @@ func actualiza_minimapa():
 	
 func _on_Btn_ready_pressed():
 	SoundManager.play_boton_1()
-	Engine.set_meta("nombre_escena_mapa",mapas[mapa_actual])
-	SoundManager.stop_musica()
-	var _aux = get_tree().change_scene("res://producto/assets/scenes/"+mapas[mapa_actual]+".tscn")
+	$Meteorito.visible = true
+	$Meteorito/AnimationPlayer.play("movimiento")
+	meteorito = true
+	
+	
+func _process(delta):
+	if meteorito:
+		$Meteorito/Sprite.position.x += 20
+		$Meteorito/Sprite.position.y += 14
+		if $Meteorito/Sprite.position.x > 1000:
+			Engine.set_meta("nombre_escena_mapa",mapas[mapa_actual])
+			SoundManager.stop_musica()
+			var _aux = get_tree().change_scene("res://producto/assets/scenes/"+mapas[mapa_actual]+".tscn")
 
 func countFilesInFolder(folder_path):
 	var dir = Directory.new()

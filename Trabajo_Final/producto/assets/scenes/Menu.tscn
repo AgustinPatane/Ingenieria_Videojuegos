@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://producto/assets/img/Pausa/Botones/CONTRARRELOJ.png" type="Texture" id=16]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/CONTRARRELOJ APRETADO.png" type="Texture" id=17]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_jugar.png" type="Texture" id=18]
+[ext_resource path="res://producto/assets/img/meteorito.png" type="Texture" id=19]
 [ext_resource path="res://producto/assets/img/Menu_principal/EMPEZAR.png" type="Texture" id=20]
 [ext_resource path="res://producto/assets/img/Menu_principal/TIENDA.png" type="Texture" id=21]
 [ext_resource path="res://producto/assets/img/Menu_principal/TIENDA APRETADO.png" type="Texture" id=22]
@@ -35,6 +36,38 @@
 [sub_resource type="DynamicFont" id=10]
 size = 90
 font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "movimiento"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -237,6 +270,19 @@ texture_normal = ExtResource( 18 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 5 )
 expand = true
+
+[node name="Meteorito" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Meteorito"]
+position = Vector2( 834, 23 )
+rotation = -0.169297
+scale = Vector2( -3.3928, 3.33199 )
+texture = ExtResource( 19 )
+hframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Meteorito"]
+anims/RESET = SubResource( 11 )
+anims/movimiento = SubResource( 12 )
 
 [connection signal="pressed" from="TextureRect2/Empezar" to="." method="_on_Empezar_pressed"]
 [connection signal="pressed" from="TextureRect2/Tienda" to="." method="_on_Tienda_pressed"]
