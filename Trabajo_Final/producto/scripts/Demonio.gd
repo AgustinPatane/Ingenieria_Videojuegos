@@ -38,7 +38,7 @@ func _dispara(cantidad, pos):
 
 func _on_AnimationPlayer_animation_finished2(anim_name):
 	if anim_name == "atack":
-		for i in range(10):
+		for _i in range(10):
 			_dispara(4, true)
 			yield(get_tree().create_timer(200), "timeout")
 		

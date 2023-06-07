@@ -44,7 +44,6 @@ func set_config(config):
 	volumenes.music_muted = config.music_muted
 	SoundManager.actualiza_volumenes()
 
-
 # JUGADOR ------------------------------------------------------------
 
 var jugador = {
@@ -76,11 +75,12 @@ var tiempos = {
 	ojo = 5,
 	pilar = 20,
 	curita = 5,
-	juego = 300
+	juego = 300,
+	evol = 1.5
 }
 
 var niveles_spawn = {
-	demonio = 10,
+	demonio = 1,
 	diablito = 5,
 	gusano = 1,
 	hechicero = 6,

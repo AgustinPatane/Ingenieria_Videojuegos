@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://producto/scripts/Interfaz.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/GUI/Barra_vida/Barra_VIDA_fondo.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://producto/assets/img/GUI/Barra_exp/GUI - copia (3).png" type="Texture" id=9]
 [ext_resource path="res://producto/assets/img/GUI/Barra_exp/GUI - copia (3) - copia.png" type="Texture" id=10]
 [ext_resource path="res://producto/assets/img/jugador/skins/Black/head.png" type="Texture" id=11]
+[ext_resource path="res://producto/assets/img/GUI/Barra_evolucion/Barra.png" type="Texture" id=12]
+[ext_resource path="res://producto/assets/img/GUI/Barra_evolucion/Barra_llena.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 21
@@ -121,5 +123,14 @@ margin_right = 560.0
 margin_bottom = 49.0
 custom_fonts/font = SubResource( 4 )
 text = "05:35"
+
+[node name="Barra_evol" type="TextureProgress" parent="."]
+margin_left = 327.0
+margin_top = 536.0
+margin_right = 698.0
+margin_bottom = 576.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 13 )
+nine_patch_stretch = true
 
 [connection signal="pressed" from="Btn_pausa" to="." method="_on_Btn_pausa_pressed"]

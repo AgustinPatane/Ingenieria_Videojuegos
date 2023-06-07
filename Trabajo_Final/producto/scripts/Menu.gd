@@ -118,7 +118,7 @@ func _on_Btn_ready_pressed():
 	meteorito = true
 	
 	
-func _process(delta):
+func _process(_delta):
 	if meteorito:
 		$Meteorito/Sprite.position.x += 20
 		$Meteorito/Sprite.position.y += 14

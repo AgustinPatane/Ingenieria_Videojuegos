@@ -9,6 +9,9 @@ var minutos = int(tiempo_juego / 60)
 var segundos = tiempo_juego % 60
 
 func _ready():
+	$Barra_evol.visible = false
+	$Barra_evol.max_value = 90
+	
 	$Tiempo_restante.text = ""
 	if(Engine.get_meta("contrarreloj")):
 		var timer_juego = Timer.new()
@@ -48,6 +51,7 @@ func update_timer():
 func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
 		pausa()
+	$Barra_evol.value += 1 
 
 func esconder():
 	self.visible = false
@@ -89,3 +93,16 @@ func _on_Jugador_player_ready():
 
 func _on_Jugador_actualiza_interfaz():
 	actualiza()
+
+func aumenta_evol(delta):
+	if $Barra_evol.value < 101:
+		get_node("Barra_evol").visible = true
+		$Barra_evol.value += Atributos.tiempos.evol / 100
+	else: 
+		get_node("Barra_evol").visible = false
+		#get_node("Interfaz/Barra_evol").value = 0
+
+func decrementa_evol():
+	get_node("Barra_evol").visible = false
+	get_node("Barra_evol").value = 0
+

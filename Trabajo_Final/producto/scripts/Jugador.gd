@@ -53,6 +53,7 @@ var token = false
 var capacidad_evolucion = false
 var capsula_evolucion 
 var primer_toque = false
+var apretando_evol = false
 # -------------------------------------------------------------------------------------
 # -------------------------------- CARACTERISTICAS ------------------------------------
 # -------------------------------------------------------------------------------------
@@ -156,8 +157,12 @@ func _physics_process(delta):
 		if !primer_toque:
 			primer_toque = true
 			chequea_capacidad_evolucion()
+			apretando_evol = true
+		$Interfaz.aumenta_evol(delta)
 	else:
+		$Interfaz.decrementa_evol()
 		if primer_toque:
+			apretando_evol = false
 			primer_toque = false
 			parar_timer()
 		pass
@@ -302,6 +307,7 @@ func _on_Anim_lvl_up_animation_finished(_anim_name):
 
 func _evolucion():
 	if mas_evoluciones:
+		print(get_node("Interfaz/Barra_evol").value)
 		$Interfaz.esconder()
 		contador_niveles_arbol += 1
 		if contador_niveles_arbol == max_nivel_arbol:

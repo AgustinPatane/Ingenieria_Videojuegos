@@ -261,7 +261,6 @@ z_index = 2
 shape = SubResource( 4 )
 
 [node name="Timer_mantener_tecla" type="Timer" parent="."]
-wait_time = 3.0
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 1

@@ -274,7 +274,7 @@ expand = true
 [node name="Meteorito" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Meteorito"]
-position = Vector2( 834, 23 )
+position = Vector2( -36.0002, -29 )
 rotation = -0.169297
 scale = Vector2( -3.3928, 3.33199 )
 texture = ExtResource( 19 )
