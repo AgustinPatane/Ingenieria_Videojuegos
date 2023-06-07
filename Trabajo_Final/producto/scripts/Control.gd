@@ -1,7 +1,5 @@
 extends Control
 
-
-
 onready var capsula := get_node("/root/"+Engine.get_meta("nombre_escena_mapa")+"/Capsula/Sprite_Base")
 onready var indicador := $Indicador 
 var jugador
@@ -12,8 +10,6 @@ var isBlinking = true
 func _ready():
 	jugador = get_node("/root/"+Engine.get_meta("nombre_escena_mapa")+"/Jugador")
 	capsula.material.set_shader_param("luminosity_amount", 0.0)
-
-
 
 func _process(delta):
 	
@@ -34,15 +30,8 @@ func _process(delta):
 		$Shift.visible=false
 		capsula.material.set_shader_param("luminosity_amount", 0)
 
-
-
-
 func parpadeo(delta):
 	blinkSpeed += delta * 2  # Ajusta la velocidad del parpadeo según tus preferencias
 	var blink = abs(sin(blinkSpeed))
 	capsula.material.set_shader_param("luminosity_amount", blink*0.7)
 
-
-
-
-	

@@ -14,6 +14,7 @@
 [sub_resource type="ShaderMaterial" id=11]
 shader = ExtResource( 10 )
 shader_param/luminosity_amount = 0.5
+shader_param/blink_speed = 1.0
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -264,6 +265,7 @@ wait_time = 3.0
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 1
+z_as_relative = false
 tile_set = SubResource( 5 )
 cell_size = Vector2( 32, 32 )
 format = 1

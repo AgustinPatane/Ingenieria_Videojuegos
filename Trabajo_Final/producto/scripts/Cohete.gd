@@ -46,6 +46,7 @@ func elimina_area_explosion():
 	$area_eplosion.monitoring = false
 
 func _process(delta):
+	z_index = int(position.y)  + 1500
 	translate(direction.normalized() * speed * delta)
 
 func _on_VisibilityNotifier2D_screen_exited():

@@ -1,6 +1,5 @@
 extends Node2D
 
-
 onready var timer = get_node("Timer_mantener_tecla")
 onready var animacion = get_node("Sprite_Base/AnimationPlayer")
 onready var sprite = get_node("Sprite_Base")
