@@ -13,7 +13,7 @@ onready var btn_contrarreloj = get_node("Menu_previo/modo_Contrarreloj")
 var prev_volumen = -20
 var mapa_actual = 0
 
-var mapas = ["MapaArena","MapaLuna","MapaLava","MapaMadera","MapaArcilla","MapaIsla"]
+var mapas = ["MapaDungeon","MapaLuna","MapaLava","MapaMadera","MapaArcilla","MapaIsla"]
 var cantidad_de_mapas = mapas.size()
 
 
