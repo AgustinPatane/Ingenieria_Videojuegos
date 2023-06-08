@@ -75,6 +75,7 @@ var tiempos = {
 	ojo = 5,
 	pilar = 20,
 	curita = 5,
+	reloj = 1,
 	juego = 300,
 	evol = 1.5
 }

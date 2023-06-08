@@ -8,3 +8,4 @@ func _ready():
 
 func accion():
 	jugador.recupera_vida(recuperacion)
+	

@@ -77,6 +77,7 @@ signal player_defeated
 signal level_up(nivel)
 signal player_ready
 signal actualiza_interfaz
+signal actualiza_tiempo
 signal freeze
 signal mascota
 signal explosion
@@ -273,7 +274,10 @@ func recupera_vida(cant):
 	if vida > vida_max: 
 		vida=vida_max
 	emit_signal("actualiza_interfaz")
-	
+
+
+func recupera_tiempo(cant):
+	emit_signal("actualiza_tiempo")
 
 # -------------------------------------------------------------------------------------
 # --------------------------- EXPERIENCIA y PUNTAJE -----------------------------------

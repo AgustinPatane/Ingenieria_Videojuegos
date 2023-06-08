@@ -1,7 +1,10 @@
 extends Node2D
 
+#Items
 var tiempo_curita 
+var tiempo_reloj
 
+#Enmigos
 var tiempo_Demonio 
 var tiempo_Diablito 
 var tiempo_Pilar 
@@ -22,7 +25,8 @@ var max_enemigos
 var cant_enemigos = 0
 var timers_enemigos = []
 
-onready var escena_item = preload("res://producto/assets/scenes/Item_curacion.tscn")
+onready var escena_item_curacion = preload("res://producto/assets/scenes/Item_curacion.tscn")
+onready var escena_item_tiempo = preload("res://producto/assets/scenes/Item_tiempo.tscn")
 var jugador
 var nombre_mapa
 
@@ -40,11 +44,22 @@ func _ready():
 	jugador.connect("freeze",self,"freeze")
 	randomize()
 
+
+	if(Engine.get_meta("contrarreloj")):
+		var timer_reloj = Timer.new()
+		self.add_child(timer_reloj)
+		timer_reloj.wait_time = tiempo_reloj
+		timer_reloj.connect("timeout", self, "spawn_item_reloj")
+		timer_reloj.start()
+	
 	var timer_objetos = Timer.new()
 	self.add_child(timer_objetos)
 	timer_objetos.wait_time = tiempo_curita
 	timer_objetos.connect("timeout", self, "spawn_item_vida")
 	timer_objetos.start()
+	
+
+	
 	sube_dificultad(1)
 	establecer_fondo_mapa()
 	capsula.connect("capsula",self,"en_capsula")
@@ -74,6 +89,7 @@ func set_tiempos():
 	tiempo_Hongo = tiempos.hongo
 	
 	tiempo_curita = tiempos.curita
+	tiempo_reloj = tiempos.reloj
 
 
 func start_spawn_enemigo(tipo_enemigo: String):
@@ -125,7 +141,13 @@ func spawn_timer(tipo_enemigo: String, tiempo: int):
 	timer_enemigos.start()
 
 func spawn_item_vida():
-	var item = escena_item.instance()
+	var item = escena_item_curacion.instance()
+	item.position = Vector2(rand_range(-567,1651),rand_range(-411,980))
+	get_node("/root/"+nombre_mapa).add_child(item)
+	
+
+func spawn_item_reloj():
+	var item = escena_item_tiempo.instance()
 	item.position = Vector2(rand_range(-567,1651),rand_range(-411,980))
 	get_node("/root/"+nombre_mapa).add_child(item)
 

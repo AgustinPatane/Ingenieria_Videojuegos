@@ -10,16 +10,15 @@ var segundos = tiempo_juego % 60
 
 func _ready():
 	$Barra_evol.visible = false
-	$Barra_evol.max_value = 90
-	
 	$Tiempo_restante.text = ""
 	if(Engine.get_meta("contrarreloj")):
 		var timer_juego = Timer.new()
 		self.add_child(timer_juego)
 		timer_juego.wait_time = 1
-		timer_juego.connect("timeout", self, "update_timer")
+		timer_juego.connect("timeout", self, "update_timer",[-1])
 		timer_juego.start()
 		set_label_tiempo_restante()
+		
 
 func set_label_tiempo_restante():
 	var string_seg
@@ -37,14 +36,26 @@ func set_label_tiempo_restante():
 		
 	$Tiempo_restante.text = string_min + string_seg
 
-func update_timer():
-	segundos -= 1
-	if segundos <= 0:
+func update_timer(value):
+	# Calcula el nuevo tiempo en segundos
+	var nuevo_tiempo = minutos * 60 + segundos + value
+	
+	# Actualiza los minutos y segundos en base al nuevo tiempo
+	minutos = nuevo_tiempo / 60
+	segundos = nuevo_tiempo % 60
+	
+	# Asegúrate de que los minutos y segundos estén en el rango correcto
+	if segundos < 0:
+		segundos += 60
 		minutos -= 1
-		segundos = 59
-		
+	elif segundos >= 60:
+		segundos -= 60
+		minutos += 1
+	
+	# Actualiza la etiqueta del tiempo restante
 	set_label_tiempo_restante()
 	
+	# Verifica si el tiempo ha alcanzado cero
 	if minutos < 0:
 		get_parent().muere()
 	
@@ -85,6 +96,7 @@ func actualiza():
 	$Control/Barra_vida.value = jugador.vida
 	$Nivel.text = " Lvl: " + str(jugador.nivel)
 	$Puntaje.text = str(jugador.puntos)
+	
 
 func _on_Jugador_player_ready():
 	jugador = get_parent()
@@ -93,6 +105,17 @@ func _on_Jugador_player_ready():
 
 func _on_Jugador_actualiza_interfaz():
 	actualiza()
+
+
+
+
+func _on_Jugador_actualiza_tiempo():
+	
+	update_timer(10)
+
+
+
+
 
 func aumenta_evol(delta):
 	if $Barra_evol.value < 101:
@@ -105,4 +128,6 @@ func aumenta_evol(delta):
 func decrementa_evol():
 	get_node("Barra_evol").visible = false
 	get_node("Barra_evol").value = 0
+
+
 

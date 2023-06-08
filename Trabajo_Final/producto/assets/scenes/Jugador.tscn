@@ -632,7 +632,7 @@ rotation = -1.5708
 scale = Vector2( 0.205161, 0.212623 )
 frames = SubResource( 28 )
 animation = "fire"
-frame = 21
+frame = 12
 playing = true
 
 [node name="Position_arma" type="Position2D" parent="Arma2"]
@@ -731,6 +731,7 @@ position = Vector2( -1, -35.5 )
 shape = SubResource( 25 )
 
 [connection signal="actualiza_interfaz" from="." to="Interfaz" method="_on_Jugador_actualiza_interfaz"]
+[connection signal="actualiza_tiempo" from="." to="Interfaz" method="_on_Jugador_actualiza_tiempo"]
 [connection signal="player_ready" from="." to="Interfaz" method="_on_Jugador_player_ready"]
 [connection signal="animation_finished" from="Lvp_up/Anim_lvl_up" to="." method="_on_Anim_lvl_up_animation_finished"]
 [connection signal="area_entered" from="Mascota/Path2D/PathFollow2D/sprite/area_mascota" to="." method="_on_Area2D_Mascota_area_entered"]
