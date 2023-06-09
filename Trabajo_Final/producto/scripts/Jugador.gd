@@ -334,7 +334,8 @@ func culmina_evolucion():
 	subiendo_nivel = true
 	vida_max += 5
 	vida += round(vida_max * 0.1)
-	if vida > vida_max: vida= vida_max
+	if vida > vida_max: 
+		vida= vida_max
 	pass
 
 func on_evol_quit():
@@ -677,12 +678,12 @@ func set_dentro(valor):
 
 func activa_metralladora():
 	var atrib = Atributos.get_atrib_jugador()
-	set_cadencia_disparo(20)
+	set_cadencia_disparo(atrib.cadencia_disparo*2)
 	pass
 
 func desactiva_metralladora():
 	var atrib = Atributos.get_atrib_jugador()
-	set_cadencia_disparo(atrib.cadencia_disparo)
+	set_cadencia_disparo(atrib.cadencia_disparo/2)
 	pass
 
 func vuelve_a_base():
