@@ -17,7 +17,7 @@ position = Vector2( 1025, 600 )
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
 
 [node name="Capsula" parent="." instance=ExtResource( 5 )]
-position = Vector2( -25.9751, -862 )
+position = Vector2( 2.99712, 313 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

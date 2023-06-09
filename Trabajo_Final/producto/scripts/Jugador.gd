@@ -387,6 +387,8 @@ func movimiento_enemigos_congelacion():
 
 func movimiento_propio_atravesarmuros():
 	print("movimiento_propio_atravesarmuros")
+	motion.x = 10000
+	motion.y = 10000
 	pass
 
 func movimiento_propio_nitro():

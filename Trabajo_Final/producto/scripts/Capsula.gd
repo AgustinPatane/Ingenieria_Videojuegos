@@ -11,6 +11,7 @@ signal capsula(cap)
 signal exit_capsula
 
 func _ready():
+	$Humo/AnimationPlayer.play("humo")
 	$Timer_mantener_tecla.wait_time = Atributos.tiempos.evol
 	pass # Replace with function body.
 
