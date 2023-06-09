@@ -20,6 +20,8 @@ func activar():
 		hielo()
 	if tipo == "balas":
 		balas()
+	if tipo == "teletransporte":
+		teletransporte()
 
 func set_tipo(tipo_poder):
 	tipo = tipo_poder
@@ -52,6 +54,9 @@ func balas():
 	jugador.activa_metralladora()
 	pass
 
+func teletransporte():
+	jugador.vuelve_a_base()
+
 func timeout():
 	if tipo == "escudo":
 		pass
@@ -65,5 +70,7 @@ func timeout():
 		Engine.set_meta("freeze","false")
 	if tipo == "balas":
 		jugador.desactiva_metralladora()
+		pass
+	if tipo == "teletransporte":
 		pass
 	pass

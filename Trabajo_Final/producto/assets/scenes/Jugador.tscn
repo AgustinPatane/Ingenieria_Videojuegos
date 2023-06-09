@@ -1,4 +1,4 @@
-[gd_scene load_steps=215 format=2]
+[gd_scene load_steps=239 format=2]
 
 [ext_resource path="res://producto/scripts/Jugador.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/img/jugador/skins/Yellow/body.png" type="Texture" id=2]
@@ -151,11 +151,17 @@
 [ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Bomba/Explosion.png" type="Texture" id=149]
 [ext_resource path="res://producto/assets/img/Accesorios/level_1/azul.png" type="Texture" id=150]
 [ext_resource path="res://producto/assets/img/Accesorios/level_2/gorros.png" type="Texture" id=151]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/20.png" type="Texture" id=152]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0029.png" type="Texture" id=153]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0041.png" type="Texture" id=154]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/13.png" type="Texture" id=155]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0026.png" type="Texture" id=156]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0030.png" type="Texture" id=157]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0027.png" type="Texture" id=158]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/21.png" type="Texture" id=159]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/base.png" type="Texture" id=160]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/base_cargado.png" type="Texture" id=161]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/15.png" type="Texture" id=162]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0009.png" type="Texture" id=163]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0012.png" type="Texture" id=164]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0010.png" type="Texture" id=165]
@@ -185,6 +191,7 @@
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0047.png" type="Texture" id=189]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0014.png" type="Texture" id=190]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0044.png" type="Texture" id=191]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/16.png" type="Texture" id=192]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0034.png" type="Texture" id=193]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0018.png" type="Texture" id=194]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0020.png" type="Texture" id=195]
@@ -194,6 +201,23 @@
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0043.png" type="Texture" id=199]
 [ext_resource path="res://producto/assets/img/proyectil_de_fuego/0036.png" type="Texture" id=200]
 [ext_resource path="res://producto/assets/img/armas/armgun.png" type="Texture" id=201]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/14.png" type="Texture" id=202]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/17.png" type="Texture" id=203]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/18.png" type="Texture" id=204]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/usandose.png" type="Texture" id=205]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/19.png" type="Texture" id=206]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/12.png" type="Texture" id=207]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/1.png" type="Texture" id=208]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/2.png" type="Texture" id=209]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/3.png" type="Texture" id=210]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/7.png" type="Texture" id=211]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/8.png" type="Texture" id=212]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/10.png" type="Texture" id=213]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/4.png" type="Texture" id=214]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/6.png" type="Texture" id=215]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/5.png" type="Texture" id=216]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/9.png" type="Texture" id=217]
+[ext_resource path="res://producto/assets/img/Iconos_Poderes/Icono_Base/11.png" type="Texture" id=218]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 33 )
@@ -425,6 +449,11 @@ animations = [ {
 "name": "carga_rayo",
 "speed": 2.0
 }, {
+"frames": [ ExtResource( 208 ), ExtResource( 209 ), ExtResource( 210 ), ExtResource( 214 ), ExtResource( 216 ), ExtResource( 215 ), ExtResource( 211 ), ExtResource( 212 ), ExtResource( 217 ), ExtResource( 213 ), ExtResource( 218 ), ExtResource( 207 ), ExtResource( 155 ), ExtResource( 202 ), ExtResource( 162 ), ExtResource( 192 ), ExtResource( 203 ), ExtResource( 204 ), ExtResource( 206 ), ExtResource( 152 ), ExtResource( 159 ), ExtResource( 160 ) ],
+"loop": true,
+"name": "carga_teletransporte",
+"speed": 3.0
+}, {
 "frames": [ ExtResource( 128 ) ],
 "loop": true,
 "name": "cargado_balas",
@@ -448,6 +477,11 @@ animations = [ {
 "frames": [ ExtResource( 59 ) ],
 "loop": true,
 "name": "cargado_rayo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 161 ) ],
+"loop": true,
+"name": "cargado_teletransporte",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 134 ), ExtResource( 145 ), ExtResource( 146 ), ExtResource( 139 ), ExtResource( 129 ), ExtResource( 135 ) ],
@@ -474,6 +508,11 @@ animations = [ {
 "loop": true,
 "name": "usandose_rayo",
 "speed": 30.0
+}, {
+"frames": [ ExtResource( 205 ) ],
+"loop": true,
+"name": "usandose_teletransporte",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=23]
@@ -632,7 +671,7 @@ rotation = -1.5708
 scale = Vector2( 0.205161, 0.212623 )
 frames = SubResource( 28 )
 animation = "fire"
-frame = 11
+frame = 18
 playing = true
 
 [node name="Position_arma" type="Position2D" parent="Arma2"]
@@ -698,8 +737,7 @@ one_shot = true
 
 [node name="sprite_poder" type="AnimatedSprite" parent="Poder_Especial_"]
 frames = SubResource( 22 )
-animation = "usandose_balas"
-frame = 5
+animation = "usandose_teletransporte"
 speed_scale = 0.5
 
 [node name="timer_con_poder" type="Timer" parent="Poder_Especial_"]

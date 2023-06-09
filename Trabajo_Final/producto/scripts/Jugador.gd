@@ -386,16 +386,16 @@ func movimiento_enemigos_congelacion():
 	pass
 
 func movimiento_propio_atravesarmuros():
-	print("movimiento_propio_atravesarmuros")
-	motion.x = 10000
-	motion.y = 10000
+	#541 296
+	poder_especial = "teletransporte"
+	habilito_poder_especial()
+	activar_poder_especial(poder_especial)
 	pass
 
 func movimiento_propio_nitro():
 	poder_especial = "rayo"
 	habilito_poder_especial()
 	activar_poder_especial(poder_especial)
-	print("movimiento_propio_nitro")
 	pass
 
 #____________ EVOLUCIONES DE SALUD ________________
@@ -684,3 +684,7 @@ func desactiva_metralladora():
 	var atrib = Atributos.get_atrib_jugador()
 	set_cadencia_disparo(atrib.cadencia_disparo)
 	pass
+
+func vuelve_a_base():
+	self.position.x = 541
+	self.position.y = 296
