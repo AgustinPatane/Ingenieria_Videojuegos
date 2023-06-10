@@ -81,7 +81,7 @@ var tiempos = {
 }
 
 var niveles_spawn = {
-	demonio = 1,
+	demonio = 10,
 	diablito = 5,
 	gusano = 1,
 	hechicero = 6,
@@ -129,7 +129,8 @@ var gusano = {
 	danio = 10,
 	experiencia = 1,
 	puntos_muerte = 2,
-	speed = 100
+	speed = 100,
+	cantidad = 2
 }
 
 func get_gusano():
