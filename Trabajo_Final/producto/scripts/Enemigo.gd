@@ -84,6 +84,8 @@ func acomodar():
 		else:
 			self.scale.x = abs(self.scale.x) * -1
 
+
+
 func _process(delta):
 	freeze = Engine.get_meta("freeze")
 	z_index = int(position.y)  + 1500

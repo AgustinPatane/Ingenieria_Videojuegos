@@ -10,9 +10,9 @@ func _ready():
 	set_puntos_muerte(atrib.puntos_muerte)
 	set_speed(atrib.speed)
 	
-	$Sprite.texture = load("res://producto/assets/img/enemigos/Gusano/"+str(round(rand_range(1, atrib.cantidad)))+".png")
-	
-	
+	$Sprite.texture = load("res://producto/assets/img/enemigos/Gusano/"+str(round(rand_range(0.5, 0.5+atrib.cantidad)))+".png")
+
+
 
 func ataque():
 	jugador.recibe_ataque(danio)

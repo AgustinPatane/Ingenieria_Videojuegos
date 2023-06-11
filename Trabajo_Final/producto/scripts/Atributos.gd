@@ -69,7 +69,7 @@ var max_enemigos = 30
 var tiempos = {
 	demonio = 60,
 	diablito = 10,
-	gusano = 2,
+	gusano = 1,
 	hechicero = 30,
 	hongo = 8,
 	ojo = 5,
@@ -130,7 +130,7 @@ var gusano = {
 	experiencia = 1,
 	puntos_muerte = 2,
 	speed = 100,
-	cantidad = 2
+	cantidad = 3
 }
 
 func get_gusano():
