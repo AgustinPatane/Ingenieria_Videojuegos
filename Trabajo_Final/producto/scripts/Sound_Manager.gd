@@ -27,11 +27,12 @@ var musica_reproduciendo = null
 
 func _ready():
 	sonidos.append(get_node("Disparo"))
-	sonidos.append(get_node("Pasos"))
+	sonidos.append(get_node("Pasos")) #hay que eliminar este nodo
 	sonidos.append(get_node("Boton_1"))
 	sonidos.append(get_node("Congelar"))
 	sonidos.append(get_node("Exp"))
 	sonidos.append(get_node("Pisadas"))
+	sonidos.append(get_node("Comprar"))
 	
 	musicas.append(get_node("Musica_menu"))
 	musicas.append(get_node("Musica_partida"))
@@ -73,6 +74,7 @@ func play_pisadas():
 		get_node("Pisadas").play_sound()
 		tiempo_ultima_pisada = OS.get_ticks_msec() / 1000.0
 		
+# no va mas
 func play_pasos():
 	var cond_pisada = tiempo_ultima_pisada + 0.4 <= OS.get_ticks_msec() / 1000.0
 	if cond_pisada and cond_sonido:
@@ -102,7 +104,6 @@ func stop_musica():
 	if musica_reproduciendo != null:	
 		musica_reproduciendo.stop_sound()
 		
-
 func stop_musica_derrota():
 	get_node("Musica_derrota").stop_sound()
 	
@@ -118,4 +119,6 @@ func play_exp():
 	if cond_sonido:
 		get_node("Exp").play_sound()
 
-
+func play_comprar():
+	if cond_sonido:
+		get_node("Comprar").play_sound()

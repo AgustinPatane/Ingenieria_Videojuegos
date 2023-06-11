@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/boton_1.wav-293d878007d2f49c71778a46e691d8c6.sample"
+path="res://.import/freeze.wav-3c62e4269f2a8ca4d5f46c320e380eb1.sample"
 
 [deps]
 
-source_file="res://producto/assets/sounds/boton_1.wav"
-dest_files=[ "res://.import/boton_1.wav-293d878007d2f49c71778a46e691d8c6.sample" ]
+source_file="res://producto/assets/sounds/jugador/freeze.wav"
+dest_files=[ "res://.import/freeze.wav-3c62e4269f2a8ca4d5f46c320e380eb1.sample" ]
 
 [params]
 

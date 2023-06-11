@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/556 Single WAV.wav-20946e7c819ce73c31cb1168339c2afb.sample"
+path="res://.import/Disparo.wav-7c9024db6cf5c0222497691bcf704a4e.sample"
 
 [deps]
 
-source_file="res://producto/assets/sounds/556 Single WAV.wav"
-dest_files=[ "res://.import/556 Single WAV.wav-20946e7c819ce73c31cb1168339c2afb.sample" ]
+source_file="res://producto/assets/sounds/jugador/Disparo.wav"
+dest_files=[ "res://.import/Disparo.wav-7c9024db6cf5c0222497691bcf704a4e.sample" ]
 
 [params]
 

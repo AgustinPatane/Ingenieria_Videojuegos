@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/freeze.wav-e45e67f2fe5744a54ff984452d5a93b5.sample"
+path="res://.import/Comprar.wav-770228fbee6fdbe8cf6980e0d8082ba6.sample"
 
 [deps]
 
-source_file="res://producto/assets/sounds/freeze.wav"
-dest_files=[ "res://.import/freeze.wav-e45e67f2fe5744a54ff984452d5a93b5.sample" ]
+source_file="res://producto/assets/sounds/interfaz/Comprar.wav"
+dest_files=[ "res://.import/Comprar.wav-770228fbee6fdbe8cf6980e0d8082ba6.sample" ]
 
 [params]
 

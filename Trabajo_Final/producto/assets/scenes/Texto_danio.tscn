@@ -3,7 +3,6 @@
 [ext_resource path="res://producto/scripts/Texto_danio.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=2]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 14
 use_filter = true

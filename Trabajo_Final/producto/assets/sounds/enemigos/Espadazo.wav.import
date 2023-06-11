@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/22LR Single WAV.wav-984066a62b680b99f809b2feced37f97.sample"
+path="res://.import/Espadazo.wav-ffc4a512f74cb8459c540efc196c9254.sample"
 
 [deps]
 
-source_file="res://producto/assets/sounds/22LR Single WAV.wav"
-dest_files=[ "res://.import/22LR Single WAV.wav-984066a62b680b99f809b2feced37f97.sample" ]
+source_file="res://producto/assets/sounds/enemigos/Espadazo.wav"
+dest_files=[ "res://.import/Espadazo.wav-ffc4a512f74cb8459c540efc196c9254.sample" ]
 
 [params]
 

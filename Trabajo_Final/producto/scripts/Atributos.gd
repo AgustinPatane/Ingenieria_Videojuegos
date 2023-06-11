@@ -47,7 +47,7 @@ func set_config(config):
 # JUGADOR ------------------------------------------------------------
 
 var jugador = {
-	vida_max = 10000, 
+	vida_max = 100, 
 	exp_necesaria = 1,
 	cadencia_disparo = 0.4,
 	danio = 10,
@@ -128,7 +128,7 @@ var gusano = {
 	vida = 20,
 	danio = 10,
 	experiencia = 1,
-	puntos_muerte = 2,
+	puntos_muerte = 200,
 	speed = 100,
 	cantidad = 3
 }

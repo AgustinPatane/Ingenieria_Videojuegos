@@ -23,10 +23,10 @@ func _ready():
 	load_tienda()
 
 func _on_comprar_pressed():
-	SoundManager.play_boton_1()
 	var costo = int(valor.text)
 	if monedas>=costo:
 		if !(skins_compradas.has(skin_seleccionada)):
+			SoundManager.play_comprar()
 			monedas-=costo
 			label_monedas.text = str(monedas)
 			skins_compradas.append(skin_seleccionada)

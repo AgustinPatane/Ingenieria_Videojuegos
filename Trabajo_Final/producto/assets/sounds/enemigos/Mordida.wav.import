@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mordida.wav-4b21b172b12e52990f6382eff4a24c74.sample"
+
+[deps]
+
+source_file="res://producto/assets/sounds/enemigos/Mordida.wav"
+dest_files=[ "res://.import/Mordida.wav-4b21b172b12e52990f6382eff4a24c74.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

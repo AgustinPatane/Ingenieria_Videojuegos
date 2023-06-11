@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Exp.wav-3af5690b541ceaec426cf771875296e9.sample"
+path="res://.import/Curacion.wav-e14ef65a7bd81ec96161b189d2952b27.sample"
 
 [deps]
 
-source_file="res://producto/assets/sounds/Exp.wav"
-dest_files=[ "res://.import/Exp.wav-3af5690b541ceaec426cf771875296e9.sample" ]
+source_file="res://producto/assets/sounds/jugador/Curacion.wav"
+dest_files=[ "res://.import/Curacion.wav-e14ef65a7bd81ec96161b189d2952b27.sample" ]
 
 [params]
 

@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://producto/scripts/Sound_Manager.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/scenes/Sound_Queue.tscn" type="PackedScene" id=2]
-[ext_resource path="res://producto/assets/sounds/556 Single WAV.wav" type="AudioStream" id=3]
+[ext_resource path="res://producto/assets/sounds/jugador/Disparo.wav" type="AudioStream" id=3]
 [ext_resource path="res://producto/assets/scenes/Sound_Pool.tscn" type="PackedScene" id=4]
 [ext_resource path="res://producto/assets/sounds/pisadas/pisada (2).wav" type="AudioStream" id=5]
 [ext_resource path="res://producto/assets/sounds/pisadas/pisada (1).wav" type="AudioStream" id=6]
@@ -12,11 +12,13 @@
 [ext_resource path="res://producto/assets/sounds/pisadas/pisada (3).wav" type="AudioStream" id=10]
 [ext_resource path="res://producto/assets/music/musica_fondo.mp3" type="AudioStream" id=11]
 [ext_resource path="res://producto/assets/music/musica_fondo3.mp3" type="AudioStream" id=12]
-[ext_resource path="res://producto/assets/music/derrota.mp3" type="AudioStream" id=13]
-[ext_resource path="res://producto/assets/sounds/boton_1.wav" type="AudioStream" id=14]
-[ext_resource path="res://producto/assets/sounds/freeze.wav" type="AudioStream" id=15]
-[ext_resource path="res://producto/assets/sounds/Exp.wav" type="AudioStream" id=16]
+[ext_resource path="res://producto/assets/sounds/interfaz/Derrota.wav" type="AudioStream" id=13]
+[ext_resource path="res://producto/assets/sounds/interfaz/boton.wav" type="AudioStream" id=14]
+[ext_resource path="res://producto/assets/sounds/jugador/freeze.wav" type="AudioStream" id=15]
+[ext_resource path="res://producto/assets/sounds/jugador/Exp.wav" type="AudioStream" id=16]
 [ext_resource path="res://producto/assets/sounds/pisadas/Gravel - Run.wav" type="AudioStream" id=17]
+[ext_resource path="res://producto/assets/scenes/Audio.tscn" type="PackedScene" id=18]
+[ext_resource path="res://producto/assets/sounds/interfaz/Comprar.wav" type="AudioStream" id=19]
 
 [node name="Sound_Manager" type="Node"]
 pause_mode = 2
@@ -24,7 +26,7 @@ script = ExtResource( 1 )
 
 [node name="Disparo" parent="." instance=ExtResource( 2 )]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Disparo"]
+[node name="Audio_disparo" parent="Disparo" instance=ExtResource( 18 )]
 stream = ExtResource( 3 )
 
 [node name="Pasos" parent="." instance=ExtResource( 4 )]
@@ -71,25 +73,30 @@ stream = ExtResource( 12 )
 
 [node name="Musica_derrota" parent="." instance=ExtResource( 2 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Musica_derrota"]
+[node name="Audio_derrota" parent="Musica_derrota" instance=ExtResource( 18 )]
 stream = ExtResource( 13 )
 
 [node name="Boton_1" parent="." instance=ExtResource( 2 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Boton_1"]
+[node name="Audio_boton" parent="Boton_1" instance=ExtResource( 18 )]
 stream = ExtResource( 14 )
 
 [node name="Congelar" parent="." instance=ExtResource( 2 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Congelar"]
+[node name="Audio_congelar" parent="Congelar" instance=ExtResource( 18 )]
 stream = ExtResource( 15 )
 
 [node name="Exp" parent="." instance=ExtResource( 2 )]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Exp"]
+[node name="Audio_exp" parent="Exp" instance=ExtResource( 18 )]
 stream = ExtResource( 16 )
 
 [node name="Pisadas" parent="." instance=ExtResource( 2 )]
 
-[node name="Audio_pisada" type="AudioStreamPlayer" parent="Pisadas"]
+[node name="Audio_pisada" parent="Pisadas" instance=ExtResource( 18 )]
 stream = ExtResource( 17 )
+
+[node name="Comprar" parent="." instance=ExtResource( 2 )]
+
+[node name="Audio_comprar" parent="Comprar" instance=ExtResource( 18 )]
+stream = ExtResource( 19 )
