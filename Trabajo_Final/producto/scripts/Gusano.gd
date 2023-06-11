@@ -15,5 +15,6 @@ func _ready():
 
 
 func ataque():
+	SoundManager.play_mordida()
 	jugador.recibe_ataque(danio)
 

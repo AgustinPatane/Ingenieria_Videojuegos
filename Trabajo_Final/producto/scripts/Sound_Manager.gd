@@ -33,6 +33,8 @@ func _ready():
 	sonidos.append(get_node("Exp"))
 	sonidos.append(get_node("Pisadas"))
 	sonidos.append(get_node("Comprar"))
+	sonidos.append(get_node("Espadazo"))
+	sonidos.append((get_node("Mordida")))
 	
 	musicas.append(get_node("Musica_menu"))
 	musicas.append(get_node("Musica_partida"))
@@ -122,3 +124,13 @@ func play_exp():
 func play_comprar():
 	if cond_sonido:
 		get_node("Comprar").play_sound()
+		
+func play_espadazo():
+	if cond_sonido:
+		get_node("Espadazo").play_sound()
+		
+func play_mordida():
+	if cond_sonido:
+		get_node("Mordida").play_sound()
+	
+	

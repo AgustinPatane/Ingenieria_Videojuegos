@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://producto/scripts/Sound_Manager.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/scenes/Sound_Queue.tscn" type="PackedScene" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://producto/assets/sounds/pisadas/Gravel - Run.wav" type="AudioStream" id=17]
 [ext_resource path="res://producto/assets/scenes/Audio.tscn" type="PackedScene" id=18]
 [ext_resource path="res://producto/assets/sounds/interfaz/Comprar.wav" type="AudioStream" id=19]
+[ext_resource path="res://producto/assets/sounds/enemigos/Espadazo.wav" type="AudioStream" id=20]
+[ext_resource path="res://producto/assets/sounds/enemigos/Mordida.wav" type="AudioStream" id=21]
 
 [node name="Sound_Manager" type="Node"]
 pause_mode = 2
@@ -100,3 +102,13 @@ stream = ExtResource( 17 )
 
 [node name="Audio_comprar" parent="Comprar" instance=ExtResource( 18 )]
 stream = ExtResource( 19 )
+
+[node name="Espadazo" parent="." instance=ExtResource( 2 )]
+
+[node name="Audio_espadazo" parent="Espadazo" instance=ExtResource( 18 )]
+stream = ExtResource( 20 )
+
+[node name="Mordida" parent="." instance=ExtResource( 2 )]
+
+[node name="Audio_mordida" parent="Mordida" instance=ExtResource( 18 )]
+stream = ExtResource( 21 )
