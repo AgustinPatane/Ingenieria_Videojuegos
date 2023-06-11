@@ -31,6 +31,7 @@ func _ready():
 	sonidos.append(get_node("Boton_1"))
 	sonidos.append(get_node("Congelar"))
 	sonidos.append(get_node("Exp"))
+	sonidos.append(get_node("Pisadas"))
 	
 	musicas.append(get_node("Musica_menu"))
 	musicas.append(get_node("Musica_partida"))
@@ -66,10 +67,16 @@ func play_disparo():
 	if cond_sonido:
 		get_node("Disparo").play_sound()
 
+func play_pisadas():
+	var cond_pisada = tiempo_ultima_pisada + 0.4 <= OS.get_ticks_msec() / 1000.0
+	if cond_sonido and cond_pisada:
+		get_node("Pisadas").play_sound()
+		tiempo_ultima_pisada = OS.get_ticks_msec() / 1000.0
+		
 func play_pasos():
 	var cond_pisada = tiempo_ultima_pisada + 0.4 <= OS.get_ticks_msec() / 1000.0
 	if cond_pisada and cond_sonido:
-		get_node("Pasos").play_random_sound()
+		#get_node("Pasos").play_random_sound()
 		tiempo_ultima_pisada = OS.get_ticks_msec() / 1000.0
 
 func set_musica_menu():
@@ -110,3 +117,5 @@ func play_congelar():
 func play_exp():
 	if cond_sonido:
 		get_node("Exp").play_sound()
+
+

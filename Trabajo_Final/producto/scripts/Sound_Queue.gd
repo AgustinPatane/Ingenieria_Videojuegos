@@ -29,10 +29,15 @@ func set_volumen(val):
 
 func play_sound():
 	if !audios[next].playing:
-		audios[next].play()
+		var copy = audios[next].duplicate()
+		self.add_child(copy)
+		copy.play()
 		next += 1
 		next %= audios.size()
 	
+func _on_audio_finished():
+	print("cacaascascacsa")
+		
 func stop_sound():
 	for i in range(audios.size()):
 		audios[i].stop()

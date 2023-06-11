@@ -127,7 +127,7 @@ func _physics_process(delta):
 	if motion.abs() != Vector2.ZERO:
 		$AnimationPlayer_body.play("move")
 		arma.position.y = -5
-		SoundManager.play_pasos()
+		SoundManager.play_pisadas()
 	else:
 		$AnimationPlayer_body.play("idle")
 	if Input.is_action_pressed("run") and puede_correr : SPEED = vel_run
