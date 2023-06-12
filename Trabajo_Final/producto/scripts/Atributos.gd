@@ -130,7 +130,7 @@ var gusano = {
 	experiencia = 1,
 	puntos_muerte = 200,
 	speed = 100,
-	cantidad = 3
+	cantidad = 4
 }
 
 func get_gusano():
