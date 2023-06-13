@@ -8,6 +8,8 @@ var skin_seleccionada = ""
 
 var skins_armas = Array()
 
+onready var escena_monedas = preload("res://producto/assets/scenes/Monedas_Insuficientes.tscn")
+
 onready var label_monedas = get_node("Monedas")
 onready var valor = get_node("skins_jugador/valor")
 onready var botones = get_node("skins_jugador")
@@ -23,9 +25,13 @@ func _ready():
 	load_tienda()
 
 func _on_comprar_pressed():
-	var costo = int(valor.text)
-	if monedas>=costo:
-		if !(skins_compradas.has(skin_seleccionada)):
+	var costo
+	if valor.text == "":
+		costo = 0
+	else: 
+		costo = int(valor.text)
+	if !(skins_compradas.has(skin_seleccionada)) and skin_seleccionada != "":
+		if monedas>=costo:
 			SoundManager.play_comprar()
 			monedas-=costo
 			label_monedas.text = str(monedas)
@@ -45,10 +51,15 @@ func _on_comprar_pressed():
 				if skins_cargados[i].nombre==skin_seleccionada:
 					skins_cargados[i].valor = 1
 			
-			
 			guardar_tienda()
+		# monedas insuficientes
+		else:
+			SoundManager.play_boton_1()
+			var monedas = escena_monedas.instance()
+			self.add_child(monedas)
+	# ya se tiene la skin o no se seleccionó ninguna
 	else:
-		pass #mostrar monedas insuficientes
+		SoundManager.play_boton_1()
 
 func _on_skin_pela_pressed():
 	SoundManager.play_boton_1()
