@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://producto/assets/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://producto/assets/img/Pausa/Fondos/Frame.png" type="Texture" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://producto/assets/img/Menu_principal/CONFIG.png" type="Texture" id=30]
 [ext_resource path="res://producto/assets/img/Menu_principal/marco.png" type="Texture" id=31]
 [ext_resource path="res://producto/assets/img/Menu_principal/CONFIG APRETADO.png" type="Texture" id=32]
+[ext_resource path="res://producto/assets/img/jugador/explosion_lvl_up.png" type="Texture" id=33]
 
 [sub_resource type="DynamicFont" id=10]
 size = 90
@@ -67,6 +68,38 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "boom"
+length = 0.95
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
 
 [node name="Menu" type="Control"]
@@ -274,15 +307,33 @@ expand = true
 [node name="Meteorito" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Meteorito"]
-position = Vector2( -36.0002, -29 )
+position = Vector2( 3, -25 )
 rotation = -0.169297
-scale = Vector2( -3.3928, 3.33199 )
+scale = Vector2( -2.03102, 2.02679 )
 texture = ExtResource( 19 )
 hframes = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Meteorito"]
 anims/RESET = SubResource( 11 )
 anims/movimiento = SubResource( 12 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = -24.0
+margin_top = -17.0
+margin_right = 1037.0
+margin_bottom = 638.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="ColorRect"]
+position = Vector2( 544.875, 434.625 )
+scale = Vector2( 9.33854, 10.0677 )
+texture = ExtResource( 33 )
+hframes = 18
+
+[node name="Explosion" type="AnimationPlayer" parent="ColorRect"]
+anims/RESET = SubResource( 13 )
+anims/boom = SubResource( 14 )
 
 [connection signal="pressed" from="TextureRect2/Empezar" to="." method="_on_Empezar_pressed"]
 [connection signal="pressed" from="TextureRect2/Tienda" to="." method="_on_Tienda_pressed"]
@@ -296,3 +347,4 @@ anims/movimiento = SubResource( 12 )
 [connection signal="pressed" from="Menu_previo/Mapas/btn_mapa_der" to="." method="_on_btn_mapa_der_pressed"]
 [connection signal="pressed" from="Menu_previo/Mapas/btn_mapa_izq" to="." method="_on_btn_mapa_izq_pressed"]
 [connection signal="pressed" from="Menu_previo/Btn_ready" to="." method="_on_Btn_ready_pressed"]
+[connection signal="animation_finished" from="ColorRect/Explosion" to="." method="_on_Explosion_animation_finished"]

@@ -35,8 +35,10 @@ var config = {
 	music_muted = false
 }
 
+signal meteorito_boom 
 
 func _ready():
+	self.connect("meteorito_boom",self,"explotar")
 	Atributos.set_cursor_menu()
 	Engine.set_meta("contrarreloj",false)
 	btn_contrarreloj.disabled = false
@@ -120,12 +122,23 @@ func _on_Btn_ready_pressed():
 	
 func _process(_delta):
 	if meteorito:
-		$Meteorito/Sprite.position.x += 20
+		$Meteorito/Sprite.position.x += 10
 		$Meteorito/Sprite.position.y += 14
-		if $Meteorito/Sprite.position.x > 1000:
-			Engine.set_meta("nombre_escena_mapa",mapas[mapa_actual])
-			SoundManager.stop_musica()
-			var _aux = get_tree().change_scene("res://producto/assets/scenes/"+mapas[mapa_actual]+".tscn")
+		$Meteorito/Sprite.scale.x -= 0.2
+		$Meteorito/Sprite.scale.y += 0.2
+		
+		if $Meteorito/Sprite.position.x > 500:
+			emit_signal("meteorito_boom")
+
+func explotar():
+	$ColorRect.visible = true
+	$ColorRect/Explosion.play("boom")
+	
+
+func _on_Explosion_animation_finished(_anim_name):
+	Engine.set_meta("nombre_escena_mapa",mapas[mapa_actual])
+	SoundManager.stop_musica()
+	var _aux = get_tree().change_scene("res://producto/assets/scenes/"+mapas[mapa_actual]+".tscn")
 
 func countFilesInFolder(folder_path):
 	var dir = Directory.new()
@@ -188,3 +201,6 @@ func _on_modo_Contrarreloj_toggled(_button_pressed):
 	btn_contrarreloj.disabled = true
 	btn_normal.disabled = false
 	btn_normal.set_pressed(false)
+
+
+
