@@ -42,4 +42,7 @@ text = "EVOLUCION"
 position = Vector2( 630, 16 )
 texture = ExtResource( 8 )
 
+[node name="Position2D" type="Position2D" parent="CanvasLayer/Control"]
+position = Vector2( 541, 298 )
+
 [connection signal="player_defeated" from="Jugador" to="." method="_on_Jugador_player_defeated"]

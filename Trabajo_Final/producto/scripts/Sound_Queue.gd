@@ -34,9 +34,12 @@ func play_sound():
 		var copy = audios[next].duplicate()
 		self.add_child(copy)
 		copy.play()
+		if self.get_child_count() > 5:
+			self.get_child(3).queue_free()
 		next += 1
 		next %= audios.size()
 		
 func stop_sound():
 	for i in range(audios.size()):
 		audios[i].stop()
+		

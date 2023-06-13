@@ -21,6 +21,9 @@ func _on_Area2D_body_entered(_body):
 func prueba():
 	pass
 
+func get_pos():
+	return self.position
+
 
 func arrancar_timer(j):
 	animacion.play("go")
