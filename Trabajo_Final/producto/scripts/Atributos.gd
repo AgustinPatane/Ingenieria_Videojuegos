@@ -46,9 +46,10 @@ func set_config(config):
 
 # JUGADOR ------------------------------------------------------------
 
+# ESTE ES PARA PROBAR EL JUEGO
 var jugador = {
 	vida_max = 100, 
-	exp_necesaria = 1,
+	exp_necesaria = 25,
 	cadencia_disparo = 0.4,
 	danio = 10,
 	rango = 0.5,
@@ -58,6 +59,20 @@ var jugador = {
 	cant_proyectiles = 1,
 	niveles_evol = [2,3,4]
 }
+
+# ESTE ES EL QUE IRIA EN LA VERSION FINAL
+#var jugador = {
+#	vida_max = 100, 
+#	exp_necesaria = 25,
+#	cadencia_disparo = 0.4,
+#	danio = 10,
+#	rango = 0.5,
+#	speed = 20000,
+#	speed_proyectil = 800,
+#	cant_atraviesa = 1,
+#	cant_proyectiles = 1,
+#	niveles_evol = [2,3,4]
+#}
 
 func get_atrib_jugador():
 	return jugador
@@ -81,13 +96,13 @@ var tiempos = {
 }
 
 var niveles_spawn = {
-	demonio = 10,
-	diablito = 5,
+	demonio = 4  ,
+	diablito = 2,
 	gusano = 1,
-	hechicero = 6,
-	hongo = 3, # 3
-	ojo = 2,
-	pilar = 4
+	hechicero = 3,
+	hongo = 2,
+	ojo = 1,
+	pilar = 3
 }
 
 func get_tiempos():
@@ -101,7 +116,7 @@ func get_niveles_spawn():
 var demonio = {
 	vida = 2000,
 	danio = 50,
-	experiencia = 50,
+	experiencia = 30,
 	puntos_muerte = 50,
 	speed = 100
 }
@@ -115,7 +130,7 @@ var diablito = {
 	vida = 40,
 	danio = 25,
 	experiencia = 10,
-	puntos_muerte = 20,
+	puntos_muerte = 15,
 	speed = 200
 }
 
@@ -128,7 +143,7 @@ var gusano = {
 	vida = 20,
 	danio = 10,
 	experiencia = 1,
-	puntos_muerte = 200,
+	puntos_muerte = 2,
 	speed = 100,
 	cantidad = 4
 }
@@ -141,8 +156,8 @@ func get_gusano():
 var hechicero = {
 	vida = 200,
 	danio = 20,
-	experiencia = 50,
-	puntos_muerte = 50,
+	experiencia = 20,
+	puntos_muerte = 30,
 	speed = 100
 }
 
@@ -182,8 +197,8 @@ func get_ojo():
 var pilar = {
 	vida = 500,
 	danio = 10,
-	experiencia = 20,
-	puntos_muerte = 40,
+	experiencia = 10,
+	puntos_muerte = 20,
 	speed = 10
 }
 

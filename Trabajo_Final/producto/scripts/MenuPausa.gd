@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal continuar
 var jugador
+var cond_pausa = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,6 +36,10 @@ func salir_pausa():
 	get_tree().paused = false
 	emit_signal("continuar")
 	self.queue_free()
+
+func _process(_delta):
+	if Input.is_action_pressed("ui_cancel") and cond_pausa:
+		salir_pausa()
 
 func _on_Boton_continuar_pressed():
 	salir_pausa()
@@ -90,3 +95,7 @@ func _on_Boton_arbol_pressed():
 	var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
 	evol_instance.set_modo(false)
 	self.add_child(evol_instance)
+
+
+func _on_Timer_inicio_pausa_timeout():
+	cond_pausa = true

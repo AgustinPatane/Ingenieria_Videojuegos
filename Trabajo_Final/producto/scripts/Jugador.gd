@@ -54,6 +54,7 @@ var capacidad_evolucion = false
 var capsula_evolucion 
 var primer_toque = false
 var apretando_evol = false
+var puede_subir_nivel = true
 # -------------------------------------------------------------------------------------
 # -------------------------------- CARACTERISTICAS ------------------------------------
 # -------------------------------------------------------------------------------------
@@ -289,10 +290,11 @@ func gana_puntos(cantidad):
 
 func gana_exp(value):
 	experiencia += value
-	if experiencia_necesaria <= experiencia:
+	if experiencia_necesaria <= experiencia and puede_subir_nivel:
+		puede_subir_nivel = false
 		nivel += 1
 		emit_signal("level_up",nivel)
-		if nivel == niveles_evol[0] or nivel == niveles_evol[1] or nivel == niveles_evol[2]:
+		if (nivel == niveles_evol[0] or nivel == niveles_evol[1] or nivel == niveles_evol[2]):
 			capacidad_evolucion = true
 			#_evolucion()
 	emit_signal("actualiza_interfaz")
@@ -304,6 +306,7 @@ func actualiza_exp(experiencia_max):
 func _on_Anim_lvl_up_animation_finished(_anim_name):
 	subiendo_nivel = false
 	spriteLvlUp.visible =false
+	puede_subir_nivel = true
 
 # -------------------------------------------------------------------------------------
 # ---------------------------------- EVOLUCION ----------------------------------------
@@ -340,6 +343,8 @@ func culmina_evolucion():
 
 func on_evol_quit():
 	$Interfaz.mostrar()
+	spriteLvlUp.visible =true
+	spriteLvlUp.z_index = self.z_index + 200
 	animLvlUp.play("LVL_UP")
 	emit_signal("actualiza_interfaz")
 	Atributos.set_cursor_juego()

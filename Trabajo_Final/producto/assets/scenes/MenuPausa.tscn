@@ -341,6 +341,11 @@ texture_under = ExtResource( 18 )
 texture_progress = ExtResource( 21 )
 nine_patch_stretch = true
 
+[node name="Timer_inicio_pausa" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="Boton_continuar" to="." method="_on_Boton_continuar_pressed"]
 [connection signal="pressed" from="Boton_salir" to="." method="_on_Boton_salir_pressed"]
 [connection signal="pressed" from="Boton_arbol" to="." method="_on_Boton_arbol_pressed"]
@@ -349,3 +354,4 @@ nine_patch_stretch = true
 [connection signal="toggled" from="Sonido/Boton_sonido" to="." method="_on_Boton_sonido_toggled"]
 [connection signal="value_changed" from="Sonido/Slider_sonido" to="." method="_on_Slider_sonido_value_changed"]
 [connection signal="toggled" from="Boton_pantalla_completa" to="." method="_on_Boton_pantalla_completa_toggled"]
+[connection signal="timeout" from="Timer_inicio_pausa" to="." method="_on_Timer_inicio_pausa_timeout"]

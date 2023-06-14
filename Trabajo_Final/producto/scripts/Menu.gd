@@ -12,6 +12,7 @@ onready var btn_contrarreloj = get_node("Menu_previo/modo_Contrarreloj")
 
 var prev_volumen = -20
 var mapa_actual = 0
+var opacidad_fondo_meteorito = 0
 
 var mapas = ["MapaDungeon","MapaLuna","MapaLava","MapaMadera","MapaArcilla","MapaIsla"]
 var cantidad_de_mapas = mapas.size()
@@ -36,6 +37,7 @@ var config = {
 }
 
 signal meteorito_boom 
+var explotando = false
 
 func _ready():
 	self.connect("meteorito_boom",self,"explotar")
@@ -122,17 +124,28 @@ func _on_Btn_ready_pressed():
 	
 func _process(_delta):
 	if meteorito:
-		$Meteorito/Sprite.position.x += 10
-		$Meteorito/Sprite.position.y += 14
-		$Meteorito/Sprite.scale.x -= 0.2
-		$Meteorito/Sprite.scale.y += 0.2
+		opacidad_fondo_meteorito += 0.02
+		$Meteorito.modulate = Color(1,1,1,opacidad_fondo_meteorito)
 		
-		if $Meteorito/Sprite.position.x > 500:
+		$Meteorito/Sprite.position.x += 10
+		$Meteorito/Sprite.position.y += 13
+		$Meteorito/Sprite.scale.x += 0.1
+		$Meteorito/Sprite.scale.y -= 0.1
+		
+		if $Meteorito/Sprite.position.x > 500 and !explotando:
 			emit_signal("meteorito_boom")
+			explotando = true
+			
+	if explotando:
+		$Explosion/Sprite.scale.x += 0.1
+		$Explosion/Sprite.scale.y += 0.1
+		$Explosion/Sprite.position.y -=7
 
 func explotar():
-	$ColorRect.visible = true
-	$ColorRect/Explosion.play("boom")
+	SoundManager.play_explosion_meteorito()
+	$Explosion.visible = true
+	$Meteorito/Sprite.visible = false
+	$Explosion/Anim_Explosion.play("boom")
 	
 
 func _on_Explosion_animation_finished(_anim_name):

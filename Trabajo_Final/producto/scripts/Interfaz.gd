@@ -7,8 +7,11 @@ var jugador
 var tiempo_juego = Atributos.tiempos.juego
 var minutos = int(tiempo_juego / 60)
 var segundos = tiempo_juego % 60
+var opacidad = 1
+var tiempo_ultima_pausa = 0
 
 func _ready():
+	$Transicion.visible = true
 	$Barra_evol.visible = false
 	$Tiempo_restante.text = ""
 	if(Engine.get_meta("contrarreloj")):
@@ -18,7 +21,7 @@ func _ready():
 		timer_juego.connect("timeout", self, "update_timer",[-1])
 		timer_juego.start()
 		set_label_tiempo_restante()
-		
+
 
 func set_label_tiempo_restante():
 	var string_seg
@@ -60,7 +63,14 @@ func update_timer(value):
 		get_parent().muere()
 	
 func _process(_delta):
-	if Input.is_action_pressed("ui_cancel"):
+	if(opacidad > 0):
+		$Transicion.modulate = Color(1,1,1,opacidad)
+		opacidad -= 0.01
+	elif has_node("Transicion"):
+		$Transicion.queue_free()
+	
+	var cond_pausa = tiempo_ultima_pausa + 0.5 <= OS.get_ticks_msec() / 1000.0
+	if Input.is_action_pressed("ui_cancel") and cond_pausa:
 		pausa()
 	$Barra_evol.value += 1 
 
@@ -86,6 +96,7 @@ func _on_Btn_pausa_pressed():
 
 func on_paused_quit():
 	Atributos.set_cursor_juego()
+	tiempo_ultima_pausa = OS.get_ticks_msec() / 1000.0
 	paused = null
 
 func actualiza():

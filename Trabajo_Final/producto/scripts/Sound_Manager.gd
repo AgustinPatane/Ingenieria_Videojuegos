@@ -35,6 +35,7 @@ func _ready():
 	sonidos.append(get_node("Comprar"))
 	sonidos.append(get_node("Espadazo"))
 	sonidos.append((get_node("Mordida")))
+	sonidos.append(get_node("Explosion_meteorito"))
 	
 	musicas.append(get_node("Musica_menu"))
 	musicas.append(get_node("Musica_partida"))
@@ -133,4 +134,7 @@ func play_mordida():
 	if cond_sonido:
 		get_node("Mordida").play_sound()
 	
+func play_explosion_meteorito():
+	if cond_sonido:
+		get_node("Explosion_meteorito").play_sound()
 	
