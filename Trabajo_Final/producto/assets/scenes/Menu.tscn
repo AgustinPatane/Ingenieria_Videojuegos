@@ -304,6 +304,7 @@ texture_hover = ExtResource( 5 )
 expand = true
 
 [node name="Meteorito" type="ColorRect" parent="."]
+visible = false
 margin_left = -34.0
 margin_top = -28.0
 margin_right = 1080.0

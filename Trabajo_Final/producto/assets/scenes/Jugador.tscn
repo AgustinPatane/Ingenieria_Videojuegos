@@ -671,7 +671,7 @@ rotation = -1.5708
 scale = Vector2( 0.205161, 0.212623 )
 frames = SubResource( 28 )
 animation = "fire"
-frame = 34
+frame = 27
 playing = true
 
 [node name="Position_arma" type="Position2D" parent="Arma2"]

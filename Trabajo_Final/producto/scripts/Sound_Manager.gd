@@ -34,8 +34,11 @@ func _ready():
 	sonidos.append(get_node("Pisadas"))
 	sonidos.append(get_node("Comprar"))
 	sonidos.append(get_node("Espadazo"))
-	sonidos.append((get_node("Mordida")))
+	sonidos.append(get_node("Mordida"))
 	sonidos.append(get_node("Explosion_meteorito"))
+	sonidos.append(get_node("Disparo_enemigo"))
+	sonidos.append(get_node("Evolucion"))
+	sonidos.append(get_node("Danio"))
 	
 	musicas.append(get_node("Musica_menu"))
 	musicas.append(get_node("Musica_partida"))
@@ -43,7 +46,6 @@ func _ready():
 	
 	set_volumen_musica(Atributos.volumenes.default_vol_musica)
 	set_volumen_sonido(Atributos.volumenes.default_vol_sonido)
-	pass
 
 func actualiza_volumenes():
 	set_volumen_musica(Atributos.volumenes.default_vol_musica)
@@ -137,4 +139,16 @@ func play_mordida():
 func play_explosion_meteorito():
 	if cond_sonido:
 		get_node("Explosion_meteorito").play_sound()
+		
+func play_disparo_enemigo():
+	if cond_sonido:
+		get_node("Disparo_enemigo").play_sound()
 	
+func play_evolucion():
+	if cond_sonido:
+		get_node("Evolucion").play_sound()
+
+func play_danio():
+	if cond_sonido:
+		get_node("Danio").play_sound()
+

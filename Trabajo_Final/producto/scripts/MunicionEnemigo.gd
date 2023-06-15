@@ -41,6 +41,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func accion():
 	jugador.recibe_ataque(damage)
+	SoundManager.play_danio()
 	self.queue_free()
 	
 

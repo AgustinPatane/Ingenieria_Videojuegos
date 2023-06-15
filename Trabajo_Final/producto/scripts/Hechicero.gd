@@ -25,9 +25,21 @@ func ataque():
 			disparo.set_rango(6)
 			disparo.set_speed(100)
 			get_node("/root/"+Engine.get_meta("nombre_escena_mapa")).add_child(disparo)
+			if verifica_pos():
+				SoundManager.play_disparo_enemigo()
 		puede_disparar = false
 	else:
 		puede_disparar = true
+
+# funciona solo a veces
+func verifica_pos():
+	var camera_rect = Rect2(
+		position.x - (OS.window_size.x / 2),
+		position.y - (OS.window_size.y / 2),
+		OS.window_size.x,
+		OS.window_size.y
+	)
+	return camera_rect.has_point($Sprite.global_position)
 
 func _process(_delta):
 	pass

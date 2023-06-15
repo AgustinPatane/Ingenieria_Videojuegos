@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://producto/scripts/Sound_Manager.gd" type="Script" id=1]
 [ext_resource path="res://producto/assets/scenes/Sound_Queue.tscn" type="PackedScene" id=2]
@@ -22,6 +22,9 @@
 [ext_resource path="res://producto/assets/sounds/enemigos/Espadazo.wav" type="AudioStream" id=20]
 [ext_resource path="res://producto/assets/sounds/enemigos/Mordida.wav" type="AudioStream" id=21]
 [ext_resource path="res://producto/assets/sounds/interfaz/Explosion_meteorito.wav" type="AudioStream" id=22]
+[ext_resource path="res://producto/assets/sounds/enemigos/disparo_enemigo.wav" type="AudioStream" id=23]
+[ext_resource path="res://producto/assets/sounds/jugador/evolucion.wav" type="AudioStream" id=24]
+[ext_resource path="res://producto/assets/sounds/jugador/danio.wav" type="AudioStream" id=25]
 
 [node name="Sound_Manager" type="Node"]
 pause_mode = 2
@@ -118,3 +121,18 @@ stream = ExtResource( 21 )
 
 [node name="Audio_meteorito" parent="Explosion_meteorito" instance=ExtResource( 18 )]
 stream = ExtResource( 22 )
+
+[node name="Disparo_enemigo" parent="." instance=ExtResource( 2 )]
+
+[node name="Audio_disparo_enemigo" parent="Disparo_enemigo" instance=ExtResource( 18 )]
+stream = ExtResource( 23 )
+
+[node name="Evolucion" parent="." instance=ExtResource( 2 )]
+
+[node name="Audio_evolucion" parent="Evolucion" instance=ExtResource( 18 )]
+stream = ExtResource( 24 )
+
+[node name="Danio" parent="." instance=ExtResource( 2 )]
+
+[node name="Audio_danio" parent="Danio" instance=ExtResource( 18 )]
+stream = ExtResource( 25 )

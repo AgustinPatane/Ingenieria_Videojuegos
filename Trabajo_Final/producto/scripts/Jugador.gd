@@ -346,6 +346,7 @@ func on_evol_quit():
 	spriteLvlUp.visible =true
 	spriteLvlUp.z_index = self.z_index + 200
 	animLvlUp.play("LVL_UP")
+	SoundManager.play_evolucion()
 	emit_signal("actualiza_interfaz")
 	Atributos.set_cursor_juego()
 	pass
