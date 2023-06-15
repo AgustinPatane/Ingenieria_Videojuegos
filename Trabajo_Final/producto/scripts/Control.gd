@@ -12,6 +12,9 @@ var isBlinking = true
 func _ready():
 	jugador = get_node("/root/"+Engine.get_meta("nombre_escena_mapa")+"/Jugador")
 	capsula.material.set_shader_param("luminosity_amount", 0.0)
+	indicador.visible=false
+	$Label.visible=false
+	$Shift.visible=false
 
 func _process(delta):
 	

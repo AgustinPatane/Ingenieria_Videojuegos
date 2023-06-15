@@ -33,6 +33,7 @@ func choca():
 	scale.x = 2
 	scale.y = 2
 	$AnimationPlayer.play("explotar")
+	SoundManager.play_cohete()
 	$area_eplosion.monitoring = true
 	var temporizador = Timer.new()
 	self.add_child(temporizador)

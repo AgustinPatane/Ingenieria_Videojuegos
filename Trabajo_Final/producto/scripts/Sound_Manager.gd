@@ -39,6 +39,7 @@ func _ready():
 	sonidos.append(get_node("Disparo_enemigo"))
 	sonidos.append(get_node("Evolucion"))
 	sonidos.append(get_node("Danio"))
+	sonidos.append(get_node("Cohete"))
 	
 	musicas.append(get_node("Musica_menu"))
 	musicas.append(get_node("Musica_partida"))
@@ -152,3 +153,6 @@ func play_danio():
 	if cond_sonido:
 		get_node("Danio").play_sound()
 
+func play_cohete():
+	if cond_sonido:
+		get_node("Cohete").play_sound()

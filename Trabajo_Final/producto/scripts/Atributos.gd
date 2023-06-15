@@ -48,8 +48,8 @@ func set_config(config):
 
 # ESTE ES PARA PROBAR EL JUEGO
 var jugador = {
-	vida_max = 100, 
-	exp_necesaria = 25,
+	vida_max = 10000, 
+	exp_necesaria = 1,
 	cadencia_disparo = 0.4,
 	danio = 10,
 	rango = 0.5,
@@ -96,10 +96,10 @@ var tiempos = {
 }
 
 var niveles_spawn = {
-	demonio = 4  ,
+	demonio = 5  ,
 	diablito = 2,
 	gusano = 1,
-	hechicero = 3,
+	hechicero = 4,
 	hongo = 2,
 	ojo = 1,
 	pilar = 3
