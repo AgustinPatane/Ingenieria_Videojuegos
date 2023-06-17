@@ -684,12 +684,12 @@ func set_dentro(valor):
 
 func activa_metralladora():
 	var atrib = Atributos.get_atrib_jugador()
-	set_cadencia_disparo(atrib.cadencia_disparo*2)
+	set_cadencia_disparo(atrib.cadencia_disparo/2)
 	pass
 
 func desactiva_metralladora():
 	var atrib = Atributos.get_atrib_jugador()
-	set_cadencia_disparo(atrib.cadencia_disparo/2)
+	set_cadencia_disparo(atrib.cadencia_disparo*2)
 	pass
 
 func vuelve_a_base():
