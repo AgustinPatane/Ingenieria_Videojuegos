@@ -5,7 +5,10 @@
 
 [node name="MapaMadera" instance=ExtResource( 1 )]
 
-[node name="TileMap" type="TileMap" parent="." index="4"]
+[node name="Jugador" parent="." index="0"]
+visible = true
+
+[node name="TileMap" type="TileMap" parent="." index="3"]
 position = Vector2( -392.623, 468 )
 tile_set = ExtResource( 2 )
 format = 1
