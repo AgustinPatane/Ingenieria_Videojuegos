@@ -48,3 +48,11 @@ func drop_on_death():
 	area_danio.desaparecer()
 	queue_free()
 
+
+
+
+func sube_dificultad():
+	self.vida*=1.25
+	self.danio*=1.2
+
+

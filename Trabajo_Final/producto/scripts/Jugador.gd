@@ -114,7 +114,7 @@ func aumenta_Area_recoleccion(value):
 ##sprite_jugador.set_flip_h(valor_booleano)
 
 func _physics_process(delta):
-	z_index = int(position.y) + 1500
+	z_index = int(position.y) + 2500
 	motion = Vector2(0,0)
 	if Input.is_action_pressed("ui_right"):
 		motion.x = 100
