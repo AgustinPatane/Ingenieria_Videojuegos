@@ -294,7 +294,7 @@ func gana_exp(value):
 	emit_signal("actualiza_interfaz")
 
 func actualiza_exp(experiencia_max):
-	return experiencia_max * 2
+	return experiencia_max * 10
 	#return (experiencia * round(pow(1.3,nivel)))
 
 func _on_Anim_lvl_up_animation_finished(_anim_name):
@@ -307,20 +307,21 @@ func _on_Anim_lvl_up_animation_finished(_anim_name):
 # -------------------------------------------------------------------------------------
 
 func _evolucion():
-	if mas_evoluciones:
-		print(get_node("Interfaz/Barra_evol").value)
-		$Interfaz.esconder()
-		contador_niveles_arbol += 1
-		if contador_niveles_arbol == max_nivel_arbol:
-			mas_evoluciones = false
-		var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
-		evol_instance.set_modo(true)
-		Atributos.set_cursor_menu()
-		self.add_child(evol_instance)
-		get_tree().paused = true
-		culmina_evolucion()
-	else:
-		print("NO HAY MAS EVOLUCIONES")
+	if experiencia_necesaria <= experiencia:
+		if mas_evoluciones:
+			print(get_node("Interfaz/Barra_evol").value)
+			$Interfaz.esconder()
+			contador_niveles_arbol += 1
+			if contador_niveles_arbol == max_nivel_arbol:
+				mas_evoluciones = false
+			var evol_instance = load("res://producto/assets/scenes/MenuEvolucion.tscn").instance()
+			evol_instance.set_modo(true)
+			Atributos.set_cursor_menu()
+			self.add_child(evol_instance)
+			get_tree().paused = true
+			culmina_evolucion()
+		else:
+			print("NO HAY MAS EVOLUCIONES")
 	pass
 
 func culmina_evolucion():

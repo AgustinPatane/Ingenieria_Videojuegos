@@ -1,10 +1,6 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://producto/assets/img/Capsula/crater.png" type="Texture" id=1]
-[ext_resource path="res://producto/assets/img/Capsula/Capsule3.png" type="Texture" id=2]
-[ext_resource path="res://producto/assets/img/Capsula/Capsule4.png" type="Texture" id=3]
-[ext_resource path="res://producto/assets/img/Capsula/Capsule2.png" type="Texture" id=4]
-[ext_resource path="res://producto/assets/img/Capsula/Capsule5.png" type="Texture" id=6]
 [ext_resource path="res://producto/assets/img/Capsula/teleport_128.png" type="Texture" id=7]
 [ext_resource path="res://producto/scripts/Capsula.gd" type="Script" id=8]
 [ext_resource path="res://producto/assets/img/Capsula/Smoke45Frames.png" type="Texture" id=9]
@@ -80,14 +76,6 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4 ]
 }
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "go",
-"speed": 8.0
-} ]
-
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 69.0
 height = 38.0
@@ -124,16 +112,6 @@ vframes = 5
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite_Base"]
 anims/RESET = SubResource( 2 )
 anims/go = SubResource( 3 )
-
-[node name="Sprite_capusla" type="Sprite" parent="."]
-position = Vector2( 539, -146 )
-scale = Vector2( 1.82891, 2.11545 )
-z_index = 2
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Sprite_capusla"]
-position = Vector2( -0.546783, 53.8893 )
-frames = SubResource( 1 )
-animation = "go"
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 518, 94 )
