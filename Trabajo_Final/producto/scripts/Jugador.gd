@@ -65,12 +65,6 @@ var vel_run
 var evolucion_actual = "evolucion"
 
 # -------------------------------------------------------------------------------------
-# ------------------------------------ CONSTANTES ----------------------------------------
-# -------------------------------------------------------------------------------------
-
-const SAVE_PATH = "res://Saves/tienda.sav"
-
-# -------------------------------------------------------------------------------------
 # ------------------------------------ SIGNALS ----------------------------------------
 # -------------------------------------------------------------------------------------
 
@@ -543,11 +537,11 @@ func guardar_monedas():
 	monedas += puntos
 	Engine.set_meta("monedas",monedas)
 	var file = File.new()
-	file.open(SAVE_PATH,File.READ)
+	file.open(Atributos.ruta_tienda,File.READ)
 	var skins_cargados = parse_json(file.get_line())
 	skins_cargados[0].valor = Engine.get_meta("monedas")
 	file.close()
-	file.open(SAVE_PATH, File.WRITE)
+	file.open(Atributos.ruta_tienda, File.WRITE)
 	file.store_line(to_json(skins_cargados))
 	file.close()
 

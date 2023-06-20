@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-const SAVE_PATH = "res://Saves/saves.sav"
 var highscores = null
 var player = {
 	"username":"",
@@ -41,26 +40,28 @@ func genera_saves_vacio():
 	var puntuaciones = []
 	for _i in range(0,10):
 		var jugador = {}
-		jugador.username = ""
-		jugador.score = 0
 		jugador.mapa = ""
+		jugador.score = 0
+		jugador.username = "|"
 		puntuaciones.append(jugador)
 	save_game(puntuaciones)
 
 func save_game(data):
 	var save_game = File.new()
-	save_game.open(SAVE_PATH, File.WRITE)
+	save_game.open(Atributos.ruta_saves, File.WRITE)
 	save_game.store_line(to_json(data))
 	save_game.close()
 
 func load_game():
 	var save_game = File.new()
-	if not save_game.file_exists(SAVE_PATH):
+	if !save_game.file_exists(Atributos.ruta_saves):
 		genera_saves_vacio()
-	save_game.open(SAVE_PATH, File.READ)
+	
+	save_game.open(Atributos.ruta_saves, File.READ)
 	highscores = parse_json(save_game.get_line())
 	#print(highscores)
 	save_game.close()
+	
 
 func get_highscore_from_saves():
 	load_game()

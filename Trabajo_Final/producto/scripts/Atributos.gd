@@ -3,14 +3,18 @@ extends Node
 var volumenes = {
 	max_vol = 5,
 	min_vol = -50,
-	default_vol_sonido = 0,
+	default_vol_sonido = -20,
 	default_vol_musica = -50,
 	sound_muted = false,
 	music_muted = false
 }
 
+const ruta_tienda = "user://tienda.sav"
+const ruta_saves = "user://saves.sav"
+const ruta_config = "user://config.sav"
+
 var opacidad_fondo = 0.8
-var fullscreen = false
+var fullscreen = true
 var tamanio = Vector2(700,400)
 var posicion = Vector2(700,110)
 

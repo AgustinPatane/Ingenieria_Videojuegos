@@ -1,6 +1,5 @@
 extends Control
 
-const SAVE_PATH = "res://Saves/saves.sav"
 onready var sprite = get_node("GameOver")
 
 var highserver
@@ -28,7 +27,7 @@ func genera_saves_vacio():
 	puntuaciones.append(player)
 	for _i in range(1,10):
 		var jugador = {}
-		jugador.username = ""
+		jugador.username = "|"
 		jugador.score = 0
 		jugador.mapa = ""
 		puntuaciones.append(jugador)
@@ -36,15 +35,15 @@ func genera_saves_vacio():
 
 func save_game(data):
 	var save_game = File.new()
-	save_game.open(SAVE_PATH, File.WRITE)
+	save_game.open(Atributos.ruta_saves, File.WRITE)
 	save_game.store_line(to_json(data))
 	save_game.close()
 
 func load_game():
 	var save_game = File.new()
-	if not save_game.file_exists(SAVE_PATH):
+	if !save_game.file_exists(Atributos.ruta_saves):
 		genera_saves_vacio()
-	save_game.open(SAVE_PATH, File.READ)
+	save_game.open(Atributos.ruta_saves, File.READ)
 	highscores = parse_json(save_game.get_line())
 	save_game.close()
 

@@ -26,8 +26,6 @@ var lista_registro_tienda = Array()
 var skins_compradas = Array()
 var meteorito = false
 
-const SAVE_PATH = "res://Saves/tienda.sav"
-
 var config = {
 	fullscreen = false,
 	vol_sonido = 0,
@@ -79,18 +77,19 @@ func _on_Tienda_pressed():
 
 func load_tienda():
 	var file = File.new()
-	if file.file_exists(SAVE_PATH):
-		file.open(SAVE_PATH,File.READ)
-		var skins_cargados = parse_json(file.get_line())
-		# en el primer reg del archivo se tiene la skin equipada y la cantidad de monedas del jugador
-		Engine.set_meta("ruta_skin","res://producto/assets/img/jugador/skins/"+skins_cargados[0].nombre)
-		Engine.set_meta("skin_equipado",skins_cargados[0].nombre)
-		Engine.set_meta("monedas",skins_cargados[0].valor)
-		for i in range(1,len(skins_cargados)):
-			if skins_cargados[i].valor == 1:
-				skins_compradas.append(skins_cargados[i])#agrega los skins comprados
-	else:
-		pass
+	
+	if !file.file_exists(Atributos.ruta_tienda):
+		Saves.crea_arch_tienda()
+		
+	file.open(Atributos.ruta_tienda,File.READ)
+	var skins_cargados = parse_json(file.get_line())
+	# en el primer reg del archivo se tiene la skin equipada y la cantidad de monedas del jugador
+	Engine.set_meta("ruta_skin","res://producto/assets/img/jugador/skins/"+skins_cargados[0].nombre)
+	Engine.set_meta("skin_equipado",skins_cargados[0].nombre)
+	Engine.set_meta("monedas",skins_cargados[0].valor)
+	for i in range(1,len(skins_cargados)):
+		if skins_cargados[i].valor == 1:
+			skins_compradas.append(skins_cargados[i])#agrega los skins comprados
 	file.close()
 
 
@@ -171,16 +170,16 @@ func countFilesInFolder(folder_path):
 
 func guardar_config():
 	var save_config = File.new()
-	save_config.open("res://Saves/config.sav", File.WRITE)
+	save_config.open(Atributos.ruta_config, File.WRITE)
 	save_config.store_line(to_json(config))
 	save_config.close()
 	
 func cargar_config():
 	var save_config = File.new()
-	if not save_config.file_exists("res://Saves/config.sav"):
+	if not save_config.file_exists(Atributos.ruta_config):
 		guardar_config()
 		return # Error! No hay archivo que guardar
-	save_config.open("res://Saves/config.sav", File.READ)
+	save_config.open(Atributos.ruta_config, File.READ)
 	config = parse_json(save_config.get_line())
 	save_config.close()
 

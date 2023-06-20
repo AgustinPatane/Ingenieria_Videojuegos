@@ -19,8 +19,6 @@ var lista_skins_colores = ["Yellow","Red","Blue","Black"]
 onready var skins_customs = get_node("skins_jugador/skins_customs")
 var lista_skins_customs = ["Pela","Soldado_arg","Nba","Rambo"]
 
-const SAVE_PATH = "res://Saves/tienda.sav"
-
 func _ready():
 	load_tienda()
 
@@ -118,7 +116,7 @@ func _on_equipar_pressed():
 func guardar_tienda():
 	var file = File.new()
 	
-	file.open(SAVE_PATH,File.READ)
+	file.open(Atributos.ruta_tienda,File.READ)
 	var _skins_cargados2 = parse_json(file.get_line())
 
 	skins_cargados[0].nombre = Engine.get_meta("skin_equipado")
@@ -126,7 +124,7 @@ func guardar_tienda():
 	Engine.set_meta("monedas",monedas)
 	file.close()
 	
-	file.open(SAVE_PATH, File.WRITE)
+	file.open(Atributos.ruta_tienda, File.WRITE)
 	file.store_line(to_json(skins_cargados))
 	file.close()
 
@@ -134,7 +132,7 @@ func guardar_tienda():
 func load_tienda():
 	var _auxruta = ""
 	var file = File.new()
-	file.open(SAVE_PATH,File.READ)
+	file.open(Atributos.ruta_tienda,File.READ)
 	skins_cargados = parse_json(file.get_line())
 	for i in range(0,len(skins_cargados)):
 		if skins_cargados[i].valor == 1:
