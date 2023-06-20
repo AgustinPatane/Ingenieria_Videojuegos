@@ -57,5 +57,5 @@ func drop_on_death():
 
 func sube_dificultad():
 	self.vida*=1.25
-	self.danio*=1.4
+	self.danio*=1.2
 
