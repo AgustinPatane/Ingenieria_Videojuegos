@@ -117,18 +117,14 @@ func _on_Jugador_player_ready():
 func _on_Jugador_actualiza_interfaz():
 	actualiza()
 
-
-
-
-func _on_Jugador_actualiza_tiempo():
-	
-	update_timer(10)
+func _on_Jugador_actualiza_tiempo(tiempo):
+	update_timer(tiempo)
 
 
 
 
 
-func aumenta_evol(delta):
+func aumenta_evol(_delta):
 	if $Barra_evol.value < 101:
 		get_node("Barra_evol").visible = true
 		$Barra_evol.value += Atributos.tiempos.evol / 100

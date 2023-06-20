@@ -78,10 +78,10 @@ signal player_defeated
 signal level_up(nivel)
 signal player_ready
 signal actualiza_interfaz
-signal actualiza_tiempo
-signal freeze
-signal mascota
+signal actualiza_tiempo(tiempo)
 signal explosion
+signal mascota
+signal freeze
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- FUNCIONES ---------------------------------------
@@ -278,7 +278,7 @@ func recupera_vida(cant):
 
 
 func recupera_tiempo(cant):
-	emit_signal("actualiza_tiempo")
+	emit_signal("actualiza_tiempo",cant)
 
 # -------------------------------------------------------------------------------------
 # --------------------------- EXPERIENCIA y PUNTAJE -----------------------------------
@@ -586,8 +586,8 @@ func habilito_poder_especial():
 	sprite_poder.set_process(true)
 	poder_especial_seleccionado.set_tipo(poder_especial)
 
-func activar_poder_especial(poder_especial):
-	sprite_poder.play("carga_"+poder_especial)
+func activar_poder_especial(_poder_especial):
+	sprite_poder.play("carga_"+_poder_especial)
 	timer_carga.start()
 
 #	poder_tanque.set_process(true)
@@ -608,23 +608,24 @@ func actualizo_skin_accesorios(atributos):
 		ruta = load("res://producto/assets/img/Accesorios/level_1/"+atributos.skin_accesorio+".png")
 		skin_bandera.set_texture(ruta)
 		animacion_bandera.play("go")
+		
 	else:
 		if skin_gorro.visible == false:
 			ruta = load("res://producto/assets/img/Accesorios/level_2/gorros.png")
 			skin_gorro.set_texture(ruta)
 			skin_gorro.visible = true
 			skin_gorro.frame = int(atributos.skin_accesorio[1])
+			
 		else:
 			if atributos.skin_accesorio[0] == "0":
 				ruta = load("res://producto/assets/img/Accesorios/level_3/gorros_coronados.png")
+			
 			else:
 				ruta = load("res://producto/assets/img/Accesorios/level_3/gorros_medalla_oro.png")
+			
 			skin_gorro.set_texture(ruta)
 			skin_gorro.visible = true
 			skin_gorro.frame = int(atributos.skin_accesorio[1])
-			pass
-		pass
-	pass
 
 func _on_timer_de_carga_timeout():
 	sprite_poder.play("cargado_"+poder_especial)

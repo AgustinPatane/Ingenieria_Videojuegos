@@ -48,7 +48,7 @@ func set_config(config):
 
 # ESTE ES PARA PROBAR EL JUEGO
 var jugador = {
-	vida_max = 10000, 
+	vida_max = 100, 
 	exp_necesaria = 1,
 	cadencia_disparo = 0.4,
 	danio = 10,

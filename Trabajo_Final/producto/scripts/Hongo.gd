@@ -25,11 +25,13 @@ func _ready():
 	area_danio.ref_jugador(jugador)
 	call_deferred("agrega_Area",area_danio)
 	
+
 	var mapa = get_node("/root/"+Engine.get_meta("nombre_escena_mapa"))
 	mapa.connect("sube_dificultad_enemigos",self,"sube_dificultad")
 	
 func agrega_Area(area_danio):
 	get_node("/root/"+Engine.get_meta("nombre_escena_mapa")).add_child(area_danio)
+
 	
 	var timer = Timer.new()
 	timer.wait_time = 1.2

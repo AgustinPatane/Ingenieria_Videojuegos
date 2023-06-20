@@ -23,7 +23,7 @@ func _process(delta):
 		$Label.visible=true
 		$Shift.visible=true
 	
-		var diff = pos_capsula.y-jugador.position.y
+		#var diff = pos_capsula.y-jugador.position.y
 		var direction = pos_capsula - jugador.position
 		direction.y+=250
 		var rotation = direction.angle()*180/3.14
