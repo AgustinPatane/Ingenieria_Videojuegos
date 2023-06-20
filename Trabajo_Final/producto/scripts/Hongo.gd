@@ -25,6 +25,9 @@ func _ready():
 	area_danio.ref_jugador(jugador)
 	call_deferred("agrega_Area",area_danio)
 	
+	var mapa = get_node("/root/"+Engine.get_meta("nombre_escena_mapa"))
+	mapa.connect("sube_dificultad_enemigos",self,"sube_dificultad")
+	
 func agrega_Area(area_danio):
 	get_node("/root/"+Engine.get_meta("nombre_escena_mapa")).add_child(area_danio)
 	
@@ -47,4 +50,10 @@ func drop_on_death():
 	get_parent().add_child(orbe_exp)
 	area_danio.desaparecer()
 	queue_free()
+
+
+
+func sube_dificultad():
+	self.vida*=1.25
+	self.danio*=1.4
 
