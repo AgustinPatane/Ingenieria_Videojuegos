@@ -3,6 +3,3 @@
 [ext_resource path="res://producto/assets/scenes/Mapa.tscn" type="PackedScene" id=2]
 
 [node name="MapaArena" instance=ExtResource( 2 )]
-
-[node name="Jugador" parent="." index="0"]
-visible = true
