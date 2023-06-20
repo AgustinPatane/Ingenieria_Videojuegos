@@ -17,7 +17,7 @@ onready var botones = get_node("skins_jugador")
 onready var skins_colores = get_node("skins_jugador/skins_de_colores")
 var lista_skins_colores = ["Yellow","Red","Blue","Black"]
 onready var skins_customs = get_node("skins_jugador/skins_customs")
-var lista_skins_customs = ["Pela","Soldado-arg","Nba","Rambo"]
+var lista_skins_customs = ["Pela","Soldado_arg","Nba","Rambo"]
 
 const SAVE_PATH = "res://Saves/tienda.sav"
 
@@ -73,17 +73,17 @@ func _on_skin_soldado_pressed():
 
 func _on_skin_bask_pressed():
 	SoundManager.play_boton_1()
-	valor.text = "70000"
+	valor.text = "25000"
 	skin_seleccionada = "Nba"
 
 func _on_skin_rambo_pressed():
 	SoundManager.play_boton_1()
-	valor.text = "40000"
+	valor.text = "30000"
 	skin_seleccionada = "Rambo"
 
 func _on_Yellow_pressed():
 	SoundManager.play_boton_1()
-	valor.text = "0"
+	valor.text = "7000"
 	skin_seleccionada = "Yellow"
 
 func _on_Red_pressed():
@@ -98,7 +98,7 @@ func _on_Blue_pressed():
 
 func _on_Black_pressed():
 	SoundManager.play_boton_1()
-	valor.text = "10000"
+	valor.text = ""
 	skin_seleccionada = "Black"
 
 func _on_volver_a_menu_pressed():
@@ -122,7 +122,8 @@ func guardar_tienda():
 	var _skins_cargados2 = parse_json(file.get_line())
 
 	skins_cargados[0].nombre = Engine.get_meta("skin_equipado")
-	skins_cargados[0].valor = Engine.get_meta("monedas")
+	skins_cargados[0].valor = monedas
+	Engine.set_meta("monedas",monedas)
 	file.close()
 	
 	file.open(SAVE_PATH, File.WRITE)
@@ -152,29 +153,16 @@ func load_tienda():
 		monedas = 99999
 	label_monedas.text = str(monedas)
 
-
-func _on_ver_skins_colores_pressed():
-	SoundManager.play_boton_1()
-	skins_colores.visible = true
-	skins_customs.visible = false
-
-func _on_ver_skins_customs_pressed():
-	SoundManager.play_boton_1()
-	skins_colores.visible = false
-	skins_customs.visible = true
-
-
-
 func _on_Boton_salir_pressed():
 	SoundManager.play_boton_1()
 	self.queue_free()
 
 func _on_Izquierda_pressed():
 	SoundManager.play_boton_1()
-	skins_colores.visible = false
-	skins_customs.visible = true
+	skins_colores.visible = true
+	skins_customs.visible = false
 
 func _on_Derecha_pressed():
 	SoundManager.play_boton_1()
-	skins_colores.visible = true
-	skins_customs.visible = false
+	skins_colores.visible = false
+	skins_customs.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/soldadoarg_buy.png" type="Texture" id=1]
 [ext_resource path="res://producto/assets/img/tienda/sin_seleccionar/pela_buy.png" type="Texture" id=2]
@@ -28,8 +28,6 @@
 [ext_resource path="res://producto/assets/img/tienda/focused/red.png" type="Texture" id=26]
 [ext_resource path="res://producto/assets/img/tienda/focused/black.png" type="Texture" id=27]
 [ext_resource path="res://producto/assets/img/tienda/focused/blue.png" type="Texture" id=28]
-[ext_resource path="res://producto/assets/img/tienda/arrow1.png" type="Texture" id=29]
-[ext_resource path="res://producto/assets/img/tienda/arrow.png" type="Texture" id=30]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir.png" type="Texture" id=31]
 [ext_resource path="res://producto/assets/img/Pausa/Botones/Boton_salir - copia.png" type="Texture" id=32]
 [ext_resource path="res://producto/assets/img/fondo.png" type="Texture" id=33]
@@ -154,7 +152,6 @@ texture_focused = ExtResource( 36 )
 expand = true
 
 [node name="skins_de_colores" type="Control" parent="skins_jugador"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -165,9 +162,9 @@ margin_right = 364.0
 margin_bottom = 21.0
 
 [node name="Yellow" type="TextureButton" parent="skins_jugador/skins_de_colores"]
-margin_left = 16.0
+margin_left = 538.0
 margin_top = 7.0
-margin_right = 168.0
+margin_right = 690.0
 margin_bottom = 159.0
 texture_normal = ExtResource( 20 )
 texture_pressed = ExtResource( 13 )
@@ -198,9 +195,9 @@ texture_focused = ExtResource( 28 )
 expand = true
 
 [node name="Black" type="TextureButton" parent="skins_jugador/skins_de_colores"]
-margin_left = 538.0
+margin_left = 16.0
 margin_top = 7.0
-margin_right = 690.0
+margin_right = 168.0
 margin_bottom = 159.0
 texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 19 )
@@ -209,6 +206,7 @@ texture_focused = ExtResource( 27 )
 expand = true
 
 [node name="skins_customs" type="Control" parent="skins_jugador"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -261,36 +259,6 @@ texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 11 )
 texture_focused = ExtResource( 25 )
 expand = true
-
-[node name="ver_skins_colores" type="Button" parent="skins_jugador"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -401.0
-margin_top = -89.0
-margin_right = 11.0
-margin_bottom = 317.0
-rect_scale = Vector2( 0.1, 0.15 )
-icon = ExtResource( 29 )
-flat = true
-icon_align = 1
-
-[node name="ver_skins_customs" type="Button" parent="skins_jugador"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 347.0
-margin_top = -94.0
-margin_right = 759.0
-margin_bottom = 312.0
-rect_scale = Vector2( 0.1, 0.15 )
-icon = ExtResource( 30 )
-flat = true
-icon_align = 1
 
 [node name="Izquierda" type="TextureButton" parent="skins_jugador"]
 anchor_left = -0.188
@@ -359,7 +327,5 @@ texture = ExtResource( 7 )
 [connection signal="pressed" from="skins_jugador/skins_customs/Soldado_arg" to="." method="_on_skin_soldado_pressed"]
 [connection signal="pressed" from="skins_jugador/skins_customs/Nba" to="." method="_on_skin_bask_pressed"]
 [connection signal="pressed" from="skins_jugador/skins_customs/Rambo" to="." method="_on_skin_rambo_pressed"]
-[connection signal="pressed" from="skins_jugador/ver_skins_colores" to="." method="_on_ver_skins_colores_pressed"]
-[connection signal="pressed" from="skins_jugador/ver_skins_customs" to="." method="_on_ver_skins_customs_pressed"]
 [connection signal="pressed" from="skins_jugador/Izquierda" to="." method="_on_Izquierda_pressed"]
 [connection signal="pressed" from="skins_jugador/Derecha" to="." method="_on_Derecha_pressed"]

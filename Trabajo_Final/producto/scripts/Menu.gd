@@ -82,6 +82,7 @@ func load_tienda():
 	if file.file_exists(SAVE_PATH):
 		file.open(SAVE_PATH,File.READ)
 		var skins_cargados = parse_json(file.get_line())
+		# en el primer reg del archivo se tiene la skin equipada y la cantidad de monedas del jugador
 		Engine.set_meta("ruta_skin","res://producto/assets/img/jugador/skins/"+skins_cargados[0].nombre)
 		Engine.set_meta("skin_equipado",skins_cargados[0].nombre)
 		Engine.set_meta("monedas",skins_cargados[0].valor)
