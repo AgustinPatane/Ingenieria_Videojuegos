@@ -186,7 +186,9 @@ var ojo = {
 	experiencia = 2,
 	puntos_muerte = 5,
 	speed = 75,
-	cadencia_disparo = 4
+	cadencia_disparo = 4,
+	velocidad_disparo=300,
+	rango_disparo=4
 }
 
 func get_ojo():

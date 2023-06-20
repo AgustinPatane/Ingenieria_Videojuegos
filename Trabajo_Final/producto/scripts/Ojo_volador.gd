@@ -4,15 +4,17 @@ onready var escena_proyectil = preload("res://producto/assets/scenes/MunicionEne
 
 var tiempo_ultimo_disparo=0.0
 var cadencia_disparo
+var speed_shoot
+var atrib = Atributos.get_ojo()
 
-func _dispara():
+func _dispara(speed_shoot, range_shoot):
 	var disparo = escena_proyectil.instance()
 	disparo.direction = self.pos_jugador - $Position_arma.global_position
 	disparo.global_position = $Position_arma.global_position
 	disparo.rotation_degrees = disparo.direction.angle() * 180 / 3.141592
 	disparo.set_damage(self.danio)
-	disparo.set_rango(4)
-	disparo.set_speed(300)
+	disparo.set_rango(range_shoot)
+	disparo.set_speed(speed_shoot)
 	get_node("/root/"+Engine.get_meta("nombre_escena_mapa")).add_child(disparo)
 	if verifica_pos():
 		SoundManager.play_disparo_enemigo()
@@ -29,7 +31,9 @@ func verifica_pos():
 	return camera_rect.has_point($Sprite.global_position)
 
 func _ready():
-	var atrib = Atributos.get_ojo()
+	var mapa = get_node("/root/"+Engine.get_meta("nombre_escena_mapa"))
+	mapa.connect("sube_dificultad_enemigos",self,"sube_dificultad")
+	
 	set_vida(atrib.vida)
 	set_danio(atrib.danio)
 	set_experiencia(atrib.experiencia)
@@ -43,6 +47,10 @@ func ataque():
 func _process(_delta):
 	var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0
 	if cond_disparo: 
-		_dispara()
+		print(atrib.velocidad_disparo)
+		_dispara(atrib.velocidad_disparo,atrib.rango_disparo)
 	
-
+func sube_dificultad():
+	atrib.velocidad_disparo*=1.1
+	atrib.rango_disparo+=0.5
+	self.danio*=1.15

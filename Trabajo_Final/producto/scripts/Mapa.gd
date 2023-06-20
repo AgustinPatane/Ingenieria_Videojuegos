@@ -31,6 +31,9 @@ var jugador
 var nombre_mapa
 
 onready var capsula = get_node("Capsula")
+signal sube_dificultad_enemigos()
+
+
 
 func _ready():
 	Atributos.set_cursor_juego()
@@ -120,6 +123,10 @@ func sube_dificultad(nivel):
 	if nivel > 1:
 		for i in range(0,len(timers_enemigos)):
 			timers_enemigos[i].wait_time *= 0.9
+			
+		emit_signal("sube_dificultad_enemigos")
+
+
 
 func spawn_enemigo(tipo_enemigo: String):
 	if cant_enemigos < max_enemigos:
