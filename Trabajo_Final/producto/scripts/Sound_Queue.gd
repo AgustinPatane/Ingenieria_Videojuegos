@@ -7,7 +7,8 @@ var audios = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if (self.get_child_count() == 0):
-		print("no hay AudioStreamPlayer")
+		pass
+		#print("no hay AudioStreamPlayer")
 	else:
 		var child = self.get_child(0)
 		if child is AudioStreamPlayer:
@@ -24,8 +25,8 @@ func set_count(value):
 	count = value
 
 func set_volumen(val):
-	for i in range(audios.size()):
-		audios[i].volume_db = val
+	for i in range(self.get_child_count()):
+		self.get_child(i).volume_db = val
 
 # funciona pero hay que arreglar que cuando se termine de reproducir el audio, la copia haga queue_free()
 # porque sino se agrega un hijo cada vez que se reproduce el audio
@@ -40,6 +41,7 @@ func play_sound():
 		next %= audios.size()
 		
 func stop_sound():
-	for i in range(audios.size()):
-		audios[i].stop()
+	for i in range(self.get_child_count()):
+		self.get_child(i).stop()
 		
+	
