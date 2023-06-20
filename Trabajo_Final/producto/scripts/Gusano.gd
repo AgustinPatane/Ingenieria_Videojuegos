@@ -22,4 +22,4 @@ func ataque():
 
 func sube_dificultad():
 	self.danio*=1.15
-	self.speed=1.1
+	self.speed*=1.1
