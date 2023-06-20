@@ -154,18 +154,13 @@ func muestro_arbol():
 	var longitud_actual = len(evolucion_actual)
 	var evolucion_actual_aux = evolucion_actual
 	
-	if evolucion_actual_aux.find("3") != -1:
+	print(evolucion_actual_aux)
+	if len(evolucion_actual_aux) >= 10:
 		if evolucion_actual_aux[10] == evol_superior:
 			evolucion_actual_aux[10] = "1"
 		else:
 			evolucion_actual_aux[10] = "2"
-			
-	elif evolucion_actual_aux.find("4") != -1:
-		if evolucion_actual_aux[10] == evol_superior:
-			evolucion_actual_aux[10] = "1"
-		else:
-			evolucion_actual_aux[10] = "2"
-	
+	print(evolucion_actual_aux)
 	
 	for boton in botones_arbol:
 		if longitud_actual+2<len(boton.name):#evoluciones que no llegaron
