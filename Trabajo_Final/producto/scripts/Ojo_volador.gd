@@ -7,14 +7,14 @@ var cadencia_disparo
 var speed_shoot
 var atrib = Atributos.get_ojo()
 
-func _dispara(speed_shoot, range_shoot):
+func _dispara(_speed_shoot, range_shoot):
 	var disparo = escena_proyectil.instance()
 	disparo.direction = self.pos_jugador - $Position_arma.global_position
 	disparo.global_position = $Position_arma.global_position
 	disparo.rotation_degrees = disparo.direction.angle() * 180 / 3.141592
 	disparo.set_damage(self.danio)
 	disparo.set_rango(range_shoot)
-	disparo.set_speed(speed_shoot)
+	disparo.set_speed(_speed_shoot)
 	get_node("/root/"+Engine.get_meta("nombre_escena_mapa")).add_child(disparo)
 	if verifica_pos():
 		SoundManager.play_disparo_enemigo()

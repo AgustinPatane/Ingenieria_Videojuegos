@@ -80,6 +80,8 @@ signal player_ready
 signal actualiza_interfaz
 signal actualiza_tiempo(tiempo)
 signal explosion
+signal mascota
+signal freeze
 
 # -------------------------------------------------------------------------------------
 # ----------------------------------- FUNCIONES ---------------------------------------
