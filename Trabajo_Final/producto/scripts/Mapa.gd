@@ -64,7 +64,7 @@ func _ready():
 
 	
 	sube_dificultad(1)
-	establecer_fondo_mapa()
+	#establecer_fondo_mapa()
 	capsula.connect("capsula",self,"en_capsula")
 	capsula.connect("exit_capsula",self,"ya_no_en_capsula")
 
@@ -201,39 +201,4 @@ func ya_no_en_capsula():
 func freeze():
 	SoundManager.play_congelar()
 
-func establecer_fondo_mapa():
-	#var numero = Engine.get_meta("numero_de_mapa")
-	#var ruta = load("res://producto/assets/img/Mapas/"+str(numero)+".png")
-	#$Fondo_elegido.set_texture(ruta)
-	#numero *= 10
-	#var ruta2 = load("res://producto/assets/img/Mapas/"+str(numero)+".png")
-	#$Fondo_bordes.set_texture(ruta2)
-	#if numero == 3:
-	#	$Obstaculos_por_mapa/Mapa_3.set_process(true)
-	var escenaMapa = "Mapa"
-	
-	
-	
-	
-	
-	
-	
-	
 
-################ACOMODAR ESTO DE ABAJO##################
-
-# -------- OBSTACULOS MAPA 3 ----------
-func _on_Lava_1_area_entered(_area):
-	#si un enemigo entra a la lava
-	#si un proyectil entra en la lava...
-	pass # Replace with function body.
-
-func _process(_delta):
-	#$Obstaculos_por_mapa/Mapa_3/Llamas.position = jugador.position
-	pass
-
-func _on_Lava_1_body_entered(_body):
-	#if body.name == jugador.name:
-		#$Obstaculos_por_mapa/Mapa_3/Llamas.visible = true
-		#$Obstaculos_por_mapa/Mapa_3/Llamas/AnimatedSprite.play("llamas")
-	pass

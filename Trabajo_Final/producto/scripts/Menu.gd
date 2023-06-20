@@ -40,7 +40,7 @@ signal meteorito_boom
 var explotando = false
 
 func _ready():
-	self.connect("meteorito_boom",self,"explotar")
+	var _a = self.connect("meteorito_boom",self,"explotar")
 	Atributos.set_cursor_menu()
 	Engine.set_meta("contrarreloj",false)
 	btn_contrarreloj.disabled = false

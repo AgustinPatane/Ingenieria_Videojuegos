@@ -55,8 +55,8 @@ func _on_comprar_pressed():
 		# monedas insuficientes
 		else:
 			SoundManager.play_boton_1()
-			var monedas = escena_monedas.instance()
-			self.add_child(monedas)
+			var _monedas = escena_monedas.instance()
+			self.add_child(_monedas)
 	# ya se tiene la skin o no se seleccionó ninguna
 	else:
 		SoundManager.play_boton_1()
