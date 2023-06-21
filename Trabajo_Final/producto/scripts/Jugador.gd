@@ -294,7 +294,7 @@ func gana_exp(value):
 	emit_signal("actualiza_interfaz")
 
 func actualiza_exp(experiencia_max):
-	return experiencia_max * 10
+	return experiencia_max * 2
 	#return (experiencia * round(pow(1.3,nivel)))
 
 func _on_Anim_lvl_up_animation_finished(_anim_name):
@@ -680,12 +680,12 @@ func set_dentro(valor):
 
 func activa_metralladora():
 	var atrib = Atributos.get_atrib_jugador()
-	set_cadencia_disparo(atrib.cadencia_disparo/2)
+	set_cadencia_disparo(atrib.cadencia_disparo/15)
 	pass
 
 func desactiva_metralladora():
 	var atrib = Atributos.get_atrib_jugador()
-	set_cadencia_disparo(atrib.cadencia_disparo*2)
+	set_cadencia_disparo(atrib.cadencia_disparo/5)
 	pass
 
 func vuelve_a_base():
