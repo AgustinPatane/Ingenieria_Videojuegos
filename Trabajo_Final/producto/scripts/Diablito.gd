@@ -9,5 +9,6 @@ func _ready():
 	set_speed(atrib.speed)
 
 func ataque():
+	SoundManager.play_espadazo()
 	jugador.recibe_ataque(danio)
 

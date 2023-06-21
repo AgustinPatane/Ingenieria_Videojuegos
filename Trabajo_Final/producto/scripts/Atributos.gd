@@ -101,7 +101,7 @@ var tiempos = {
 
 var niveles_spawn = {
 	demonio = 5  ,
-	diablito = 2,
+	diablito = 3,
 	gusano = 1,
 	hechicero = 4,
 	hongo = 2,

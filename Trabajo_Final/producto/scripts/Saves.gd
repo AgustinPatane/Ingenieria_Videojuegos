@@ -57,7 +57,6 @@ func cargar_config():
 		return # Error! No hay archivo que guardar
 	save_config.open(Atributos.ruta_config, File.READ)
 	var config = parse_json(save_config.get_line())
-	print(config)
 	Atributos.set_config(config)
 	save_config.close()
 
