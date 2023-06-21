@@ -6,6 +6,8 @@ var tiempo_ultimo_disparo=0.0
 var cadencia_disparo
 var speed_shoot
 var atrib = Atributos.get_ojo()
+var vel_disparo
+var rango_disparo
 
 func _dispara(_speed_shoot, range_shoot):
 	var disparo = escena_proyectil.instance()
@@ -40,7 +42,8 @@ func _ready():
 	set_puntos_muerte(atrib.puntos_muerte)
 	set_speed(atrib.speed)
 	cadencia_disparo = atrib.cadencia_disparo
-
+	vel_disparo = atrib.velocidad_disparo
+	rango_disparo = atrib.rango_disparo
 func ataque():
 	pass
 
@@ -48,9 +51,10 @@ func _process(_delta):
 	var cond_disparo = tiempo_ultimo_disparo + cadencia_disparo <= OS.get_ticks_msec() / 1000.0
 	if cond_disparo: 
 		print(atrib.velocidad_disparo)
-		_dispara(atrib.velocidad_disparo,atrib.rango_disparo)
+		
+		_dispara(vel_disparo,rango_disparo)
 	
 func sube_dificultad():
-	atrib.velocidad_disparo*=1.1
-	atrib.rango_disparo+=0.5
+	vel_disparo*=1.1
+	rango_disparo+=0.5
 	self.danio*=1.15
